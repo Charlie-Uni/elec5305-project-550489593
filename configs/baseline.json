@@ -1,0 +1,17 @@
+{
+  "features": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "svm_grid": {
+    "svc__C": [1.0, 10.0, 100.0],
+    "svc__gamma": ["scale", 0.001, 0.1]
+  }
+}

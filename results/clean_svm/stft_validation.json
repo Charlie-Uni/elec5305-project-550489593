@@ -1,0 +1,38 @@
+{
+  "reference": "scipy.signal.stft",
+  "passed": true,
+  "cases": [
+    {
+      "case": "short_impulse",
+      "frames": 1,
+      "max_absolute_error": 0.0
+    },
+    {
+      "case": "silence",
+      "frames": 3,
+      "max_absolute_error": 0.0
+    },
+    {
+      "case": "random_non_hop_aligned",
+      "frames": 19,
+      "max_absolute_error": 1.9131948672901813e-14
+    },
+    {
+      "case": "bin_centred_sine",
+      "frames": 15,
+      "max_absolute_error": 3.459380390484886e-14
+    }
+  ],
+  "feature_config": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "course_MyStft_m": "not_checked_source_not_available"
+}

@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "clips": 2000,
+  "classes": 50,
+  "folds": [
+    {
+      "fold": 1,
+      "clips": 400,
+      "model_sha256": "485fb11a47b25e8dc1c4c76ce85542cd2dfd37e919b04ac213b20fc6c7f2b10f",
+      "cpu_vs_mps_max_logit_difference": 1.9073486328125e-05,
+      "cpu_vs_mps_max_embedding_difference": 6.9141387939453125e-06,
+      "cpu_vs_mps_prediction_disagreements": 0
+    },
+    {
+      "fold": 2,
+      "clips": 400,
+      "model_sha256": "7143f19e534c56a8f10734563ab578a45e3706c3a374da17b26b7194ddc678a1",
+      "cpu_vs_mps_max_logit_difference": 1.52587890625e-05,
+      "cpu_vs_mps_max_embedding_difference": 6.318092346191406e-06,
+      "cpu_vs_mps_prediction_disagreements": 0
+    },
+    {
+      "fold": 3,
+      "clips": 400,
+      "model_sha256": "81ced439b9b8fd5de7bc13ab067127cac6e0b6e8f69516e94b4a25a124f124fa",
+      "cpu_vs_mps_max_logit_difference": 2.288818359375e-05,
+      "cpu_vs_mps_max_embedding_difference": 7.033348083496094e-06,
+      "cpu_vs_mps_prediction_disagreements": 0
+    },
+    {
+      "fold": 4,
+      "clips": 400,
+      "model_sha256": "3b79a594c9ad4e6d130d71a5993ae3883d2588c1911b54adec1470f5cc9c6ab4",
+      "cpu_vs_mps_max_logit_difference": 1.52587890625e-05,
+      "cpu_vs_mps_max_embedding_difference": 5.7220458984375e-06,
+      "cpu_vs_mps_prediction_disagreements": 0
+    },
+    {
+      "fold": 5,
+      "clips": 400,
+      "model_sha256": "769516ee7eb808a5941b2d09a70345f01fddb6ffcc74a60eafbf84eefd2246a1",
+      "cpu_vs_mps_max_logit_difference": 1.9073486328125e-05,
+      "cpu_vs_mps_max_embedding_difference": 5.245208740234375e-06,
+      "cpu_vs_mps_prediction_disagreements": 0
+    }
+  ],
+  "svm_cnn_inputs_identical": true,
+  "source_hashes_match": true,
+  "training_only_normalisation_verified": true,
+  "validation_selected_epochs_verified": true,
+  "metrics_recomputed_from_predictions": true,
+  "saved_predictions_and_confusion_counts_verified": true,
+  "test_suite": {
+    "passed": 41
+  },
+  "cpu_logit_tolerance": {
+    "atol": 0.0001,
+    "rtol": 0.0001
+  }
+}

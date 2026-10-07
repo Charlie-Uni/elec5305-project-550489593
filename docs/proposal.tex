@@ -1,0 +1,126 @@
+% Editable source. Matches the original proposal's LaTeX article typography.
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={ELEC5305 Project Proposal},pdfauthor={Qihan Zhu}}
+\urlstyle{tt}
+\newcommand{\studenturl}[1]{{\fontsize{10.5}{13.6}\selectfont\url{#1}}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=6.14pt,parsep=0pt,topsep=0pt}
+\pagestyle{plain}
+
+\begin{document}
+\begin{center}
+{\LARGE ELEC5305 Project Proposal}
+\end{center}
+
+\section{Project Title}
+
+\textbf{When Background Noise Has Meaning: Environmental Sound Classification under Semantic Interference}
+
+\section{Student Information}
+
+\begin{itemize}
+\item \textbf{Full Name:} Qihan Zhu
+\item \textbf{Student ID (SID):} 550489593
+\item \textbf{GitHub Username:} Charlie-Uni
+\item \textbf{GitHub Repository:} \studenturl{https://github.com/Charlie-Uni/elec5305-project-550489593}
+\item \textbf{GitHub Project Site:} \studenturl{https://Charlie-Uni.github.io/elec5305-project-550489593/}
+\end{itemize}
+
+\section{Project Overview}
+
+Environmental recordings often contain competing meaningful events. A dog bark mixed with a siren may affect classification differently from equally powerful white noise. This project compares handcrafted features with SVM, a supervised log-Mel CNN, and frozen zero-shot LAION-CLAP.
+
+\begin{quote}
+\textbf{At matched interference levels, how do these representations respond to generic noise versus semantic distractors? When classification fails, does the prediction switch to the interfering event?}
+\end{quote}
+
+An optional extension tests whether ordinary noise augmentation protects against semantic interference.
+
+I hypothesise that interference type affects failure beyond its power level, and that generic-noise augmentation transfers imperfectly to competing events. These hypotheses will be measured without assuming a model ranking.
+
+\section{Background and Motivation}
+
+ESC-50 supports controlled environmental-sound evaluation [\hyperref[ref:1]{1}]. Handcrafted descriptors and CNN spectrogram features provide classical and learned representations [\hyperref[ref:2]{2}-\hyperref[ref:5]{5}, \hyperref[ref:7]{7}]; augmentation can improve generalisation [\hyperref[ref:6]{6}]. CLAP adds audio-text pretraining [\hyperref[ref:9]{9}]. PAT studies training-free alignment and noisy-input robustness [\hyperref[ref:10]{10}], Mix-CLAP addresses efficient noise-aware models [\hyperref[ref:11]{11}], and RSA-Bench examines realistic structured interference [\hyperref[ref:12]{12}].
+
+I chose this problem to connect course STFT and feature-analysis concepts with multi-source listening and resource-constrained deployment. The contribution is controlled failure analysis. CLAP benefits from external pretraining, so deployment comparisons do not establish equal training efficiency or independent pretraining data.
+
+\section{Proposed Methodology}
+
+\textbf{Systems:} Use Python, NumPy, SciPy, scikit-learn and PyTorch. Custom framing and STFT use 44.1 kHz audio, a 1,024-sample Hann window, 512-sample hop and 1,024-point FFT. Validate against SciPy and, when available, course MyStft.m. Pool means and standard deviations of RMS, ZCR, centroid, spread, roll-off, flux, 20 MFCCs and deltas into 92 SVM features. A compact CNN uses 64-band log-Mel inputs. Frozen CLAP retains its official frontend, 48 kHz resampling and fixed prompts: "the sound of [class]".
+
+\textbf{Evaluation:} Retain all five official ESC-50 folds. Each outer split reserves one non-test fold for selection, then retrains supervised models on all four non-test folds. Standardisation uses training data only. Start with one CNN seed; three-seed repeats are optional. Record CLAP checkpoint provenance and possible pretraining overlap. Both supervised systems initially train on clean recordings. For test fold k, validation uses the next fold cyclically; the remaining three folds train candidates. Select SVM hyperparameters by validation macro-F1 and CNN duration by early stopping, then refit without consulting test outcomes.
+
+An audit of the official metadata identifies four source IDs spanning folds under different labels. Retain official assignments for comparability and disclose these exceptions in evaluation summaries.
+
+\textbf{Interference:} Test clean audio, white Gaussian noise, held-out DEMAND backgrounds [\hyperref[ref:8]{8}], and another ESC-50 class. Seeded pairing assigns each target one same-broad-category and one different-category distractor from its held-out test fold. Reuse pairs across models and levels. Test +10 and +5 dB SNR/SIR; treat 0 dB semantic mixtures as an ambiguous-label stress test.
+
+Measure both component powers over target-active regions, using a threshold 40 dB below peak frame energy. Scale interference to the requested ratio, verify the achieved ratio, and avoid clipping through logged common attenuation. Save filenames, labels, categories, folds, channel, offset, gains, checksums and seed in a shared manifest. Inspect activity overlap and listen to representative mixtures. Equal power does not isolate semantic meaning from spectral or temporal differences.
+
+\textbf{Analysis:} Report five-fold means and standard deviations for accuracy and macro-F1, relative F1 loss, confusion matrices and paired target-level bootstrap intervals. Distractor capture rate is distractor predictions divided by incorrect predictions; report counts and undefined zero-error cases. Plot target-minus-distractor scores against SIR. Analyse within-model feature/embedding displacement; score scales and distances are not directly comparable across architectures. Measure preprocessing, batch-one CPU inference, model size and model-specific complexity; report CLAP audio-embedding/text-scoring costs separately. Use the same hardware and thread count, warm up models, and report median inference over 100 runs, excluding disk access and model loading.
+
+\section{Expected Outcomes}
+
+Deliver three classifiers, reproducible mixtures, robustness/capture/margin figures, a focused representation analysis, a command-line demonstration, code, written report and video through GitHub and the project site. Document dataset preprocessing caveats and external-code attribution. After the core, optionally add generic-noise augmentation or released PAT inference. CLAP training and Mix-CLAP reproduction are outside scope.
+
+\section{Timeline}
+{\small
+\begin{tabularx}{\linewidth}{@{}p{0.105\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Weeks} & \textbf{Planned work} \\
+\midrule
+
+1--2 & Choose topic and define the research question. \\
+
+3--5 & Review literature; collect data and freeze the experimental protocol. \\
+
+6--9 & Validate DSP; implement SVM, compact CNN, controlled mixtures and frozen CLAP. \\
+
+10--11 & Run robustness, semantic-capture, representation and cost analysis; optional extension. \\
+
+12--13 & Finalise reproducible code, figures, report, GitHub Pages, demonstration and video. \\
+
+\bottomrule
+\end{tabularx}
+}
+
+\section{References}
+\begingroup
+\urlstyle{same}
+\begin{enumerate}[label={[\arabic*]},widest=12,leftmargin=*,labelsep=0.5em,align=left,itemsep=0.6em,parsep=0pt,topsep=0pt]
+
+\item\label{ref:1} K. J. Piczak, ``ESC: Dataset for Environmental Sound Classification,'' \emph{ACM Multimedia}, 2015. \href{https://doi.org/10.1145/2733373.2806390}{\nolinkurl{doi:10.1145/2733373.2806390}}.
+
+\item\label{ref:2} K. J. Piczak, ``Environmental Sound Classification with Convolutional Neural Networks,'' \emph{MLSP}, 2015. \href{https://doi.org/10.1109/MLSP.2015.7324337}{\nolinkurl{doi:10.1109/MLSP.2015.7324337}}.
+
+\item\label{ref:3} S. B. Davis and P. Mermelstein, ``Comparison of Parametric Representations for Monosyllabic Word Recognition in Continuously Spoken Sentences,'' \emph{IEEE TASSP}, 1980. \href{https://doi.org/10.1109/TASSP.1980.1163420}{\nolinkurl{doi:10.1109/TASSP.1980.1163420}}.
+
+\item\label{ref:4} G. Sharma et al., ``Trends in Audio Signal Feature Extraction Methods,'' \emph{Applied Acoustics}, 2020. \href{https://doi.org/10.1016/j.apacoust.2019.107020}{\nolinkurl{doi:10.1016/j.apacoust.2019.107020}}.
+
+\item\label{ref:5} C. Cortes and V. Vapnik, ``Support-Vector Networks,'' \emph{Machine Learning}, 1995. \href{https://doi.org/10.1007/BF00994018}{\nolinkurl{doi:10.1007/BF00994018}}.
+
+\item\label{ref:6} J. Salamon and J. P. Bello, ``Deep Convolutional Neural Networks and Data Augmentation for Environmental Sound Classification,'' \emph{IEEE SPL}, 2017. \href{https://doi.org/10.1109/LSP.2017.2657381}{\nolinkurl{doi:10.1109/LSP.2017.2657381}}.
+
+\item\label{ref:7} A. Bansal and N. K. Garg, ``Environmental Sound Classification: A Descriptive Review of the Literature,'' \emph{ISWA}, 2022. \href{https://doi.org/10.1016/j.iswa.2022.200115}{\nolinkurl{doi:10.1016/j.iswa.2022.200115}}.
+
+\item\label{ref:8} J. Thiemann et al., ``The Diverse Environments Multi-Channel Acoustic Noise Database (DEMAND): A Database of Multichannel Environmental Noise Recordings,'' \emph{POMA}, 2013. \href{https://doi.org/10.1121/1.4799597}{\nolinkurl{doi:10.1121/1.4799597}}.
+
+\item\label{ref:9} Y. Wu et al., ``Large-Scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation,'' \emph{ICASSP}, 2023. \href{https://arxiv.org/abs/2211.06687}{\nolinkurl{arXiv:2211.06687}}.
+
+\item\label{ref:10} A. Seth et al., ``PAT: Parameter-Free Audio-Text Aligner to Boost Zero-Shot Audio Classification,'' \emph{NAACL}, 2025. \href{https://aclanthology.org/2025.naacl-long.616/}{\nolinkurl{doi:10.18653/v1/2025.naacl-long.616}}.
+
+\item\label{ref:11} W. Kohno et al., ``Mix-CLAP: Adaptive Fusion of Knowledge-Distilled Audio Embeddings for Noise-Aware Audio-Language Models,'' \emph{ICASSP}, 2026. \href{https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206}{Conference record}.
+
+\item\label{ref:12} Y. Zhang et al., ``RSA-Bench: Benchmarking Audio Large Models in Real-World Acoustic Scenarios,'' \emph{Findings of ACL}, 2026. \href{https://aclanthology.org/2026.findings-acl.913/}{\nolinkurl{doi:10.18653/v1/2026.findings-acl.913}}.
+
+\end{enumerate}
+\endgroup
+\end{document}
