@@ -99,7 +99,8 @@ across official test folds.
 [confusion matrix](results/clean_svm/confusion_matrix.csv), and
 [STFT validation](results/clean_svm/stft_validation.json) are checked into the
 results directory. The source-overlap caveat below applies to these scores.
-With the CNN extra installed, the current code passes 41 tests. No model settings were changed using these
+With the CNN extra installed, the current code passes 44 tests on the local Mac;
+one CUDA hardware test is skipped. No model settings were changed using these
 outer-test results.
 
 A [single-clip CPU microbenchmark](results/clean_svm/cost.json) measured median
@@ -302,11 +303,18 @@ esc-baseline train-cnn --spectrograms artifacts/features/esc50_log_mel.npz --con
 
 `auto` selects CUDA, then Apple MPS, then CPU according to availability. The local
 M3 run uses MPS; CPU remains available with `--device cpu`. Random seeds, package
-versions, backend and deterministic settings are recorded. MPS uses deterministic
+versions, backend and deterministic settings are recorded. MPS and CUDA use deterministic
 algorithms in warning mode because backend support varies; a fixed seed does not
 promise bitwise equality across platforms or PyTorch versions. See the official
 [MPS](https://docs.pytorch.org/docs/stable/notes/mps.html) and
 [reproducibility](https://docs.pytorch.org/docs/stable/notes/randomness.html) notes.
+
+The portability review enabled warning mode for CUDA as well: adaptive pooling's
+CUDA backward pass otherwise raises under strict deterministic mode. CPU remains
+strict. This change leaves the measured CPU/MPS paths unchanged. The recorded
+training-source hashes refer to baseline commit `932d445`, immediately before this
+portability fix; the result files are historical run records, not rewritten hashes.
+CUDA's policy is unit-tested here, while its hardware smoke test requires a CUDA host.
 
 The extractor rejects an existing cache and training rejects a nonempty run
 folder. To repeat an experiment, choose a new run folder and reuse the existing

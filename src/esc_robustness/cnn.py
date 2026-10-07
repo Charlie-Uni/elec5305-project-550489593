@@ -72,8 +72,9 @@ def seed_training(seed, device):
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.backends.cudnn.benchmark = False
-    # MPS has operations without deterministic implementations; log this limitation.
-    torch.use_deterministic_algorithms(True, warn_only=device.type == "mps")
+    # Accelerator pooling backward may lack a deterministic implementation.
+    # Keep supported deterministic kernels, but warn instead of aborting training.
+    torch.use_deterministic_algorithms(True, warn_only=device.type != "cpu")
 
 
 def fit_normalisation(X, indices):
@@ -269,7 +270,7 @@ def evaluate_cnn(cache_path, output_dir, config=CNNConfig(), device="auto", requ
             "device": str(device),
             "numerical_threads": config.num_threads,
             "deterministic_algorithms": True,
-            "deterministic_warn_only": device.type == "mps",
+            "deterministic_warn_only": device.type != "cpu",
             "packages": {
                 p: importlib.metadata.version(p)
                 for p in ("torch", "numpy", "scipy", "scikit-learn")

@@ -15,6 +15,7 @@ from esc_robustness.cnn import (  # noqa: E402
     load_cnn,
     predict_arrays,
     predict_cnn,
+    seed_training,
 )
 from esc_robustness.data import load_audio, outer_split  # noqa: E402
 from esc_robustness.dsp import log_mel  # noqa: E402
@@ -26,6 +27,33 @@ from esc_robustness.spectrograms import (  # noqa: E402
 SMALL_CNN = CNNConfig(
     channels=(2, 4, 4), max_epochs=3, patience=2, batch_size=8, num_threads=1, dropout=0.0
 )
+
+
+@pytest.mark.parametrize("backend", ["cpu", "mps", "cuda"])
+def test_accelerator_determinism_policy(backend):
+    enabled = torch.are_deterministic_algorithms_enabled()
+    warn_only = torch.is_deterministic_algorithms_warn_only_enabled()
+    try:
+        # A device descriptor exercises policy without requiring that hardware.
+        seed_training(5305, torch.device(backend))
+        assert torch.are_deterministic_algorithms_enabled()
+        assert torch.is_deterministic_algorithms_warn_only_enabled() == (backend != "cpu")
+    finally:
+        torch.use_deterministic_algorithms(enabled, warn_only=warn_only)
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA hardware is unavailable")
+def test_cuda_pooling_backward_can_train():
+    device = torch.device("cuda")
+    seed_training(5305, device)
+    model = CompactCNN(64, 2, SMALL_CNN).to(device)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+    inputs = torch.randn(4, 1, 64, 16, device=device)
+    targets = torch.tensor([0, 1, 0, 1], device=device)
+    loss = torch.nn.functional.cross_entropy(model(inputs), targets)
+    loss.backward()
+    assert all(p.grad is not None and torch.isfinite(p.grad).all() for p in model.parameters())
+    optimizer.step()
 
 
 def test_cache_matches_existing_frontend_and_rejects_corruption(toy_dataset, tmp_path):
