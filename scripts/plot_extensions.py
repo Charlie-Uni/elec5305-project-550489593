@@ -24,6 +24,44 @@ def read(path):
         return list(csv.DictReader(handle))
 
 
+def replication_figure(replication):
+    fig, axes = plt.subplots(1, 2, figsize=(7.16, 3.2), sharex=True, layout="constrained")
+    for ax, region in zip(axes, ("own", "target")):
+        for c, condition in enumerate(CONDITIONS[2:]):
+            for k, seed in enumerate((5305, 5306, 5307)):
+                row = next(
+                    r
+                    for r in replication
+                    if r["region"] == region
+                    and r["condition"] == condition
+                    and int(r["seed"]) == seed
+                )
+                value, low, high = [
+                    100 * float(row[key])
+                    for key in ("accuracy_difference", "accuracy_ci_low", "accuracy_ci_high")
+                ]
+                ax.errorbar(
+                    value,
+                    c + (k - 1) * 0.20,
+                    xerr=[[value - low], [high - value]],
+                    fmt=MARKERS[k],
+                    capsize=3,
+                    ms=5,
+                    color=COLORS["cnn"],
+                    mfc="white" if k == 0 else COLORS["cnn"],
+                    label=f"Seed {seed}" if c == 0 else None,
+                )
+        ax.set_yticks([0, 1], ["Same", "Different"])
+        ax.invert_yaxis()
+        ax.axvline(0, color="0.5", lw=0.8)
+        ax.set_xlabel("Semantic − DEMAND accuracy (pp)")
+        ax.set_title(f"{region.capitalize()} activity power")
+        ax.grid(axis="x", alpha=0.18)
+    axes[1].legend(fontsize=7, loc="center", bbox_to_anchor=(0.72, 0.5))
+    fig.suptitle("Clean-trained CNN replication: +5 dB, overlap ≥ 0.8", fontsize=10)
+    return fig
+
+
 def plot(directory, output, export=False, audit=None):
     status = json.loads((directory / "summary_audit.json").read_text())
     if not status["complete"] or status["variants"] != 14:
@@ -231,40 +269,7 @@ def plot(directory, output, export=False, audit=None):
         writer.writerows(clap_effects)
 
     replication = read(directory / "cnn_overlap_replication.csv")
-    fig, axes = plt.subplots(1, 2, figsize=(7.16, 3.2), sharex=True, layout="constrained")
-    for ax, region in zip(axes, ("own", "target")):
-        for c, condition in enumerate(CONDITIONS[2:]):
-            for k, seed in enumerate((5305, 5306, 5307)):
-                row = next(
-                    r
-                    for r in replication
-                    if r["region"] == region
-                    and r["condition"] == condition
-                    and int(r["seed"]) == seed
-                )
-                value, low, high = [
-                    100 * float(row[key])
-                    for key in ("accuracy_difference", "accuracy_ci_low", "accuracy_ci_high")
-                ]
-                ax.errorbar(
-                    value,
-                    c + (k - 1) * 0.20,
-                    xerr=[[value - low], [high - value]],
-                    fmt=MARKERS[k],
-                    capsize=3,
-                    ms=5,
-                    color=COLORS["cnn"],
-                    mfc="white" if k == 0 else COLORS["cnn"],
-                    label=f"Seed {seed}" if c == 0 else None,
-                )
-        ax.set_yticks([0, 1], ["Same", "Different"])
-        ax.invert_yaxis()
-        ax.axvline(0, color="0.5", lw=0.8)
-        ax.set_xlabel("Semantic − DEMAND accuracy (pp)")
-        ax.set_title(f"{region.capitalize()} activity power")
-        ax.grid(axis="x", alpha=0.18)
-    axes[1].legend(fontsize=7, loc="upper right")
-    fig.suptitle("Clean-trained CNN replication: +5 dB, overlap ≥ 0.8", fontsize=10)
+    fig = replication_figure(replication)
     save(
         fig,
         "17_cnn_overlap_replication",
@@ -290,6 +295,7 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--export", action="store_true")
     parser.add_argument("--qa-path", type=Path)
+    parser.add_argument("--replication-only", action="store_true")
     args = parser.parse_args()
     audit = None
     if args.qa_path:
@@ -299,4 +305,38 @@ if __name__ == "__main__":
         from visual_qa import audit_layout
 
         audit = audit_layout
-    plot(args.input, args.output, args.export, audit)
+    if args.replication_only:
+        rows = read(args.input / "cnn_overlap_replication.csv")
+        expected = {
+            (r, str(s), c)
+            for r in ("own", "target")
+            for s in (5305, 5306, 5307)
+            for c in CONDITIONS[2:]
+        }
+        if len(rows) != 12 or {(r["region"], r["seed"], r["condition"]) for r in rows} != expected:
+            raise ValueError("Incomplete clean-seed replication")
+        plt.rcParams.update(
+            {
+                "font.size": 9,
+                "svg.fonttype": "none",
+                "pdf.fonttype": 42,
+                "axes.spines.top": False,
+                "axes.spines.right": False,
+            }
+        )
+        figure = replication_figure(rows)
+        args.output.mkdir(parents=True, exist_ok=True)
+        report = audit(figure) if audit else None
+        for suffix in ["png", "pdf", "svg"] if args.export else ["png"]:
+            figure.savefig(
+                args.output / f"17_cnn_overlap_replication.{suffix}",
+                dpi=600 if args.export else 160,
+            )
+        with (args.output / "17_cnn_overlap_replication.csv").open("w", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        (args.output / "layout_audit.json").write_text(json.dumps(report, indent=2))
+        plt.close(figure)
+    else:
+        plot(args.input, args.output, args.export, audit)

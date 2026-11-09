@@ -35,8 +35,10 @@ At +5 dB, the SVM is especially vulnerable to white noise, whereas CLAP retains
 strong performance under ordinary backgrounds but loses substantially more
 accuracy under overlapping meaningful events. On high-overlap targets, CLAP's
 semantic-minus-DEMAND accuracy difference is approximately -26 to -29 percentage
-points; the corresponding CNN difference is about -3 points and requires more
-cautious statistical interpretation. Distractor capture, full-class rankings
+points; the core CNN difference is about -3 points, with two additional seeds
+showing differences of approximately -5 to -7 points. A fixed prompt ensemble
+raises CLAP clean accuracy to 92.90\% without changing its audio embeddings,
+while a substantial semantic-interference gap remains. Distractor capture, full-class rankings
 and within-model representation shifts reveal structured failure patterns that
 aggregate accuracy alone misses. The contribution is a reproducible interference
 experiment and failure analysis, rather than a claim about the best architecture
@@ -118,6 +120,9 @@ The core experiment uses seed 5305. Additional seeds are analysed separately.
 CLAP uses the fixed \texttt{630k-audioset-best.pt} checkpoint, HTSAT-tiny audio
 encoder, RoBERTa text encoder and no fusion. Audio is resampled to 48 kHz and
 passes through the official int16 truncation-and-return convention exactly once.
+The official non-fusion frontend repeat-pads five-second inputs to ten seconds;
+all systems receive the same canonical five-second waveform before their own
+frontends.
 The prompt is \texttt{the sound of \{label\}}, replacing underscores with spaces.
 Class scores are cosine similarities between unit audio embeddings and the 50
 unit prompt embeddings. Parameters are frozen; there is no ESC-50 classifier
@@ -278,6 +283,9 @@ after ten warm-ups on one representative clip; it is not a dataset-wide tail
 latency claim. Disk I/O, loading and external pretraining are excluded. CLAP
 prompt embeddings are cached, and its audio embedding plus class scoring is
 included. CPU performance is separate from MPS used for supervised training.
+CLAP's reported preprocessing stage covers resampling and quantisation; its
+internal Mel frontend is included in embedding time. Stage boundaries therefore
+differ across implementations, so total query cost is the comparable measure.
 
 The compact CNN has 36,258 parameters; the loaded CLAP model has 158,334,169.
 Saved checkpoint size, parameter bytes and inference latency are different
@@ -294,8 +302,8 @@ post-baseline analysis choices and seed variability limit generalisation.
 These limitations are reasons to report the protocol and failure cases precisely,
 not reasons to reinterpret a smaller error bar as proof of causal semantics.
 
-\section{Extension experiment status}
-\input{report_extension_status.tex}
+\section{Extension experiments}
+\subsection{Protocol}
 The extension compares clean, WGN-augmented and semantic-augmented supervised
 training. CNN seeds are 5305, 5306 and 5307. Each augmented CNN sees clean data
 with probability 0.5 and otherwise one of three fixed training-only views at
@@ -314,14 +322,19 @@ features and a label-based fusion-coefficient search; reproducing that search
 on outer test folds would invalidate this experiment's isolation. None of those
 steps is silently incorporated into the core CLAP reference.
 
+\subsection{Verified results at build time}
+\input{report_extension_status.tex}
+
 \section{Conclusion}
 Interference power alone does not describe environmental-sound classifier
 failure. The SVM's strongest weakness is white-noise-induced spectral-feature
 change, while CLAP shows substantial competition from recognisable events even
 when its generic-background performance remains high. Temporal overlap and
 power measurement materially affect interpretation; paired controls and both
-power protocols make that dependence visible. The smaller CNN effect should
-remain qualified pending replication. The practical research contribution is
+power protocols make that dependence visible. The CNN contrast is directionally
+consistent across all three seeds, while the original seed's corrected test
+remains inconclusive. Prompt ensembling improves CLAP's class readout yet retains
+substantial competition under meaningful interference. The practical research contribution is
 the combination of controlled DSP mixing, explicit reproducibility and analysis
 of where the classification decision moves.
 

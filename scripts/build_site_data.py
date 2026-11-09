@@ -49,6 +49,30 @@ def build(run):
             {"name": "Fixed CLAP prompt ensemble", "completed": int(ensemble), "total": 1},
         ],
     }
+    audit_path = ROOT / "results/extensions_20261109/prompt_ensemble_audit.json"
+    if audit_path.exists():
+        audit = json.loads(audit_path.read_text())
+        if not audit["verified"]:
+            raise ValueError("Prompt ensemble must pass its independent audit")
+        state["prompt_ensemble"] = {
+            "clean_accuracy": audit["clean_accuracy"],
+            "clean_macro_f1": audit["clean_macro_f1"],
+            "templates": audit["templates_per_class"],
+            "unique_templates": audit["unique_templates"],
+            "conditions": {
+                region: json.loads(
+                    (
+                        ROOT
+                        / f"results/extensions_20261109/clap_prompt_ensemble/{region}_conditions.json"
+                    ).read_text()
+                )
+                for region in ("own", "target")
+            },
+        }
+    replication = ROOT / "results/extensions_20261109/clean_replication/cnn_overlap_replication.csv"
+    if replication.exists():
+        with replication.open() as handle:
+            state["cnn_replication"] = list(csv.DictReader(handle))
     (ROOT / "site-data.json").write_text(json.dumps(state, indent=2) + "\n")
 
 

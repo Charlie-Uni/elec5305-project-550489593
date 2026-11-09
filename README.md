@@ -242,9 +242,12 @@ latency across all classes or compare the other planned systems.
   tonal descriptors, silence, tail padding, official split isolation, scaler
   fitting and a synthetic end-to-end train/save/predict pipeline.
 
-SciPy STFT validation is implemented. The cross-check against the course `MyStft.m`
-(Week 4 material) remains to be recorded. Synthetic test scores are never reported as
-ESC-50 benchmark results.
+SciPy STFT validation and an actual MATLAB cross-check against the course
+`MyStft.m` are complete. Five cases include silence, an impulse, random input,
+a sinusoid and real ESC-50 audio; window, leading padding, frame alignment and
+one-sided output are explicitly reconciled. Maximum absolute disagreement is
+`2.93e-14`; see the [numerical audit](results/extensions_20261109/course_stft/validation.json).
+Synthetic test scores are never reported as ESC-50 benchmark results.
 
 ## Clean compact CNN baseline
 
@@ -775,13 +778,20 @@ before final intervention plots. Seed SD, fold SD and paired bootstrap intervals
 describe different uncertainties and are labelled separately. The completed
 [diagnostic extension](results/extensions_20261109/README.md) includes feature
 groups, full-class CLAP ranking, paired uncertainty and actual course MATLAB STFT
-validation. The CNN high-overlap difference is tentative after Holm correction;
-its replication is reported per seed rather than pooling repeated targets.
+validation. All three clean CNN seeds reproduce the negative high-overlap
+semantic-minus-DEMAND contrast. Both added seeds pass the separate declared
+12-comparison Holm family; the original seed does not. The
+[replication table](results/extensions_20261109/clean_replication/cnn_overlap_replication.csv)
+reports every seed separately rather than pooling repeated targets.
 
 The fixed released PAT prompt-list ablation is implemented in
 `python -m esc_robustness.prompt_ensemble --help`. It reuses the exact cached
 audio embeddings, applies all templates to every class and performs no label-based
-prompt search. It is explicitly **not full PAT**.
+prompt search. The audited 300-entry list contains 275 unique templates, with
+released multiplicities preserved. Clean accuracy is **92.90 ± 0.65%**, and
+macro-F1 is **92.53 ± 0.59%** (five-fold mean ± SD). Both interference protocols
+are complete; the audio embeddings are unchanged. It is explicitly **not full PAT**.
+See the [independent audit](results/extensions_20261109/prompt_ensemble_audit.json).
 
 ## Repository layout
 

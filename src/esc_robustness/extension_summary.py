@@ -108,6 +108,58 @@ def matched_vectors(a, b, condition, level=5.0, high_overlap=False):
     )
 
 
+def replicate_overlap(loaded, replicates=2000):
+    # Replicate the original overlap finding without treating three predictions
+    # of one test recording as three independent observations.
+    replication = []
+    for region in ("own", "target"):
+        for seed in (5305, 5306, 5307):
+            rows = loaded[(region, f"cnn_clean_seed_{seed}")]
+            demand = {
+                r["target_file"]: r
+                for r in rows
+                if r["condition"] == "demand" and r["level_db"] == 5.0
+            }
+            for condition in ("semantic_same", "semantic_different"):
+                selected = sorted(
+                    [
+                        r
+                        for r in rows
+                        if r["condition"] == condition
+                        and r["level_db"] == 5.0
+                        and float(r["activity_overlap"]) >= 0.8
+                    ],
+                    key=lambda r: r["target_file"],
+                )
+                controls = [demand[r["target_file"]] for r in selected]
+                if any(
+                    a["target_class"] != b["target_class"] or a["fold"] != b["fold"]
+                    for a, b in zip(selected, controls)
+                ):
+                    raise ValueError("Semantic/DEMAND target matching failed")
+                result = paired_bootstrap(
+                    [r["target_class"] for r in selected],
+                    [r["prediction"] for r in selected],
+                    [r["prediction"] for r in controls],
+                    [r["fold"] for r in selected],
+                    replicates=replicates,
+                    seed=530509,
+                )
+                replication.append(
+                    dict(
+                        region=region,
+                        seed=seed,
+                        condition=condition,
+                        level_db=5.0,
+                        stratum="overlap_ge_0.8",
+                        **result,
+                    )
+                )
+    for row, adjusted in zip(replication, holm_adjust([r["mcnemar_exact_p"] for r in replication])):
+        row["holm_p_across_cnn_replication"] = float(adjusted)
+    return replication
+
+
 def summarise(repo, runtime, root, output, replicates=2000):
     output.mkdir(parents=True, exist_ok=True)
     tables, clean_rows, loaded, provenance = [], [], {}, {}
@@ -238,54 +290,7 @@ def summarise(repo, runtime, root, output, replicates=2000):
     for row, pvalue in zip(comparisons, adjusted):
         row["holm_p_across_extension_comparisons"] = float(pvalue)
     write_csv(output / "paired_intervention_effects.csv", comparisons)
-    # Replicate the original overlap finding without treating three predictions
-    # of one test recording as three independent observations.
-    replication = []
-    for region in ("own", "target"):
-        for seed in (5305, 5306, 5307):
-            rows = loaded[(region, f"cnn_clean_seed_{seed}")]
-            demand = {
-                r["target_file"]: r
-                for r in rows
-                if r["condition"] == "demand" and r["level_db"] == 5.0
-            }
-            for condition in ("semantic_same", "semantic_different"):
-                selected = sorted(
-                    [
-                        r
-                        for r in rows
-                        if r["condition"] == condition
-                        and r["level_db"] == 5.0
-                        and float(r["activity_overlap"]) >= 0.8
-                    ],
-                    key=lambda r: r["target_file"],
-                )
-                controls = [demand[r["target_file"]] for r in selected]
-                if any(
-                    a["target_class"] != b["target_class"] or a["fold"] != b["fold"]
-                    for a, b in zip(selected, controls)
-                ):
-                    raise ValueError("Semantic/DEMAND target matching failed")
-                result = paired_bootstrap(
-                    [r["target_class"] for r in selected],
-                    [r["prediction"] for r in selected],
-                    [r["prediction"] for r in controls],
-                    [r["fold"] for r in selected],
-                    replicates=replicates,
-                    seed=530509,
-                )
-                replication.append(
-                    dict(
-                        region=region,
-                        seed=seed,
-                        condition=condition,
-                        level_db=5.0,
-                        stratum="overlap_ge_0.8",
-                        **result,
-                    )
-                )
-    for row, adjusted in zip(replication, holm_adjust([r["mcnemar_exact_p"] for r in replication])):
-        row["holm_p_across_cnn_replication"] = float(adjusted)
+    replication = replicate_overlap(loaded, replicates)
     write_csv(output / "cnn_overlap_replication.csv", replication)
     report = {
         "complete": True,
@@ -312,5 +317,31 @@ if __name__ == "__main__":
     for name in ("repo", "runtime", "run", "output"):
         p.add_argument(f"--{name}", type=Path, required=True)
     p.add_argument("--replicates", type=int, default=2000)
+    p.add_argument("--replication-only", action="store_true")
     a = p.parse_args()
-    summarise(a.repo, a.runtime, a.run, a.output, a.replicates)
+    if a.replication_only:
+        loaded = {}
+        provenance = {}
+        for region in ("own", "target"):
+            for seed in (5305, 5306, 5307):
+                name = f"cnn_clean_seed_{seed}"
+                directory = a.run / "evaluations" / region / name
+                audit = json.loads((directory / "audit.json").read_text())
+                path = directory / "cnn_predictions.csv"
+                if sha256_file(path) != audit["predictions_sha256"]:
+                    raise ValueError("Clean replication prediction hash differs")
+                loaded[(region, name)] = read_predictions(path)
+                provenance[f"{region}/{name}"] = audit
+        a.output.mkdir(parents=True, exist_ok=True)
+        rows = replicate_overlap(loaded, a.replicates)
+        write_csv(a.output / "cnn_overlap_replication.csv", rows)
+        write_json(
+            a.output / "audit.json",
+            {
+                "complete": True,
+                "scope": "clean CNN overlap replication only",
+                "provenance": provenance,
+            },
+        )
+    else:
+        summarise(a.repo, a.runtime, a.run, a.output, a.replicates)

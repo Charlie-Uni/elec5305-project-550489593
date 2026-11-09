@@ -18,7 +18,10 @@ def render(clap_run, svm_models):
         for text in fig.texts:
             text.set_text(re.sub(r"^Figure \d+\.\s*", "", text.get_text()))
         for axis in fig.axes:
-            axis.set_title(re.sub(r"^Figure \d+\.\s*", "", axis.get_title()))
+            for location in ("left", "center", "right"):
+                axis.set_title(
+                    re.sub(r"^Figure \d+\.\s*", "", axis.get_title(loc=location)), loc=location
+                )
         fig.savefig(output / f"{name}.png", dpi=160)
         fig.savefig(output / f"{name}.pdf")
         plt.close(fig)

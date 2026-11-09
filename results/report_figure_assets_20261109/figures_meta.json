@@ -1,5 +1,5 @@
 {
-  "evaluation": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/eval_own",
+  "evaluation": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
   "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
   "systems": [
     "svm",
@@ -12,8 +12,8 @@
     "clap": "cosine_similarity"
   },
   "input_evaluations": {
-    "svm": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/eval_own",
-    "cnn": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/eval_own",
+    "svm": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
+    "cnn": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
     "clap": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_own"
   },
   "svm_training_scalers": {
@@ -40,13 +40,13 @@
   },
   "focus_level_db": 5,
   "clean_dirs": {
-    "svm": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/clean_svm",
-    "cnn": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/clean_cnn",
+    "svm": "/Users/leaf/Projects/elec5305-local/repo/results/clean_svm",
+    "cnn": "/Users/leaf/Projects/elec5305-local/repo/results/clean_cnn",
     "clap": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/clean"
   },
   "costs": {
-    "svm": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/clean_svm/cost.json",
-    "cnn": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/clean_cnn/cost.json",
+    "svm": "/Users/leaf/Projects/elec5305-local/repo/results/clean_svm/cost.json",
+    "cnn": "/Users/leaf/Projects/elec5305-local/repo/results/clean_cnn/cost.json",
     "clap": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/clean/cost.json"
   },
   "records_per_figure": {

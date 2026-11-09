@@ -1,0 +1,58 @@
+{
+  "folds": {
+    "1": {
+      "n": 400,
+      "accuracy": 0.94,
+      "macro_f1": 0.9339604924173507
+    },
+    "2": {
+      "n": 400,
+      "accuracy": 0.9225,
+      "macro_f1": 0.9176323179744231
+    },
+    "3": {
+      "n": 400,
+      "accuracy": 0.9275,
+      "macro_f1": 0.9234665850145726
+    },
+    "4": {
+      "n": 400,
+      "accuracy": 0.9275,
+      "macro_f1": 0.9253451319921908
+    },
+    "5": {
+      "n": 400,
+      "accuracy": 0.9275,
+      "macro_f1": 0.926174890469008
+    }
+  },
+  "accuracy": {
+    "mean": 0.929,
+    "sample_std": 0.006519202405202631
+  },
+  "macro_f1": {
+    "mean": 0.9253158835735091,
+    "sample_std": 0.005872075779804709
+  },
+  "pooled": {
+    "accuracy": 0.929,
+    "macro_f1": 0.9267103666225176
+  },
+  "evaluation": "fixed_prompt_ensemble_zero_shot",
+  "clips": 2000,
+  "system": {
+    "name": "LAION-CLAP + fixed released PAT prompt ensemble",
+    "not_full_PAT": "No local-feature mutual alignment, beta fusion, or label-based parameter search",
+    "checkpoint_sha256": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037",
+    "templates_sha256": "2decfa74ebd8aebcc51dee998afc942e5c640af315e44eea4417e0410b33d72e",
+    "templates_per_class": 300,
+    "unique_templates": 275,
+    "source": "https://github.com/cs20s030/PAT/blob/8910ebb756e33aec72e2cf6c1f02614bfa194e85/promt_list.txt",
+    "aggregation": "Unit-normalise each text embedding, mean across all prompts, unit-normalise mean",
+    "selection": "All released nonblank templates; no selection using clean or interference labels",
+    "baseline_text_max_abs_difference": 0.0,
+    "source_sha256": "2603a0e5d87d2931e457740a93071f6c2d11abd534b8940706813d30f41dd847",
+    "text_embeddings_sha256": "cf56d2ca736b22e4c3325a3274779418d5725c0d5c71fccae6e656be50827f8e"
+  },
+  "input_sha256": "006287cc6707d9db68aa61888b19282ded8e5be831c08fc32e4ed1ea445b9b95"
+}

@@ -1,2 +1,39 @@
-The core and diagnostic results above are verified. The extended augmentation, multi-seed interference and prompt-ensemble results are still being generated and are not used to support the conclusions of this draft.
-Completed additional clean training runs at the build time are seed 5306: clean accuracy 66.40\%, macro-F1 65.19\%; seed 5307: clean accuracy 66.40\%, macro-F1 65.53\%. Their interference comparisons are reported only after evaluation and audit.
+Supervised augmentation comparisons are still running. The completed replication and prompt-ablation results below are separately verified; pending interventions do not support the conclusions of this draft.
+Additional clean runs are seed 5306: clean accuracy 66.40\%, macro-F1 65.19\%; seed 5307: clean accuracy 66.40\%, macro-F1 65.53\%.
+
+\subsubsection*{CNN replication across optimisation seeds}
+All three clean-trained seeds show lower accuracy for semantic interference than
+matched DEMAND at +5 dB and overlap at least 0.8. The two new seeds have larger
+differences than the core seed. Their eight comparisons pass the declared
+12-comparison Holm family, while seed 5305 remains above 0.05. This supports
+directional replication; it does not turn repeated predictions of the same clips
+into independent samples or isolate a causal semantic effect.
+\begin{table}[htbp]\centering\small
+\caption{Semantic minus matched DEMAND accuracy (percentage points), with paired 95\% target-bootstrap intervals and Holm-adjusted exact McNemar $p$ values. Each seed is analysed separately.}
+\begin{tabular}{lrcrcr}\toprule Power & Seed & Same category & $p$ & Different category & $p$\\\midrule
+Own & 5305 & $-3.28\;[-5.94,-0.68]$ & 0.060 & $-2.94\;[-5.46,-0.48]$ & 0.060 \\
+Own & 5306 & $-5.74\;[-8.40,-3.14]$ & $<0.001$ & $-6.83\;[-9.28,-4.23]$ & $<0.001$ \\
+Own & 5307 & $-5.12\;[-7.79,-2.46]$ & 0.001 & $-5.80\;[-8.33,-3.34]$ & $<0.001$ \\
+\midrule
+Target & 5305 & $-3.35\;[-6.01,-0.68]$ & 0.060 & $-2.87\;[-5.46,-0.41]$ & 0.060 \\
+Target & 5306 & $-5.74\;[-8.33,-3.14]$ & $<0.001$ & $-6.62\;[-9.15,-3.89]$ & $<0.001$ \\
+Target & 5307 & $-4.92\;[-7.58,-2.25]$ & 0.002 & $-5.67\;[-8.19,-3.21]$ & $<0.001$ \\
+\bottomrule\end{tabular}\end{table}
+\begin{figure}[htbp]\centering
+\includegraphics{../results/extensions_20261109/replication_figures/17_cnn_overlap_replication.pdf}
+\caption{The high-overlap CNN contrast is negative for all three seeds in both power protocols. Intervals condition on each fitted model.}
+\end{figure}
+\subsubsection*{Fixed prompt-ensemble ablation}
+The released list contains 300 entries and 275 unique templates. All entries, including their released multiplicities, are retained. Clean accuracy is 92.90 $\pm$ 0.65\%, and macro-F1 is 92.53 $\pm$ 0.59\% across five folds. No prompts were selected using the test labels.
+The saved audio embeddings are bit-identical to the core run, and
+scores have been independently recomputed from the new unit text vectors. Thus
+the changed classifier output comes from the text references, not a new audio
+encoder or new training. The gain in clean accuracy does not remove the
+semantic-interference gap. Conditional capture rates must still be interpreted
+together with the unconditional capture fraction and total error count.
+\begin{table}[htbp]\centering
+\caption{Fixed prompt ensemble at +5 dB: five-fold macro-F1 (percent). The single-prompt reference is retained in Table~\ref{tab:five}.}
+\begin{tabular}{lrrrr}\toprule Power & White & DEMAND & Same category & Different category\\\midrule
+Own & 75.72 & 84.32 & 55.50 & 53.69 \\
+Target & 75.71 & 84.15 & 54.10 & 51.64 \\
+\bottomrule\end{tabular}\end{table}

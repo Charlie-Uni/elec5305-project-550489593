@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "scope": "clean CNN overlap replication only",
+  "provenance": {
+    "own/cnn_clean_seed_5305": {
+      "rows": 24000,
+      "prediction_scores_verified": true,
+      "predictions_sha256": "5cd3e7a19d7b258860b7a9e3abea5c29a9f657a9d9c8436d6ea8cf81dddfc814",
+      "scores_sha256": "effc54e1e6b352161eb70e531fd240537c017b82b3da0575208670560086d0d7",
+      "scores_original_max_abs_difference": 5.340576171875e-05,
+      "scores_original_prediction_changes": 0,
+      "control_scores_original_max_abs_difference": 4.9591064453125e-05,
+      "control_scores_original_prediction_changes": 0
+    },
+    "own/cnn_clean_seed_5306": {
+      "rows": 24000,
+      "prediction_scores_verified": true,
+      "predictions_sha256": "c805211297fd97941e4e3dfe368d20c740db759e304130ad50cf375b84fdae84",
+      "scores_sha256": "cca7790583069112f77d0a6fe260668e5b9942ad1f4a5c6ddf11d8486dd3befa"
+    },
+    "own/cnn_clean_seed_5307": {
+      "rows": 24000,
+      "prediction_scores_verified": true,
+      "predictions_sha256": "4793363d18eeab2ad1c425931519de38fd613a857003d4cb3859c19faa1d9403",
+      "scores_sha256": "327ad14a3b5284c9bf6894223663cde6c330691f8c6e1f47d20c583b141012bd"
+    },
+    "target/cnn_clean_seed_5305": {
+      "rows": 23991,
+      "prediction_scores_verified": true,
+      "predictions_sha256": "2ee9cf8fce2b677ff338de2825864d4fc5b77e59189c2eeaf02e9ac93bf6bac0",
+      "scores_sha256": "763c497be4e0dce039c245e707ecce07458a763ca5277454ae2017f30cf39d0a",
+      "scores_original_max_abs_difference": 4.57763671875e-05,
+      "scores_original_prediction_changes": 0,
+      "control_scores_original_max_abs_difference": 4.57763671875e-05,
+      "control_scores_original_prediction_changes": 0
+    },
+    "target/cnn_clean_seed_5306": {
+      "rows": 23991,
+      "prediction_scores_verified": true,
+      "predictions_sha256": "d51279c6478cd07daff19b967a6f22565af0dcddbbc961172cbc055efccef978",
+      "scores_sha256": "4525ba2f308989e9243951750d714e73b63f2db08fc04c88e39d16490736739a"
+    },
+    "target/cnn_clean_seed_5307": {
+      "rows": 23991,
+      "prediction_scores_verified": true,
+      "predictions_sha256": "c6e79c1e235463cc40876222e62f110425045570d366282a73eaa2490603abb7",
+      "scores_sha256": "201ac1dd09dd8b92e390ac27291d390454ca9461b953e909478eeb13b409e2a5"
+    }
+  }
+}

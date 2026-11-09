@@ -34,6 +34,18 @@ def run(system_name, model_path, data_root, output, repeats=3):
         panel.setdefault((clip.fold, clip.target), clip)
     if set(panel) != {(fold, cls) for fold in range(1, 6) for cls in range(50)}:
         raise ValueError("Expected the complete five-fold, 50-class panel")
+    write_json(
+        output / "panel.json",
+        [
+            dict(
+                filename=c.filename,
+                fold=c.fold,
+                target=c.target,
+                audio_sha256=sha256_file(data_root / "audio" / c.filename),
+            )
+            for _, c in sorted(panel.items())
+        ],
+    )
     if system_name == "clap":
         from esc_robustness.clap_system import clap_system_from_checkpoint
 
