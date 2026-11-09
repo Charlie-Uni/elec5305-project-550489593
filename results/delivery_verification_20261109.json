@@ -4,14 +4,15 @@
     "passed": 87,
     "skipped": 1,
     "skip_reason": "CUDA unavailable on Apple M3",
-    "log_sha256": "91b55f5be5797af9c32f6d50449b9e985f416adccd54eb978d0616dc020b85ff"
+    "log_sha256": "dd739a33ddfb13d246c6397a74db71fad0829a2e3d7ef4144ed2a9cfe37f730a",
+    "last_run": "2026-11-10"
   },
   "lint": "ruff check src scripts tests passed",
   "intervention_variants": 14,
   "condition_cells": 336,
   "paired_intervention_contrasts": 156,
   "evaluation_queue_completed": 22,
-  "report_pages": 20,
+  "report_pages": 21,
   "presentation_slides": 13,
   "video_recorded": false,
   "course_submission_performed": false,
@@ -23,5 +24,8 @@
     "results/presentation_20261109_draft/research_presentation.pdf",
     "docs/video_narration_draft.txt",
     "index.html"
-  ]
+  ],
+  "last_review_date": "2026-11-10",
+  "teacher_recommendations_review": "docs/teacher_review_20261110.md",
+  "core_figure_records_recomputed": 348
 }

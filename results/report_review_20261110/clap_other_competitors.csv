@@ -1,0 +1,5 @@
+region,condition,n,target_predictions,distractor_predictions,other_predictions,median_target_minus_best_other,median_selected_other_score_change
+own,semantic_same,2000,1056,632,312,0.06247624064199398,0.04691658280798797
+own,semantic_different,2000,985,612,403,0.04405336641997305,0.055236687459181616
+target,semantic_same,1998,1032,664,302,0.05743506192052207,0.05300759511582859
+target,semantic_different,1999,943,647,409,0.036474180878120266,0.061562149652420364

@@ -130,7 +130,7 @@ three CNN seeds and keep clean performance visible.
 Narration:
 Across three CNN seeds, white-noise augmentation raises plus-five-decibel
 white-noise macro-F1 from 7.48 to 43.95 percent. Yet same-category semantic
-performance changes only from 33.00 to 33.46 percent. Semantic training reaches
+performance changes only from 32.99 to 33.46 percent. Semantic training reaches
 36.05 percent there, but clean macro-F1 falls from 65.78 to 61.70 percent.
 The direct CNN accuracy advantages over white-noise training remain uncertain
 after the declared multiple-comparison correction. I keep all seeds rather

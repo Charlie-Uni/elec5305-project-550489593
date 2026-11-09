@@ -1,8 +1,9 @@
 {
-  "pdf_sha256": "7fec03d4dfccdf65e33c77c8d791c41fc3ea4396357f0af75c2601081171d638",
-  "pages": 20,
+  "pdf_sha256": "0ba06438160206100a777e1d49f41bfca0ee5f8435ecc68eebb105c0b93a111c",
+  "pages": 21,
   "text_flags": [],
   "visual_review_required": false,
   "verified": true,
-  "visual_review": "All 20 rendered pages inspected. Tables, equations, captions and figure panels are readable; no unresolved references or out-of-page text. Final revisions on pages 1 and 8 preserve layout."
+  "reviewed_date": "2026-11-10",
+  "visual_review": "All 21 pages rendered and reviewed in the contact sheet. Changed statistical text, control/competition tables, intervention figures, captions, references and supplementary examples inspected at full size. No unresolved references or out-of-page text detected."
 }

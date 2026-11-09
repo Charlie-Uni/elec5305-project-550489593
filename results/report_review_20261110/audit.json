@@ -1,0 +1,40 @@
+{
+  "verified": true,
+  "figure_records_checked": {
+    "own/svm": 58,
+    "target/svm": 58,
+    "own/cnn": 58,
+    "target/cnn": 58,
+    "own/clap": 58,
+    "target/clap": 58
+  },
+  "tolerance": 1e-10,
+  "checks": "Independent per-trial/sklearn recomputation of figures 1\u20136 and 8 for both protocols; cost figure 7 retains its audited historical microbenchmark definition",
+  "source_hashes": {
+    "own/svm": {
+      "predictions": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+      "scores": "f836551604f034edee2618bca6b78af1f2e9a8ba902f148172036513b9c61fbd"
+    },
+    "target/svm": {
+      "predictions": "9bf2100917e525e7e5a306cea25b4ec0c30997dd34741f5d144c83b1ee48b3ba",
+      "scores": "1007c6d7c42b1ad9ea6248ab19fb5b931ae24f7b13189f9d482409176c9bc3d0"
+    },
+    "own/cnn": {
+      "predictions": "2530061f2bb5c0016a1ff986d70571aed36d9d46becb7c0743ab5e51a684121e",
+      "scores": "d456439311a11b9be4ae38cbdb99cbd46b974c5b6c7bb344868a8140688db651"
+    },
+    "target/cnn": {
+      "predictions": "5a402d3bcd20bee14b702df0d902c7dd2bfc9ca1f33174e6e95c0ecf4a3246b8",
+      "scores": "cd8baacd7e7404ba88da3cccaf63c157449cc6909f26bd4f9960b5286c884c4d"
+    },
+    "own/clap": {
+      "predictions": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+      "scores": "90c904f46947279301b6cbb7a6441e396bf298427e7ef0b41e91abe9c8025b01"
+    },
+    "target/clap": {
+      "predictions": "7ac200ccc603ce3b9eaa8ecba3e4bd28e1fc4ce931b26e31786d77d12201f239",
+      "scores": "bf8da580fe7c3b609c702ed84912456cfdcfaaa93665cc05807b14171802d4c6"
+    }
+  },
+  "selected_other_caveat": "Best other class is selected on each mixture; its score change is a descriptive selected-competitor diagnostic, not a prespecified class effect"
+}

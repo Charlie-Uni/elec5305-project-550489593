@@ -7,6 +7,7 @@ ELEC5305 project · Qihan Zhu · SID 550489593
 [Revised project proposal (PDF)](./ELEC5305_Project_proposal_550489593.pdf)
 
 [Research report draft](results/research_report_20261109_draft/research_report.pdf)
+· [10 November review against all 80 instructor recommendations](docs/teacher_review_20261110.md)
 · [Interactive project page](index.html)
 · [Attributed listening examples](examples/listening_own_20261109/README.md)
 · [Video recording script](docs/video_narration_draft.txt)
@@ -840,7 +841,7 @@ fold/seed SD and per-seed paired intervals separately.
 
 WGN training mainly protects against broadband noise. Semantic training yields
 larger semantic point-estimate gains but reduces clean CNN performance. None
-of the 12 full-condition CNN semantic-versus-WGN paired accuracy comparisons
+of the 12 full-test-set CNN semantic-condition comparisons between semantic and WGN training
 passes the common 156-test Holm correction; the modest advantage is uncertain.
 SVM passes three of its four corresponding comparisons. See the
 [independent audit](results/extensions_20261109/interventions/independent_audit.json)

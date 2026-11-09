@@ -1,0 +1,494 @@
+{
+  "review_date": "2026-11-10 Australia/Sydney",
+  "baseline_commit": "df797d9cc96a1cd660f0e01015de36cfcd136a2d",
+  "scope": "Teacher advice supplied in this chat; not an official assessment rubric",
+  "declared_experiments_complete": true,
+  "selected_extensions_complete": true,
+  "full_PAT_reproduced": false,
+  "author_listening_verified": false,
+  "video_recorded": false,
+  "public_pages_deployed": false,
+  "main_merged": false,
+  "items": [
+    {
+      "number": 1,
+      "status": "已落实",
+      "recommendation": "保留原提案的方法学优点",
+      "assessment": "官方折、配对混合、训练隔离、宏 F1、成本均保留。"
+    },
+    {
+      "number": 2,
+      "status": "已落实",
+      "recommendation": "修改核心研究问题",
+      "assessment": "比较非特定噪声与已标注竞争事件下的失效，并检验增强迁移。"
+    },
+    {
+      "number": 3,
+      "status": "已落实",
+      "recommendation": "修改标题",
+      "assessment": "采用 When Background Noise Has Meaning 及语义干扰副标题。"
+    },
+    {
+      "number": 4,
+      "status": "已说明",
+      "recommendation": "真实环境含多个有意义声音",
+      "assessment": "作为研究动机；实验仍是受控双源混合。"
+    },
+    {
+      "number": 5,
+      "status": "已说明",
+      "recommendation": "RSA Bench 研究背景",
+      "assessment": "报告引用，并注明其主要是语音感知和推理任务，不当作 ESC 分类基线。"
+    },
+    {
+      "number": 6,
+      "status": "已说明",
+      "recommendation": "噪声感知音频语言模型",
+      "assessment": "文献讨论 Mix CLAP；未声称复现。"
+    },
+    {
+      "number": 7,
+      "status": "已落实",
+      "recommendation": "加入现代参考模型",
+      "assessment": "冻结 LAION CLAP 已完成干净和两套全量干扰评估。"
+    },
+    {
+      "number": 8,
+      "status": "已落实",
+      "recommendation": "不训练 CLAP",
+      "assessment": "固定权重，不微调。"
+    },
+    {
+      "number": 9,
+      "status": "已落实",
+      "recommendation": "保留手工 DSP 与 SVM",
+      "assessment": "92 维特征含 RMS、ZCR、质心、展宽、roll off、通量、MFCC 和 delta。"
+    },
+    {
+      "number": 10,
+      "status": "已落实",
+      "recommendation": "保留紧凑 log Mel CNN",
+      "assessment": "36,258 参数，保留监督学习基线。"
+    },
+    {
+      "number": 11,
+      "status": "已落实",
+      "recommendation": "比较三代表示",
+      "assessment": "SVM、任务训练 CNN、预训练音频语言表示均保留。"
+    },
+    {
+      "number": 12,
+      "status": "已落实",
+      "recommendation": "避免谁最好或训练公平竞赛",
+      "assessment": "研究失效机制与部署行为，说明 CLAP 的外部预训练优势。"
+    },
+    {
+      "number": 13,
+      "status": "已落实",
+      "recommendation": "区分三类干扰",
+      "assessment": "白噪声、DEMAND 背景、已标注 ESC 事件；后者拆同大类与异大类。"
+    },
+    {
+      "number": 14,
+      "status": "已说明",
+      "recommendation": "说明语义干扰的区别",
+      "assessment": "两个声音均可能对应标签；DEMAND 也可能含有可识别事件。"
+    },
+    {
+      "number": 15,
+      "status": "已落实",
+      "recommendation": "检查功率是否足以解释失败",
+      "assessment": "固定标称相对功率下比较失效差异；不把它当作语义因果隔离。"
+    },
+    {
+      "number": 16,
+      "status": "已落实",
+      "recommendation": "区分 SNR 和 SIR",
+      "assessment": "噪声用 SNR，竞争事件用 SIR。"
+    },
+    {
+      "number": 17,
+      "status": "已落实",
+      "recommendation": "系统构造不同细类混合",
+      "assessment": "同留出折、不同细类与源录音，+10、+5、0 dB。"
+    },
+    {
+      "number": 18,
+      "status": "已落实",
+      "recommendation": "谨慎解释 0 dB",
+      "assessment": "明确为单标签有歧义的等功率压力测试。"
+    },
+    {
+      "number": 19,
+      "status": "已落实",
+      "recommendation": "突出 +5 和 +10 dB",
+      "assessment": "主要配对分析使用 +5 dB，完整曲线保留三个等级。"
+    },
+    {
+      "number": 20,
+      "status": "已落实",
+      "recommendation": "同大类和异大类干扰",
+      "assessment": "两类配对均完成，粗分类不等于可量化感知距离。"
+    },
+    {
+      "number": 21,
+      "status": "已落实",
+      "recommendation": "固定配对而不穷举",
+      "assessment": "每目标每种语义类型一个固定配对；未来可复验配对随机性。"
+    },
+    {
+      "number": 22,
+      "status": "已落实",
+      "recommendation": "干扰录音不进监督训练折",
+      "assessment": "测试干扰来自目标留出折；还排除跨折源录音作为干扰。"
+    },
+    {
+      "number": 23,
+      "status": "已落实",
+      "recommendation": "完整 mixture manifest",
+      "assessment": "身份、类别、类别组、功率、偏移、增益、seed、哈希、重叠均记录。"
+    },
+    {
+      "number": 24,
+      "status": "已落实",
+      "recommendation": "分析错误目的地",
+      "assessment": "区分目标、干扰类和其他类；补充增益对照到混合的变化。"
+    },
+    {
+      "number": 25,
+      "status": "已落实",
+      "recommendation": "条件 capture rate",
+      "assessment": "分母为错误数，另报全试验捕获比例与原始计数。"
+    },
+    {
+      "number": 26,
+      "status": "已落实",
+      "recommendation": "CLAP 目标和干扰文本分数",
+      "assessment": "保存 50 类余弦分数，检查目标和干扰竞争。"
+    },
+    {
+      "number": 27,
+      "status": "已落实",
+      "recommendation": "定义目标减干扰 margin",
+      "assessment": "SVM 决策分数、CNN logits、CLAP cosines；不跨模型比较绝对尺度。"
+    },
+    {
+      "number": 28,
+      "status": "已落实",
+      "recommendation": "画 margin 随 SIR 变化",
+      "assessment": "三个等级的箱线图与数值表齐全。"
+    },
+    {
+      "number": 29,
+      "status": "已作诊断",
+      "recommendation": "心理测量式过渡趋势",
+      "assessment": "已显示 margin 分布趋势；三个 SIR 点不足以精确拟合决策翻转阈值。"
+    },
+    {
+      "number": 30,
+      "status": "已落实",
+      "recommendation": "保留普通噪声对照",
+      "assessment": "WGN 和三个 DEMAND 环境均完成。"
+    },
+    {
+      "number": 31,
+      "status": "已落实",
+      "recommendation": "谨慎匹配干扰功率",
+      "assessment": "own 与原提案 target 两套全量结果均保留，不把标称功率当作全部声学匹配。"
+    },
+    {
+      "number": 32,
+      "status": "已落实",
+      "recommendation": "活动区功率",
+      "assessment": "40 dB 活动帧定义，并记录活动区重叠；不把 own 改动归为老师明确指令。"
+    },
+    {
+      "number": 33,
+      "status": "已落实",
+      "recommendation": "验证实际达到的比值",
+      "assessment": "生成后重算并写 manifest；零能量无定义配对明确排除。"
+    },
+    {
+      "number": 34,
+      "status": "已落实",
+      "recommendation": "官方五折",
+      "assessment": "全 2,000 条、50 类、五折保留。"
+    },
+    {
+      "number": 35,
+      "status": "已说明",
+      "recommendation": "ESC 50 数据 caveat",
+      "assessment": "部分原始预处理与类别有关；另披露源 ID 跨折和外部预训练不确定性。"
+    },
+    {
+      "number": 36,
+      "status": "已落实",
+      "recommendation": "控制 CNN 训练负担",
+      "assessment": "核心一个 seed，扩展完成 5305、5306、5307 三个 seed。"
+    },
+    {
+      "number": 37,
+      "status": "已落实",
+      "recommendation": "重视失效分析而非架构调榜",
+      "assessment": "保留小 CNN，扩展集中在干扰、增强迁移与诊断。"
+    },
+    {
+      "number": 38,
+      "status": "已落实",
+      "recommendation": "普通增强作为扩展",
+      "assessment": "先完成干净训练鲁棒性，再完成独立 WGN 增强训练。"
+    },
+    {
+      "number": 39,
+      "status": "已落实",
+      "recommendation": "测试普通增强向语义干扰迁移",
+      "assessment": "SVM/CNN 在两种功率口径下评估。"
+    },
+    {
+      "number": 40,
+      "status": "已落实",
+      "recommendation": "把增强迁移作为待测假设",
+      "assessment": "实际结果显示迁移有限；保留不确定性与负面结果。"
+    },
+    {
+      "number": 41,
+      "status": "已落实",
+      "recommendation": "可选语义混合增强",
+      "assessment": "SVM 两种增强、CNN 三 seed 两种增强均完成。"
+    },
+    {
+      "number": 42,
+      "status": "已落实",
+      "recommendation": "控制扩展范围",
+      "assessment": "核心结果保留，扩展单独命名与报告。"
+    },
+    {
+      "number": 43,
+      "status": "已落实",
+      "recommendation": "分特征组位移",
+      "assessment": "8 组特征分别分析，使用相应训练折标准差。"
+    },
+    {
+      "number": 44,
+      "status": "已落实",
+      "recommendation": "位移大小是否足够解释失效",
+      "assessment": "比较匹配目标位移与分类；保留方向、类边界等未控制解释。"
+    },
+    {
+      "number": 45,
+      "status": "已落实",
+      "recommendation": "CNN 表示位移",
+      "assessment": "保存倒数层 256 维向量，使用余弦距离。"
+    },
+    {
+      "number": 46,
+      "status": "已落实",
+      "recommendation": "CLAP 表示位移",
+      "assessment": "保存 512 维向量，包含位移与错误关联 AUC。"
+    },
+    {
+      "number": 47,
+      "status": "已落实",
+      "recommendation": "不跨架构比较绝对距离",
+      "assessment": "分面并明确不同表示几何。"
+    },
+    {
+      "number": 48,
+      "status": "已落实",
+      "recommendation": "检查其他竞争类文本分数",
+      "assessment": "保存 top 3 其他类；本轮增加最强其他类分数变化和三类预测去向表。"
+    },
+    {
+      "number": 49,
+      "status": "已落实",
+      "recommendation": "控制提示语",
+      "assessment": "核心固定模板；独立固定提示集合不按测试标签挑选。"
+    },
+    {
+      "number": 50,
+      "status": "可选未完整复现",
+      "recommendation": "PAT 可选现代扩展",
+      "assessment": "仅复用其发布的模板列表做固定平均；未实现完整互反馈和局部音频对齐。"
+    },
+    {
+      "number": 51,
+      "status": "已查阅",
+      "recommendation": "PAT 公共代码",
+      "assessment": "固定源码 commit 和模板来源，报告与完整 PAT 的差异。"
+    },
+    {
+      "number": 52,
+      "status": "部分回答",
+      "recommendation": "更好的音频文本对齐是否帮助",
+      "assessment": "固定文本读出改变已评估；完整 PAT 的对齐机制尚未评估。"
+    },
+    {
+      "number": 53,
+      "status": "已遵守",
+      "recommendation": "不训练 PAT",
+      "assessment": "未训练 PAT，也未把提示集合消融称为完整 PAT。"
+    },
+    {
+      "number": 54,
+      "status": "已说明",
+      "recommendation": "Mix CLAP 作为方向背景",
+      "assessment": "已引用，未复现；老师明确不要求复现。"
+    },
+    {
+      "number": 55,
+      "status": "已落实",
+      "recommendation": "宏 F1 随干扰等级图",
+      "assessment": "四类干扰分面，三系统；own/target 两套图均在仓库。"
+    },
+    {
+      "number": 56,
+      "status": "已落实",
+      "recommendation": "capture rate 图",
+      "assessment": "条件与分母明确；1/49 仅是均匀错类参考。"
+    },
+    {
+      "number": 57,
+      "status": "已落实",
+      "recommendation": "margin 图",
+      "assessment": "保留各模型自己的分数尺度。"
+    },
+    {
+      "number": 58,
+      "status": "已落实",
+      "recommendation": "同类和异类比较图",
+      "assessment": "相同保留目标的相对 F1 损失；区分均值之比与各折比值。"
+    },
+    {
+      "number": 59,
+      "status": "已落实",
+      "recommendation": "表示位移图",
+      "assessment": "增益匹配对照与混合，分正确/错误；不声称因果。"
+    },
+    {
+      "number": 60,
+      "status": "已落实",
+      "recommendation": "confusion flow 图",
+      "assessment": "按观察计数选例；图注区分原有混淆和新诱发捕获。"
+    },
+    {
+      "number": 61,
+      "status": "已落实",
+      "recommendation": "鲁棒性与成本图",
+      "assessment": "原微基准保留并标明定义，另有平衡样本的两轮成本测量。"
+    },
+    {
+      "number": 62,
+      "status": "已落实",
+      "recommendation": "公平部署成本边界",
+      "assessment": "同机器单线程 batch 1，预处理与推理边界说明，单次文本准备另列。"
+    },
+    {
+      "number": 63,
+      "status": "已落实",
+      "recommendation": "不把 CLAP 预训练计入本机推理",
+      "assessment": "说明外部训练优势；不声称全生命周期成本公平。"
+    },
+    {
+      "number": 64,
+      "status": "已落实",
+      "recommendation": "官方 ESC 50 数据",
+      "assessment": "固定官方快照和元数据。"
+    },
+    {
+      "number": 65,
+      "status": "已对照方法",
+      "recommendation": "历史 Piczak CNN 参考",
+      "assessment": "报告引用 log Mel CNN 思路；未逐层复现历史架构，老师不要求。"
+    },
+    {
+      "number": 66,
+      "status": "已落实",
+      "recommendation": "官方 LAION CLAP 实现",
+      "assessment": "固定 checkpoint、官方 tensor 路径和冻结推理，哈希及环境记录齐全。"
+    },
+    {
+      "number": 67,
+      "status": "可选未完整复现",
+      "recommendation": "PAT 官方实现",
+      "assessment": "已查阅并做明确命名的提示集合消融；完整算法尚未复现。"
+    },
+    {
+      "number": 68,
+      "status": "已完成",
+      "recommendation": "里程碑 1 手工 SVM",
+      "assessment": "干净五折及自定义 STFT、课程 MATLAB 对照均完成。"
+    },
+    {
+      "number": 69,
+      "status": "已完成",
+      "recommendation": "里程碑 2 小 CNN",
+      "assessment": "干净五折及三 seed 扩展完成。"
+    },
+    {
+      "number": 70,
+      "status": "已完成",
+      "recommendation": "里程碑 3 普通干扰",
+      "assessment": "WGN/DEMAND 混合与相同输入评估完成。"
+    },
+    {
+      "number": 71,
+      "status": "待作者试听",
+      "recommendation": "里程碑 4 语义混合与试听",
+      "assessment": "工程验证及 24 条示例已完成；没有把音频成功加载冒充人工听感确认。"
+    },
+    {
+      "number": 72,
+      "status": "已完成",
+      "recommendation": "里程碑 5 冻结 CLAP",
+      "assessment": "干净与 own/target 全量完成，分数和向量缓存。"
+    },
+    {
+      "number": 73,
+      "status": "已完成",
+      "recommendation": "里程碑 6 全部诊断",
+      "assessment": "F1、准确率、退化、capture、margin、表示位移均完成。"
+    },
+    {
+      "number": 74,
+      "status": "已完成",
+      "recommendation": "里程碑 7 选一扩展",
+      "assessment": "已完成普通增强，并额外完成语义增强与固定提示集合。"
+    },
+    {
+      "number": 75,
+      "status": "已落实",
+      "recommendation": "扩展现代文献综述",
+      "assessment": "原经典参考与 CLAP、PAT 均进入正式报告草稿。"
+    },
+    {
+      "number": 76,
+      "status": "已落实",
+      "recommendation": "2026 文献背景",
+      "assessment": "Mix CLAP 和 RSA Bench 已查原始来源，任务边界已注明。"
+    },
+    {
+      "number": 77,
+      "status": "已完成",
+      "recommendation": "老师给出的项目核心范围",
+      "assessment": "三系统、五折、全部干扰和指标已覆盖。"
+    },
+    {
+      "number": 78,
+      "status": "已遵守",
+      "recommendation": "避免不必要的巨型训练",
+      "assessment": "没有训练/微调 CLAP、复现 Mix CLAP 或穷举全部配对。"
+    },
+    {
+      "number": 79,
+      "status": "分支已具备",
+      "recommendation": "GitHub 内容要求",
+      "assessment": "代码、结果、图和示例在 feature/interference 与 PR；main 和公开 Pages 尚未更新。"
+    },
+    {
+      "number": 80,
+      "status": "已回应",
+      "recommendation": "整体研究目标",
+      "assessment": "研究声学破坏与标签竞争的不同失效模式；现有实验不等于语义因果隔离。"
+    }
+  ]
+}

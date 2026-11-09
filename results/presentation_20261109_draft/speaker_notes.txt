@@ -34,7 +34,7 @@ A fixed ensemble of the complete released PAT prompt list raises CLAP clean accu
 Evidence: Prompt audit; capture_transitions_core; prompt_multiplicity sensitivity.
 
 SLIDE 8
-Across all three CNN seeds, WGN augmentation raises white-noise macro-F1 from 7.48 to 43.95 percent, but same-category interference changes only from 33.00 to 33.46 percent. Semantic training reaches 36.05 percent for same-category and 33.73 for different-category interference, while clean macro-F1 falls from 65.78 to 61.70 percent. These are measured trade-offs. Direct semantic-versus-WGN paired accuracy advantages for the CNN do not pass the common 156-test Holm correction, so modest positive point estimates are not an established superiority claim. All seeds are retained. Augmentation probability and maximum epoch budget are shared; actual refit durations are selected separately by clean validation.
+Across all three CNN seeds, WGN augmentation raises white-noise macro-F1 from 7.48 to 43.95 percent, but same-category interference changes only from 32.99 to 33.46 percent. Semantic training reaches 36.05 percent for same-category and 33.73 for different-category interference, while clean macro-F1 falls from 65.78 to 61.70 percent. These are measured trade-offs. Direct semantic-versus-WGN paired accuracy advantages for the CNN do not pass the common 156-test Holm correction, so modest positive point estimates are not an established superiority claim. All seeds are retained. Augmentation probability and maximum epoch budget are shared; actual refit durations are selected separately by clean validation.
 
 Evidence: Extension protocol and independently audited intervention tables.
 

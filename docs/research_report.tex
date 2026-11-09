@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,amsmath,amssymb,graphicx,booktabs,tabularx}
+\usepackage[section]{placeins}
 \usepackage[textwidth=7.16in,top=18mm,bottom=18mm]{geometry}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
@@ -12,14 +13,14 @@
 \renewcommand{\bottomfraction}{0.95}
 \renewcommand{\textfraction}{0.05}
 \renewcommand{\floatpagefraction}{0.7}
-\newcommand{\corefig}[3]{\begin{figure}[p]\centering\includegraphics{../results/report_figure_assets_20261109/#1.pdf}\caption{#2}\label{#3}\end{figure}}
-\newcommand{\diagfig}[3]{\begin{figure}[p]\centering\includegraphics{../results/extensions_20261109/figures/#1.pdf}\caption{#2}\label{#3}\end{figure}}
+\newcommand{\corefig}[3]{\begin{figure}[tbp]\centering\includegraphics{../results/report_figure_assets_20261109/#1.pdf}\caption{#2}\label{#3}\end{figure}}
+\newcommand{\diagfig}[3]{\begin{figure}[tbp]\centering\includegraphics{../results/extensions_20261109/figures/#1.pdf}\caption{#2}\label{#3}\end{figure}}
 \begin{document}
 \begin{center}
 {\LARGE\bfseries When Background Noise Has Meaning}\\[4pt]
 {\Large Environmental Sound Classification under Semantic Interference}\\[7pt]
 Qihan Zhu \quad SID 550489593 \quad ELEC5305\\[3pt]
-Research report draft --- 9 November 2026
+Research report draft --- experiments 9 November; reviewed 10 November 2026
 \end{center}
 
 \begin{abstract}
@@ -121,6 +122,8 @@ The core experiment uses seed 5305. Additional seeds are analysed separately.
 CLAP uses the fixed \texttt{630k-audioset-best.pt} checkpoint, HTSAT-tiny audio
 encoder, RoBERTa text encoder and no fusion. Audio is resampled to 48 kHz and
 passes through the official int16 truncation-and-return convention exactly once.
+That conversion clips to $[-1,1]$ after resampling. The mixer's no-hard-clipping
+guarantee concerns the canonical input waveform before model-specific preprocessing.
 The official non-fusion frontend repeat-pads five-second inputs to ten seconds;
 all systems receive the same canonical five-second waveform before their own
 frontends.
@@ -194,6 +197,14 @@ interpreted only within a system. A negative margin does not guarantee that
 the distractor beats every other class. The CLAP diagnostic therefore also
 computes ranks and competing scores across all 50 prompts.
 
+Relative macro-F1 loss is $1-F_{\mathrm{mixture}}/F_{\mathrm{clean}}$, where each
+$F$ is the five-fold mean on identical retained targets. It is a proportional
+loss, not a percentage-point difference. Replacing the reference with
+$F_{\mathrm{gain\ control}}$ gives the additional control-referenced loss.
+Capture rates pool counts across folds; they are not unweighted means of fold
+capture percentages. Fold SD describes between-fold variation, not a confidence
+interval for a population mean.
+
 Paired bootstrap intervals resample target clips within official folds,
 retaining matched condition predictions, using 2,000 replicates and seed 530509.
 For these matched comparisons, accuracy differences pool the retained target
@@ -204,6 +215,19 @@ Holm correction covers the 12 +5-dB high-overlap comparisons across models,
 power definitions and semantic pairing types. These are post-baseline extensions,
 not retrospectively preregistered tests. Three CNN seeds separately assess
 training variability; five folds times three seeds are not 15 independent datasets.
+
+Three comparison families are kept distinct: 12 core high-overlap contrasts
+(three systems, two power protocols and two semantic pairing types); 12 clean-CNN
+replication contrasts (three seeds, two protocols and two pairing types); and 156
+intervention contrasts, defined in the extension protocol. A core seed-5305
+comparison appears in both of the first two families, so its adjusted $p$ value
+can differ without its effect or raw $p$ value changing. Holm correction applies
+within each family; it is not a study-wide guarantee across every exploratory
+analysis. Bootstrap intervals are pointwise and unadjusted. Exact McNemar tests
+assume independent target pairs under the null; shared source recordings,
+distractors, backgrounds and overlapping training sets limit that assumption.
+The corrected values therefore remain conditional, nominal tests, rather than
+proof of generalisation to independently sampled acoustic scenes.
 
 An exploratory resampling-unit sensitivity analysis draws 10,000 bootstrap
 samples of original target source IDs globally. All retained clips from a sampled
@@ -260,6 +284,8 @@ fine ranking is invariant: small same-/different-category order changes can
 occur, including for the CNN at 0 dB. Both protocols and the retained-target
 intersection remain part of the result rather than selecting a preferred table.
 
+\input{report_review_controls.tex}
+
 \section{Representation and competition diagnostics}
 Handcrafted displacement uses the relevant SVM training-fold scale and is
 normalised by the square root of group dimensionality. The eight groups are
@@ -287,6 +313,8 @@ classes are retained per trial. Displacement/error AUC (Appendix) summarises
 association within each condition and fold, not causal explanation.
 
 \diagfig{11_clap_distractor_ranking}{CLAP distractor ranking among all 50 classes. Lower rank is stronger; rank 1 is highest. Top-five fractions use all semantic trials, unlike error-conditioned capture rate. Grey curves are gain-matched clean controls.}{fig:ranks}
+
+\input{report_review_competitors.tex}
 
 \section{Deployment cost and limits}
 \input{report_cost_panel.tex}
@@ -317,7 +345,8 @@ not reasons to reinterpret a smaller error bar as proof of causal semantics.
 The extension compares clean, WGN-augmented and semantic-augmented supervised
 training. CNN seeds are 5305, 5306 and 5307. Each augmented CNN sees clean data
 with probability 0.5 and otherwise one of three fixed training-only views at
-+5, +10 or +15 dB. Banks are shared across optimisation seeds. Clean validation,
++5, +10 or +15 dB under the own-activity power convention. Both power conventions
+are then evaluated at test time. Banks are shared across optimisation seeds. Clean validation,
 architecture, training cap and four-fold refit logic are unchanged.
 Actual refit epochs are selected separately on clean validation, so identical
 augmentation probabilities and maximum budgets do not imply identical numbers
@@ -337,6 +366,27 @@ steps is silently incorporated into the core CLAP reference.
 
 \subsection{Verified results}
 \input{report_extension_status.tex}
+
+\section{Remaining scope and further experiments}
+The declared extension is complete: three clean CNN seeds, WGN and semantic
+training for SVM/CNN, fixed prompt ensembling, representation diagnostics and
+balanced deployment timing. The prompt experiment uses the released PAT template
+list, but does not implement PAT's full audio--text mutual alignment. Full PAT
+and Mix-CLAP are therefore not reported as reproduced methods.
+
+The strongest next experiments would reduce identified uncertainties. First,
+repeat held-out pairing with several fixed random seeds while keeping models
+frozen; report variability across distractor choices rather than assuming one
+pair per category type represents every competing scene. Second, construct and
+validate spectrally and temporally matched interferer controls with reduced
+recognisability. Recognisability must be checked rather than assumed from phase
+randomisation or another transformation; residual acoustic changes would still
+limit causal interpretation. Third, vary onset alignment for fixed source pairs
+and use a denser SIR grid on a declared subset, checking event truncation and
+achieved power after each shift. This would test overlap effects within pairs
+and support transition-threshold estimates that three SIR points cannot provide.
+Additional top-two or two-source retrieval diagnostics at 0 dB could complement,
+but should not retrospectively replace, the designated-target metric.
 
 \section{Conclusion}
 Interference power alone does not describe environmental-sound classifier
@@ -367,6 +417,7 @@ review and the course's disclosure requirements. All declared experimental runs
 are complete and independently checked. Final recording and course submission
 remain separate from these research outputs.
 
+\clearpage
 \begin{thebibliography}{12}
 \raggedright
 \bibitem{esc} K. J. Piczak, ``ESC: Dataset for Environmental Sound Classification,'' ACM Multimedia, 2015. \href{https://doi.org/10.1145/2733373.2806390}{doi:10.1145/2733373.2806390}.
@@ -389,9 +440,9 @@ The repository also contains a complete corresponding figure set for the target
 power convention, each with numerical source tables and export audits.
 
 \corefig{fig3_margin_vs_sir}{Target--distractor margin distributions. Scores have architecture-specific scales; comparisons are within each panel. A negative margin indicates a distractor score above the target score, not necessarily the overall predicted class.}{fig:margin}
-\corefig{fig4_same_vs_different}{Same- versus different-category relative macro-F1 loss. Category relationships are coarse dataset groupings and should not be equated with a validated perceptual-distance scale.}{fig:category}
+\corefig{fig4_same_vs_different}{Same- versus different-category relative macro-F1 loss. Large markers are ratios of five-fold mean F1 values on common targets; small dots are the five individual fold ratios. A ratio of means is not generally the mean of ratios. Category relationships are coarse dataset groupings, not a validated perceptual-distance scale.}{fig:category}
 \corefig{fig5_representation_displacement}{Representation displacement from gain-matched controls, separated by classification outcome. Handcrafted features use training-fold standardisation; CNN and CLAP use cosine distance. Absolute distances are not comparable between architectures.}{fig:representations}
-\corefig{fig6_confusion_flow}{Observed target-to-distractor capture flows. Labels report captured trials relative to the available pair count. Small denominators make these illustrative examples rather than reliable estimates of class-pair risk.}{fig:flows}
+\corefig{fig6_confusion_flow}{Observed target-to-distractor capture counts relative to available pairs. Counts include pre-existing clean-control confusions; they are not all newly induced errors. The source table separately counts captures from correct controls. Examples are selected by observed counts, and small denominators do not establish reliable class-pair risk.}{fig:flows}
 \corefig{fig7_robustness_vs_cost}{Original own-protocol robustness and CPU microbenchmark at +5 dB different-category interference. The horizontal coordinate sums the median preprocessing and median inference times for one clip; it is not the median total over the balanced panel. Cached CLAP text embeddings are used; open markers show clean macro-F1. External pretraining cost is excluded.}{fig:cost}
 \diagfig{12_displacement_error_association}{Association between representation displacement and classification error at +5 dB. Dots show the five official folds and short bars their means. AUC above 0.5 indicates larger movement tends to accompany errors; this is descriptive, not a causal semantic-effect estimate.}{fig:auc}
 \corefig{fig8_overlap_strata}{Overlap-stratified semantic versus DEMAND comparisons on matched target sets. Read accuracy together with class coverage; macro-F1 with all 50 labels is sensitive to absent classes in small strata.}{fig:overlap}

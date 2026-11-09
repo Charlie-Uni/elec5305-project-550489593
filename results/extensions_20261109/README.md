@@ -112,11 +112,13 @@ passes, with identical models and audio but reversed model order; all 10,500
 predictions match the formal clean evaluations.
 
 For the CNN, WGN training raises own/+5-dB white-noise macro-F1 from 7.48% to
-43.95%, while same/different semantic scores move from 33.00/31.41% to
+43.95%, while same/different semantic scores move from 32.99/31.41% to
 33.46/32.10%. Semantic training reaches 36.05/33.73%, with clean macro-F1 falling
-from 65.78% to 61.70%. None of the 12 full-condition direct CNN accuracy contrasts
+from 65.78% to 61.70%. None of the 12 full-test-set semantic-condition CNN accuracy contrasts
 passes the common Holm family. These are modest positive point estimates with
 uncertain direct advantages, not proof of superiority. All three seeds are kept.
+The 12 contrasts are two semantic pairing types × two power protocols × three
+seeds. White-noise and DEMAND contrasts remain in the full 156-test family.
 
 ## Additional interpretation checks
 

@@ -14,6 +14,88 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def review_tables():
+    directory = ROOT / "results/report_review_20261110"
+    if not json.loads((directory / "audit.json").read_text())["verified"]:
+        raise ValueError("Review tables require the per-trial figure audit")
+    with (directory / "gain_control_effects.csv").open() as handle:
+        controls = list(csv.DictReader(handle))
+    labels = {"svm_clean": "SVM", "cnn_clean_seed_5305": "CNN", "clap_baseline": "CLAP"}
+    core = [r for r in controls if r["variant"] in labels]
+    low, high = (
+        min(float(r["control_minus_clean_pp"]) for r in core),
+        max(float(r["control_minus_clean_pp"]) for r in core),
+    )
+    text = r"""\subsection{Gain-matched control check}
+Table~\ref{tab:gain} compares attenuated and original clean audio on matched
+targets. The shifts are small relative to mixture losses, but are not zero.
+\begin{table}[htbp]\centering\small
+\caption{Gain-matched clean minus original clean macro-F1 at +5 dB, in percentage points. Each value is a difference of five-fold means on that condition's retained targets. Core CNN seed: 5305.}
+\label{tab:gain}\begin{tabular}{llrrrr}\toprule Power & Model & White & DEMAND & Same & Different\\\midrule
+"""
+    for region in ("own", "target"):
+        for variant, label in labels.items():
+            values = [
+                next(
+                    float(r["control_minus_clean_pp"])
+                    for r in controls
+                    if r["region"] == region
+                    and r["variant"] == variant
+                    and r["condition"] == c
+                    and float(r["level_db"]) == 5
+                )
+                for c in ("white", "demand", "semantic_same", "semantic_different")
+            ]
+            text += (
+                region.capitalize()
+                + " & "
+                + label
+                + " & "
+                + " & ".join(f"{v:+.2f}" for v in values)
+                + r" \\"
+                + "\n"
+            )
+        if region == "own":
+            text += r"\midrule" + "\n"
+    text += r"\bottomrule\end{tabular}\end{table}" + "\n"
+    text += f"Across all 72 core cells, control-minus-clean F1 ranges from {low:+.2f} to {high:+.2f} percentage points. Both reference losses are exported; these results show limited attenuation effects, not exact amplitude invariance.\n"
+    (ROOT / "docs/report_review_controls.tex").write_text(text)
+    with (directory / "clap_other_competitors.csv").open() as handle:
+        rows = list(csv.DictReader(handle))
+    text = r"""\subsection{The remaining competing classes}
+An error need not name the designated distractor. For each CLAP mixture, define
+$o^*=\arg\max_{c\notin\{x,d\}}s_c$ over the other 48 labels.
+Table~\ref{tab:other} retains all three possible prediction destinations and
+shows the target's margin over this strongest other class. The last column
+subtracts that same class's gain-matched control score from its mixture score.
+Because $o^*$ is selected on the mixture, this is a descriptive selected-competitor
+diagnostic; it is not evidence for a prespecified class effect.
+\begin{table}[htbp]\centering\footnotesize
+\caption{Single-prompt CLAP at +5 dB. Target, distractor and other columns are disjoint prediction counts summing to $n$. The final two columns are median cosine-score differences, not probabilities.}
+\label{tab:other}\begin{tabular}{llrrrrrr}\toprule Power & Pair & $n$ & Target & Distractor & Other & $s_x-s_{o^*}$ & $\Delta s_{o^*}$\\\midrule
+"""
+    for row in rows:
+        values = [
+            row[k]
+            for k in ("n", "target_predictions", "distractor_predictions", "other_predictions")
+        ]
+        values += [
+            f"{float(row[k]):+.3f}"
+            for k in ("median_target_minus_best_other", "median_selected_other_score_change")
+        ]
+        text += (
+            row["region"].capitalize()
+            + " & "
+            + ("Same" if row["condition"] == "semantic_same" else "Different")
+            + " & "
+            + " & ".join(values)
+            + r" \\"
+            + "\n"
+        )
+    text += r"\bottomrule\end{tabular}\end{table}" + "\n"
+    (ROOT / "docs/report_review_competitors.tex").write_text(text)
+
+
 def cost_table():
     directory = ROOT / "results/extensions_20261109/cost_panel"
     if not (directory / "audit.json").exists():
@@ -29,7 +111,9 @@ tail-latency estimate. The balanced 250-clip extension is still pending.
     with (directory / "latency_summary.csv").open() as handle:
         rows = list(csv.DictReader(handle))
     repeat_directory = directory.with_name("cost_panel_reverse")
-    repeat_audit = json.loads((directory.with_name("cost_repeatability") / "audit.json").read_text())
+    repeat_audit = json.loads(
+        (directory.with_name("cost_repeatability") / "audit.json").read_text()
+    )
     if not repeat_audit["verified"]:
         raise ValueError("Repeated timing must use verified identical model inputs")
     with (repeat_directory / "latency_summary.csv").open() as handle:
@@ -153,15 +237,26 @@ settings or test mixtures; it is disclosed in the saved protocol.
             if system == "svm":
                 text += r"\midrule" + "\n"
         text += r"\bottomrule\end{tabular}\end{table}" + "\n"
+
     def cnn_f1(regime, condition):
-        selected = [r for r in conditions if r["system"] == "cnn" and r["regime"] == regime
-                    and r["region"] == "own" and r["condition"] == condition
-                    and float(r["level_db"]) == 5]
+        selected = [
+            r
+            for r in conditions
+            if r["system"] == "cnn"
+            and r["regime"] == regime
+            and r["region"] == "own"
+            and r["condition"] == condition
+            and float(r["level_db"]) == 5
+        ]
         return 100 * np.mean([float(r["macro_f1"]) for r in selected])
 
-    clean_means = {regime: 100 * np.mean([float(r["macro_f1"]) for r in clean
-                   if r["system"] == "cnn" and r["regime"] == regime])
-                   for regime in ("clean", "wgn", "semantic")}
+    clean_means = {
+        regime: 100
+        * np.mean(
+            [float(r["macro_f1"]) for r in clean if r["system"] == "cnn" and r["regime"] == regime]
+        )
+        for regime in ("clean", "wgn", "semantic")
+    }
     text += (
         f"Under own-activity power, WGN augmentation raises three-seed CNN white-noise macro-F1 "
         f"from {cnn_f1('clean', 'white'):.2f}\\% to {cnn_f1('wgn', 'white'):.2f}\\%, "
@@ -174,8 +269,13 @@ settings or test mixtures; it is disclosed in the saved protocol.
         "Thus transfer is interference-specific, and the semantic intervention has a clean-performance cost.\n"
     )
     with (directory / "paired_intervention_effects.csv").open() as handle:
-        direct = [r for r in csv.DictReader(handle) if r["comparison_type"] == "semantic_vs_wgn"
-                  and r["stratum"] == "all" and r["condition"].startswith("semantic")]
+        direct = [
+            r
+            for r in csv.DictReader(handle)
+            if r["comparison_type"] == "semantic_vs_wgn"
+            and r["stratum"] == "all"
+            and r["condition"].startswith("semantic")
+        ]
     for system, total in (("cnn", 12), ("svm", 4)):
         selected = [r for r in direct if r["system"] == system]
         if len(selected) != total:
@@ -183,29 +283,30 @@ settings or test mixtures; it is disclosed in the saved protocol.
         positive = sum(float(r["accuracy_difference"]) > 0 for r in selected)
         significant = sum(float(r["holm_p_across_extension_comparisons"]) < 0.05 for r in selected)
         text += (
-            f"For {system.upper()}, {positive} of {total} full-condition semantic-versus-WGN "
-            f"paired accuracy point estimates are positive, but {significant} of {total} "
+            f"For {system.upper()}, {positive} of {total} full-test-set semantic-condition "
+            "comparisons of semantic versus WGN training have positive "
+            f"paired accuracy point estimates, but {significant} of {total} "
             "pass the common 156-test Holm correction. "
         )
-    text += "These tests concern per-variant paired accuracy, not significance of the three-seed mean macro-F1. The modest CNN advantage is therefore not established by the corrected tests.\n"
+    text += "Here the 12 CNN comparisons are two semantic pairing types times two power protocols times three seeds; the four SVM comparisons omit the seed factor. White-noise and DEMAND comparisons remain in the 156-test family but are not included in these semantic-condition counts. These tests concern per-variant paired accuracy, not significance of the three-seed mean macro-F1. The modest CNN advantage is therefore not established by the corrected tests.\n"
     figure_root = ROOT / "results/extensions_20261109/intervention_figures"
     for filename, caption in (
         (
             "13_augmentation_transfer",
-            "Augmentation transfer at +5 dB. Small CNN points retain each optimisation seed; large points and whiskers show the three-seed mean and sample SD. SVM points are five-fold means.",
+            "Augmentation transfer at +5 dB. Small CNN points retain each optimisation seed; large points and whiskers show the three-seed mean and sample SD. Each seed is a five-fold mean. SVM points are five-fold means; each cell retains 1,998--2,000 targets.",
         ),
         (
             "16_clap_prompt_ensemble",
-            "Frozen CLAP class readout with the original single prompt and the complete fixed prompt ensemble. The audio vectors are identical. Both conditional and unconditional capture metrics are retained in the numerical tables.",
+            "Frozen CLAP with identical audio vectors and two text readouts. Top: five-fold macro-F1 means with sample fold SD. Bottom: paired accuracy differences with pointwise 95\\% intervals from 2,000 within-fold target-bootstrap replicates, using 1,998--2,000 matched targets. These intervals are not multiplicity-adjusted; the associated exact tests belong to the 156-comparison Holm family.",
         ),
         (
             "19_semantic_vs_wgn_training",
-            "Direct semantic-augmentation minus WGN-augmentation accuracy effects at +5 dB. Each CNN comparison retains the same optimisation seed. Intervals are paired target-bootstrap intervals conditional on fitted models; exact tests join the common 156-comparison Holm family.",
+            "Direct semantic-augmentation minus WGN-augmentation accuracy effects at +5 dB. Each CNN comparison retains the same optimisation seed and 1,998--2,000 paired targets. Pointwise 95\\% intervals use 2,000 within-fold target-bootstrap replicates conditional on fitted models; exact tests join the common 156-comparison Holm family.",
         ),
     ):
         if (figure_root / (filename + ".pdf")).exists():
             text += (
-                r"\begin{figure}[p]\centering\includegraphics{../results/extensions_20261109/intervention_figures/"
+                r"\begin{figure}[tbp]\centering\includegraphics{../results/extensions_20261109/intervention_figures/"
                 + filename
                 + r".pdf}\caption{"
                 + caption
@@ -285,11 +386,13 @@ into independent samples or isolate a causal semantic effect.
         if (root / "replication_figures/17_cnn_overlap_replication.pdf").exists():
             text += r"""\begin{figure}[htbp]\centering
 \includegraphics{../results/extensions_20261109/replication_figures/17_cnn_overlap_replication.pdf}
-\caption{The high-overlap CNN contrast is negative for all three seeds in both power protocols. Intervals condition on each fitted model.}
+\caption{The high-overlap CNN contrast is negative for all three seeds in both power protocols. Pointwise 95\% intervals use 2,000 within-fold target-bootstrap replicates and 1,464 same-category or 1,465 different-category paired targets. Intervals condition on each fitted model; corrected tests are reported separately in the table.}
 \end{figure}
 """
         if (root / "source_cluster_sensitivity/audit.json").exists():
-            text += r"""The exploratory target-source bootstrap preserves this
+            text += r"""
+
+The exploratory target-source bootstrap preserves this
 direction: all 12 clean-CNN pointwise source-cluster intervals remain negative,
 whereas the four SVM intervals include zero. This sensitivity check changes the
 resampling unit, not the primary test families or their multiplicity conclusions.
@@ -440,6 +543,7 @@ def build(compiler, extension_run=None, only_cached=False):
     status = extension_status(extension_run)
     (ROOT / "docs/report_extension_status.tex").write_text(status)
     (ROOT / "docs/report_cost_panel.tex").write_text(cost_table())
+    review_tables()
     destination = ROOT / "results/research_report_20261109_draft"
     destination.mkdir(exist_ok=True)
     build_directory = ROOT / "tmp/research_report_build"
@@ -473,6 +577,11 @@ def build(compiler, extension_run=None, only_cached=False):
         ROOT / "docs/report_tables.tex",
         ROOT / "docs/report_extension_status.tex",
         ROOT / "docs/report_cost_panel.tex",
+        ROOT / "docs/report_review_controls.tex",
+        ROOT / "docs/report_review_competitors.tex",
+        ROOT / "results/report_review_20261110/audit.json",
+        ROOT / "results/report_review_20261110/gain_control_effects.csv",
+        ROOT / "results/report_review_20261110/clap_other_competitors.csv",
         ROOT / "docs/extension_protocol_20261109.md",
         ROOT / "results/clap_full_20261109/all_conditions_verified.csv",
     ]
@@ -490,7 +599,9 @@ def build(compiler, extension_run=None, only_cached=False):
         "source": "docs/research_report.tex",
         "table_source": "results/clap_full_20261109/all_conditions_verified.csv",
         "extension_status": status,
-        "pdf_sha256": hashlib.sha256((destination / "research_report.pdf").read_bytes()).hexdigest(),
+        "pdf_sha256": hashlib.sha256(
+            (destination / "research_report.pdf").read_bytes()
+        ).hexdigest(),
         "source_files_sha256": {
             str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in inputs
