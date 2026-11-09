@@ -1,0 +1,44 @@
+{
+  "clips": 2000,
+  "folds": {
+    "1": {
+      "n": 400,
+      "accuracy": 0.8375,
+      "macro_f1": 0.8204128044671859
+    },
+    "2": {
+      "n": 400,
+      "accuracy": 0.7725,
+      "macro_f1": 0.7378339340024627
+    },
+    "3": {
+      "n": 400,
+      "accuracy": 0.83,
+      "macro_f1": 0.8113117666019537
+    },
+    "4": {
+      "n": 400,
+      "accuracy": 0.8225,
+      "macro_f1": 0.8007933098892852
+    },
+    "5": {
+      "n": 400,
+      "accuracy": 0.825,
+      "macro_f1": 0.8041778172321986
+    }
+  },
+  "accuracy": {
+    "mean": 0.8175000000000001,
+    "sample_std": 0.02579970930068788
+  },
+  "macro_f1": {
+    "mean": 0.7949059264386171,
+    "sample_std": 0.032778018479024194
+  },
+  "all_50_classes_per_fold": true,
+  "cosine_scores_recomputed": true,
+  "predictions_recomputed": true,
+  "metrics_recomputed_from_confusion_counts": true,
+  "checkpoint_sha256": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037",
+  "full_interference_evaluation_complete": false
+}

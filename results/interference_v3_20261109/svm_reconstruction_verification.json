@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cache_matches_original_hash": true,
+  "audio_hashes_verified": 2000,
+  "identical_clean_predictions": 2000,
+  "original_available_fold_5_parameters_identical": {
+    "scale.mean_": true,
+    "scale.scale_": true,
+    "scale.var_": true,
+    "svc.support_": true,
+    "svc.support_vectors_": true,
+    "svc.dual_coef_": true,
+    "svc.intercept_": true
+  },
+  "reason": "Original folds 1-4 are iCloud placeholders; originals preserved. Reconstructed using unchanged recorded search grid and cache.",
+  "model_dir": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed"
+}

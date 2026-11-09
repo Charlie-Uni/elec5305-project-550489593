@@ -1,0 +1,34 @@
+{
+  "region": "own",
+  "raw_prediction_rows": {
+    "svm": 24000,
+    "cnn": 24000,
+    "clap": 24000
+  },
+  "figure_csv_records": {
+    "fig8_overlap_strata": 18,
+    "fig2_capture_rate_vs_sir": 18,
+    "fig4_same_vs_different": 18,
+    "fig7_robustness_vs_cost": 3,
+    "fig8_overlap_fold_metrics": 90,
+    "representation_overlap_comparison": 18,
+    "fig6_confusion_flow": 30,
+    "fig8_matched_trials": 12000,
+    "fig4_fold_losses": 90,
+    "fig1_macro_f1_vs_level": 48,
+    "fig5_representation_displacement": 24,
+    "fig3_margin_vs_sir": 18
+  },
+  "status": "passed",
+  "absolute_tolerance": 1e-10,
+  "checks": [
+    "Independent five-fold macro-F1 and SD",
+    "Capture counts and raw score margins",
+    "Paired same/different category intersections",
+    "Training-fold-standardised SVM distance and CNN/CLAP cosine distance",
+    "Confusion counts, denominators and correct-control transitions",
+    "CPU latency from source cost files",
+    "Identical-target overlap accuracy, F1 and coverage",
+    "Paired representation-displacement summary and trial CSVs"
+  ]
+}

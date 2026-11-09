@@ -1,0 +1,10 @@
+target_file,condition,level_db,fold,target_class,interferer,activity_overlap,reason
+4-164021-A-1.wav,semantic_different,0.0,4,1,4-154443-A-24.wav,0.0,Exactly zero interferer energy on target-active mask
+4-164021-A-1.wav,semantic_different,5.0,4,1,4-154443-A-24.wav,0.0,Exactly zero interferer energy on target-active mask
+4-164021-A-1.wav,semantic_different,10.0,4,1,4-154443-A-24.wav,0.0,Exactly zero interferer energy on target-active mask
+4-184434-A-21.wav,semantic_same,0.0,4,21,4-176914-A-23.wav,0.0,Exactly zero interferer energy on target-active mask
+4-184434-A-21.wav,semantic_same,5.0,4,21,4-176914-A-23.wav,0.0,Exactly zero interferer energy on target-active mask
+4-184434-A-21.wav,semantic_same,10.0,4,21,4-176914-A-23.wav,0.0,Exactly zero interferer energy on target-active mask
+5-235874-A-28.wav,semantic_same,0.0,5,28,5-221593-A-21.wav,0.0,Exactly zero interferer energy on target-active mask
+5-235874-A-28.wav,semantic_same,5.0,5,28,5-221593-A-21.wav,0.0,Exactly zero interferer energy on target-active mask
+5-235874-A-28.wav,semantic_same,10.0,5,28,5-221593-A-21.wav,0.0,Exactly zero interferer energy on target-active mask

@@ -1,0 +1,25 @@
+system,displacement,level_db,condition,outcome,n,median,q1,q3
+svm,normalised Euclidean distance of training-standardised features,5,white,correct,108,1.304884400665673,1.08135778123215,1.6376934083954349
+svm,normalised Euclidean distance of training-standardised features,5,white,incorrect,1892,1.5062453368406536,1.297008671801108,1.7309354196028597
+svm,normalised Euclidean distance of training-standardised features,5,demand,correct,356,0.7291273829555934,0.5700725891677375,0.8733379676955658
+svm,normalised Euclidean distance of training-standardised features,5,demand,incorrect,1644,0.8581030130697094,0.6743975112077383,1.057341075790065
+svm,normalised Euclidean distance of training-standardised features,5,semantic_same,correct,450,0.5203772390699631,0.3511494279591094,0.7777504951400234
+svm,normalised Euclidean distance of training-standardised features,5,semantic_same,incorrect,1548,0.7396641714785763,0.47545999151246965,1.053479292226677
+svm,normalised Euclidean distance of training-standardised features,5,semantic_different,correct,443,0.5118708597095061,0.32958768640138014,0.6992187623203123
+svm,normalised Euclidean distance of training-standardised features,5,semantic_different,incorrect,1556,0.7533469316884409,0.5063524917290994,1.0788186897405516
+cnn,cosine distance of embeddings,5,white,correct,245,0.261239455728993,0.2106369742022539,0.31128919702771707
+cnn,cosine distance of embeddings,5,white,incorrect,1755,0.35470397780009544,0.28783468753225516,0.4440355992683847
+cnn,cosine distance of embeddings,5,demand,correct,631,0.1051845179930273,0.06279369295806791,0.16711326289077433
+cnn,cosine distance of embeddings,5,demand,incorrect,1369,0.19532400895877133,0.12854104548095935,0.30227765027225617
+cnn,cosine distance of embeddings,5,semantic_same,correct,695,0.03263632954222917,0.012954530648335294,0.07275671815691814
+cnn,cosine distance of embeddings,5,semantic_same,incorrect,1303,0.13393518651410408,0.05655054561633033,0.25121953349543025
+cnn,cosine distance of embeddings,5,semantic_different,correct,664,0.03398984420911777,0.01415013728867709,0.07172382555455234
+cnn,cosine distance of embeddings,5,semantic_different,incorrect,1335,0.14390512994983407,0.06048563307424504,0.28586796947483933
+clap,cosine distance of embeddings,5,white,correct,1298,0.3048650948869908,0.2155768125491203,0.4259410167095907
+clap,cosine distance of embeddings,5,white,incorrect,702,0.42649568619359873,0.2950018378276387,0.5664530472820266
+clap,cosine distance of embeddings,5,demand,correct,1482,0.2378960891899572,0.1236691796523067,0.36140731546453164
+clap,cosine distance of embeddings,5,demand,incorrect,518,0.34479180015067745,0.17467787271952007,0.5384457100827795
+clap,cosine distance of embeddings,5,semantic_same,correct,1032,0.1984492153329392,0.11174586377047493,0.3163987801095338
+clap,cosine distance of embeddings,5,semantic_same,incorrect,966,0.4098364774915885,0.26512578980404006,0.5661830697840673
+clap,cosine distance of embeddings,5,semantic_different,correct,943,0.23630589497411125,0.1301028587292153,0.33604355111593043
+clap,cosine distance of embeddings,5,semantic_different,incorrect,1056,0.42904114713602065,0.30258668373488373,0.5866435321149132

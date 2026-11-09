@@ -1,0 +1,71 @@
+{
+  "own": {
+    "rows": 24000,
+    "target_condition_pairs": 8000,
+    "maximum_ratio_error_db": 4.440892098500626e-15,
+    "minimum_common_gain": 0.030139127657604247,
+    "noise_realisation_fixed_across_levels": true,
+    "semantic_fold_and_source_separation": true,
+    "no_clipping_after_recorded_gain": true
+  },
+  "target": {
+    "rows": 23991,
+    "target_condition_pairs": 7997,
+    "maximum_ratio_error_db": 4.440892098500626e-15,
+    "minimum_common_gain": 0.00219538526150353,
+    "noise_realisation_fixed_across_levels": true,
+    "semantic_fold_and_source_separation": true,
+    "no_clipping_after_recorded_gain": true
+  },
+  "between_protocols": {
+    "identical_pairing_and_realisation_on_shared_trials": true,
+    "shared_rows": 23991,
+    "omitted_rows": [
+      {
+        "target_file": "4-164021-A-1.wav",
+        "condition": "semantic_different",
+        "level_db": 0.0
+      },
+      {
+        "target_file": "4-164021-A-1.wav",
+        "condition": "semantic_different",
+        "level_db": 10.0
+      },
+      {
+        "target_file": "4-164021-A-1.wav",
+        "condition": "semantic_different",
+        "level_db": 5.0
+      },
+      {
+        "target_file": "4-184434-A-21.wav",
+        "condition": "semantic_same",
+        "level_db": 0.0
+      },
+      {
+        "target_file": "4-184434-A-21.wav",
+        "condition": "semantic_same",
+        "level_db": 10.0
+      },
+      {
+        "target_file": "4-184434-A-21.wav",
+        "condition": "semantic_same",
+        "level_db": 5.0
+      },
+      {
+        "target_file": "5-235874-A-28.wav",
+        "condition": "semantic_same",
+        "level_db": 0.0
+      },
+      {
+        "target_file": "5-235874-A-28.wav",
+        "condition": "semantic_same",
+        "level_db": 10.0
+      },
+      {
+        "target_file": "5-235874-A-28.wav",
+        "condition": "semantic_same",
+        "level_db": 5.0
+      }
+    ]
+  }
+}

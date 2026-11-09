@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "rows": 24000,
+  "targets": 2000,
+  "conditions": 12,
+  "five_fold_metrics_independently_recomputed": true,
+  "scores_predictions_margins_and_embedding_shapes_verified": true,
+  "manifest_sha256": "587c2c5e46131ed6b5a021255d4c7197a8c0866a4637a42cfd0944cb7934e8e5",
+  "numerical_parity_with_supplied_patch": {
+    "passed": true,
+    "rows": 120,
+    "all_csv_fields_identical_to_incoming_patch": true,
+    "manifest_sha256": "afc5e7bc9dff59d96d97a017112a9346c5847c25ecbdfcbee3ba6939ef4f2005"
+  },
+  "representation": {
+    "white@+10dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.29463385094740513,
+      "correct_median": 0.23410488083485992,
+      "incorrect_median": 0.3112491619171206,
+      "undefined_zero_norm": 0
+    },
+    "white@+5dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.3395390048169134,
+      "correct_median": 0.26293937258510663,
+      "incorrect_median": 0.3550542176373603,
+      "undefined_zero_norm": 0
+    },
+    "white@+0dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.39502843593647735,
+      "correct_median": 0.3054138607490564,
+      "incorrect_median": 0.40176080571406547,
+      "undefined_zero_norm": 0
+    },
+    "demand@+10dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.11621688800884783,
+      "correct_median": 0.07591347378687174,
+      "incorrect_median": 0.1550922129830712,
+      "undefined_zero_norm": 0
+    },
+    "demand@+5dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.16135627992020457,
+      "correct_median": 0.10715426817130158,
+      "incorrect_median": 0.1957293608334929,
+      "undefined_zero_norm": 0
+    },
+    "demand@+0dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.22177507873118724,
+      "correct_median": 0.1430765552012515,
+      "incorrect_median": 0.24148374255849725,
+      "undefined_zero_norm": 0
+    },
+    "semantic_same@+10dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.04721753838072007,
+      "correct_median": 0.01942515294116337,
+      "incorrect_median": 0.10165723685951594,
+      "undefined_zero_norm": 0
+    },
+    "semantic_same@+5dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.07897169973793344,
+      "correct_median": 0.028072440831409584,
+      "incorrect_median": 0.13534325512546408,
+      "undefined_zero_norm": 0
+    },
+    "semantic_same@+0dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.12103572671389928,
+      "correct_median": 0.04026459675425542,
+      "incorrect_median": 0.17295893902255033,
+      "undefined_zero_norm": 0
+    },
+    "semantic_different@+10dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.05246623028755154,
+      "correct_median": 0.02132386977772338,
+      "incorrect_median": 0.10832929398118651,
+      "undefined_zero_norm": 0
+    },
+    "semantic_different@+5dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.08399569124831247,
+      "correct_median": 0.030220783331550316,
+      "incorrect_median": 0.13918915155822686,
+      "undefined_zero_norm": 0
+    },
+    "semantic_different@+0dB": {
+      "reference": "same-model gain-matched target control",
+      "cosine_displacement_median": 0.1272803630596775,
+      "correct_median": 0.03998065477810964,
+      "incorrect_median": 0.18022715644988396,
+      "undefined_zero_norm": 0
+    }
+  },
+  "limitations": [
+    "Own-active-region ratio differs from common-target-region SIR.",
+    "Cloud SVM attachment contains aggregates only; cloud trial pairing is not independently verified.",
+    "One fixed CNN training seed; no bootstrap intervals in this run."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-09",
+  "base_commit": "1ba8f4f371576e20b2f385f0f0816ddbcbc48b22",
+  "branch": "feature/interference",
+  "source_state": "uncommitted integration on local branch; use source hashes and reviewed patch",
+  "source_sha256": {
+    "src/esc_robustness/dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "src/esc_robustness/interference_eval.py": "f0b2bd6f58ebb490b552e6a915540082be0bd1ce3412a53552f25da4e47ecaaf",
+    "src/esc_robustness/analysis.py": "cad0591eeec1e837491e2e3df195f45777a0943bdd757280765c38da4a58fae0",
+    "src/esc_robustness/__init__.py": "4b02016c1d7b3a23976df9ec550d02b0e8d6b4e15e6035d268499badd75a3cf9",
+    "src/esc_robustness/features.py": "6db31128977dfbdd70695013f937ab481c88989a25dbda25d41f5a383e0a0db3",
+    "src/esc_robustness/cnn.py": "85045ba7c59c69abb70a7002d38898c366fa613cd4faec5e1891ef1386fca952",
+    "src/esc_robustness/cli.py": "9e04b19c82f4c1a003385938f1e28314d0825012954d48cfa739f96b81502b77",
+    "src/esc_robustness/mixing.py": "8fe5ae22ea791ba55977209b51d5109655116f7421c89d63080661b86749f058",
+    "src/esc_robustness/spectrograms.py": "aad150e2c0643a72c0de3c3aa45bacc1c2edab88a4e7684aff87b4bae2de755e",
+    "src/esc_robustness/artifacts.py": "b637d9fda7524089d14d9b7f2f9c0560ee170710366aa580c573144e9f1d2537",
+    "src/esc_robustness/svm.py": "2995f4e03c6b188d282de707f4d0ec33100a7459c7349ef952e3c9ad5b9e3f79",
+    "src/esc_robustness/data.py": "a43f834cb80a04fc0089f266d19f4a9a04d6e3f4fbb9132d7b19ccf98b5121fc",
+    "src/esc_robustness/validation.py": "27839dcdbdf0d40750072e2a2f9a4ee5b15b2b81109922bc10b09b4759f44b4a",
+    "configs/interference.json": "6cd2911d44d9c1bf16c0126c3306996efaea57a0218c079041d406be7f46ea4e"
+  },
+  "incoming_patch_sha256": "ffaa1d18f5d495bd9067686823e4b9e66b2b6a9d53910c58fa2a772315331ab8",
+  "tests": {
+    "passed": 61,
+    "skipped": 1,
+    "skip_reason": "CUDA unavailable"
+  },
+  "full_artifacts": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/20261109/cnn_own_active",
+  "manifest": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/20261109/manifest_own_active",
+  "python": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/tmp/local_setup_20261109/venv/bin/python"
+}

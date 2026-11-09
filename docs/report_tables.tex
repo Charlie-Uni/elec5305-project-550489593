@@ -1,0 +1,19 @@
+\begin{table}[htbp]\centering
+\caption{Clean five-fold results (percent; mean $\pm$ sample SD). Core CNN seed: 5305.}
+\label{tab:clean}\begin{tabular}{lrr}\toprule System & Accuracy & Macro-F1\\\midrule
+SVM & 48.90 $\pm$ 4.21 & 47.96 $\pm$ 4.07 \\
+CNN & 67.90 $\pm$ 3.65 & 66.61 $\pm$ 3.91 \\
+CLAP & 81.75 $\pm$ 2.58 & 79.49 $\pm$ 3.28 \\\bottomrule\end{tabular}\end{table}
+\begin{table}[htbp]\centering
+\caption{Macro-F1 at +5 dB (percent; five-fold mean $\pm$ sample SD). Each cell uses its retained targets.}
+\label{tab:five}\begin{tabular}{llrrr}\toprule Power & Condition & SVM & CNN & CLAP\\\midrule
+Own & White noise & 2.03 $\pm$ 0.86 & 7.76 $\pm$ 1.54 & 62.91 $\pm$ 3.50 \\
+Own & DEMAND & 16.13 $\pm$ 1.95 & 29.46 $\pm$ 4.19 & 71.49 $\pm$ 1.00 \\
+Own & Same category & 22.47 $\pm$ 2.68 & 32.60 $\pm$ 2.26 & 48.86 $\pm$ 1.53 \\
+Own & Different category & 21.34 $\pm$ 2.58 & 32.00 $\pm$ 3.38 & 45.16 $\pm$ 1.11 \\
+\midrule
+Target & White noise & 2.03 $\pm$ 0.86 & 7.76 $\pm$ 1.54 & 62.92 $\pm$ 3.50 \\
+Target & DEMAND & 16.15 $\pm$ 2.29 & 29.33 $\pm$ 4.14 & 71.64 $\pm$ 0.91 \\
+Target & Same category & 21.14 $\pm$ 2.63 & 31.70 $\pm$ 1.88 & 47.76 $\pm$ 1.07 \\
+Target & Different category & 20.87 $\pm$ 2.37 & 30.93 $\pm$ 4.19 & 42.81 $\pm$ 1.27 \\
+\bottomrule\end{tabular}\end{table}

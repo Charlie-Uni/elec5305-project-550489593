@@ -1,0 +1,158 @@
+{
+  "demand@+0dB": {
+    "n": 2000,
+    "nominal_own_active_db": 0.0,
+    "target_mask_db_q05_q50_q95": [
+      -0.5723907596479153,
+      0.0,
+      0.741769199505591
+    ],
+    "zero_interferer_power_on_target_mask": 0,
+    "overlap_median": 1.0,
+    "overlap_below_half": 0,
+    "common_gain_min": 0.19829609598336487
+  },
+  "demand@+10dB": {
+    "n": 2000,
+    "nominal_own_active_db": 10.0,
+    "target_mask_db_q05_q50_q95": [
+      9.490934920071224,
+      10.0,
+      10.74088968348644
+    ],
+    "zero_interferer_power_on_target_mask": 0,
+    "overlap_median": 1.0,
+    "overlap_below_half": 0,
+    "common_gain_min": 0.4872584888640367
+  },
+  "demand@+5dB": {
+    "n": 2000,
+    "nominal_own_active_db": 5.0,
+    "target_mask_db_q05_q50_q95": [
+      4.498138446519085,
+      5.0,
+      5.744894750320623
+    ],
+    "zero_interferer_power_on_target_mask": 0,
+    "overlap_median": 1.0,
+    "overlap_below_half": 0,
+    "common_gain_min": 0.34299313031487455
+  },
+  "semantic_different@+0dB": {
+    "n": 2000,
+    "nominal_own_active_db": 0.0,
+    "target_mask_db_q05_q50_q95": [
+      -0.9075968927089524,
+      1.928654933106574e-15,
+      7.824110826109308
+    ],
+    "zero_interferer_power_on_target_mask": 1,
+    "overlap_median": 1.0,
+    "overlap_below_half": 350,
+    "common_gain_min": 0.030139127657604247
+  },
+  "semantic_different@+10dB": {
+    "n": 2000,
+    "nominal_own_active_db": 10.0,
+    "target_mask_db_q05_q50_q95": [
+      9.092403107291048,
+      10.000000000000002,
+      17.824110826109308
+    ],
+    "zero_interferer_power_on_target_mask": 1,
+    "overlap_median": 1.0,
+    "overlap_below_half": 350,
+    "common_gain_min": 0.09530829008860484
+  },
+  "semantic_different@+5dB": {
+    "n": 2000,
+    "nominal_own_active_db": 5.0,
+    "target_mask_db_q05_q50_q95": [
+      4.092403107291046,
+      5.000000000000002,
+      12.824110826109306
+    ],
+    "zero_interferer_power_on_target_mask": 1,
+    "overlap_median": 1.0,
+    "overlap_below_half": 350,
+    "common_gain_min": 0.05359579015005226
+  },
+  "semantic_same@+0dB": {
+    "n": 2000,
+    "nominal_own_active_db": 0.0,
+    "target_mask_db_q05_q50_q95": [
+      -0.9757533210906089,
+      9.64327466553287e-16,
+      7.464959560705285
+    ],
+    "zero_interferer_power_on_target_mask": 2,
+    "overlap_median": 1.0,
+    "overlap_below_half": 315,
+    "common_gain_min": 0.03536505623369446
+  },
+  "semantic_same@+10dB": {
+    "n": 2000,
+    "nominal_own_active_db": 10.0,
+    "target_mask_db_q05_q50_q95": [
+      9.02424667890939,
+      10.000000000000002,
+      17.464959560705285
+    ],
+    "zero_interferer_power_on_target_mask": 2,
+    "overlap_median": 1.0,
+    "overlap_below_half": 315,
+    "common_gain_min": 0.11183808168802208
+  },
+  "semantic_same@+5dB": {
+    "n": 2000,
+    "nominal_own_active_db": 5.0,
+    "target_mask_db_q05_q50_q95": [
+      4.024246678909392,
+      5.000000000000001,
+      12.464959560705283
+    ],
+    "zero_interferer_power_on_target_mask": 2,
+    "overlap_median": 1.0,
+    "overlap_below_half": 315,
+    "common_gain_min": 0.06288975171464997
+  },
+  "white@+0dB": {
+    "n": 2000,
+    "nominal_own_active_db": 0.0,
+    "target_mask_db_q05_q50_q95": [
+      -0.015707439593292485,
+      0.0,
+      0.015995503714512534
+    ],
+    "zero_interferer_power_on_target_mask": 0,
+    "overlap_median": 1.0,
+    "overlap_below_half": 0,
+    "common_gain_min": 0.25194534122464535
+  },
+  "white@+10dB": {
+    "n": 2000,
+    "nominal_own_active_db": 10.0,
+    "target_mask_db_q05_q50_q95": [
+      9.984133089249463,
+      10.0,
+      10.014579563226107
+    ],
+    "zero_interferer_power_on_target_mask": 0,
+    "overlap_median": 1.0,
+    "overlap_below_half": 0,
+    "common_gain_min": 0.512379796054914
+  },
+  "white@+5dB": {
+    "n": 2000,
+    "nominal_own_active_db": 5.0,
+    "target_mask_db_q05_q50_q95": [
+      4.985112790133232,
+      5.0,
+      5.015923978095606
+    ],
+    "zero_interferer_power_on_target_mask": 0,
+    "overlap_median": 1.0,
+    "overlap_below_half": 0,
+    "common_gain_min": 0.36259019354286975
+  }
+}

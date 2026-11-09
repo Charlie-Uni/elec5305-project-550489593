@@ -1,0 +1,29 @@
+{
+  "pid": 78413,
+  "started_utc": "2026-11-09T05:43:22.343454+00:00",
+  "script": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/run_full_interference.sh",
+  "source_snapshot": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/execution_v4_snapshot/esc_robustness",
+  "source_sha256": {
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "interference_eval.py": "3232d9a3dc248e7e1c155cd64836637cc1e5f2cb774ded3460a0e0910e37be07",
+    "clap_system.py": "f414c9f0b509a8ea8b5a90416cd5bcf23d15379565a415f6d6da614d600147d8",
+    "analysis.py": "78188c81c4058c7f772bb7c663c68df93751589d80d3bf039f96d451f8beca26",
+    "__init__.py": "4b02016c1d7b3a23976df9ec550d02b0e8d6b4e15e6035d268499badd75a3cf9",
+    "features.py": "6db31128977dfbdd70695013f937ab481c88989a25dbda25d41f5a383e0a0db3",
+    "cnn.py": "85045ba7c59c69abb70a7002d38898c366fa613cd4faec5e1891ef1386fca952",
+    "cli.py": "5e8fc5081268a2b1eb4a1cc5e8033c87bb35dce602f386c0955a7de4ad6eea6d",
+    "mixing.py": "312f50b2686dff2bab93cfddc3c3f56067112f9926d501c006fd4f89d67bf21a",
+    "spectrograms.py": "aad150e2c0643a72c0de3c3aa45bacc1c2edab88a4e7684aff87b4bae2de755e",
+    "artifacts.py": "b637d9fda7524089d14d9b7f2f9c0560ee170710366aa580c573144e9f1d2537",
+    "svm.py": "2995f4e03c6b188d282de707f4d0ec33100a7459c7349ef952e3c9ad5b9e3f79",
+    "data.py": "a43f834cb80a04fc0089f266d19f4a9a04d6e3f4fbb9132d7b19ccf98b5121fc",
+    "validation.py": "27839dcdbdf0d40750072e2a2f9a4ee5b15b2b81109922bc10b09b4759f44b4a"
+  },
+  "log": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/full_run.log",
+  "sequence": [
+    "own 24000 rows",
+    "own summary",
+    "target 23991 rows",
+    "target summary"
+  ]
+}

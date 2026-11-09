@@ -1,0 +1,15 @@
+{
+  "own": {
+    "directory": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_own",
+    "scores": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_own/clap_scores.npz",
+    "scores_sha256": "90c904f46947279301b6cbb7a6441e396bf298427e7ef0b41e91abe9c8025b01",
+    "manifest": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/manifest_own/manifest.csv"
+  },
+  "target": {
+    "directory": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_target",
+    "scores": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_target/clap_scores.npz",
+    "scores_sha256": "bf8da580fe7c3b609c702ed84912456cfdcfaaa93665cc05807b14171802d4c6",
+    "manifest": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/manifest_target/manifest.csv"
+  },
+  "clean": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/clean"
+}

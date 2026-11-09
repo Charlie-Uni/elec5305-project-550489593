@@ -20,6 +20,7 @@ dependencies = [
 cnn = ["torch>=2.6,<3"]
 dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
 docs = ["reportlab>=4,<6", "pypdf>=5,<7", "pypdfium2>=4,<6"]
+figures = ["matplotlib>=3.8,<4"]
 
 [project.scripts]
 esc-baseline = "esc_robustness.cli:main"

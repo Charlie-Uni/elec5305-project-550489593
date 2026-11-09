@@ -1,0 +1,562 @@
+{
+  "fig1_macro_f1_vs_level.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /FSBYHW+DejaVuSans, /EEZAWI+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig1_macro_f1_vs_level.pdf",
+      "ext": "pdf",
+      "size_bytes": 27818,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/FSBYHW+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 17192
+        },
+        {
+          "name": "/EEZAWI+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 3864
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig1_macro_f1_vs_level.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig1_macro_f1_vs_level.png",
+      "ext": "png",
+      "size_bytes": 594197,
+      "category": "raster",
+      "size_px": [
+        4296,
+        3480
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig1_macro_f1_vs_level.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig1_macro_f1_vs_level.svg",
+      "ext": "svg",
+      "size_bytes": 73042,
+      "category": "vector"
+    }
+  },
+  "fig1_macro_f1_vs_level_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig1_macro_f1_vs_level_grayscale.png",
+      "ext": "png",
+      "size_bytes": 272422,
+      "category": "raster",
+      "size_px": [
+        4296,
+        3480
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig2_capture_rate_vs_sir.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /EEZAWI+DejaVuSans, /FCGINJ+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig2_capture_rate_vs_sir.pdf",
+      "ext": "pdf",
+      "size_bytes": 20910,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/FCGINJ+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 14776
+        },
+        {
+          "name": "/EEZAWI+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 3864
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig2_capture_rate_vs_sir.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig2_capture_rate_vs_sir.png",
+      "ext": "png",
+      "size_bytes": 364587,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2160
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig2_capture_rate_vs_sir.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig2_capture_rate_vs_sir.svg",
+      "ext": "svg",
+      "size_bytes": 18859,
+      "category": "vector"
+    }
+  },
+  "fig2_capture_rate_vs_sir_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig2_capture_rate_vs_sir_grayscale.png",
+      "ext": "png",
+      "size_bytes": 173536,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2160
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig3_margin_vs_sir.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /GUCHGM+DejaVuSans, /GOZOJM+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig3_margin_vs_sir.pdf",
+      "ext": "pdf",
+      "size_bytes": 25088,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/GOZOJM+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 17004
+        },
+        {
+          "name": "/GUCHGM+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 4012
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig3_margin_vs_sir.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig3_margin_vs_sir.png",
+      "ext": "png",
+      "size_bytes": 317014,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2100
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig3_margin_vs_sir.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig3_margin_vs_sir.svg",
+      "ext": "svg",
+      "size_bytes": 51381,
+      "category": "vector"
+    }
+  },
+  "fig3_margin_vs_sir_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig3_margin_vs_sir_grayscale.png",
+      "ext": "png",
+      "size_bytes": 158559,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2100
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig4_same_vs_different.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /EEZAWI+DejaVuSans, /EFSFYO+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig4_same_vs_different.pdf",
+      "ext": "pdf",
+      "size_bytes": 28673,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/EFSFYO+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 15228
+        },
+        {
+          "name": "/EEZAWI+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 3864
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig4_same_vs_different.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig4_same_vs_different.png",
+      "ext": "png",
+      "size_bytes": 389784,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2160
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig4_same_vs_different.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig4_same_vs_different.svg",
+      "ext": "svg",
+      "size_bytes": 45589,
+      "category": "vector"
+    }
+  },
+  "fig4_same_vs_different_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig4_same_vs_different_grayscale.png",
+      "ext": "png",
+      "size_bytes": 182364,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2160
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig5_representation_displacement.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /MQYIBR+DejaVuSans, /DQIFZV+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig5_representation_displacement.pdf",
+      "ext": "pdf",
+      "size_bytes": 25904,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/MQYIBR+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 17560
+        },
+        {
+          "name": "/DQIFZV+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 4040
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig5_representation_displacement.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig5_representation_displacement.png",
+      "ext": "png",
+      "size_bytes": 494469,
+      "category": "raster",
+      "size_px": [
+        4296,
+        4920
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig5_representation_displacement.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig5_representation_displacement.svg",
+      "ext": "svg",
+      "size_bytes": 59704,
+      "category": "vector"
+    }
+  },
+  "fig5_representation_displacement_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig5_representation_displacement_grayscale.png",
+      "ext": "png",
+      "size_bytes": 232902,
+      "category": "raster",
+      "size_px": [
+        4296,
+        4920
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig6_confusion_flow.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /DLFEFJ+DejaVuSans, /EUMNSR+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig6_confusion_flow.pdf",
+      "ext": "pdf",
+      "size_bytes": 23710,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/EUMNSR+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 17280
+        },
+        {
+          "name": "/DLFEFJ+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 4240
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig6_confusion_flow.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig6_confusion_flow.png",
+      "ext": "png",
+      "size_bytes": 739347,
+      "category": "raster",
+      "size_px": [
+        4296,
+        5070
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig6_confusion_flow.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig6_confusion_flow.svg",
+      "ext": "svg",
+      "size_bytes": 57667,
+      "category": "vector"
+    }
+  },
+  "fig6_confusion_flow_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig6_confusion_flow_grayscale.png",
+      "ext": "png",
+      "size_bytes": 351234,
+      "category": "raster",
+      "size_px": [
+        4296,
+        5070
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig7_robustness_vs_cost.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /CWMNNZ+DejaVuSans, /DQIFZV+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig7_robustness_vs_cost.pdf",
+      "ext": "pdf",
+      "size_bytes": 20335,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/CWMNNZ+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 16892
+        },
+        {
+          "name": "/DQIFZV+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 4040
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig7_robustness_vs_cost.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig7_robustness_vs_cost.png",
+      "ext": "png",
+      "size_bytes": 214474,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2280
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig7_robustness_vs_cost.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig7_robustness_vs_cost.svg",
+      "ext": "svg",
+      "size_bytes": 16625,
+      "category": "vector"
+    }
+  },
+  "fig7_robustness_vs_cost_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig7_robustness_vs_cost_grayscale.png",
+      "ext": "png",
+      "size_bytes": 103200,
+      "category": "raster",
+      "size_px": [
+        4296,
+        2280
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig8_overlap_strata.pdf": {
+    "issues": [
+      [
+        "WARN",
+        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /HDIIKF+DejaVuSans, /DAJXBC+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+      ]
+    ],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig8_overlap_strata.pdf",
+      "ext": "pdf",
+      "size_bytes": 56316,
+      "category": "vector",
+      "verified_descendant_fonts": [
+        {
+          "name": "/DAJXBC+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 15268
+        },
+        {
+          "name": "/HDIIKF+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_font_bytes": 3940
+        }
+      ],
+      "generic_font_warning_resolution": "Type0 descendant CIDFontType2 contains an embedded TrueType FontFile2 stream"
+    }
+  },
+  "fig8_overlap_strata.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig8_overlap_strata.png",
+      "ext": "png",
+      "size_bytes": 919306,
+      "category": "raster",
+      "size_px": [
+        4296,
+        4830
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "fig8_overlap_strata.svg": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig8_overlap_strata.svg",
+      "ext": "svg",
+      "size_bytes": 111285,
+      "category": "vector"
+    }
+  },
+  "fig8_overlap_strata_grayscale.png": {
+    "issues": [],
+    "info": {
+      "path": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/results/figures_three_systems_target_20261109/fig8_overlap_strata_grayscale.png",
+      "ext": "png",
+      "size_bytes": 425004,
+      "category": "raster",
+      "size_px": [
+        4296,
+        4830
+      ],
+      "dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  }
+}

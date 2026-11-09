@@ -1,0 +1,17 @@
+system,displacement,level_db,condition,outcome,n,median,q1,q3
+svm,normalised Euclidean distance of training-standardised features,5.0,white,correct,108,1.304884400665673,1.08135778123215,1.6376934083954349
+svm,normalised Euclidean distance of training-standardised features,5.0,white,incorrect,1892,1.5062453368406536,1.297008671801108,1.730979683414847
+svm,normalised Euclidean distance of training-standardised features,5.0,demand,correct,357,0.7257990544075748,0.569909225038583,0.8732391797452204
+svm,normalised Euclidean distance of training-standardised features,5.0,demand,incorrect,1643,0.8569995271569449,0.6747197780784554,1.0583834755146437
+svm,normalised Euclidean distance of training-standardised features,5.0,semantic_same,correct,473,0.5017177597370337,0.3295231556119275,0.7484400509755449
+svm,normalised Euclidean distance of training-standardised features,5.0,semantic_same,incorrect,1527,0.7360474610210798,0.4623905974375583,1.0489427444790396
+svm,normalised Euclidean distance of training-standardised features,5.0,semantic_different,correct,452,0.4937744919710315,0.31094386394293005,0.6919546663604571
+svm,normalised Euclidean distance of training-standardised features,5.0,semantic_different,incorrect,1548,0.7374510358208357,0.4813274306435805,1.0728981210226918
+cnn,cosine distance of embeddings,5.0,white,correct,245,0.261239455728993,0.21068154970828978,0.31128919702771707
+cnn,cosine distance of embeddings,5.0,white,incorrect,1755,0.3546153956811835,0.2878771259845784,0.44397188410470334
+cnn,cosine distance of embeddings,5.0,demand,correct,631,0.10496354243494,0.06279369295806791,0.16711326289077433
+cnn,cosine distance of embeddings,5.0,demand,incorrect,1369,0.19591170272327474,0.12854104548095935,0.29809923682890027
+cnn,cosine distance of embeddings,5.0,semantic_same,correct,711,0.028072440831409584,0.010391036358191774,0.07197691065610867
+cnn,cosine distance of embeddings,5.0,semantic_same,incorrect,1289,0.13534325512546408,0.05544733886073683,0.24812315843131316
+cnn,cosine distance of embeddings,5.0,semantic_different,correct,685,0.030220783331550316,0.010767070491909503,0.0693987656085665
+cnn,cosine distance of embeddings,5.0,semantic_different,incorrect,1315,0.13918915155822686,0.05677817377459243,0.2834936062017698

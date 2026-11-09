@@ -1,0 +1,1615 @@
+{
+  "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+  "power_definition": "target: mean square over its own active region (unwindowed frames within 40.0 dB of its peak frame); interferer: mean square over its own active region; both interferer readings are recorded in every row",
+  "rows": 24,
+  "files": [
+    {
+      "row": 0,
+      "condition": "white",
+      "ratio_type": "SNR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "white",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 0,
+      "row_seed": 3175050323,
+      "interferer_gain": 0.051386398485912275,
+      "common_gain": 0.9323966387187568,
+      "target_power": 0.02305664772461847,
+      "interferer_power": 0.0023056647724618465,
+      "achieved_db": 10.0,
+      "interferer_power_on_target_mask": 0.0023122140216362682,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0617798894689263,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "",
+      "audio": {
+        "mixture": {
+          "file": "row_000000_mixture.wav",
+          "sha256": "ec1c48d646165d91f0bdfcef96a5c2c965c079b980c79d8bc4dc56af0923cdfb",
+          "max_quantisation_error": 3.0517298486380448e-05
+        },
+        "clean_matched": {
+          "file": "row_000000_clean_matched.wav",
+          "sha256": "6220afaeb06d9914e2ad03def5d844f4af9fa04b34e0642526988278e78d69eb",
+          "max_quantisation_error": 3.0514305048051638e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 13,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "1.6727885111048109",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-10.461688995361328",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 4,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.2789302544054034",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 1,
+      "condition": "white",
+      "ratio_type": "SNR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "white",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 0,
+      "row_seed": 3175050323,
+      "interferer_gain": 0.09137937438355308,
+      "common_gain": 0.8428346021601915,
+      "target_power": 0.018839938458489074,
+      "interferer_power": 0.005957711650622708,
+      "achieved_db": 5.000000000000001,
+      "interferer_power_on_target_mask": 0.005974634552241067,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.1746076839543873,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "",
+      "audio": {
+        "mixture": {
+          "file": "row_000001_mixture.wav",
+          "sha256": "10cf6f375974cda1979686d97250ced6147d632aee330090e002798e773e7b90",
+          "max_quantisation_error": 3.0517279314211387e-05
+        },
+        "clean_matched": {
+          "file": "row_000001_clean_matched.wav",
+          "sha256": "a96168b26dd520741d73ea97af59963d2a7aa2b545a24f1be777bb99e1bccd23",
+          "max_quantisation_error": 3.0509278201446e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 13,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "1.6726451244755174",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-11.288774490356445",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 4,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.23398452814420223",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 2,
+      "condition": "white",
+      "ratio_type": "SNR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "white",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 0,
+      "row_seed": 3175050323,
+      "interferer_gain": 0.16249805996851063,
+      "common_gain": 0.7198706705127454,
+      "target_power": 0.013743701840622444,
+      "interferer_power": 0.013743701840622442,
+      "achieved_db": 9.64327466553287e-16,
+      "interferer_power_on_target_mask": 0.013782740875701723,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.3752470277679856,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "",
+      "audio": {
+        "mixture": {
+          "file": "row_000002_mixture.wav",
+          "sha256": "5295c893f80abdc74566dc0ede3590b2ea5a99e3ccfcdb83b880e539c35fe7af",
+          "max_quantisation_error": 3.051694037145558e-05
+        },
+        "clean_matched": {
+          "file": "row_000002_clean_matched.wav",
+          "sha256": "ed5dc9eacb2e19d6d5084c64d8d21eb4e3cc1c8231155017ac1ee4b7eb5fa7ee",
+          "max_quantisation_error": 3.0516291237792093e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 13,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "0.6725843471818922",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-11.974777221679688",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 10,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.16402814370175328",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 3,
+      "condition": "demand",
+      "ratio_type": "SNR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "demand:STRAFFIC",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 911292,
+      "row_seed": 2270580210,
+      "interferer_gain": 4.958679525730072,
+      "common_gain": 0.9574696124048179,
+      "target_power": 0.02431334791288593,
+      "interferer_power": 0.0024313347912885926,
+      "achieved_db": 10.0,
+      "interferer_power_on_target_mask": 0.0020374275144864366,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0339753733943342,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "25237fcd2c1632348de43b9375c0c264607144cf34ae7858a6814e24d77a2bdb",
+      "audio": {
+        "mixture": {
+          "file": "row_000003_mixture.wav",
+          "sha256": "93354c752fd68de37a698aecccc4c2159891ef26ff42dc95676d74298d475a1d",
+          "max_quantisation_error": 3.051706627176659e-05
+        },
+        "clean_matched": {
+          "file": "row_000003_clean_matched.wav",
+          "sha256": "e940a1c030ffad651eeeb328a5ecd88e38beae38ce1066f404b164addd124428",
+          "max_quantisation_error": 3.050792107717193e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 28,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "18.74352367273394",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 25,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-9.632352828979492",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 0,
+          "control_prediction": 0,
+          "correct": 1,
+          "target_score": "0.3319080966360631",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 4,
+      "condition": "demand",
+      "ratio_type": "SNR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "demand:STRAFFIC",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 911292,
+      "row_seed": 2270580210,
+      "interferer_gain": 8.817917701587358,
+      "common_gain": 0.9296268612142294,
+      "target_power": 0.022919867029279794,
+      "interferer_power": 0.007247898348072129,
+      "achieved_db": 4.999999999999999,
+      "interferer_power_on_target_mask": 0.006073646282475355,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0649434104205147,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "25237fcd2c1632348de43b9375c0c264607144cf34ae7858a6814e24d77a2bdb",
+      "audio": {
+        "mixture": {
+          "file": "row_000004_mixture.wav",
+          "sha256": "dee36755a4951a085d710d4d85af892d20cf20f7618017008b50ba4d04d085bb",
+          "max_quantisation_error": 3.0517340576810548e-05
+        },
+        "clean_matched": {
+          "file": "row_000004_clean_matched.wav",
+          "sha256": "426a3444d7bf097c35992f023100a4fda21f244bd058a53fc808f5b65cc3b2b8",
+          "max_quantisation_error": 3.051584385931061e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 28,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "17.714456747249937",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 25,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-11.070110321044922",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 0,
+          "control_prediction": 0,
+          "correct": 1,
+          "target_score": "0.27506307685741965",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 5,
+      "condition": "demand",
+      "ratio_type": "SNR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "demand:STRAFFIC",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 911292,
+      "row_seed": 2270580210,
+      "interferer_gain": 15.68072148815054,
+      "common_gain": 0.8811627933244038,
+      "target_power": 0.02059240483842569,
+      "interferer_power": 0.02059240483842568,
+      "achieved_db": 1.928654933106574e-15,
+      "interferer_power_on_target_mask": 0.017256172353382872,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.1235154360807507,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "25237fcd2c1632348de43b9375c0c264607144cf34ae7858a6814e24d77a2bdb",
+      "audio": {
+        "mixture": {
+          "file": "row_000005_mixture.wav",
+          "sha256": "f19e7ef6558273c546a7ac0113546a8429677f31e81a391e9001d5200228104c",
+          "max_quantisation_error": 3.051722699232151e-05
+        },
+        "clean_matched": {
+          "file": "row_000005_clean_matched.wav",
+          "sha256": "9d089f67c3aa241d40a18df0c921e3b29b96b8eb7f45604ee255f8f7ff93a0b6",
+          "max_quantisation_error": 3.0511578503811254e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 47,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "16.704052960741183",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-11.910625457763672",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 44,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.20270270652227912",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 6,
+      "condition": "semantic_same",
+      "ratio_type": "SIR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "1-18755-B-4.wav",
+      "interferer_class": 4,
+      "interferer_category": "frog",
+      "interferer_coarse": "animals",
+      "offset_samples": 0,
+      "row_seed": 29418616,
+      "interferer_gain": 0.5851473690169436,
+      "common_gain": 0.9609639235012061,
+      "target_power": 0.02449113617746338,
+      "interferer_power": 0.002449113617746338,
+      "achieved_db": 10.0,
+      "interferer_power_on_target_mask": 0.0010791838167305355,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0302155739551626,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "3fadff6b71d7a5d8f96cd098218f55265fb07b9a618943e4a34d5e8b1ca7c6d9",
+      "audio": {
+        "mixture": {
+          "file": "row_000006_mixture.wav",
+          "sha256": "305e2ad0f25bd736456b692fb893bb7ab0aaa2e31ef72c66bee9e907a24acfbc",
+          "max_quantisation_error": 3.051648201685131e-05
+        },
+        "clean_matched": {
+          "file": "row_000006_clean_matched.wav",
+          "sha256": "e32d1c5b9aabd6a4b4a01a26a1b87d7b4fdb3455ba1bfce64fb4427f9dc9b987",
+          "max_quantisation_error": 3.0508991532993135e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 26,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "38.31609384922286",
+          "interferer_score": "47.32879914220781",
+          "margin": -9.012705292984947
+        },
+        "cnn": {
+          "prediction": 4,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-15.84673023223877",
+          "interferer_score": "-0.10298514366149902",
+          "margin": -15.74374508857727
+        },
+        "clap": {
+          "prediction": 4,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.2175350689970016",
+          "interferer_score": "0.6337710407444066",
+          "margin": -0.416235971747405
+        }
+      }
+    },
+    {
+      "row": 7,
+      "condition": "semantic_same",
+      "ratio_type": "SIR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "1-18755-B-4.wav",
+      "interferer_class": 4,
+      "interferer_category": "frog",
+      "interferer_coarse": "animals",
+      "offset_samples": 0,
+      "row_seed": 29418616,
+      "interferer_gain": 1.0405555181612782,
+      "common_gain": 0.8382296107995836,
+      "target_power": 0.018634629505456364,
+      "interferer_power": 0.005892787259061919,
+      "achieved_db": 5.000000000000001,
+      "interferer_power_on_target_mask": 0.0025966131580565043,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.1810606392867025,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "3fadff6b71d7a5d8f96cd098218f55265fb07b9a618943e4a34d5e8b1ca7c6d9",
+      "audio": {
+        "mixture": {
+          "file": "row_000007_mixture.wav",
+          "sha256": "c0ead6a7b04f58986bb0dd4e9614cb738eb46af7729657978144b4d4febc716b",
+          "max_quantisation_error": 3.0516915497325048e-05
+        },
+        "clean_matched": {
+          "file": "row_000007_clean_matched.wav",
+          "sha256": "6479e1a67def23417d5e92da958c3bdc9a03f14186b82d53ed1132cd5263032b",
+          "max_quantisation_error": 3.050578412999521e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 26,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "38.31519851925757",
+          "interferer_score": "47.32877613011794",
+          "margin": -9.013577610860366
+        },
+        "cnn": {
+          "prediction": 4,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-17.122512817382812",
+          "interferer_score": "-0.2571014165878296",
+          "margin": -16.865411400794983
+        },
+        "clap": {
+          "prediction": 4,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.16648646288709762",
+          "interferer_score": "0.631756270069805",
+          "margin": -0.46526980718270733
+        }
+      }
+    },
+    {
+      "row": 8,
+      "condition": "semantic_same",
+      "ratio_type": "SIR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "1-18755-B-4.wav",
+      "interferer_class": 4,
+      "interferer_category": "frog",
+      "interferer_coarse": "animals",
+      "offset_samples": 0,
+      "row_seed": 29418616,
+      "interferer_gain": 1.8503984529485837,
+      "common_gain": 0.5554984843852085,
+      "target_power": 0.008183903926867377,
+      "interferer_power": 0.00818390392686738,
+      "achieved_db": -1.9286549331065747e-15,
+      "interferer_power_on_target_mask": 0.003606176786391747,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.7821830802934968,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "3fadff6b71d7a5d8f96cd098218f55265fb07b9a618943e4a34d5e8b1ca7c6d9",
+      "audio": {
+        "mixture": {
+          "file": "row_000008_mixture.wav",
+          "sha256": "7dca7f6d3176f437a20e48f4fccb0bc502aaf6c33353cfd84151f6c5ff348697",
+          "max_quantisation_error": 3.051705102308233e-05
+        },
+        "clean_matched": {
+          "file": "row_000008_clean_matched.wav",
+          "sha256": "d8b8b8bb13e75dd677c7c4c6f04e646979e61e8f5508a68d63c3f4566f22facc",
+          "max_quantisation_error": 3.0516033520021357e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 26,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "38.314488112456246",
+          "interferer_score": "47.328753330874385",
+          "margin": -9.014265218418139
+        },
+        "cnn": {
+          "prediction": 4,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-17.739971160888672",
+          "interferer_score": "-0.2713586091995239",
+          "margin": -17.468612551689148
+        },
+        "clap": {
+          "prediction": 4,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.1517201146817362",
+          "interferer_score": "0.6289789212363194",
+          "margin": -0.4772588065545832
+        }
+      }
+    },
+    {
+      "row": 9,
+      "condition": "semantic_different",
+      "ratio_type": "SIR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "1-72195-B-37.wav",
+      "interferer_class": 37,
+      "interferer_category": "clock_alarm",
+      "interferer_coarse": "interior_domestic",
+      "offset_samples": 0,
+      "row_seed": 2235656754,
+      "interferer_gain": 0.11356854202465463,
+      "common_gain": 1.0,
+      "target_power": 0.026521297408505364,
+      "interferer_power": 0.0026521297408505363,
+      "achieved_db": 10.0,
+      "interferer_power_on_target_mask": 0.0031014463192064134,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 0.5596009070294785,
+      "activity_overlap": 0.9642857142857143,
+      "peak_before_common_gain": 0.9753800823680149,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "e7aab3836068e1776bc2a16086b49e57046d728812b4ed9989053ebc705a4f7e",
+      "audio": {
+        "mixture": {
+          "file": "row_000009_mixture.wav",
+          "sha256": "abd2411d61ef99450f53dec74552706b77cbb42ba1bc412b4f70d048862f2a2c",
+          "max_quantisation_error": 3.05170872331971e-05
+        },
+        "clean_matched": {
+          "file": "row_000009_clean_matched.wav",
+          "sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+          "max_quantisation_error": 0.0
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 37,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "36.319174415802195",
+          "interferer_score": "49.32853782235761",
+          "margin": -13.009363406555416
+        },
+        "cnn": {
+          "prediction": 37,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-18.187606811523438",
+          "interferer_score": "11.472506523132324",
+          "margin": -29.66011333465576
+        },
+        "clap": {
+          "prediction": 37,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.3429887928089646",
+          "interferer_score": "0.5403228740197957",
+          "margin": -0.19733408121083112
+        }
+      }
+    },
+    {
+      "row": 10,
+      "condition": "semantic_different",
+      "ratio_type": "SIR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "1-72195-B-37.wav",
+      "interferer_class": 37,
+      "interferer_category": "clock_alarm",
+      "interferer_coarse": "interior_domestic",
+      "offset_samples": 0,
+      "row_seed": 2235656754,
+      "interferer_gain": 0.20195659991058346,
+      "common_gain": 1.0,
+      "target_power": 0.026521297408505364,
+      "interferer_power": 0.008386770631359805,
+      "achieved_db": 4.999999999999999,
+      "interferer_power_on_target_mask": 0.00980763440943789,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 0.5596009070294785,
+      "activity_overlap": 0.9642857142857143,
+      "peak_before_common_gain": 0.9610515106816678,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "e7aab3836068e1776bc2a16086b49e57046d728812b4ed9989053ebc705a4f7e",
+      "audio": {
+        "mixture": {
+          "file": "row_000010_mixture.wav",
+          "sha256": "bbdd3b4028ffebf6e9d873ba4ac19723b9b02d3e47f7613fbb0e5343c6ba1601",
+          "max_quantisation_error": 3.051686137386933e-05
+        },
+        "clean_matched": {
+          "file": "row_000010_clean_matched.wav",
+          "sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+          "max_quantisation_error": 0.0
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 37,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "37.3185905430682",
+          "interferer_score": "49.32860187917403",
+          "margin": -12.010011336105833
+        },
+        "cnn": {
+          "prediction": 37,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-18.9591064453125",
+          "interferer_score": "12.38279914855957",
+          "margin": -31.34190559387207
+        },
+        "clap": {
+          "prediction": 37,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.33151107369553806",
+          "interferer_score": "0.5749764481505093",
+          "margin": -0.24346537445497124
+        }
+      }
+    },
+    {
+      "row": 11,
+      "condition": "semantic_different",
+      "ratio_type": "SIR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-100032-A-0.wav",
+      "target_class": 0,
+      "target_category": "dog",
+      "target_coarse": "animals",
+      "interferer": "1-72195-B-37.wav",
+      "interferer_class": 37,
+      "interferer_category": "clock_alarm",
+      "interferer_coarse": "interior_domestic",
+      "offset_samples": 0,
+      "row_seed": 2235656754,
+      "interferer_gain": 0.3591352633424591,
+      "common_gain": 0.9476698380999837,
+      "target_power": 0.023818196970812822,
+      "interferer_power": 0.02381819697081282,
+      "achieved_db": 9.64327466553287e-16,
+      "interferer_power_on_target_mask": 0.02785341085974566,
+      "target_active_fraction": 0.06501587301587301,
+      "interferer_active_fraction": 0.5596009070294785,
+      "activity_overlap": 0.9642857142857143,
+      "peak_before_common_gain": 1.0446676260003014,
+      "target_sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "interferer_sha256": "e7aab3836068e1776bc2a16086b49e57046d728812b4ed9989053ebc705a4f7e",
+      "audio": {
+        "mixture": {
+          "file": "row_000011_mixture.wav",
+          "sha256": "d60f510fa66d322111ea9c5129557dba0bd46721728708262287bd0d9e3f04fb",
+          "max_quantisation_error": 3.051723045092991e-05
+        },
+        "clean_matched": {
+          "file": "row_000011_clean_matched.wav",
+          "sha256": "7573ec2b5d5b2fdb2a33e7ecd04a997b5bc53c0d57d6777df9f34d2f797b5f63",
+          "max_quantisation_error": 3.051574284920755e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 37,
+          "control_prediction": 39,
+          "correct": 0,
+          "target_score": "38.318406843403714",
+          "interferer_score": "49.32869461109642",
+          "margin": -11.010287767692702
+        },
+        "cnn": {
+          "prediction": 37,
+          "control_prediction": 21,
+          "correct": 0,
+          "target_score": "-19.695310592651367",
+          "interferer_score": "13.134834289550781",
+          "margin": -32.83014488220215
+        },
+        "clap": {
+          "prediction": 37,
+          "control_prediction": 0,
+          "correct": 0,
+          "target_score": "0.29480808036347517",
+          "interferer_score": "0.5863720958359836",
+          "margin": -0.29156401547250843
+        }
+      }
+    },
+    {
+      "row": 84,
+      "condition": "white",
+      "ratio_type": "SNR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "white",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 0,
+      "row_seed": 1679695595,
+      "interferer_gain": 0.03996725777840207,
+      "common_gain": 0.9263723597337686,
+      "target_power": 0.013756947814250905,
+      "interferer_power": 0.0013756947814250902,
+      "achieved_db": 10.0,
+      "interferer_power_on_target_mask": 0.0013690842384472505,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0686847352446023,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "",
+      "audio": {
+        "mixture": {
+          "file": "row_000084_mixture.wav",
+          "sha256": "bdf5bc94fd927336e832705d63cddd4f1004259dd2195a30ceba11cdc5a9b781",
+          "max_quantisation_error": 3.051729199232689e-05
+        },
+        "clean_matched": {
+          "file": "row_000084_clean_matched.wav",
+          "sha256": "e581f3359c879069c47ba1935d46acc391b76a3f7c2a1b7385cfe846b22c5cc5",
+          "max_quantisation_error": 3.0512917446132853e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 13,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "39.318740030981786",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-3.2404708862304688",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 34,
+          "control_prediction": 34,
+          "correct": 1,
+          "target_score": "0.5072648985564607",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 85,
+      "condition": "white",
+      "ratio_type": "SNR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "white",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 0,
+      "row_seed": 1679695595,
+      "interferer_gain": 0.07107295158305038,
+      "common_gain": 0.8706146507300029,
+      "target_power": 0.01215074356077857,
+      "interferer_power": 0.003842402491668486,
+      "achieved_db": 4.999999999999999,
+      "interferer_power_on_target_mask": 0.0038239388272333992,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.137127659372483,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "",
+      "audio": {
+        "mixture": {
+          "file": "row_000085_mixture.wav",
+          "sha256": "81ab1dc399bea8836480833417e13747bade64f0f3f02a0149d008ab82d9ddeb",
+          "max_quantisation_error": 3.0517103563817982e-05
+        },
+        "clean_matched": {
+          "file": "row_000085_clean_matched.wav",
+          "sha256": "8851c3417ecfbbb44397d40836dd87a5a0bf7023c4c2c236cfd7cbf17d9a9fbd",
+          "max_quantisation_error": 3.0509010837362002e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "37.31350927359698",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-3.246063709259033",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 34,
+          "control_prediction": 34,
+          "correct": 1,
+          "target_score": "0.4494645648298245",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 86,
+      "condition": "white",
+      "ratio_type": "SNR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "white",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 0,
+      "row_seed": 1679695595,
+      "interferer_gain": 0.12638756641083176,
+      "common_gain": 0.7864393690111587,
+      "target_power": 0.00991474171351014,
+      "interferer_power": 0.009914741713510141,
+      "achieved_db": -9.643274665532871e-16,
+      "interferer_power_on_target_mask": 0.009867099004461378,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.2588383021119496,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "",
+      "audio": {
+        "mixture": {
+          "file": "row_000086_mixture.wav",
+          "sha256": "573d3420ecab0c30c3cfedf54349298d5c2464a85b97648f8c6337d7d64f616c",
+          "max_quantisation_error": 3.0517192349352462e-05
+        },
+        "clean_matched": {
+          "file": "row_000086_clean_matched.wav",
+          "sha256": "01d09f75fc6e7252a77835595ed8151a870e0f1faed3064fe6eca118c33bb117",
+          "max_quantisation_error": 3.051251603747307e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 13,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "35.30393487313045",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-3.0402374267578125",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 34,
+          "control_prediction": 34,
+          "correct": 1,
+          "target_score": "0.392354752971363",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 87,
+      "condition": "demand",
+      "ratio_type": "SNR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "demand:PSTATION",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 9812952,
+      "row_seed": 1402313702,
+      "interferer_gain": 3.0143912144214586,
+      "common_gain": 0.896935573481045,
+      "target_power": 0.012896545977564964,
+      "interferer_power": 0.0012896545977564965,
+      "achieved_db": 9.999999999999998,
+      "interferer_power_on_target_mask": 0.0011915962525881417,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.1037582065763853,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "9679785b993f0aa31d5ca1ac5c9f494246db19f80ab74f5193e9ae514537fda2",
+      "audio": {
+        "mixture": {
+          "file": "row_000087_mixture.wav",
+          "sha256": "fc35e3d3ad3cb30b1bfae3318687c18a71452e0498defcae6bd15e467e06f669",
+          "max_quantisation_error": 3.0517068240254464e-05
+        },
+        "clean_matched": {
+          "file": "row_000087_clean_matched.wav",
+          "sha256": "4586dab9ea042faac8cce171760a03dc32237e327353ced590eb8202a310cc6b",
+          "max_quantisation_error": 3.0513637686009273e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 25,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "36.31622010965114",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 25,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-4.937726974487305",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 34,
+          "control_prediction": 34,
+          "correct": 1,
+          "target_score": "0.5496848296550516",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 88,
+      "condition": "demand",
+      "ratio_type": "SNR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "demand:PSTATION",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 9812952,
+      "row_seed": 1402313702,
+      "interferer_gain": 5.360429830407903,
+      "common_gain": 0.8357878746166213,
+      "target_power": 0.011198066579094248,
+      "interferer_power": 0.0035411395780147884,
+      "achieved_db": 5.0,
+      "interferer_power_on_target_mask": 0.0032718905188989927,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.1845110823773513,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "9679785b993f0aa31d5ca1ac5c9f494246db19f80ab74f5193e9ae514537fda2",
+      "audio": {
+        "mixture": {
+          "file": "row_000088_mixture.wav",
+          "sha256": "e723c8871bae723048903864527499e425a27f241e4184e64a56adc3864b5d2a",
+          "max_quantisation_error": 3.05173014292226e-05
+        },
+        "clean_matched": {
+          "file": "row_000088_clean_matched.wav",
+          "sha256": "1a6f157fb51906bff55468efb9dbcc0cdfc21ef4032328177d59d5e3798fde91",
+          "max_quantisation_error": 3.051555570592751e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 48,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "33.306870359555745",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 25,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-6.506488800048828",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 34,
+          "control_prediction": 34,
+          "correct": 1,
+          "target_score": "0.498896132152977",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 89,
+      "condition": "demand",
+      "ratio_type": "SNR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "demand:PSTATION",
+      "interferer_class": null,
+      "interferer_category": "",
+      "interferer_coarse": "",
+      "offset_samples": 9812952,
+      "row_seed": 1402313702,
+      "interferer_gain": 9.532341996372809,
+      "common_gain": 0.7454189158357643,
+      "target_power": 0.008907415915526322,
+      "interferer_power": 0.008907415915526323,
+      "achieved_db": -9.643274665532871e-16,
+      "interferer_power_on_target_mask": 0.008230144291075684,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.3281122587156395,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "9679785b993f0aa31d5ca1ac5c9f494246db19f80ab74f5193e9ae514537fda2",
+      "audio": {
+        "mixture": {
+          "file": "row_000089_mixture.wav",
+          "sha256": "e0616b4b56d261e95739fa440844464572d5c446c3572b535c4dc765aa0c0445",
+          "max_quantisation_error": 3.051716090937337e-05
+        },
+        "clean_matched": {
+          "file": "row_000089_clean_matched.wav",
+          "sha256": "dcaac99b75aff46b2470679e6349e41bcc989a6a6ea1b2365b05f6c468d74b35",
+          "max_quantisation_error": 3.051647631915899e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 48,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "24.27656773318461",
+          "interferer_score": "",
+          "margin": null
+        },
+        "cnn": {
+          "prediction": 10,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-7.859418869018555",
+          "interferer_score": "",
+          "margin": null
+        },
+        "clap": {
+          "prediction": 34,
+          "control_prediction": 34,
+          "correct": 1,
+          "target_score": "0.45404524942350327",
+          "interferer_score": "",
+          "margin": null
+        }
+      }
+    },
+    {
+      "row": 90,
+      "condition": "semantic_same",
+      "ratio_type": "SIR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "1-13613-A-37.wav",
+      "interferer_class": 37,
+      "interferer_category": "clock_alarm",
+      "interferer_coarse": "interior_domestic",
+      "offset_samples": 0,
+      "row_seed": 603543383,
+      "interferer_gain": 0.3113937024163183,
+      "common_gain": 0.9030426684819849,
+      "target_power": 0.013072765022895868,
+      "interferer_power": 0.0013072765022895862,
+      "achieved_db": 10.000000000000002,
+      "interferer_power_on_target_mask": 0.000993254621998465,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0962937129694994,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "2e28b25e14611723cdcc0becfa36468a8d0329a0c141e4f1d894bd6bb5773f34",
+      "audio": {
+        "mixture": {
+          "file": "row_000090_mixture.wav",
+          "sha256": "0a505af4bc059359aa146cecba02ec8f808a011b5a53b57d9d1c4af679ec5b00",
+          "max_quantisation_error": 3.051732512261013e-05
+        },
+        "clean_matched": {
+          "file": "row_000090_clean_matched.wav",
+          "sha256": "c6762a6422d95c1d3df957b9c3ec518422808250020764fa2193018c8e519c05",
+          "max_quantisation_error": 3.0512206705413103e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 14,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "43.31860093082175",
+          "interferer_score": "28.268190326525648",
+          "margin": 15.050410604296104
+        },
+        "cnn": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-16.981040954589844",
+          "interferer_score": "6.197697639465332",
+          "margin": -23.178738594055176
+        },
+        "clap": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "0.26696165877353706",
+          "interferer_score": "0.4095225180927528",
+          "margin": -0.14256085931921575
+        }
+      }
+    },
+    {
+      "row": 91,
+      "condition": "semantic_same",
+      "ratio_type": "SIR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "1-13613-A-37.wav",
+      "interferer_class": 37,
+      "interferer_category": "clock_alarm",
+      "interferer_coarse": "interior_domestic",
+      "offset_samples": 0,
+      "row_seed": 603543383,
+      "interferer_gain": 0.5537450094227264,
+      "common_gain": 0.8035004340870621,
+      "target_power": 0.010349589970983427,
+      "interferer_power": 0.003272827715714359,
+      "achieved_db": 5.0,
+      "interferer_power_on_target_mask": 0.002486659287415129,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.2321088552053352,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "2e28b25e14611723cdcc0becfa36468a8d0329a0c141e4f1d894bd6bb5773f34",
+      "audio": {
+        "mixture": {
+          "file": "row_000091_mixture.wav",
+          "sha256": "a352507ac3e75372e3274da701ddc66d23ae77f1993457cc1533e28a871b037b",
+          "max_quantisation_error": 3.0516942504853206e-05
+        },
+        "clean_matched": {
+          "file": "row_000091_clean_matched.wav",
+          "sha256": "aec5da90ad5062b25d1f896f80bb46c03c6cc27cb92cf8784de0fee58caea48f",
+          "max_quantisation_error": 3.0516185075775415e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 14,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "39.31523731771987",
+          "interferer_score": "32.288161623130016",
+          "margin": 7.027075694589854
+        },
+        "cnn": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-18.700000762939453",
+          "interferer_score": "6.801002502441406",
+          "margin": -25.50100326538086
+        },
+        "clap": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "0.18452568853069928",
+          "interferer_score": "0.4597806255571957",
+          "margin": -0.2752549370264964
+        }
+      }
+    },
+    {
+      "row": 92,
+      "condition": "semantic_same",
+      "ratio_type": "SIR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "1-13613-A-37.wav",
+      "interferer_class": 37,
+      "interferer_category": "clock_alarm",
+      "interferer_coarse": "interior_domestic",
+      "offset_samples": 0,
+      "row_seed": 603543383,
+      "interferer_gain": 0.9847133486682437,
+      "common_gain": 0.656675928132506,
+      "target_power": 0.00691278589544992,
+      "interferer_power": 0.00691278589544992,
+      "achieved_db": 0.0,
+      "interferer_power_on_target_mask": 0.005252260351590444,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.5075929504762278,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "2e28b25e14611723cdcc0becfa36468a8d0329a0c141e4f1d894bd6bb5773f34",
+      "audio": {
+        "mixture": {
+          "file": "row_000092_mixture.wav",
+          "sha256": "a90f8f6d4aff72e5ca0c457003156ca7010d43c60b3457e2f78ff0dd1dde2410",
+          "max_quantisation_error": 3.0517334872109947e-05
+        },
+        "clean_matched": {
+          "file": "row_000092_clean_matched.wav",
+          "sha256": "edcdf500ca16643cc796a62c90fe53329cccdfdfa6e9f378d5518188e435694a",
+          "max_quantisation_error": 3.051557542023669e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 14,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "33.31029026972431",
+          "interferer_score": "34.29441069306397",
+          "margin": -0.984120423339661
+        },
+        "cnn": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-19.91800308227539",
+          "interferer_score": "7.051476001739502",
+          "margin": -26.969479084014893
+        },
+        "clap": {
+          "prediction": 37,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "0.12223984367913561",
+          "interferer_score": "0.4924556316519766",
+          "margin": -0.370215787972841
+        }
+      }
+    },
+    {
+      "row": 93,
+      "condition": "semantic_different",
+      "ratio_type": "SIR",
+      "level_db": 10.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "1-34094-A-5.wav",
+      "interferer_class": 5,
+      "interferer_category": "cat",
+      "interferer_coarse": "animals",
+      "offset_samples": 0,
+      "row_seed": 36128583,
+      "interferer_gain": 0.40867722010649943,
+      "common_gain": 0.9273532294690081,
+      "target_power": 0.013786095742546812,
+      "interferer_power": 0.0013786095742546814,
+      "achieved_db": 9.999999999999998,
+      "interferer_power_on_target_mask": 0.000588610542761729,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.0675543779222754,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "ceddf296bcdda3996d35d3f4c292c338050bcb4c5a05a96ca22a69d33e33e4de",
+      "audio": {
+        "mixture": {
+          "file": "row_000093_mixture.wav",
+          "sha256": "182c0f5efb14509f84a86592abeee348d4ec7071d5e870ea5e1243c881b9e895",
+          "max_quantisation_error": 3.0517236668431034e-05
+        },
+        "clean_matched": {
+          "file": "row_000093_clean_matched.wav",
+          "sha256": "57e030784d6803108aae0c4e43096c9a52e5ba39f0f7ec82e4cba443fcff0ad1",
+          "max_quantisation_error": 3.0512626665042675e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 43,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "28.24830546728382",
+          "interferer_score": "48.32377598118472",
+          "margin": -20.075470513900896
+        },
+        "cnn": {
+          "prediction": 5,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-14.47259521484375",
+          "interferer_score": "3.0349767208099365",
+          "margin": -17.507571935653687
+        },
+        "clap": {
+          "prediction": 5,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "0.0916418366356515",
+          "interferer_score": "0.4298964023173931",
+          "margin": -0.3382545656817416
+        }
+      }
+    },
+    {
+      "row": 94,
+      "condition": "semantic_different",
+      "ratio_type": "SIR",
+      "level_db": 5.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "1-34094-A-5.wav",
+      "interferer_class": 5,
+      "interferer_category": "cat",
+      "interferer_coarse": "animals",
+      "offset_samples": 0,
+      "row_seed": 36128583,
+      "interferer_gain": 0.7267422858673328,
+      "common_gain": 0.8838068029578318,
+      "target_power": 0.012521766273446236,
+      "interferer_power": 0.003959730175236888,
+      "achieved_db": 5.000000000000001,
+      "interferer_power_on_target_mask": 0.001690644669210462,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.1201543105198692,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "ceddf296bcdda3996d35d3f4c292c338050bcb4c5a05a96ca22a69d33e33e4de",
+      "audio": {
+        "mixture": {
+          "file": "row_000094_mixture.wav",
+          "sha256": "cc89b6fa3bedeff8e0d53def33e3de6bc0527a88ba70f947efbbf02f6af2c733",
+          "max_quantisation_error": 3.051723488046857e-05
+        },
+        "clean_matched": {
+          "file": "row_000094_clean_matched.wav",
+          "sha256": "8fd0eb3d960f857d001ebeab92fa535c40a4a081ccc8a5bdb8d76eb2104c5713",
+          "max_quantisation_error": 3.051016788691019e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 43,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "21.749082341575196",
+          "interferer_score": "48.32420126017565",
+          "margin": -26.575118918600452
+        },
+        "cnn": {
+          "prediction": 5,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-16.910789489746094",
+          "interferer_score": "3.2323079109191895",
+          "margin": -20.143097400665283
+        },
+        "clap": {
+          "prediction": 5,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "0.06413658875702545",
+          "interferer_score": "0.4227096034953273",
+          "margin": -0.3585730147383019
+        }
+      }
+    },
+    {
+      "row": 95,
+      "condition": "semantic_different",
+      "ratio_type": "SIR",
+      "level_db": 0.0,
+      "fold": 1,
+      "target_file": "1-101404-A-34.wav",
+      "target_class": 34,
+      "target_category": "can_opening",
+      "target_coarse": "interior_domestic",
+      "interferer": "1-34094-A-5.wav",
+      "interferer_class": 5,
+      "interferer_category": "cat",
+      "interferer_coarse": "animals",
+      "offset_samples": 0,
+      "row_seed": 36128583,
+      "interferer_gain": 1.2923508433624988,
+      "common_gain": 0.8156931534524603,
+      "target_power": 0.010666072883052975,
+      "interferer_power": 0.010666072883052975,
+      "achieved_db": 0.0,
+      "interferer_power_on_target_mask": 0.004553981827831234,
+      "target_active_fraction": 0.16486167800453513,
+      "interferer_active_fraction": 1.0,
+      "activity_overlap": 1.0,
+      "peak_before_common_gain": 1.2136916876276056,
+      "target_sha256": "a5e9ca3a735d31404f93194af687d2eca85e4a940ccda0675755b410342e8474",
+      "interferer_sha256": "ceddf296bcdda3996d35d3f4c292c338050bcb4c5a05a96ca22a69d33e33e4de",
+      "audio": {
+        "mixture": {
+          "file": "row_000095_mixture.wav",
+          "sha256": "4e08e0a37438050c03bcf01e0642f62f313f0295af85e040640247d64989fd0c",
+          "max_quantisation_error": 3.0517179041266926e-05
+        },
+        "clean_matched": {
+          "file": "row_000095_clean_matched.wav",
+          "sha256": "211b237bce439d10ea80f5dea8b12013e64c3c39c7a47adab09e25c4bb56d9a5",
+          "max_quantisation_error": 3.0512942259162956e-05
+        }
+      },
+      "predictions": {
+        "svm": {
+          "prediction": 43,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "18.698820620812125",
+          "interferer_score": "48.32468085318404",
+          "margin": -29.625860232371917
+        },
+        "cnn": {
+          "prediction": 5,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "-19.096649169921875",
+          "interferer_score": "3.1426990032196045",
+          "margin": -22.23934817314148
+        },
+        "clap": {
+          "prediction": 5,
+          "control_prediction": 34,
+          "correct": 0,
+          "target_score": "0.03964335254653671",
+          "interferer_score": "0.430494081070134",
+          "margin": -0.39085072852359726
+        }
+      }
+    }
+  ]
+}

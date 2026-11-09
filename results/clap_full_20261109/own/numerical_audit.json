@@ -1,0 +1,85 @@
+{
+  "region": "own",
+  "rows_per_system": 24000,
+  "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+  "systems": {
+    "svm": {
+      "rows": 24000,
+      "conditions": {
+        "white@+10dB": 2000,
+        "white@+5dB": 2000,
+        "white@+0dB": 2000,
+        "demand@+10dB": 2000,
+        "demand@+5dB": 2000,
+        "demand@+0dB": 2000,
+        "semantic_same@+10dB": 2000,
+        "semantic_same@+5dB": 2000,
+        "semantic_same@+0dB": 2000,
+        "semantic_different@+10dB": 2000,
+        "semantic_different@+5dB": 2000,
+        "semantic_different@+0dB": 2000
+      },
+      "csv_sha256": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+      "scores_sha256": "f836551604f034edee2618bca6b78af1f2e9a8ba902f148172036513b9c61fbd",
+      "condition_metrics_verified": 12
+    },
+    "cnn": {
+      "rows": 24000,
+      "conditions": {
+        "white@+10dB": 2000,
+        "white@+5dB": 2000,
+        "white@+0dB": 2000,
+        "demand@+10dB": 2000,
+        "demand@+5dB": 2000,
+        "demand@+0dB": 2000,
+        "semantic_same@+10dB": 2000,
+        "semantic_same@+5dB": 2000,
+        "semantic_same@+0dB": 2000,
+        "semantic_different@+10dB": 2000,
+        "semantic_different@+5dB": 2000,
+        "semantic_different@+0dB": 2000
+      },
+      "csv_sha256": "2530061f2bb5c0016a1ff986d70571aed36d9d46becb7c0743ab5e51a684121e",
+      "scores_sha256": "d456439311a11b9be4ae38cbdb99cbd46b974c5b6c7bb344868a8140688db651",
+      "condition_metrics_verified": 12
+    },
+    "clap": {
+      "rows": 24000,
+      "conditions": {
+        "white@+10dB": 2000,
+        "white@+5dB": 2000,
+        "white@+0dB": 2000,
+        "demand@+10dB": 2000,
+        "demand@+5dB": 2000,
+        "demand@+0dB": 2000,
+        "semantic_same@+10dB": 2000,
+        "semantic_same@+5dB": 2000,
+        "semantic_same@+0dB": 2000,
+        "semantic_different@+10dB": 2000,
+        "semantic_different@+5dB": 2000,
+        "semantic_different@+0dB": 2000
+      },
+      "csv_sha256": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+      "scores_sha256": "90c904f46947279301b6cbb7a6441e396bf298427e7ef0b41e91abe9c8025b01",
+      "unit_norm_max_deviation": {
+        "representation": 2.220446049250313e-16,
+        "control_representation": 2.220446049250313e-16,
+        "text_embeddings": 2.220446049250313e-16
+      },
+      "cosine_recalculation_max_error": {
+        "scores": 1.6653345369377348e-15,
+        "control_scores": 1.4432899320127035e-15
+      },
+      "checkpoint_sha256": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037",
+      "condition_metrics_verified": 12
+    }
+  },
+  "checks": [
+    "Manifest hash and every trial field; unique ordered IDs",
+    "Finite score/representation arrays and class argmax",
+    "Target, distractor, margin and gain-matched-control scores",
+    "CLAP cosine reconstruction, unit vectors, prompts and checkpoint provenance",
+    "Independent confusion-matrix F1, accuracy, five-fold means and sample SD",
+    "Matched clean/control losses, capture rates, margins and control transitions"
+  ]
+}

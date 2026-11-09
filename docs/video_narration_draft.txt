@@ -1,0 +1,182 @@
+ELEC5305 VIDEO RECORDING MATERIAL — DRAFT
+Qihan Zhu | When Background Noise Has Meaning
+
+Purpose: a recording script and shot list for author review. This is not a
+completed or submitted video. Suggested duration is about 7–9 minutes; confirm
+the course's current duration and submission instructions before recording.
+The extension-results passage must be updated from verified outputs before a
+final recording. Do not present a running experiment as a measured result.
+
+00:00–00:45 | Listen to a competing event
+Visual: project page, can opening, same-category event, +5 dB. Keep the player
+volume identical. Play the five-second gain-matched control, then the mixture.
+
+Narration:
+This project asks what happens when background interference is itself a
+recognisable sound. The first recording is a can opening. The second contains
+the same target and a clock alarm, with the target five decibels stronger under
+the declared activity-power convention. In this selected example, the CNN and
+CLAP identify the clean control correctly, then both predict the clock alarm
+in the mixture. The SVM instead predicts chirping birds. This illustrates two
+different kinds of failure: a competing event can capture the decision, or the
+prediction can move to another class entirely. The experiment measures how
+often each happens across the full dataset, rather than drawing a conclusion
+from this single example.
+
+00:45–01:35 | Research question and three representations
+Visual: three system descriptions on the project page; keep the full research
+question and the external-pretraining caveat visible.
+
+Narration:
+The central question is how different audio representations respond to ordinary
+acoustic noise and a competing meaningful event at controlled relative levels.
+The first system is a classical SVM using 92 temporal, spectral and MFCC features.
+The second is a compact CNN trained on log-Mel spectrograms. The third is frozen
+LAION-CLAP, which compares an audio embedding with text descriptions of the fifty
+classes. CLAP is not trained or fine-tuned here. It uses one fixed prompt template
+in the core experiment. These systems have very different training histories,
+so this is a study of failure patterns and deployment behaviour, rather than an
+equal-data contest to determine the best model.
+
+01:35–02:25 | DSP and experimental controls
+Visual: report methods and mixture-manifest example, followed by the official
+five-fold evaluation description. Use a readable crop, not a whole dense page.
+
+Narration:
+I use all two thousand ESC-50 clips and the five official test folds. For each
+outer fold, three folds select the supervised model with a separate validation
+fold; a fresh model is then fitted using all four non-test folds. Normalisation
+is learned from the relevant training data. Semantic distractors come from the
+held-out test fold, with different labels and source recordings. Pairings remain
+fixed across models and interference levels. The acoustic controls are white
+Gaussian noise and three DEMAND environments. Every target is evaluated at plus
+ten, plus five and zero decibels. The same noise realisation is retained across
+levels. Scaling is verified numerically, and common attenuation prevents clipping.
+Every mixture also has a clean target control with exactly the same attenuation.
+
+02:25–03:15 | Why power convention and overlap matter
+Visual: website method explanations, then overlap-stratification figure. Show
+own/target definitions together; do not suggest one replaces the other.
+
+Narration:
+The original proposal measured both components over the target's active region.
+With a sparse distractor, there may be almost no interference energy in that
+region, which can demand an extreme scaling gain. The implemented default
+instead measures each signal over its own active region. That is a documented
+method change, so I ran both definitions as a sensitivity comparison. Three
+pairs have zero interference energy in the target region and cannot satisfy a
+finite requested ratio; their nine conditions are explicitly excluded from
+that protocol. Neither power convention guarantees temporal overlap. A competing
+event that mostly occurs during target silence is a different challenge from
+one that sounds simultaneously. The analysis therefore also compares matched
+high-overlap targets. Zero decibels is treated as an ambiguous-label stress test.
+
+03:15–04:10 | Main robustness results
+Visual: macro-F1 curves, followed by the +5 dB table. Point to one system at a
+time. Values below refer to the own-activity protocol and all retained targets.
+
+Narration:
+The clean five-fold macro-F1 means are about forty-eight percent for the SVM,
+sixty-seven percent for the CNN and seventy-nine percent for CLAP. At plus five
+decibels, white noise reduces SVM macro-F1 to about two percent, while its scores
+under semantic interference remain around twenty-one to twenty-two percent.
+CLAP shows a different pattern: roughly seventy-one percent with DEMAND, but
+about forty-nine and forty-five percent with same-category and different-category
+events. Thus interference power alone does not describe the failure pattern.
+For the CNN, aggregate semantic scores look slightly better than DEMAND, but
+the comparison changes when attention is restricted to strongly overlapping
+pairs. Both the overall results and the stratified results are reported, because
+they answer different questions about the mixture population.
+
+04:10–05:10 | Where the decision moves
+Visual: capture-rate curves, target–distractor margins and CLAP distractor-rank
+plot. Do not show all three figures at a size too small to read.
+
+Narration:
+Accuracy alone cannot show whether the model recognises the interfering event.
+Distractor capture rate is the fraction of incorrect predictions that equal
+the distractor label. At plus five decibels, about sixty to sixty-seven percent
+of CLAP's errors under semantic interference name that distractor. The rate is
+lower for the supervised systems. I also retain the unconditional capture
+fraction, because the conditional rate depends on how many errors a model makes.
+The target-minus-distractor margin shows how their relative scores change as
+the interferer strengthens. These score scales are compared within a model,
+not between architectures. For CLAP, the distractor's median rank among all
+fifty classes rises to approximately third at plus five decibels and second at
+zero decibels. This provides evidence of structured competition rather than
+merely recording a drop in the correct-class score.
+
+05:10–06:00 | Representation diagnostics and uncertainty
+Visual: feature-group heatmap and paired high-overlap accuracy intervals.
+
+Narration:
+White noise strongly changes the SVM's zero-crossing and spectral descriptors.
+The group analysis separates those changes from MFCCs, their deltas and energy.
+For the CNN, smaller embedding displacement does not necessarily imply better
+classification: semantic interference can cause more errors on high-overlap
+targets despite less overall movement than DEMAND. This association does not
+isolate a causal effect of meaning, because the sounds also differ acoustically.
+Paired comparisons retain the same target recordings. On high-overlap targets,
+CLAP loses approximately twenty-six to twenty-nine accuracy points more under
+semantic interference than under DEMAND. The core CNN difference is about three
+points, but is tentative after multiple-comparison correction. The intervals
+condition on fitted models; repeated predictions of one clip are not independent
+samples. Training-seed variability is investigated separately.
+
+06:00–06:45 | Extension comparison — REPLACE AFTER AUDIT
+Visual: the final augmentation-transfer and CNN-replication figures, only after
+all declared seeds and both protocols have completed and been checked.
+
+Recording note, not narration:
+Use results/extensions_20261109/interventions/clean_variants.csv,
+condition_variants.csv, paired_intervention_effects.csv and
+cnn_overlap_replication.csv. State whether WGN augmentation transfers to DEMAND
+and semantic events, whether semantic augmentation improves the intended
+conditions, and any clean-performance tradeoff. Report all three CNN seeds.
+Describe the fixed CLAP prompt ensemble as an ablation, not a reproduction of
+full PAT. Use the measured result even if no intervention helps. Do not fill
+this passage with expected improvements or the best seed alone.
+
+06:45–07:35 | Computational cost and limitations
+Visual: CPU-cost figure and a short limitations view from the report.
+
+Narration:
+The compact CNN has about thirty-six thousand parameters. The core batch-one
+CPU microbenchmark, including preprocessing, is about three milliseconds per
+clip for the CNN, eleven for the SVM and ninety-eight for CLAP. These are
+single-clip measurements on the same machine, not a claim about all deployment
+hardware. Cached text embeddings exclude repeated prompt preparation from
+CLAP's audio-query timing. Its external pretraining cost is not local inference
+cost. Limitations include one semantic pairing of each type per target, only
+three real background environments, sparse temporal overlap, official source
+reuse across a small number of folds, and possible CLAP pretraining overlap.
+Equal active power does not make spectral or perceptual difficulty equal.
+
+07:35–08:00 | Conclusion and reproducibility
+Visual: project site with report, source, result-table and listening links.
+
+Narration:
+The contribution is a controlled signal-processing experiment that distinguishes
+ordinary acoustic corruption from competition between recognisable events.
+Reproducible mixtures, gain-matched controls, two power conventions and explicit
+failure destinations make the comparison interpretable. The repository includes
+the DSP and evaluation code, verified tables, figure source data and attributed
+audio examples. The report documents method changes and statistical limits so
+that the conclusions can be checked rather than inferred from selected clips.
+
+RECORDING CHECKS
+- Use the final verified figures and update the extension passage before recording.
+- Confirm the course's duration, required format and AI-assistance disclosure.
+- Record the author's own explanation; this file does not imply a recording exists.
+- Keep sample playback levels matched and pause narration during each audio clip.
+- Export legible slides or screen crops; do not shrink a full report page into video.
+- Preserve the sources and audio attribution in the video description or final view.
+
+SOURCES
+Core numerical evidence: results/clap_full_20261109/all_conditions_verified.csv
+Core figure data: results/figures_three_systems_own_20261109/
+Paired diagnostics: results/extensions_20261109/diagnostics/
+Timing: results/clean_svm/cost.json, results/clean_cnn/cost.json,
+        results/clap_integration_20261109/clean/cost.json
+Listening provenance: examples/listening_own_20261109/examples.json
+Research references: docs/research_report.tex bibliography

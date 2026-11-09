@@ -1,0 +1,8 @@
+{
+  "local_root": "/Users/leaf/Projects/elec5305-local",
+  "run_root": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109",
+  "python": "/Users/leaf/Projects/elec5305-local/clap-venv/bin/python",
+  "checkpoint": "/Users/leaf/Projects/elec5305-local/models/clap/630k-audioset-best.pt",
+  "checkpoint_sha256": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037",
+  "manifest_csvs_unchanged": true
+}

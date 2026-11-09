@@ -1,0 +1,7 @@
+{
+  "reviewed_at": "2026-11-09T19:40:23.275021+11:00",
+  "all_eight_png_previews": "passed: glyphs, clipping, overlaps, panel alignment, legends and limits",
+  "grayscale_contact_sheet": "passed: marker/line/fill cues retained",
+  "numerical_csv_audit": "passed",
+  "figure_count": 8
+}

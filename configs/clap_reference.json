@@ -1,0 +1,17 @@
+{
+  "checkpoint_filename": "630k-audioset-best.pt",
+  "checkpoint_sha256": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037",
+  "download_url": "https://huggingface.co/lukewys/laion_clap/resolve/b3708341862f581175dba5c356a4ebf74a9b6651/630k-audioset-best.pt?download=true",
+  "audio_model": "HTSAT-tiny",
+  "text_model": "roberta",
+  "enable_fusion": false,
+  "prompt_template": "the sound of {label}",
+  "input_sample_rate": 44100,
+  "model_sample_rate": 48000,
+  "resampling": "scipy.signal.resample_poly, float64",
+  "quantisation": "exactly one official int16 round trip, truncation toward zero",
+  "short_audio_policy": "official repeatpad to 10 seconds",
+  "frozen": true,
+  "training_or_tuning": false,
+  "role": "reference record; the CLI uses the same fixed defaults and verifies the checkpoint hash"
+}

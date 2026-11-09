@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "rows": 120,
+  "all_csv_fields_identical_to_incoming_patch": true,
+  "manifest_sha256": "afc5e7bc9dff59d96d97a017112a9346c5847c25ecbdfcbee3ba6939ef4f2005"
+}

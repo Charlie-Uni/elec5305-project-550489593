@@ -1,0 +1,81 @@
+{
+  "scope": "exploratory selected-subset diagnostic, not a replacement for full ESC-50",
+  "selection": "All four conditions within 1 dB on the common target mask; both semantic pairs overlap at least 80% of the target-active interval.",
+  "levels": {
+    "10": {
+      "targets": 819,
+      "conditions": {
+        "clean": {
+          "macro_f1_mean": 0.6174310561471553,
+          "macro_f1_sample_sd": 0.05516608506427532
+        },
+        "white": {
+          "macro_f1_mean": 0.1423136264226331,
+          "macro_f1_sample_sd": 0.017520370195032324
+        },
+        "demand": {
+          "macro_f1_mean": 0.39412084364058797,
+          "macro_f1_sample_sd": 0.04943200649655256
+        },
+        "semantic_same": {
+          "macro_f1_mean": 0.33629572127219187,
+          "macro_f1_sample_sd": 0.024148077240458688
+        },
+        "semantic_different": {
+          "macro_f1_mean": 0.35339598454521054,
+          "macro_f1_sample_sd": 0.04207368038986
+        }
+      }
+    },
+    "5": {
+      "targets": 826,
+      "conditions": {
+        "clean": {
+          "macro_f1_mean": 0.6134120085281076,
+          "macro_f1_sample_sd": 0.056839577491775005
+        },
+        "white": {
+          "macro_f1_mean": 0.0753228975475545,
+          "macro_f1_sample_sd": 0.02270193360860156
+        },
+        "demand": {
+          "macro_f1_mean": 0.2959949258832537,
+          "macro_f1_sample_sd": 0.036583641419796226
+        },
+        "semantic_same": {
+          "macro_f1_mean": 0.2595454500779578,
+          "macro_f1_sample_sd": 0.026437197687708507
+        },
+        "semantic_different": {
+          "macro_f1_mean": 0.26900020268688996,
+          "macro_f1_sample_sd": 0.04127429428863108
+        }
+      }
+    },
+    "0": {
+      "targets": 820,
+      "conditions": {
+        "clean": {
+          "macro_f1_mean": 0.6141894977055968,
+          "macro_f1_sample_sd": 0.05530967643034568
+        },
+        "white": {
+          "macro_f1_mean": 0.032931156674406846,
+          "macro_f1_sample_sd": 0.007573312225384793
+        },
+        "demand": {
+          "macro_f1_mean": 0.19191583433866127,
+          "macro_f1_sample_sd": 0.03237820208371042
+        },
+        "semantic_same": {
+          "macro_f1_mean": 0.17091680475737955,
+          "macro_f1_sample_sd": 0.014289199187415445
+        },
+        "semantic_different": {
+          "macro_f1_mean": 0.1793700602561817,
+          "macro_f1_sample_sd": 0.03693389343579465
+        }
+      }
+    }
+  }
+}

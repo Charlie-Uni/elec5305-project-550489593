@@ -145,7 +145,18 @@ def predict_arrays(model, X, indices, batch_size, device):
     return logits, embeddings
 
 
-def train_epochs(model, X, y, indices, config, device, epochs, validation=None, progress=None):
+def train_epochs(
+    model,
+    X,
+    y,
+    indices,
+    config,
+    device,
+    epochs,
+    validation=None,
+    progress=None,
+    batch_transform=None,
+):
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay
     )
@@ -160,7 +171,12 @@ def train_epochs(model, X, y, indices, config, device, epochs, validation=None, 
         total_loss = 0.0
         for offset in range(0, len(order), config.batch_size):
             rows = order[offset : offset + config.batch_size]
-            inputs = torch.from_numpy(np.asarray(X[rows], dtype=np.float32)[:, None]).to(device)
+            batch = np.asarray(X[rows], dtype=np.float32)
+            if batch_transform is not None:
+                batch = batch_transform(rows, batch)
+                if batch.shape != X[rows].shape or not np.isfinite(batch).all():
+                    raise ValueError("Augmentation must preserve finite spectrogram shapes")
+            inputs = torch.from_numpy(batch[:, None]).to(device)
             targets = torch.from_numpy(y[rows].astype(np.int64)).to(device)
             optimizer.zero_grad(set_to_none=True)
             loss = loss_function(model(inputs), targets)
@@ -184,7 +200,16 @@ def train_epochs(model, X, y, indices, config, device, epochs, validation=None, 
     return history, best_epoch
 
 
-def fit_outer_fold_cnn(X, y, folds, test_fold, config=CNNConfig(), device="cpu", progress=None):
+def fit_outer_fold_cnn(
+    X,
+    y,
+    folds,
+    test_fold,
+    config=CNNConfig(),
+    device="cpu",
+    progress=None,
+    augmentation=None,
+):
     device = resolve_device(str(device))
     torch.set_num_threads(config.num_threads)
     labels = np.unique(y)
@@ -201,15 +226,34 @@ def fit_outer_fold_cnn(X, y, folds, test_fold, config=CNNConfig(), device="cpu",
     def callback(phase):
         return (lambda row: progress(phase, row)) if progress else None
 
+    selection_transform = augmentation(test_fold, "selection", train) if augmentation else None
     selection_history, best_epoch = train_epochs(
-        model, X, y, train, config, device, config.max_epochs, validation, callback("selection")
+        model,
+        X,
+        y,
+        train,
+        config,
+        device,
+        config.max_epochs,
+        validation,
+        callback("selection"),
+        batch_transform=selection_transform,
     )
     # Discard selection weights and optimizer. Fresh seed, scaler, model and optimizer.
     del model
     final_train = np.concatenate((train, validation))
     model = new_model(X, final_train, len(labels), config, device)
+    refit_transform = augmentation(test_fold, "refit", final_train) if augmentation else None
     refit_history, _ = train_epochs(
-        model, X, y, final_train, config, device, best_epoch, progress=callback("refit")
+        model,
+        X,
+        y,
+        final_train,
+        config,
+        device,
+        best_epoch,
+        progress=callback("refit"),
+        batch_transform=refit_transform,
     )
     logits, embeddings = predict_arrays(model, X, test, config.batch_size, device)
     predictions = logits.argmax(axis=1)
@@ -235,10 +279,22 @@ def fit_outer_fold_cnn(X, y, folds, test_fold, config=CNNConfig(), device="cpu",
         "test_metrics": metrics(y[test], predictions, labels),
         "parameter_count": sum(p.numel() for p in model.parameters()),
     }
+    if augmentation:
+        result["augmentation_banks"] = {
+            "selection": selection_transform.metadata,
+            "refit": refit_transform.metadata,
+        }
     return model.cpu(), result, test, predictions, logits, embeddings
 
 
-def evaluate_cnn(cache_path, output_dir, config=CNNConfig(), device="auto", require_complete=True):
+def evaluate_cnn(
+    cache_path,
+    output_dir,
+    config=CNNConfig(),
+    device="auto",
+    require_complete=True,
+    augmentation=None,
+):
     cache_path, output_dir = Path(cache_path), Path(output_dir)
     if output_dir.exists() and any(output_dir.iterdir()):
         raise FileExistsError(f"Output directory is not empty; choose a new run: {output_dir}")
@@ -251,6 +307,8 @@ def evaluate_cnn(cache_path, output_dir, config=CNNConfig(), device="auto", requ
         name: sha256_file(Path(__file__).with_name(name))
         for name in ("cnn.py", "dsp.py", "spectrograms.py", "data.py", "svm.py")
     }
+    if augmentation is not None:
+        source_hashes["augmentation.py"] = sha256_file(Path(__file__).with_name("augmentation.py"))
     run = {
         "evaluation": "clean_ESC-50_official_five_fold"
         if require_complete
@@ -277,7 +335,7 @@ def evaluate_cnn(cache_path, output_dir, config=CNNConfig(), device="auto", requ
             },
         },
         "selection_rule": "highest validation macro-F1; ties keep earliest epoch; fresh refit",
-        "augmentation": "none",
+        "augmentation": augmentation.settings if augmentation is not None else "none",
     }
     output_dir.mkdir(parents=True, exist_ok=True)
     write_json(output_dir / "run_config.json", run)
@@ -300,7 +358,7 @@ def evaluate_cnn(cache_path, output_dir, config=CNNConfig(), device="auto", requ
                 )
 
             model, result, test, pred, scores, vectors = fit_outer_fold_cnn(
-                X, y, folds, fold, config, str(device), progress
+                X, y, folds, fold, config, str(device), progress, augmentation
             )
             predictions[test], logits[test], embeddings[test] = pred, scores, vectors
             model_path = output_dir / f"cnn_fold_{fold}.pt"

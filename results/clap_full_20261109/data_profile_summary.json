@@ -1,0 +1,20 @@
+{
+  "rows_per_system": {
+    "own": 24000,
+    "target": 23991
+  },
+  "unique_targets": 2000,
+  "test_folds": 5,
+  "target_classes": 50,
+  "conditions": 4,
+  "levels_db": [
+    10,
+    5,
+    0
+  ],
+  "analysis_units": "Repeated conditions on the same targets; five official test folds are retained. Mixture rows are not independent training/test splits.",
+  "intentional_missing_fields": "Distractor label, distractor score, capture flag and margin are undefined for white/DEMAND rows (50% of own rows). They are not imputed or interpreted as missing predictions.",
+  "type_corrections": "File names, row IDs, fold IDs, class IDs and condition names are nominal identifiers; automatic numeric-ID correlations are not interpreted.",
+  "chart_choice": "Use ordered-level curves for performance and capture; within-model boxplots for margins and representation shifts; paired fold points for overlap strata; exploratory capture counts; log-scale CPU latency. No significance claims are inferred from descriptive fold SD.",
+  "alternative_views": "The exported fold/trial CSVs support paired effect plots and distribution plots; a single ranked bar chart would hide protocol, dose and overlap differences."
+}

@@ -1,0 +1,38 @@
+{
+  "clips": [
+    "1-100032-A-0.wav",
+    "1-17367-A-10.wav",
+    "1-187207-A-20.wav",
+    "1-101336-A-30.wav"
+  ],
+  "load_seconds": 20.88668641599361,
+  "official_quantisation_exact": true,
+  "cpu_batch4_seconds": 0.48868574999505654,
+  "cpu_predictions": [
+    0,
+    19,
+    20,
+    30
+  ],
+  "shape": [
+    4,
+    512
+  ],
+  "cpu_scalar4_seconds": 0.7256889170093928,
+  "cpu_batch_scalar_max_score_diff": 1.639453591772977e-07,
+  "official_path_embedding_max_diff": 0.0,
+  "mps_first_batch4_seconds": 3.42069908301346,
+  "cpu_mps_max_score_diff": 3.5573622870349597e-07,
+  "mps_predictions": [
+    0,
+    19,
+    20,
+    30
+  ],
+  "mps_batch4_seconds": 0.5137690000119619,
+  "mps_batch4_max_score_diff": 0.0,
+  "mps_batch8_seconds": 1.4846156249986961,
+  "mps_batch8_max_score_diff": 0.0,
+  "mps_batch16_seconds": 2.6839303329761606,
+  "mps_batch16_max_score_diff": 1.0617182840885753e-07
+}

@@ -1,0 +1,17 @@
+{
+  "base_v4_tree": "3be1769d9e7d191f677427ff5d56fd9870eba23f",
+  "patch": "figures_reviewed_over_v4_local.patch",
+  "source_files": [
+    "README.md",
+    "pyproject.toml",
+    "uv.lock",
+    "src/esc_robustness/analysis.py",
+    "src/esc_robustness/cli.py",
+    "src/esc_robustness/figures.py",
+    "tests/test_figures.py"
+  ],
+  "sha256": "cfe36e531d008725a4906514b7346f231aaec53625b5cdf42f5ed2d06f5f033d",
+  "clean_apply_and_source_comparison": true,
+  "working_tree_branch": "feature/interference",
+  "committed_or_pushed": false
+}

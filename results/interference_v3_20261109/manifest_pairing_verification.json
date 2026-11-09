@@ -1,0 +1,17 @@
+{
+  "own": {
+    "rows": 24000,
+    "dropped_rows": 0,
+    "minimum_common_gain": 0.030139127657604247
+  },
+  "target": {
+    "rows": 23991,
+    "dropped_rows": 9,
+    "minimum_common_gain": 0.00219538526150353
+  },
+  "passed": true,
+  "common_rows": 23991,
+  "matching_pairs_noise_seeds_and_offsets": true,
+  "fixed_interference_across_levels": true,
+  "achieved_ratios_verified": true
+}

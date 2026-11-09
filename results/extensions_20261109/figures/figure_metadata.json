@@ -1,0 +1,19 @@
+{
+  "figures": [
+    "09_paired_accuracy_intervals",
+    "10_feature_group_displacement",
+    "11_clap_distractor_ranking",
+    "12_displacement_error_association"
+  ],
+  "stage": "export",
+  "layout_audit": {
+    "09_paired_accuracy_intervals": [],
+    "10_feature_group_displacement": [],
+    "11_clap_distractor_ranking": [],
+    "12_displacement_error_association": []
+  },
+  "uncertainty": "2000 paired target bootstrap replicates within folds; fixed trained models",
+  "feature_displacement": "relative to gain-matched clean control; training-fold SVM scaling; /sqrt(group dimension)",
+  "ranking": "competition rank among 50 classes; curves use all targets, not only errors",
+  "auc": "Descriptive association only; dots are official folds, bars are unweighted means"
+}
