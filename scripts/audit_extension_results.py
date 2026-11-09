@@ -92,7 +92,7 @@ def check_holm(rows, pvalues, key):
         close(rows[index][key], min(1.0, maximum))
 
 
-def audit(repo, runtime, root, directory):
+def audit(repo, runtime, root, directory, trial_evidence=None):
     declared = json.loads((directory / "summary_audit.json").read_text())
     if not declared["complete"] or declared["variants"] != 14:
         raise ValueError("The complete declared study is required")
@@ -101,7 +101,7 @@ def audit(repo, runtime, root, directory):
     if len(clean_table) != 14 or len(conditions) != 336:
         raise ValueError("Unexpected summary dimensions")
     loaded, hashes = {}, {}
-    for name, system, _, _, clean_dir, directories in variant_paths(repo, runtime, root):
+    for name, system, _, _, clean_dir, directories in variant_paths(repo, runtime, root, trial_evidence):
         clean = read(clean_dir / "predictions.csv")
         clean_index = {r["filename"]: r for r in clean}
         if len(clean_index) != 2000 or any(
@@ -154,7 +154,7 @@ def audit(repo, runtime, root, directory):
     if any(len(v) != 1 for v in hashes.values()):
         raise ValueError("Different variants used different manifests")
     comparisons = read(directory / "paired_intervention_effects.csv")
-    if len(comparisons) != 108:
+    if len(comparisons) != 156:
         raise ValueError("Changed intervention test family")
     probabilities = []
     for row in comparisons:
@@ -205,7 +205,7 @@ def audit(repo, runtime, root, directory):
         verified=True,
         clean_variants=14,
         condition_cells=336,
-        paired_effects=108,
+        paired_effects=156,
         replication_contrasts=12,
         cnn_seed_aggregates=72,
         method="Direct CSV/sklearn recomputation; independently calculated exact tests and Holm adjustment",
@@ -220,5 +220,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for key in ("repo", "runtime", "run", "input"):
         parser.add_argument("--" + key, type=Path, required=True)
+    parser.add_argument("--trial-evidence", type=Path)
     args = parser.parse_args()
-    audit(args.repo, args.runtime, args.run, args.input)
+    audit(args.repo, args.runtime, args.run, args.input, args.trial_evidence)

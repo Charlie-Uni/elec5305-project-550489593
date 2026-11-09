@@ -1,8 +1,11 @@
 # Extended analysis and intervention experiments
 
-These are extensions motivated by the completed baseline experiment. Settings
-were fixed before inspecting the new intervention results; this is not a
-retrospective preregistration. See the [protocol](../../docs/extension_protocol_20261109.md).
+These are extensions motivated by the completed baseline experiment. Training
+settings and the original contrasts were fixed before the new results. The direct
+semantic-versus-WGN comparisons were added at 22:45 AEDT, before semantic results
+were available but after some WGN results had been inspected; all 156 final tests
+share one Holm correction. This is not a retrospective preregistration. See the
+[dated protocol amendment](../../docs/extension_protocol_20261109.md).
 
 ## Completed and checked
 
@@ -82,14 +85,58 @@ persists. Error-conditioned capture rates remain high and must be read alongside
 unconditional capture counts. See [own conditions](clap_prompt_ensemble/own_conditions.json)
 and [target conditions](clap_prompt_ensemble/target_conditions.json).
 
-## Running training interventions
+## Completed training interventions
 
-- Separate WGN and semantic-mixture CNNs at all three seeds, with matched exposure.
-- Deterministic SVM augmentation using the same training banks. WGN training and
-  both interference evaluations are complete; the semantic intervention is pending.
+All 20 training banks have passed an independent full-file and row audit:
+84,000 views, all 2,000 source-audio hashes, source-code hashes, achieved ratios,
+peak gains and finite feature/Mel tensors. Selection banks exclude validation
+and test audio; refit banks exclude test audio. Semantic partners also exclude
+cross-fold source IDs. See [bank audit](augmentation_banks_audit.json).
+
+- Separate WGN and semantic-mixture CNNs at all three seeds, with the same
+  augmentation probability, view schedule and maximum epoch budget. Actual
+  refit durations can differ because clean validation selects each one.
+- Deterministic SVM augmentation using the same training banks. Both modes and
+  both interference protocols are complete and independently verified.
 - Both final own and target manifests for every supervised variant, followed by
   independent row/score/hash verification. New results are separate from the core runs.
 
-Do not quote augmentation improvements until the saved results and comparisons
-have been verified. Training/evaluation state is recorded locally under
-`/Users/leaf/Projects/elec5305-local/runs/extensions_20261109`.
+All 22 supervised evaluation runs are complete. Together with the original SVM
+and two frozen CLAP readouts, the final study contains 14 variants and 336
+condition cells. [Independent recomputation](interventions/independent_audit.json)
+checks all metrics, 156 paired effects, 12 replication contrasts and 72 CNN seed
+aggregates. [Seven extension figures](intervention_figures/figure_metadata.json)
+(including the separate [cost panel](cost_figures/18_balanced_deployment_cost.pdf))
+retain numerical source tables. The cost study has two independently audited
+passes, with identical models and audio but reversed model order; all 10,500
+predictions match the formal clean evaluations.
+
+For the CNN, WGN training raises own/+5-dB white-noise macro-F1 from 7.48% to
+43.95%, while same/different semantic scores move from 33.00/31.41% to
+33.46/32.10%. Semantic training reaches 36.05/33.73%, with clean macro-F1 falling
+from 65.78% to 61.70%. None of the 12 full-condition direct CNN accuracy contrasts
+passes the common Holm family. These are modest positive point estimates with
+uncertain direct advantages, not proof of superiority. All three seeds are kept.
+
+## Additional interpretation checks
+
+- [Capture transitions](capture_transitions_core/capture_transitions.csv) separate
+  new distractor captures from predictions already naming the distractor in the
+  gain-matched clean control. Own-protocol CLAP at +5 dB has 632/612 captures
+  (same/different category) with the single prompt and 645/645 with the ensemble,
+  despite total errors falling from 944/1,015 to 834/876. Conditional capture rate
+  therefore changes with both the numerator and the error denominator.
+- [Prompt multiplicity](prompt_multiplicity/sensitivity.csv) is an exploratory
+  equal-weight check on the 275 unique templates. It changes clean accuracy from
+  92.90% to 92.80%; the largest absolute macro-F1 change across all 25 cells is
+  0.47 percentage points. The declared 300-entry result remains the intervention.
+- [Target-source uncertainty](source_cluster_sensitivity/source_cluster_intervals.csv)
+  resamples original target recording IDs jointly, using 10,000 replicates.
+  All 12 clean-CNN pointwise intervals remain negative for high-overlap
+  semantic-minus-DEMAND accuracy; SVM intervals span zero. CLAP ensemble contrasts
+  remain about −31 to −34 points. This sensitivity does not replace the original
+  corrected tests or account for every dependency from shared distractors.
+
+The [editable presentation](../presentation_20261109_draft/research_presentation.pptx)
+contains native charts, speaker notes and two embedded audio examples. It is an
+author-review draft; final narration and course submission have not occurred.

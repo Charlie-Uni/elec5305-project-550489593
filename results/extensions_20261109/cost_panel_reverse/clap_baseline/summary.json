@@ -1,0 +1,88 @@
+{
+  "scope": "one clip per class and official fold, 250 unique five-second clips",
+  "system": "clap",
+  "batch_size": 1,
+  "device": "cpu",
+  "numerical_threads": 1,
+  "observed_thread_pools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libopenblas",
+      "filepath": "/Users/leaf/Projects/elec5305-local/clap-venv/lib/python3.11/site-packages/numpy/.dylibs/libopenblas64_.0.dylib",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "armv8"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/leaf/Projects/elec5305-local/clap-venv/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/leaf/Projects/elec5305-local/clap-venv/lib/python3.11/site-packages/torch/lib/libomp.dylib",
+      "version": null
+    }
+  ],
+  "repetitions_per_clip": 3,
+  "warmup_per_model": 10,
+  "trials": 750,
+  "elapsed_seconds_including_loading_between_trials": 41.293611291999696,
+  "model_sha256": {
+    "checkpoint": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037"
+  },
+  "serialized_model_bytes": 1863587645,
+  "parameter_count": 158334169,
+  "excludes": [
+    "disk I/O",
+    "model loading",
+    "text embedding preparation",
+    "external pretraining"
+  ],
+  "includes": [
+    "frontend",
+    "audio representation",
+    "50-class scoring",
+    "argmax"
+  ],
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "processor": "arm",
+  "cpu_name": "Apple M3",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.1",
+    "laion-clap": "1.1.7",
+    "transformers": "4.48.3"
+  },
+  "interpretation": "Latency distribution over clips and repetitions; not independent accuracy observations or a general hardware guarantee",
+  "trials_sha256": "00a13b079832611f5bfcf1320769a1bd6cea0c1aa84f3a18b14251229407ec66",
+  "source_sha256": "cb673ce0472fc1c90ba3704dfd893540ad0079c4fa22b5027a3edd737aba4d05",
+  "preprocessing_ms": {
+    "median": 2.851707991794683,
+    "p25": 2.824249750119634,
+    "p75": 2.950521244201809,
+    "p95": 3.071817016461864
+  },
+  "inference_scoring_ms": {
+    "median": 47.98656298953574,
+    "p25": 47.16991675377358,
+    "p75": 48.728166504588444,
+    "p95": 50.135046502691694
+  },
+  "total_ms": {
+    "median": 50.859520997619256,
+    "p25": 50.09009424975375,
+    "p75": 51.61088500608457,
+    "p95": 53.04451873525977
+  }
+}

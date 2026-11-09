@@ -1,0 +1,104 @@
+{
+  "verified": true,
+  "models": 7,
+  "clips_per_model": 250,
+  "total_timed_queries": 5250,
+  "predictions": "All timed predictions match the corresponding official clean evaluation",
+  "total_cost": "Direct median of total query time, not sum of stage medians",
+  "cnn_scope": "Seed 5305 only for latency; all seeds retained for accuracy",
+  "clap_scope": "Single-prompt query benchmark; ensemble uses cached 50-vector readout but is not independently timed here",
+  "caveats": [
+    "Same Apple M3 CPU, model-specific pinned software environments",
+    "One fixed model order, no claim of hardware-general latency",
+    "Disk I/O, model loading and one-off prompt encoding excluded"
+  ],
+  "provenance": {
+    "svm_clean": {
+      "trials_sha256": "12e1b1c3986402ba41aeaab0995b307a1362bf6b2c9f5c290afb915ee80dc933",
+      "summary_sha256": "53cdb962578de3681f189b737ac3085320ccc16ac34392386bd7b97af4d5baa6",
+      "model_sha256": {
+        "svm_fold_1.joblib": "6c615d717e03f6b9c692141da287b0c3f03f19b2d3d3574bd0277f520e3b571a",
+        "svm_fold_2.joblib": "20ad29a19af73012518e66538be1ad5eb98017f55482c0966fe92c1afaa2fe7c",
+        "svm_fold_3.joblib": "2dc72edc8dfc98b69796cbb12f246331a15ba21a37982cfa6a5f4b4fe02204e3",
+        "svm_fold_4.joblib": "ca7e30a2766ed88303fc5c0c6282400795c19e94c72c9c96528ae3c0c880e0e3",
+        "svm_fold_5.joblib": "d37d62b85873f4f7fa675be356a268a3434af1aecdc9449aceb62769f953bf86"
+      },
+      "clean_predictions_sha256": "18bc32f9f1639d530279cb03449cf1632b152040a998c22067f3e10182e38cbc",
+      "timed_prediction_changes_from_clean": 0
+    },
+    "cnn_clean": {
+      "trials_sha256": "f161f4f7aff5f7e4e3b682d77b822020a79e95ce6687da99a244ae364dd21cfc",
+      "summary_sha256": "c607e73a5c354d30fb889383af5e0d0fed182402a77285a6a52c7c36d0ebbdc4",
+      "model_sha256": {
+        "cnn_fold_1.pt": "485fb11a47b25e8dc1c4c76ce85542cd2dfd37e919b04ac213b20fc6c7f2b10f",
+        "cnn_fold_2.pt": "7143f19e534c56a8f10734563ab578a45e3706c3a374da17b26b7194ddc678a1",
+        "cnn_fold_3.pt": "81ced439b9b8fd5de7bc13ab067127cac6e0b6e8f69516e94b4a25a124f124fa",
+        "cnn_fold_4.pt": "3b79a594c9ad4e6d130d71a5993ae3883d2588c1911b54adec1470f5cc9c6ab4",
+        "cnn_fold_5.pt": "769516ee7eb808a5941b2d09a70345f01fddb6ffcc74a60eafbf84eefd2246a1"
+      },
+      "clean_predictions_sha256": "2114da32ab9944eeb28279d87ebb89037a2dccb1f8116fed0838aa6df1de5d35",
+      "timed_prediction_changes_from_clean": 0
+    },
+    "svm_wgn": {
+      "trials_sha256": "6f4fe531ec4116e855e32c5ed30eed4727cd39617b47de09e2278dba670465d9",
+      "summary_sha256": "4481d14f3f187fa0ed7951771cd40b0dbf5e7c4c3125ebd32b8f0577d990ddd1",
+      "model_sha256": {
+        "svm_fold_1.joblib": "68c481c344d5b6240180ce8bc14afaf11ef90946341274f29f08fdcd4a4a88c3",
+        "svm_fold_2.joblib": "804d8f4a769a64f689af5b3b725f838d3006a02743bdd9c4c84b0c2373fc1fc2",
+        "svm_fold_3.joblib": "e6b586f820934af0b705253518da9011f0d4d85d818e852251455536e06bb9d7",
+        "svm_fold_4.joblib": "cddac0bbd8e3499656cdd5e79c91f772e6f60c8b5c2d6785fad995c2a7c954a3",
+        "svm_fold_5.joblib": "2d73eae7f6b0887eb42271bf0f5f77f2ccc4db60aca1cb8407c2e5c99c4939fd"
+      },
+      "clean_predictions_sha256": "883db8c1fff5c3e8d6e4ca7715ee57232588181296fbca2999571a0818410a2b",
+      "timed_prediction_changes_from_clean": 0
+    },
+    "cnn_wgn": {
+      "trials_sha256": "5a63f90f6924309d71a224f07ab527cc3127248d46d879e524a010ad83168f3f",
+      "summary_sha256": "24e73ce440a1585710255a037323682cde51ce2c2d7188b5b6c8a8ad2ff04280",
+      "model_sha256": {
+        "cnn_fold_1.pt": "890a4cf38b04dfd16572c02d6f55fa12e577450f95e44cd6420a193550488471",
+        "cnn_fold_2.pt": "6592b4522727a26def1692c2cf22902c588ef5ca7503d2ca0796f475aabb6ba0",
+        "cnn_fold_3.pt": "3b0ef158c8a3680fd63d78a94c336466dcdc8acd959e4bd0c13e0a95d2a279b8",
+        "cnn_fold_4.pt": "ad4d73e725a8bdc96523d6adc99f36b215d7ed726944656c48393c59a1e0b6b2",
+        "cnn_fold_5.pt": "6cb8feda60497c87005023a6269fb797f96e0896fb1c69ded5422aabffab73d0"
+      },
+      "clean_predictions_sha256": "dc66cbf1855f9f982ca1f8abcf2fa99bf4847b029e5370cf4cefc766250c2708",
+      "timed_prediction_changes_from_clean": 0
+    },
+    "svm_semantic": {
+      "trials_sha256": "1108e71fc47a757b21ae61703151b30c96dbaae5df1de6c43e6e7b0cb7bca958",
+      "summary_sha256": "3b733bd70e7f12d00ebff90887b555b9f693d9a03464824c363acee961cf744d",
+      "model_sha256": {
+        "svm_fold_1.joblib": "e475ddb581846526283e6c8645d8d417b406c3c4323df9ead48eaf1c49b60112",
+        "svm_fold_2.joblib": "63341111ad16fee60e270c47cf4d103d15786c3d630b50c063df1326947362f9",
+        "svm_fold_3.joblib": "2253830f480d5dd28585cc34befde28947e77d3195ac5cf0c0ec041df91d0901",
+        "svm_fold_4.joblib": "43814074c04b530278e5dc58a1e9b9e7f5c86ef56973bea2dafb15f94a341ae7",
+        "svm_fold_5.joblib": "20d165428762cf0a2b154731cd0575c3afc2929f264e41cd82c62139bd3495e2"
+      },
+      "clean_predictions_sha256": "cd3ecb4bee568d1fc0deea88a70b1b8e90b04e92cf72f734be10668d89c412d0",
+      "timed_prediction_changes_from_clean": 0
+    },
+    "cnn_semantic": {
+      "trials_sha256": "1578fe0baa1c9bde98c8e377c339ea20f0e246c4ee0236bd9b1664a869013db1",
+      "summary_sha256": "26211763cd0ac18e62db0ad464a71915996cab4e1927ec8fd0d14e56d146ef82",
+      "model_sha256": {
+        "cnn_fold_1.pt": "2f64be1ec8e76e41bb545c408bf7545f1505409453ae856795b13cd0c12fa332",
+        "cnn_fold_2.pt": "291209e8e31e107a8993c1d0dc086907a5a743c8abf860b324c63c0b74d2f0c6",
+        "cnn_fold_3.pt": "d4efe958908e3c66238e09c6169ce1b077b99f42be8e42e304aeaad08e78bee4",
+        "cnn_fold_4.pt": "a006cea62ca299203cd05cf82d49bca58bb2db0760c907730f6e8bfa4e766774",
+        "cnn_fold_5.pt": "fa56481ec39f3ed114009379b2f10f557f11890533e8411a74fa4910bfff58cb"
+      },
+      "clean_predictions_sha256": "be797524381982da2ebeeb5e52bbb9fee458f306f1410a3d6c1c00b8531045c7",
+      "timed_prediction_changes_from_clean": 0
+    },
+    "clap_baseline": {
+      "trials_sha256": "2c46ff006e3c8bc0dd6ba15244d577e7c832828a330896f8af5b2df8a676b309",
+      "summary_sha256": "3d0865da5af534061516d6af1676801ba0ee972f97609316bb56f0d53bce63ef",
+      "model_sha256": {
+        "checkpoint": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037"
+      },
+      "clean_predictions_sha256": "ca32fcc6b86e76e1961cc6d578257854e2d95259b5690f8bfe2164e6d01cfe5e",
+      "timed_prediction_changes_from_clean": 0
+    }
+  }
+}

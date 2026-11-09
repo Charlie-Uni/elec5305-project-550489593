@@ -1,0 +1,86 @@
+{
+  "scope": "one clip per class and official fold, 250 unique five-second clips",
+  "system": "cnn",
+  "batch_size": 1,
+  "device": "cpu",
+  "numerical_threads": 1,
+  "observed_thread_pools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/leaf/Projects/elec5305-local/baseline-venv/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/leaf/Projects/elec5305-local/baseline-venv/lib/python3.11/site-packages/torch/lib/libomp.dylib",
+      "version": null
+    }
+  ],
+  "repetitions_per_clip": 3,
+  "warmup_per_model": 10,
+  "trials": 750,
+  "elapsed_seconds_including_loading_between_trials": 4.217889332998311,
+  "model_sha256": {
+    "cnn_fold_1.pt": "890a4cf38b04dfd16572c02d6f55fa12e577450f95e44cd6420a193550488471",
+    "cnn_fold_2.pt": "6592b4522727a26def1692c2cf22902c588ef5ca7503d2ca0796f475aabb6ba0",
+    "cnn_fold_3.pt": "3b0ef158c8a3680fd63d78a94c336466dcdc8acd959e4bd0c13e0a95d2a279b8",
+    "cnn_fold_4.pt": "ad4d73e725a8bdc96523d6adc99f36b215d7ed726944656c48393c59a1e0b6b2",
+    "cnn_fold_5.pt": "6cb8feda60497c87005023a6269fb797f96e0896fb1c69ded5422aabffab73d0"
+  },
+  "serialized_model_bytes": {
+    "cnn_fold_1.pt": 156725,
+    "cnn_fold_2.pt": 156725,
+    "cnn_fold_3.pt": 156725,
+    "cnn_fold_4.pt": 156725,
+    "cnn_fold_5.pt": 156725
+  },
+  "parameter_count": 36258,
+  "excludes": [
+    "disk I/O",
+    "model loading",
+    "text embedding preparation",
+    "external pretraining"
+  ],
+  "includes": [
+    "frontend",
+    "audio representation",
+    "50-class scoring",
+    "argmax"
+  ],
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "processor": "arm",
+  "cpu_name": "Apple M3",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.1"
+  },
+  "interpretation": "Latency distribution over clips and repetitions; not independent accuracy observations or a general hardware guarantee",
+  "trials_sha256": "5a63f90f6924309d71a224f07ab527cc3127248d46d879e524a010ad83168f3f",
+  "source_sha256": "cb673ce0472fc1c90ba3704dfd893540ad0079c4fa22b5027a3edd737aba4d05",
+  "preprocessing_ms": {
+    "median": 2.8344585152808577,
+    "p25": 2.5698644894873723,
+    "p75": 3.0853959833621047,
+    "p95": 3.915000002598386
+  },
+  "inference_scoring_ms": {
+    "median": 1.9644790154416114,
+    "p25": 1.7607607587706298,
+    "p75": 2.1787702571600676,
+    "p95": 2.7470187487779176
+  },
+  "total_ms": {
+    "median": 4.826437492738478,
+    "p25": 4.3585835010162555,
+    "p75": 5.277562770061195,
+    "p95": 6.420632847584784
+  }
+}

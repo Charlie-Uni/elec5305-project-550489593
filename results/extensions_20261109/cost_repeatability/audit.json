@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "models": 7,
+  "clips_per_model": 250,
+  "queries_per_model_per_pass": 750,
+  "total_timed_queries": 10500,
+  "model_inputs_identical": true,
+  "interpretation": "Post-hoc reversed-order sensitivity after timing drift was observed; both passes retained. No attribution to a measured thermal or scheduling cause, and no causal augmentation-cost claim.",
+  "source_audits": [
+    "067885748ff5dbc43a45f5365d9aaf325d1e87ada808e7f1e8a9491cd8266cdc",
+    "a50d4b7a79d5524435f8d87794b89e457aa85bd85c73fe3d59ac4e6fca0583f5"
+  ]
+}

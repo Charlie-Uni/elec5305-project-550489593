@@ -10,11 +10,14 @@ ELEC5305 project · Qihan Zhu · SID 550489593
 · [Interactive project page](index.html)
 · [Attributed listening examples](examples/listening_own_20261109/README.md)
 · [Video recording script](docs/video_narration_draft.txt)
+· [Editable presentation draft](results/presentation_20261109_draft/research_presentation.pptx)
+· [Exact evaluated mixture manifests](results/mixture_manifests_20261109/README.md)
 
-The core three-system study and supplementary diagnostics are complete. The
-expanded training interventions are running; the report and site distinguish
-verified results from pending comparisons. The recording script is preparation
-material, not a finished video submission.
+The core study and expanded interventions are complete and independently checked:
+14 variants, both power protocols, all three CNN seeds, 336 condition cells and
+156 paired intervention contrasts. The report, figures and editable presentation
+are prepared for author review. The recording script is preparation material,
+not a finished video submission.
 
 ## Research question
 
@@ -44,6 +47,9 @@ studies those failure patterns and their computational cost.
 At 0 dB, both events have equal power under the chosen measurement convention.
 This is a stress test with an ambiguous single target label. Equal power does not
 control all spectral, temporal or perceptual differences between interference types.
+DEMAND recordings may themselves contain recognisable events. The semantic
+condition supplies an explicitly labelled competing ESC-50 class; it is not a
+causal isolation of meaning from acoustic structure.
 
 ### Controls and reproducibility
 
@@ -67,7 +73,7 @@ control all spectral, temporal or perceptual differences between interference ty
   checkpoint and the fixed prompt `the sound of [class]`. Record checkpoint
   provenance and possible pretraining overlap; frozen inference does not establish
   that ESC-50 was absent from external pretraining.
-- The core CNN uses seed 5305. The active extension evaluates seeds 5305–5307
+- The core CNN uses seed 5305. The completed extension evaluates seeds 5305–5307
   and separate white-noise and semantic-mixture training, with clean validation
   and training-partition-only distractors. See the [extension protocol](docs/extension_protocol_20261109.md).
 
@@ -93,8 +99,9 @@ does not establish that the distractor is the overall top prediction.
 6. **Completed:** three-system robustness, semantic capture, representation and
    computational-cost analysis, with eight audited figures for each power protocol.
    See [full results and verification](results/clap_full_20261109/README.md).
-7. **In progress:** three-seed CNN replication, matched white-noise/semantic
-   augmentation for CNN and SVM, and a fixed CLAP prompt-ensemble ablation.
+7. **Expanded study:** three-seed clean CNN replication and a fixed CLAP prompt
+   ensemble are complete and verified. Separate white-noise/semantic augmentation
+   for CNN and SVM is complete under the declared shared settings.
    Paired bootstrap intervals, individual feature groups, 50-class CLAP ranking,
    displacement/error association and the course MATLAB STFT comparison are
    [completed extensions](results/extensions_20261109/).
@@ -750,9 +757,12 @@ under both power definitions.
 ### Expanded training and diagnostics
 
 The [extension protocol](docs/extension_protocol_20261109.md) fixes all three
-CNN seeds and separate WGN/semantic interventions before their results are
-examined. It is a post-baseline extension, not a retrospective preregistration.
-Clean validation selects model settings; all three seeds are retained.
+CNN seeds and separate WGN/semantic training settings before their results are
+examined. Its dated analysis amendment adds direct semantic-versus-WGN contrasts
+before semantic results, while disclosing prior inspection of some WGN results.
+All 156 final intervention tests share one Holm correction. This is a post-baseline
+extension, not a retrospective preregistration. Clean validation selects model
+settings; all three seeds are retained.
 
 ```bash
 # Use the same full clean spectrogram/feature caches as the baseline.
@@ -784,6 +794,26 @@ semantic-minus-DEMAND contrast. Both added seeds pass the separate declared
 [replication table](results/extensions_20261109/clean_replication/cnn_overlap_replication.csv)
 reports every seed separately rather than pooling repeated targets.
 
+The evidence ZIP also provides a portable `trial_evidence/` layout. From its
+extracted root, the locked base environment can regenerate the main extension
+tables without audio, model checkpoints, Torch or CLAP inference:
+
+```bash
+uv run --locked --no-dev python -m esc_robustness.extension_summary \
+  --repo . --runtime . --run . --trial-evidence trial_evidence \
+  --output reproduced_tables
+uv run --locked --no-dev python scripts/audit_extension_results.py \
+  --repo . --runtime . --run . --trial-evidence trial_evidence \
+  --input reproduced_tables
+```
+
+This recomputes fold metrics, paired bootstrap intervals and corrected tests from
+the saved trial predictions. It does not retrain models or reproduce embedding
+displacements from the excluded large arrays. Canonical results are in
+`results/clap_full_20261109/` and `results/extensions_20261109/`; older pipeline
+directories are retained as historical evidence and should not be mixed with
+these final manifests.
+
 The fixed released PAT prompt-list ablation is implemented in
 `python -m esc_robustness.prompt_ensemble --help`. It reuses the exact cached
 audio embeddings, applies all templates to every class and performs no label-based
@@ -792,6 +822,34 @@ released multiplicities preserved. Clean accuracy is **92.90 ± 0.65%**, and
 macro-F1 is **92.53 ± 0.59%** (five-fold mean ± SD). Both interference protocols
 are complete; the audio embeddings are unchanged. It is explicitly **not full PAT**.
 See the [independent audit](results/extensions_20261109/prompt_ensemble_audit.json).
+
+### Verified augmentation outcomes
+
+Own-activity protocol, +5 dB macro-F1 (%). CNN values average all three
+seeds’ five-fold means; SVM values are five-fold means. The report supplies
+fold/seed SD and per-seed paired intervals separately.
+
+| Model / training | Clean | White | DEMAND | Same category | Different category |
+|---|---:|---:|---:|---:|---:|
+| SVM / clean | 47.96 | 2.03 | 16.13 | 22.47 | 21.34 |
+| SVM / wgn | 45.99 | 41.14 | 23.72 | 22.60 | 22.19 |
+| SVM / semantic | 49.27 | 1.91 | 19.92 | 26.83 | 24.96 |
+| CNN / clean | 65.78 | 7.48 | 30.92 | 32.99 | 31.41 |
+| CNN / wgn | 64.65 | 43.95 | 33.80 | 33.46 | 32.10 |
+| CNN / semantic | 61.70 | 9.91 | 33.62 | 36.05 | 33.73 |
+
+WGN training mainly protects against broadband noise. Semantic training yields
+larger semantic point-estimate gains but reduces clean CNN performance. None
+of the 12 full-condition CNN semantic-versus-WGN paired accuracy comparisons
+passes the common 156-test Holm correction; the modest advantage is uncertain.
+SVM passes three of its four corresponding comparisons. See the
+[independent audit](results/extensions_20261109/interventions/independent_audit.json)
+and [all paired effects](results/extensions_20261109/interventions/paired_intervention_effects.csv).
+
+The deployment benchmark retains two model orders and 10,500 timed queries.
+Timing drift is visible even in identical CNN frontends, so both passes are
+reported and no causal augmentation-cost claim is made. See the
+[repeatability check](results/extensions_20261109/cost_repeatability/audit.json).
 
 ## Repository layout
 

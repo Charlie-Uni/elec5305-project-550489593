@@ -11,7 +11,7 @@ from .artifacts import sha256_file, write_json
 from .diagnostics import holm_adjust, paired_bootstrap, write_csv
 
 
-def variant_paths(repo, runtime, root):
+def variant_paths(repo, runtime, root, trial_evidence=None):
     core = runtime / "runs/clap_v4_20261109"
     variants = []
     for system in ("svm", "cnn"):
@@ -72,7 +72,32 @@ def variant_paths(repo, runtime, root):
                 {region: base / f"eval_{region}" for region in ("own", "target")},
             )
         )
+    if trial_evidence is not None:
+        evidence = Path(trial_evidence)
+        return [
+            (
+                name, system, regime, seed, evidence / "clean" / name,
+                {region: evidence / region / name for region in ("own", "target")},
+            )
+            for name, system, regime, seed, _, _ in variants
+        ]
     return variants
+
+
+def comparison_specs(variants):
+    """Retain clean-reference contrasts and direct semantic-versus-WGN pairs."""
+    for name, system, regime, seed, _, _ in variants:
+        if regime in ("clean", "baseline"):
+            continue
+        reference = (
+            f"cnn_clean_seed_{seed}"
+            if system == "cnn"
+            else ("svm_clean" if system == "svm" else "clap_baseline")
+        )
+        yield name, reference, system, regime, seed, "against_clean_reference"
+        if regime == "semantic":
+            reference = f"cnn_wgn_seed_{seed}" if system == "cnn" else "svm_wgn"
+            yield name, reference, system, regime, seed, "semantic_vs_wgn"
 
 
 def matched_vectors(a, b, condition, level=5.0, high_overlap=False):
@@ -160,10 +185,11 @@ def replicate_overlap(loaded, replicates=2000):
     return replication
 
 
-def summarise(repo, runtime, root, output, replicates=2000):
+def summarise(repo, runtime, root, output, replicates=2000, trial_evidence=None):
     output.mkdir(parents=True, exist_ok=True)
     tables, clean_rows, loaded, provenance = [], [], {}, {}
-    for name, system, regime, seed, clean_dir, dirs in variant_paths(repo, runtime, root):
+    variants = variant_paths(repo, runtime, root, trial_evidence)
+    for name, system, regime, seed, clean_dir, dirs in variants:
         clean = read_clean_predictions(clean_dir / "predictions.csv")
         if len(clean) != 2000:
             raise ValueError("Incomplete clean reference")
@@ -252,14 +278,9 @@ def summarise(repo, runtime, root, output, replicates=2000):
 
     comparisons = []
     for region in ("own", "target"):
-        for name, system, regime, seed, _, _ in variant_paths(repo, runtime, root):
-            if regime in ("clean", "baseline"):
-                continue
-            reference = (
-                f"cnn_clean_seed_{seed}"
-                if system == "cnn"
-                else ("svm_clean" if system == "svm" else "clap_baseline")
-            )
+        for name, reference, system, regime, seed, comparison_type in comparison_specs(
+            variants
+        ):
             comparisons_to_run = [
                 (c, False) for c in ("white", "demand", "semantic_same", "semantic_different")
             ]
@@ -277,6 +298,7 @@ def summarise(repo, runtime, root, output, replicates=2000):
                         region=region,
                         variant=name,
                         reference=reference,
+                        comparison_type=comparison_type,
                         system=system,
                         regime=regime,
                         seed=seed,
@@ -297,6 +319,8 @@ def summarise(repo, runtime, root, output, replicates=2000):
         "variants": len(clean_rows),
         "condition_rows": len(tables),
         "paired_comparisons": len(comparisons),
+        "comparison_family": "108 clean-reference contrasts plus 48 direct semantic-versus-WGN contrasts; one Holm family of 156",
+        "analysis_amendment": "2026-11-09 22:45 AEDT: direct contrasts added to answer the stated second question, after some WGN results but before any completed semantic-intervention result; training settings unchanged",
         "cnn_overlap_replications": len(replication),
         "bootstrap_replicates": replicates,
         "provenance": provenance,
@@ -318,7 +342,10 @@ if __name__ == "__main__":
         p.add_argument(f"--{name}", type=Path, required=True)
     p.add_argument("--replicates", type=int, default=2000)
     p.add_argument("--replication-only", action="store_true")
+    p.add_argument("--trial-evidence", type=Path, help="Portable evidence ZIP's trial_evidence directory")
     a = p.parse_args()
+    if a.replication_only and a.trial_evidence:
+        p.error("Use --trial-evidence for the full portable summary, without --replication-only")
     if a.replication_only:
         loaded = {}
         provenance = {}
@@ -344,4 +371,4 @@ if __name__ == "__main__":
             },
         )
     else:
-        summarise(a.repo, a.runtime, a.run, a.output, a.replicates)
+        summarise(a.repo, a.runtime, a.run, a.output, a.replicates, a.trial_evidence)

@@ -10,6 +10,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.lines import Line2D
 
 COLORS = {"svm": "#0072B2", "cnn": "#D55E00", "clap": "#009E73"}
 CONDITIONS = ("white", "demand", "semantic_same", "semantic_different")
@@ -94,7 +95,7 @@ def plot(directory, output, export=False, audit=None):
 
     all_conditions = read(directory / "condition_variants.csv")
     supervised = [r for r in all_conditions if r["system"] != "clap" and float(r["level_db"]) == 5]
-    fig, axes = plt.subplots(2, 2, figsize=(7.16, 6), sharey=True, layout="constrained")
+    fig, axes = plt.subplots(2, 2, figsize=(7.16, 5.4), sharey=True, layout="constrained")
     for i, region in enumerate(("own", "target")):
         for j, system in enumerate(("svm", "cnn")):
             ax = axes[i, j]
@@ -133,12 +134,17 @@ def plot(directory, output, export=False, audit=None):
                         )
             ax.set_title(f"{system.upper()} · {region} activity power")
             ax.set_xticks(range(4), LABELS)
-            ax.set_ylim(0, 100)
+            ax.set_ylim(0, 60)
             ax.grid(axis="y", alpha=0.18)
             if j == 0:
                 ax.set_ylabel("Macro-F1 (%)")
-            if i == 0:
-                ax.legend(fontsize=7, loc="upper right")
+    legend_handles = [
+        Line2D([], [], marker=marker, linestyle="none", color="0.25",
+               mfc="white" if i == 0 else "0.25", markersize=6, label=label)
+        for i, (marker, label) in enumerate(zip(MARKERS, REGIME_LABELS))
+    ]
+    fig.legend(handles=legend_handles, loc="outside lower center", ncol=3,
+               fontsize=7, frameon=False)
     fig.suptitle("Training intervention transfer at +5 dB", fontsize=11)
     save(
         fig,
@@ -149,7 +155,13 @@ def plot(directory, output, export=False, audit=None):
 
     effects = read(directory / "paired_intervention_effects.csv")
     for system, number in (("svm", "14"), ("cnn", "15")):
-        rows = [r for r in effects if r["system"] == system and r["stratum"] == "all"]
+        rows = [
+            r
+            for r in effects
+            if r["system"] == system
+            and r["stratum"] == "all"
+            and r["comparison_type"] == "against_clean_reference"
+        ]
         fig, axes = plt.subplots(2, 2, figsize=(7.16, 5.6), sharex=True, layout="constrained")
         for i, regime in enumerate(("wgn", "semantic")):
             for j, region in enumerate(("own", "target")):
@@ -196,14 +208,73 @@ def plot(directory, output, export=False, audit=None):
                 if i == 1:
                     ax.set_xlabel("Augmented − clean accuracy (pp)")
         if system == "cnn":
-            axes[0, 1].legend(fontsize=7, loc="upper right")
+            handles, legend_labels = axes[0, 1].get_legend_handles_labels()
+            fig.legend(
+                handles, legend_labels, loc="outside lower center", ncol=3,
+                frameon=False, fontsize=7,
+            )
         fig.suptitle(f"{system.upper()} paired intervention effects at +5 dB", fontsize=11)
         save(
             fig,
             f"{number}_{system}_paired_training_effects",
             rows,
-            "Each marker compares augmentation with its matching clean seed on identical target mixtures. 95% paired target bootstrap intervals condition on fitted models; they are not seed-level confidence intervals. See CSV for the common Holm correction family.",
+            "Each marker compares augmentation with its matching clean seed on identical mixtures, using 1,998–2,000 targets across five folds. Pointwise 95% paired intervals use 2,000 target-bootstrap replicates conditional on fitted models; they are not seed-level confidence intervals. All 156 extension exact McNemar tests share one Holm family; see the source CSV.",
         )
+
+    direct = [
+        r for r in effects if r["comparison_type"] == "semantic_vs_wgn" and r["stratum"] == "all"
+    ]
+    fig, axes = plt.subplots(2, 2, figsize=(7.16, 5.8), sharex=True, layout="constrained")
+    for i, system in enumerate(("svm", "cnn")):
+        for j, region in enumerate(("own", "target")):
+            ax = axes[i, j]
+            for c, condition in enumerate(CONDITIONS):
+                selected = sorted(
+                    [
+                        r
+                        for r in direct
+                        if r["system"] == system
+                        and r["region"] == region
+                        and r["condition"] == condition
+                    ],
+                    key=lambda r: r["seed"],
+                )
+                if len(selected) != (3 if system == "cnn" else 1):
+                    raise ValueError("Missing direct training contrast")
+                for k, row in enumerate(selected):
+                    value, low, high = [
+                        100 * float(row[key])
+                        for key in ("accuracy_difference", "accuracy_ci_low", "accuracy_ci_high")
+                    ]
+                    ax.errorbar(
+                        value,
+                        c + ((k - 1) * 0.2 if system == "cnn" else 0),
+                        xerr=[[value - low], [high - value]],
+                        fmt=MARKERS[k],
+                        color=COLORS[system],
+                        capsize=2,
+                        ms=4,
+                        mfc="white" if k == 0 else COLORS[system],
+                        label=f"CNN seed {row['seed']}" if system == "cnn" and c == 0 else None,
+                    )
+            ax.axvline(0, color="0.5", lw=0.8)
+            ax.set_yticks(range(4), LABELS)
+            ax.invert_yaxis()
+            ax.grid(axis="x", alpha=0.18)
+            ax.set_title(f"{system.upper()} · {region} activity power")
+            if i == 1:
+                ax.set_xlabel("Semantic − WGN accuracy (pp)")
+    handles, legend_labels = axes[1, 1].get_legend_handles_labels()
+    fig.legend(
+        handles, legend_labels, loc="outside lower center", ncol=3, frameon=False, fontsize=7
+    )
+    fig.suptitle("Direct comparison of augmentation regimes at +5 dB", fontsize=11)
+    save(
+        fig,
+        "19_semantic_vs_wgn_training",
+        direct,
+        "Paired semantic-versus-WGN training contrasts, with each CNN seed matched and 1,998–2,000 targets per contrast across five folds. Pointwise 95% intervals use 2,000 target-bootstrap replicates; all 156 extension exact McNemar tests share one Holm family. This analysis amendment was recorded before semantic-trained results were available, after some WGN results had been inspected.",
+    )
 
     clap_rows = [r for r in all_conditions if r["system"] == "clap" and float(r["level_db"]) == 5]
     clap_effects = [r for r in effects if r["system"] == "clap" and r["stratum"] == "all"]
@@ -261,7 +332,7 @@ def plot(directory, output, export=False, audit=None):
         fig,
         "16_clap_prompt_ensemble",
         clap_rows,
-        "Top panels show five-fold macro-F1 means ± fold SD. Bottom panels show paired accuracy differences with 95% target bootstrap intervals; their source is 16_clap_prompt_ensemble_effects.csv. Same audio embeddings, all released fixed templates, no test-label prompt selection; this is not full PAT.",
+        "Top panels show five-fold macro-F1 means ± fold SD. Bottom panels use 1,998–2,000 matched targets and 2,000 target-bootstrap replicates for pointwise 95% accuracy intervals. Their exact McNemar tests join the 156-comparison Holm family; the source is 16_clap_prompt_ensemble_effects.csv. Same audio embeddings, all released fixed templates, no test-label prompt selection; this is not full PAT.",
     )
     with (output / "16_clap_prompt_ensemble_effects.csv").open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(clap_effects[0]))
@@ -274,7 +345,7 @@ def plot(directory, output, export=False, audit=None):
         fig,
         "17_cnn_overlap_replication",
         replication,
-        "Each seed uses the same matched high-overlap targets and a separate paired 95% target bootstrap CI. The 12 exact McNemar comparisons share a Holm correction family. Repeated target predictions are not independent samples.",
+        "Each seed uses 1,464 same-category or 1,465 different-category high-overlap targets and a separate pointwise 95% CI from 2,000 paired target-bootstrap replicates. The 12 exact McNemar comparisons share a Holm family. Repeated target predictions are not independent samples.",
     )
     (output / "figure_metadata.json").write_text(
         json.dumps(

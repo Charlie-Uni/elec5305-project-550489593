@@ -1,0 +1,6 @@
+{
+  "layout": [],
+  "latency": "250 clips \u00d7 three timed repetitions per model per pass; both first and post-hoc reversed-order passes retained. Whiskers are IQR, not CIs. Do not infer a causal augmentation-cost difference from drift between identically shaped CNNs.",
+  "performance": "Five-fold macro-F1; CNN seed 5305 here, full three-seed analysis elsewhere",
+  "clap": "Single-prompt inference; prompt-ensemble initialisation is not included"
+}

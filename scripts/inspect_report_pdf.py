@@ -35,7 +35,8 @@ def inspect(source, output):
         pages.append(picture.copy())
         textpage.close()
         page.close()
-    columns, cell_width, cell_height = 3, 420, 620
+    columns, cell_width = 3, 420
+    cell_height = round((cell_width - 20) * pages[0].height / pages[0].width) + 36
     sheet = Image.new(
         "RGB", (columns * cell_width, math.ceil(len(pages) / columns) * cell_height), "#dddddd"
     )

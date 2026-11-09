@@ -4,8 +4,8 @@ Qihan Zhu | When Background Noise Has Meaning
 Purpose: a recording script and shot list for author review. This is not a
 completed or submitted video. Suggested duration is about 7–9 minutes; confirm
 the course's current duration and submission instructions before recording.
-The extension-results passage must be updated from verified outputs before a
-final recording. Do not present a running experiment as a measured result.
+All reported experiment results have been verified. This remains a script for
+author narration and review, not a completed recording.
 
 00:00–00:45 | Listen to a competing event
 Visual: project page, can opening, same-category event, +5 dB. Keep the player
@@ -123,29 +123,34 @@ points, but is tentative after multiple-comparison correction. The intervals
 condition on fitted models; repeated predictions of one clip are not independent
 samples. Training-seed variability is investigated separately.
 
-06:00–06:45 | Extension comparison — REPLACE AFTER AUDIT
-Visual: the final augmentation-transfer and CNN-replication figures, only after
-all declared seeds and both protocols have completed and been checked.
+06:00–06:45 | What robustness training transfers
+Visual: editable intervention table or the verified transfer figure; show all
+three CNN seeds and keep clean performance visible.
 
-Recording note, not narration:
-Use results/extensions_20261109/interventions/clean_variants.csv,
-condition_variants.csv, paired_intervention_effects.csv and
-cnn_overlap_replication.csv. State whether WGN augmentation transfers to DEMAND
-and semantic events, whether semantic augmentation improves the intended
-conditions, and any clean-performance tradeoff. Report all three CNN seeds.
-Describe the fixed CLAP prompt ensemble as an ablation, not a reproduction of
-full PAT. Use the measured result even if no intervention helps. Do not fill
-this passage with expected improvements or the best seed alone.
+Narration:
+Across three CNN seeds, white-noise augmentation raises plus-five-decibel
+white-noise macro-F1 from 7.48 to 43.95 percent. Yet same-category semantic
+performance changes only from 33.00 to 33.46 percent. Semantic training reaches
+36.05 percent there, but clean macro-F1 falls from 65.78 to 61.70 percent.
+The direct CNN accuracy advantages over white-noise training remain uncertain
+after the declared multiple-comparison correction. I keep all seeds rather
+than selecting the strongest one. Separately, the fixed CLAP prompt ensemble
+raises clean accuracy from 81.75 to 92.90 percent with identical audio embeddings,
+while substantial competing-event errors remain. This is a prompt ablation,
+not a full reproduction of PAT.
 
 06:45–07:35 | Computational cost and limitations
 Visual: CPU-cost figure and a short limitations view from the report.
 
 Narration:
-The compact CNN has about thirty-six thousand parameters. The core batch-one
-CPU microbenchmark, including preprocessing, is about three milliseconds per
-clip for the CNN, eleven for the SVM and ninety-eight for CLAP. These are
-single-clip measurements on the same machine, not a claim about all deployment
-hardware. Cached text embeddings exclude repeated prompt preparation from
+The compact CNN has about thirty-six thousand parameters. The expanded CPU benchmark uses
+250 clips, three repetitions and two model orders. Median query times for the
+clean CNN are 3.07 and 2.44 milliseconds in the two passes; SVM is 15.00 and
+11.29, and CLAP is 69.31 and 50.86. All timed predictions match the formal clean
+evaluation. The second pass was added after observing timing drift. Both passes
+are reported: the speed ordering is stable, but absolute latency is sensitive
+to this machine's running state. I do not attribute that drift to a measured
+thermal cause or to augmentation changing the CNN operation count. Cached text embeddings exclude repeated prompt preparation from
 CLAP's audio-query timing. Its external pretraining cost is not local inference
 cost. Limitations include one semantic pairing of each type per target, only
 three real background environments, sparse temporal overlap, official source

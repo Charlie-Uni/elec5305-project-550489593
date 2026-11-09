@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "index_sha256": "a0373114d96177df92f1d12be21bcbb64f23179048635c80b3c1edb2ec742c84",
+  "data_sha256": "b1638aba420bf48c66cbe192b5faf6d094d3ef45e00896d1b39e25d910154db0",
+  "local_assets_checked": 14,
+  "missing_assets": [],
+  "js_syntax": "passed",
+  "browser_console_errors": [],
+  "viewports_reviewed": [
+    320,
+    390,
+    1280
+  ],
+  "checks": [
+    "Power selectors update core, ensemble and intervention tables together",
+    "Both power definitions visually checked",
+    "No document overflow at 320 or 390 px; wide tables scroll within containers",
+    "Can-opening + clock-alarm case reproduces saved predictions",
+    "Both selected audio controls load 5-second recordings without media errors"
+  ],
+  "public_pages_deployed": false
+}

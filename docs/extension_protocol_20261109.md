@@ -1,8 +1,9 @@
 # Extension protocol — 9 November 2026
 
 This extension is specified after inspecting the completed baseline robustness
-results. It is not a retrospective preregistration. All additional settings below
-are fixed before examining the new intervention results. Existing baseline runs
+results. It is not a retrospective preregistration. Training settings and the
+original comparisons were fixed before examining the new intervention results;
+the later, explicitly dated analysis amendment is recorded below. Existing baseline runs
 remain separately identifiable by their manifests and hashes.
 
 ## Research questions and primary comparisons
@@ -31,8 +32,10 @@ protocols; report high-overlap (at least 0.8) comparisons on matched targets.
   are +5, +10 and +15 dB; exclude equal-power semantic targets from training.
 - Use a deterministic bank of three augmented views per training clip, with
   banks fixed across optimisation seeds. Random per-epoch sampling and model
-  initialisation follow the declared optimisation seed. Match exposure and
-  augmentation-level schedules between interventions.
+  initialisation follow the declared optimisation seed. Match the augmentation
+  probability, number of views, level schedule and maximum epoch budget between
+  interventions. Actual refit epochs are selected separately on clean validation
+  and can differ; total training-example presentations are therefore not identical.
 - Use own-active-region power, the existing 40-dB activity threshold and logged
   common attenuation. Semantic partners come only from the current training
   partition, have a different fine class/source recording, and balance same-
@@ -80,6 +83,19 @@ protocols; report high-overlap (at least 0.8) comparisons on matched targets.
 - Verify course MyStft.m numerically after explicitly reconciling window,
   padding, frame alignment and one-sided/full-spectrum conventions.
 
+### Analysis amendment recorded at 22:45 AEDT, 9 November 2026
+
+The stated second research question requires a direct semantic-augmentation
+versus WGN-augmentation contrast, beyond comparisons with clean training. The
+initial analysis implementation omitted those direct contrasts. They are added
+before any completed semantic-intervention result is available, after some WGN
+results have already been inspected. Training settings and saved evaluations
+are unchanged. The final +5-dB family includes 108 clean-reference contrasts and
+48 direct semantic-versus-WGN contrasts (SVM plus three matched CNN seeds, both
+power definitions, four full conditions and two high-overlap semantic subsets).
+All 156 exact tests share one Holm correction. This amendment is disclosed;
+it is not presented as a preregistration before every intervention result.
+
 ## Modern alignment extension
 
 Inspect the official PAT release before claiming a reproduction. Preserve the
@@ -95,6 +111,18 @@ for all 50 classes. Average unit text embeddings and re-normalise the mean. Reus
 the exact cached LAION audio embeddings. No prompt subset or fusion coefficient
 is selected using clean or interference labels. This is a fixed prompt-ensemble
 ablation, not a reproduction of PAT's local-feature mutual alignment.
+
+## Post-hoc timing repeat
+
+After the first balanced CPU panel showed different frontend times for CNNs
+with identical processing, a second pass reversed the model order. Both passes
+use the same 250 class/fold-balanced recordings, three repetitions, one CPU
+thread, batch size one, model hashes and software versions. All 10,500 timed
+predictions match the formal clean evaluations. Both passes are retained;
+neither is selected as the preferred latency result. This is a descriptive
+order sensitivity check added after observing drift, not a randomised hardware
+study or evidence that augmentation changes operation count. See
+`results/extensions_20261109/cost_repeatability/` for the recorded design and audit.
 
 ## Delivery
 

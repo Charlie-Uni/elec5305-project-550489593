@@ -73,6 +73,31 @@ def build(run):
     if replication.exists():
         with replication.open() as handle:
             state["cnn_replication"] = list(csv.DictReader(handle))
+    interventions = ROOT / "results/extensions_20261109/interventions"
+    if (interventions / "independent_audit.json").exists():
+        if not json.loads((interventions / "independent_audit.json").read_text())["verified"]:
+            raise ValueError("Intervention results require an independent audit")
+        state["augmentation"] = {}
+        for key, filename in (
+            ("clean", "clean_variants.csv"),
+            ("conditions", "condition_variants.csv"),
+        ):
+            with (interventions / filename).open() as handle:
+                state["augmentation"][key] = [
+                    r for r in csv.DictReader(handle) if r["system"] in ("svm", "cnn")
+                ]
+    costs = ROOT / "results/extensions_20261109/cost_panel"
+    if (costs / "audit.json").exists():
+        if not json.loads((costs / "audit.json").read_text())["verified"]:
+            raise ValueError("CPU panel requires an independent audit")
+        with (costs / "latency_summary.csv").open() as handle:
+            state["balanced_costs"] = list(csv.DictReader(handle))
+        if not json.loads((costs.with_name("cost_repeatability") / "audit.json").read_text())["verified"]:
+            raise ValueError("Both timing passes must be checked")
+        with (costs.with_name("cost_panel_reverse") / "latency_summary.csv").open() as handle:
+            repeated = {r["variant"]: r for r in csv.DictReader(handle)}
+        for row in state["balanced_costs"]:
+            row.update({f"reverse_{k}": v for k, v in repeated[row["variant"]].items() if k.startswith("total_")})
     (ROOT / "site-data.json").write_text(json.dumps(state, indent=2) + "\n")
 
 

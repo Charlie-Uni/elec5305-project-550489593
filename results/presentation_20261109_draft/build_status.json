@@ -1,0 +1,13 @@
+{
+  "slides": 13,
+  "editable_charts": true,
+  "embedded_audio_clips": 2,
+  "augmentation_complete": true,
+  "cost_panel_complete": true,
+  "draft": true,
+  "pptxgenjs": "4.0.1",
+  "node": "v24.22.1",
+  "source_sha256": "378eb5525b4eb4665d392a6cf6659ae601fe6ed9ac9e061d21ef16df83864567",
+  "data_sha256": "74617aae29406ed3d47436ab4ccedfb94c1816f43f3f9feac5145cc158b8836d",
+  "pptx_sha256": "cd357e197d350067655c18df571dc8c4ca1c649966ddcb246f078169fdc28177"
+}

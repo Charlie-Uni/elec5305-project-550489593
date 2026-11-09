@@ -1,7 +1,7 @@
+note: using only cached resource files
 note: Running TeX ...
 note: Rerunning TeX because "research_report.aux" changed ...
 note: Running xdvipdfmx ...
-note: downloading lmmi9.pfb
-note: Writing `/Users/leaf/Projects/elec5305-local/repo/tmp/research_report_build/research_report.log` (21.091796875 KiB)
-note: Writing `/Users/leaf/Projects/elec5305-local/repo/tmp/research_report_build/research_report.pdf` (385.91015625 KiB)
+note: Writing `/Users/leaf/Projects/elec5305-local/repo/tmp/research_report_build/research_report.log` (22.015625 KiB)
+note: Writing `/Users/leaf/Projects/elec5305-local/repo/tmp/research_report_build/research_report.pdf` (489.94921875 KiB)
 note: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)

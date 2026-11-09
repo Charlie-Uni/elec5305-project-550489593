@@ -1,0 +1,34 @@
+{
+  "started_utc": "2026-11-09T12:36:54.274150+00:00",
+  "reason": "Post-hoc check of latency drift after unequal CNN frontend timings; original pass retained",
+  "primary_order": [
+    "svm_clean",
+    "cnn_clean",
+    "svm_wgn",
+    "cnn_wgn",
+    "svm_semantic",
+    "cnn_semantic",
+    "clap_baseline"
+  ],
+  "repeat_order": [
+    "clap_baseline",
+    "cnn_semantic",
+    "svm_semantic",
+    "cnn_wgn",
+    "svm_wgn",
+    "cnn_clean",
+    "svm_clean"
+  ],
+  "completed": [
+    "clap_baseline",
+    "cnn_semantic",
+    "svm_semantic",
+    "cnn_wgn",
+    "svm_wgn",
+    "cnn_clean",
+    "svm_clean"
+  ],
+  "active": null,
+  "complete": true,
+  "finished_utc": "2026-11-09T12:38:28.364578+00:00"
+}

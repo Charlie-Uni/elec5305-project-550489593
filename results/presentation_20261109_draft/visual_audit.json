@@ -1,0 +1,14 @@
+{
+  "pdf_sha256": "1940edd0883c529c5b09b7d47d92630387cdbe75470cc56571b9d315788e74e1",
+  "pages": 13,
+  "text_flags": [],
+  "visual_review_required": false,
+  "verified": true,
+  "visual_review": "All 13 slides reviewed in rendered contact sheet; final updated intervention table and cost chart inspected at full size. Earlier unchanged slides also reviewed individually.",
+  "pptx_sha256": "cd357e197d350067655c18df571dc8c4ca1c649966ddcb246f078169fdc28177",
+  "embedded_audio": [
+    "ppt/media/media-10-1.wav",
+    "ppt/media/media-10-4.wav"
+  ],
+  "recorded_video_included": false
+}

@@ -9,11 +9,12 @@ import argparse
 import importlib.metadata
 import json
 import platform
+import subprocess
 from pathlib import Path
 from time import perf_counter
 
 import numpy as np
-from threadpoolctl import threadpool_limits
+from threadpoolctl import threadpool_info, threadpool_limits
 
 from esc_robustness.artifacts import sha256_file, write_json
 from esc_robustness.data import load_audio, load_metadata
@@ -100,6 +101,9 @@ def run(system_name, model_path, data_root, output, repeats=3):
     records = []
     started = perf_counter()
     with threadpool_limits(limits=1):
+        observed_pools = threadpool_info()
+        if any(pool["num_threads"] != 1 for pool in observed_pools):
+            raise ValueError("Benchmark numerical thread count differs")
         for fold in range(1, 6):
             first = load_audio(data_root / "audio" / panel[(fold, 0)].filename, config)
             for _ in range(10):
@@ -139,6 +143,7 @@ def run(system_name, model_path, data_root, output, repeats=3):
         "batch_size": 1,
         "device": "cpu",
         "numerical_threads": 1,
+        "observed_thread_pools": observed_pools,
         "repetitions_per_clip": repeats,
         "warmup_per_model": 10,
         "trials": len(records),
@@ -155,11 +160,29 @@ def run(system_name, model_path, data_root, output, repeats=3):
         "includes": ["frontend", "audio representation", "50-class scoring", "argmax"],
         "platform": platform.platform(),
         "processor": platform.processor(),
+        "cpu_name": subprocess.check_output(
+            ["sysctl", "-n", "machdep.cpu.brand_string"], text=True
+        ).strip()
+        if platform.system() == "Darwin"
+        else platform.processor(),
         "versions": {p: importlib.metadata.version(p) for p in ("numpy", "scipy", "scikit-learn")},
         "interpretation": "Latency distribution over clips and repetitions; not independent accuracy observations or a general hardware guarantee",
         "trials_sha256": sha256_file(output / "trials.csv"),
         "source_sha256": sha256_file(Path(__file__)),
     }
+    if system_name == "svm":
+        summary["support_vectors_per_fold"] = {
+            str(fold): int(bundle["model"].named_steps["svc"].support_vectors_.shape[0])
+            for fold, bundle in system.models.items()
+        }
+    for package in (
+        ["torch"]
+        if system_name == "cnn"
+        else ["torch", "laion-clap", "transformers"]
+        if system_name == "clap"
+        else []
+    ):
+        summary["versions"][package] = importlib.metadata.version(package)
     for key in ("preprocessing_ms", "inference_scoring_ms", "total_ms"):
         values = np.array([r[key] for r in records])
         summary[key] = dict(

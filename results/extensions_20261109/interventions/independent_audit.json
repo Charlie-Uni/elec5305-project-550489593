@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "clean_variants": 14,
+  "condition_cells": 336,
+  "paired_effects": 156,
+  "replication_contrasts": 12,
+  "cnn_seed_aggregates": 72,
+  "method": "Direct CSV/sklearn recomputation; independently calculated exact tests and Holm adjustment",
+  "bootstrap_scope": "Bounds and point estimates checked; stochastic replicates not independently regenerated",
+  "source_summary_sha256": "75783d145ef31f66f09195484be312b00386b973161b15a6e310a5a3b57bfc76"
+}

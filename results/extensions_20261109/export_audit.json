@@ -1,0 +1,174 @@
+{
+  "verified": true,
+  "files": {
+    "intervention_figures/13_augmentation_transfer.pdf": {
+      "sha256": "521d43b1b611a7d2fb21c4fc0a8a5eb5b815aca390f4fa949c1367cb012a7177",
+      "fonts": [
+        {
+          "name": "/HFAMIJ+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        },
+        {
+          "name": "/EEZAWI+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 7.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "intervention_figures/14_svm_paired_training_effects.pdf": {
+      "sha256": "06d2c8eb3cf21a97f10d32cc3faa546c0df18fc1d97d7e3247858997c32ab45b",
+      "fonts": [
+        {
+          "name": "/FDQMCK+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        },
+        {
+          "name": "/EKJTPF+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 9.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "intervention_figures/15_cnn_paired_training_effects.pdf": {
+      "sha256": "589d299c8c9badd4649ca534055e8135fe99c8197d3b30e877177259423603b7",
+      "fonts": [
+        {
+          "name": "/CWZASA+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        },
+        {
+          "name": "/EKJTPF+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 7.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "intervention_figures/16_clap_prompt_ensemble.pdf": {
+      "sha256": "84229de6b52df20fa0fa4c3bef9ce3a31df1b1ec540fc1be5a492a325abf3de2",
+      "fonts": [
+        {
+          "name": "/CGBTBX+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        },
+        {
+          "name": "/EKJTPF+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 7.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "intervention_figures/17_cnn_overlap_replication.pdf": {
+      "sha256": "44d60bf5e54fdc7a54e5e290853bc51422e0cd98caf4c55cc3a50c4faf6f560e",
+      "fonts": [
+        {
+          "name": "/BKSVLQ+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        },
+        {
+          "name": "/CWEZVP+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 7.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "intervention_figures/19_semantic_vs_wgn_training.pdf": {
+      "sha256": "5f5d1f57597fd11bf7790687faf6be5320489717646b35c9e90383d1e3cb69d1",
+      "fonts": [
+        {
+          "name": "/ZGBQJF+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        },
+        {
+          "name": "/EKJTPF+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 7.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    },
+    "cost_figures/18_balanced_deployment_cost.pdf": {
+      "sha256": "073eb5fbcf5b077148f8e59487e860188662d72ffd8dfc4e6ff4c0755fecb9b7",
+      "fonts": [
+        {
+          "name": "/DAXDNA+DejaVuSans",
+          "subtype": "/CIDFontType2",
+          "embedded_streams": [
+            "/FontFile2"
+          ]
+        }
+      ],
+      "minimum_text_pt": 7.0,
+      "png_dpi": [
+        599.9988,
+        599.9988
+      ]
+    }
+  },
+  "font_warning_resolution": "The generic checker did not descend into Type0 CID fonts; direct PDF descendant FontDescriptor inspection confirms embedded FontFile2 streams.",
+  "data_profile_notes": [
+    "Variant/system/regime/condition/region/seed are grouping factors, not continuous variables.",
+    "Seed is intentionally absent for SVM/CLAP; capture is undefined for white/DEMAND conditions.",
+    "All 336 condition cells have finite accuracy/F1. Large between-model differences are retained, not removed as outliers.",
+    "Bounded performance uses a linear axis starting at zero; latency uses a log axis."
+  ],
+  "visual_review": "All seven colour exports and grayscale contact sheet inspected; model and treatment distinctions remain visible through markers/line styles. Layout audits contain no flags."
+}
