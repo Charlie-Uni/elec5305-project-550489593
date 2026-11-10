@@ -562,7 +562,7 @@ def analyse(run_dir, regions=("own", "target")):
         )
         cell_keys = np.array([f"{r['condition']}@{r['level_db']:+.0f}" for r in records])
         fused = {
-            f"{kind}_{name}": np.full(arrays["scores"].shape, np.nan, dtype=np.float32)
+            f"{kind}_{name}": np.full(arrays["scores"].shape, np.nan, dtype=np.float64)
             for kind in ("mixture", "control")
             for name in ("aligned_fixed", "aligned_calibrated")
         }
