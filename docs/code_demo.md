@@ -8,7 +8,7 @@ The video is an actual screen recording of this process. The two exported audio 
 
 ## Inputs and setup
 
-Use the default `main` checkout (the retained `feature/interference` branch also works) and the environments/data described in the [repository instructions](../README.md). The layout below is relative to a runtime directory; `repo/` is the checkout. Data and weights are external to GitHub because of their size. The demo validates source, metadata and model provenance and uses the evaluated checkpoints; arbitrary replacement models need not reproduce these outputs.
+Use the default `main` checkout (the retained `feature/interference` branch also works) and the environments/data described in the [baseline guide](guides/baselines.md) and [CLAP guide](guides/interference_and_clap.md#frozen-clap-zero-shot-reference). The layout below is relative to a runtime directory; `repo/` is the checkout. Data and weights are external to GitHub because of their size. The demo validates source, metadata and model provenance and uses the evaluated checkpoints; arbitrary replacement models need not reproduce these outputs.
 
 ```text
 runtime/
@@ -22,7 +22,7 @@ runtime/
   hf-cache/
 ```
 
-The baseline environment contains the pinned SVM/CNN dependencies used by the saved models. The CLAP environment follows `requirements-clap-macos.txt` and needs the cached RoBERTa tokenizer/configuration already prepared by the documented CLAP clean run. The demonstration uses offline inference; it is not an automatic weight download. Follow the clean-training and CLAP preparation instructions in the README when reproducing on a new computer. No DEMAND files are needed for this example.
+The baseline environment contains the pinned SVM/CNN dependencies used by the saved models. The CLAP environment follows `requirements-clap-macos.txt` and needs the cached RoBERTa tokenizer/configuration already prepared by the documented CLAP clean run. The demonstration uses offline inference; it is not an automatic weight download. Follow the linked clean-training and CLAP preparation guides when reproducing on a new computer. No DEMAND files are needed for this example.
 
 ## Run from the checkout
 

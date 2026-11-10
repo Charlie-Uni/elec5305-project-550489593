@@ -2,17 +2,45 @@
 
 [Repository home](../README.md) · [Results index](../results/README.md) · [Project website](https://charlie-uni.github.io/elec5305-project-550489593/)
 
+## Reports and demonstration
+
 | Purpose | Document |
 |---|---|
-| Current report | [10-page PDF](../results/final_submission_20261110/final_report.pdf) · [LaTeX source](final_report.tex) · [generated tables](final_report_tables.tex) |
-| Detailed supplement | [Unchanged 26-page PDF](../results/research_report_20261109_draft/research_report.pdf) · [source](research_report.tex) |
-| Remaining report edits | [Prioritised follow-up and verified capture counts](report_followup_20261110.md) |
-| Course submission | [Final checklist](final_submission_checklist_20261110.md) · [weighted rubric review](rubric_review_20261110.md) · [80 instructor suggestions](teacher_review_20261110.md) |
-| Code and recorded demonstration | [Run guide](code_demo.md) · [actual execution video](../results/final_submission_20261110/code_demo.mp4) |
-| Website publication | [Verified Pages workflow and recovery notes](pages_deployment.md) |
-| Presentation | [12-slide editable deck](../results/final_submission_20261110/presentation.pptx) · [PDF](../results/final_submission_20261110/presentation.pdf) · [exact narration script](video_narration_final.txt) |
-| Augmentation, seeds and prompts | [Extension protocol](extension_protocol_20261109.md) |
-| Rank and acoustic diagnostics | [Closing-analysis protocol](closing_protocol_20261110.md) |
-| Original proposal | [PDF](../ELEC5305_Project_proposal_550489593.pdf) · [source](proposal.tex) |
+| Main manuscript | [10-page PDF](../results/final_submission_20261110/final_report.pdf) · [LaTeX source](final_report.tex) · [generated tables](final_report_tables.tex) |
+| Detailed technical supplement | [Original 26-page PDF](../results/research_report_20261109_draft/research_report.pdf) · [source](research_report.tex) |
+| Presentation | [12-slide PDF](../results/final_submission_20261110/presentation.pdf) · [editable PowerPoint](../results/final_submission_20261110/presentation.pptx) |
+| Code demonstration | [Run guide](code_demo.md) · [actual execution video](../results/final_submission_20261110/code_demo.mp4) · [recording script](video_narration_final.txt) |
+| Current report edits | [Prioritised follow-up and verified capture counts](report_followup_20261110.md) |
+| Course submission | [Final checklist](final_submission_checklist_20261110.md) · [rubric review](rubric_review_20261110.md) · [80 instructor suggestions](teacher_review_20261110.md) |
 
-The current report remains subject to the listed editorial revisions and author review. Experimental completion, manuscript readiness and Canvas submission are separate states. Earlier drafts and audit files remain available for provenance; their dated conclusions describe their own reviewed versions.
+The execution clip has no author narration. Experimental completion, manuscript
+readiness and Canvas submission are separate states; see the current follow-up
+and checklist before submitting.
+
+## Reproduce the study
+
+Run commands in these guides from the repository root. The detailed instructions
+were moved out of the main README; dated measurements remain tied to their
+original runs and cohorts.
+
+| Step | Guide |
+|---|---|
+| 1. Understand the design | [Research question, folds, controls, power definitions and metrics](guides/experiment_design.md) |
+| 2. Set up data and clean baselines | [Install, download ESC-50, validate DSP, train SVM/CNN and measure cost](guides/baselines.md) |
+| 3. Reproduce interference and CLAP | [DEMAND, manifests, own/target evaluation, frozen CLAP and figures](guides/interference_and_clap.md) |
+| 4. Reproduce extensions | [Augmentation, seeds, prompts and closing analyses](guides/extensions.md) |
+| 5. Inspect implementation | [Source-code map](../src/esc_robustness/README.md) · [scripts by task](../scripts/README.md) |
+
+## Protocols and maintenance
+
+- [Augmentation, seeds and prompt protocol](extension_protocol_20261109.md)
+- [Ranked-readout and acoustic-overlap protocol](closing_protocol_20261110.md)
+- [Verified Pages publication](pages_deployment.md)
+- [Repository organisation, duplicate policy and cleanup record](repository_maintenance.md)
+
+## Historical material and sources
+
+- [Original proposal PDF](../ELEC5305_Project_proposal_550489593.pdf) · [source](proposal.tex) · [rebuild instructions and references](guides/proposal_and_references.md)
+- [Earlier narration](video_narration_draft.txt) and [earlier presentation](../results/presentation_20261109_draft/research_presentation.pptx)
+- `report_*.tex` files are build inputs for the detailed report; they are retained with its source.
+- Earlier drafts and audit files record their own versions. Their dates and hashes are not a statement of the current deployment or submission status.
