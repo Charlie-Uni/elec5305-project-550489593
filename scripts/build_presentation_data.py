@@ -4,6 +4,8 @@ import csv
 import json
 from pathlib import Path
 
+from delivery_claims import closing_claims
+
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "results/presentation_20261109_draft"
 
@@ -16,6 +18,7 @@ def rows(relative):
 def main():
     extension = ROOT / "results/extensions_20261109"
     data = {
+        "closing": closing_claims(),
         "core": rows("results/clap_full_20261109/all_conditions_verified.csv"),
         "replication": rows(
             "results/extensions_20261109/clean_replication/cnn_overlap_replication.csv"
@@ -59,7 +62,9 @@ def main():
         if not json.loads((extension / "cost_repeatability/audit.json").read_text())["verified"]:
             raise ValueError("Both timing passes must be checked")
         data["cost_panel"] = rows("results/extensions_20261109/cost_panel/latency_summary.csv")
-        data["cost_panel_reverse"] = rows("results/extensions_20261109/cost_panel_reverse/latency_summary.csv")
+        data["cost_panel_reverse"] = rows(
+            "results/extensions_20261109/cost_panel_reverse/latency_summary.csv"
+        )
     DESTINATION.mkdir(parents=True, exist_ok=True)
     (DESTINATION / "presentation_data.json").write_text(json.dumps(data, indent=2))
 

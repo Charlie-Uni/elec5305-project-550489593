@@ -1,10 +1,9 @@
 {
   "verified": true,
-  "index_sha256": "a0373114d96177df92f1d12be21bcbb64f23179048635c80b3c1edb2ec742c84",
-  "data_sha256": "b1638aba420bf48c66cbe192b5faf6d094d3ef45e00896d1b39e25d910154db0",
-  "local_assets_checked": 14,
+  "index_sha256": "57c754a1c7e9c4c9e1d52ddfdc1f0f21a0c8e2c6bf1888238402163ad671e14b",
+  "data_sha256": "77b824ddece198caed0dd8203042b3eee11cbbb615c45b374affcd7b9413098e",
+  "local_assets_checked": 26,
   "missing_assets": [],
-  "js_syntax": "passed",
   "browser_console_errors": [],
   "viewports_reviewed": [
     320,
@@ -12,11 +11,10 @@
     1280
   ],
   "checks": [
-    "Power selectors update core, ensemble and intervention tables together",
-    "Both power definitions visually checked",
-    "No document overflow at 320 or 390 px; wide tables scroll within containers",
-    "Can-opening + clock-alarm case reproduces saved predictions",
-    "Both selected audio controls load 5-second recordings without media errors"
+    "Both power conventions and both CLAP readouts match independent CSV verification",
+    "No page overflow; tables scroll inside mobile containers",
+    "Two 5-second audio controls load without media errors"
   ],
-  "public_pages_deployed": false
+  "public_pages_deployed": false,
+  "browser_audit": "results/delivery_sync_20261110/local_browser_audit.json"
 }

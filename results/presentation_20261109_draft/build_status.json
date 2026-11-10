@@ -1,5 +1,6 @@
 {
-  "slides": 13,
+  "slides": 16,
+  "closing_analyses_complete": true,
   "editable_charts": true,
   "embedded_audio_clips": 2,
   "augmentation_complete": true,
@@ -7,7 +8,7 @@
   "draft": true,
   "pptxgenjs": "4.0.1",
   "node": "v24.22.1",
-  "source_sha256": "fd5f37ef1aeebf16350a114f1588ec0d8fa35152d386a12421d2ff84a7817f59",
-  "data_sha256": "74617aae29406ed3d47436ab4ccedfb94c1816f43f3f9feac5145cc158b8836d",
-  "pptx_sha256": "18dfd502ace9df8c4c0ab521c6b8e2c30bc4b8244a62da24b2caa6fe13c7a4a4"
+  "source_sha256": "6df86fd7e8736c0cab03eda28f349a7e8bff36b27577182500b1ed0063facdee",
+  "data_sha256": "6a4958851205cd8dbf7dd1b017dc7ba018f2cf52e1e4b9561ea9d5b5f13fea76",
+  "pptx_sha256": "d9f04e0d0fa467455da3bfd7f49ea4bfcd7d69848858cf819bac2f6efb71bc92"
 }

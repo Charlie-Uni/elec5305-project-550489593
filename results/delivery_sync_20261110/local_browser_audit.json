@@ -1,0 +1,66 @@
+{
+  "url": "http://127.0.0.1:8765/",
+  "states": [
+    {
+      "region": "own",
+      "variant": "clap_baseline",
+      "readout": "Same category / 2000\t43.95%\t26.05%\t23.35%\t6.65%\t37.34% (236/632)\nDifferent category / 2000\t44.60%\t21.00%\t24.05%\t10.35%\t33.17% (203/612)",
+      "acoustics": "SVM\t+1.90 [-4.42, +8.13]\t+8.43 [+2.78, +14.61]\nCNN\t+3.81 [-3.33, +11.79]\t+2.25 [-3.37, +7.96]\nCLAP\t-25.71 [-32.71, -19.05]\t-19.10 [-26.74, -11.80]",
+      "support": "Own activity power: 210 targets / 199 source clusters / 49 classes; 178 targets / 168 source clusters / 48 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    },
+    {
+      "region": "own",
+      "variant": "clap_prompt_ensemble",
+      "readout": "Same category / 2000\t41.55%\t36.65%\t19.05%\t2.75%\t47.60% (307/645)\nDifferent category / 2000\t45.55%\t28.45%\t22.90%\t3.10%\t38.60% (249/645)",
+      "acoustics": "SVM\t+1.90 [-4.42, +8.13]\t+8.43 [+2.78, +14.61]\nCNN\t+3.81 [-3.33, +11.79]\t+2.25 [-3.37, +7.96]\nCLAP\t-25.71 [-32.71, -19.05]\t-19.10 [-26.74, -11.80]",
+      "support": "Own activity power: 210 targets / 199 source clusters / 49 classes; 178 targets / 168 source clusters / 48 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    },
+    {
+      "region": "target",
+      "variant": "clap_baseline",
+      "readout": "Same category / 1998\t42.09%\t26.73%\t24.72%\t6.46%\t36.45% (242/664)\nDifferent category / 1999\t41.97%\t22.16%\t25.66%\t10.21%\t32.92% (213/647)",
+      "acoustics": "SVM\t+2.44 [-3.81, +8.96]\t+8.56 [+3.21, +14.05]\nCNN\t+3.90 [-3.94, +11.77]\t+3.74 [-2.12, +9.19]\nCLAP\t-23.41 [-30.30, -16.19]\t-16.04 [-23.28, -8.95]",
+      "support": "Target activity power: 205 targets / 195 source clusters / 49 classes; 187 targets / 178 source clusters / 47 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    },
+    {
+      "region": "target",
+      "variant": "clap_prompt_ensemble",
+      "readout": "Same category / 1998\t38.99%\t38.34%\t19.92%\t2.75%\t47.85% (322/673)\nDifferent category / 1999\t42.47%\t29.96%\t24.41%\t3.15%\t38.65% (264/683)",
+      "acoustics": "SVM\t+2.44 [-3.81, +8.96]\t+8.56 [+3.21, +14.05]\nCNN\t+3.90 [-3.94, +11.77]\t+3.74 [-2.12, +9.19]\nCLAP\t-23.41 [-30.30, -16.19]\t-16.04 [-23.28, -8.95]",
+      "support": "Target activity power: 205 targets / 195 source clusters / 49 classes; 187 targets / 178 source clusters / 47 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    }
+  ],
+  "sizes": [
+    {
+      "width": 1280,
+      "scroll": 1280
+    },
+    {
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "width": 320,
+      "scroll": 320
+    }
+  ],
+  "audio": [
+    {
+      "duration": 5,
+      "ready": 4,
+      "error": null
+    },
+    {
+      "duration": 5,
+      "ready": 4,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "assets": 26,
+  "bad": []
+}

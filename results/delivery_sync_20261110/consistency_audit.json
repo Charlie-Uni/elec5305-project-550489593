@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "native_chart_values_checked": 54,
+  "native_charts": 7,
+  "intervention_table_cells": 30,
+  "interval_lines_checked": 6,
+  "exact_narration_segments": 16,
+  "browser_selector_states": 4,
+  "embedded_audio_unchanged": true,
+  "report_unchanged": true,
+  "claim_boundary": "Numerical consistency and stated interpretation checked; not a course-format approval or completed video.",
+  "files": {
+    "results/research_report_20261109_draft/research_report.pdf": "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35",
+    "results/presentation_20261109_draft/research_presentation.pptx": "d9f04e0d0fa467455da3bfd7f49ea4bfcd7d69848858cf819bac2f6efb71bc92",
+    "results/presentation_20261109_draft/research_presentation.pdf": "d08cdce7194c6a4cffda2b8e14ed8b7adbaf46e58da5d617d6c451d3db24e272",
+    "results/presentation_20261109_draft/presentation_data.json": "6a4958851205cd8dbf7dd1b017dc7ba018f2cf52e1e4b9561ea9d5b5f13fea76",
+    "docs/video_narration_draft.txt": "4e44272978f4d30b73134f4fbf1aa55bb567ae6fecc5084214b9846d4774d197",
+    "index.html": "57c754a1c7e9c4c9e1d52ddfdc1f0f21a0c8e2c6bf1888238402163ad671e14b",
+    "site-data.json": "77b824ddece198caed0dd8203042b3eee11cbbb615c45b374affcd7b9413098e"
+  }
+}

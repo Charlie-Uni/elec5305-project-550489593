@@ -1,31 +1,19 @@
 {
-  "pdf_sha256": "228642357c4b771864e006fa1217728558a89e17d5c7dee89edc9cc5fb0b32b0",
-  "pages": 13,
+  "pdf_sha256": "d08cdce7194c6a4cffda2b8e14ed8b7adbaf46e58da5d617d6c451d3db24e272",
+  "pages": 16,
   "text_flags": [],
   "visual_review_required": false,
   "verified": true,
   "reviewed_date": "2026-11-10",
-  "visual_review": "All 13 slides reviewed in contact sheet; all 13 final slide renders pixel-identical to the previously individually reviewed version. This revision changes a speaker-note rounding value only.",
-  "pixel_identical_to_prior_review": [
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true
-  ],
-  "pptx_sha256": "18dfd502ace9df8c4c0ab521c6b8e2c30bc4b8244a62da24b2caa6fe13c7a4a4",
-  "embedded_audio": [
-    "ppt/media/media-10-1.wav",
-    "ppt/media/media-10-4.wav"
-  ],
+  "visual_review": "All 16 final slide pages inspected individually. New closing-analysis slides 10–12 checked for labels, denominators, confidence intervals and claim boundaries. No clipping or overlap observed.",
+  "pptx_sha256": "d9f04e0d0fa467455da3bfd7f49ea4bfcd7d69848858cf819bac2f6efb71bc92",
+  "embedded_audio_unchanged": true,
   "recorded_video_included": false,
-  "ooxml_validation": "passed"
+  "ooxml_validation": "passed",
+  "artifact_tool_import": "passed",
+  "native_powerpoint_playback_verified": false,
+  "embedded_audio": [
+    "ppt/media/media-13-1.wav",
+    "ppt/media/media-13-4.wav"
+  ]
 }

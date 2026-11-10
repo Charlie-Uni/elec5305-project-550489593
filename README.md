@@ -8,10 +8,11 @@ ELEC5305 project · Qihan Zhu · SID 550489593
 
 [Research report draft](results/research_report_20261109_draft/research_report.pdf)
 · [10 November review against all 80 instructor recommendations](docs/teacher_review_20261110.md)
-· [Interactive project page](index.html)
+· [Interactive project page](https://charlie-uni.github.io/elec5305-project-550489593/)
 · [Attributed listening examples](examples/listening_own_20261109/README.md)
 · [Video recording script](docs/video_narration_draft.txt)
 · [Editable presentation draft](results/presentation_20261109_draft/research_presentation.pptx)
+· [Final submission checklist](docs/final_submission_checklist_20261110.md)
 · [Exact evaluated mixture manifests](results/mixture_manifests_20261109/README.md)
 
 The core study and expanded interventions are complete and independently checked:
@@ -19,6 +20,10 @@ The core study and expanded interventions are complete and independently checked
 156 paired intervention contrasts. The report, figures and editable presentation
 are prepared for author review. The recording script is preparation material,
 not a finished video submission.
+
+The 10 November delivery update synchronizes both closing analyses across the
+26-page report, 16-slide editable presentation, speaker notes, video script and
+interactive page. [Cross-deliverable numerical checks](results/delivery_sync_20261110/consistency_audit.json) cover the native charts, tables, uncertainty intervals and all four website selector states. The 1,389-word script takes approximately 9.4–10.9 minutes including the two audio clips; the final course duration requirement still needs confirmation.
 
 ## Research question
 

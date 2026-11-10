@@ -6,6 +6,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from delivery_claims import closing_claims
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -33,6 +35,7 @@ def build(run):
     svm = sum((run / f"svm_{mode}/summary.json").exists() for mode in ("wgn", "semantic"))
     ensemble = (run / "clap_prompt_ensemble/complete.json").exists()
     state = {
+        "closing": closing_claims(),
         "updated": datetime.now(timezone.utc).isoformat(),
         "clean": clean,
         "conditions": conditions,
@@ -92,12 +95,20 @@ def build(run):
             raise ValueError("CPU panel requires an independent audit")
         with (costs / "latency_summary.csv").open() as handle:
             state["balanced_costs"] = list(csv.DictReader(handle))
-        if not json.loads((costs.with_name("cost_repeatability") / "audit.json").read_text())["verified"]:
+        if not json.loads((costs.with_name("cost_repeatability") / "audit.json").read_text())[
+            "verified"
+        ]:
             raise ValueError("Both timing passes must be checked")
         with (costs.with_name("cost_panel_reverse") / "latency_summary.csv").open() as handle:
             repeated = {r["variant"]: r for r in csv.DictReader(handle)}
         for row in state["balanced_costs"]:
-            row.update({f"reverse_{k}": v for k, v in repeated[row["variant"]].items() if k.startswith("total_")})
+            row.update(
+                {
+                    f"reverse_{k}": v
+                    for k, v in repeated[row["variant"]].items()
+                    if k.startswith("total_")
+                }
+            )
     (ROOT / "site-data.json").write_text(json.dumps(state, indent=2) + "\n")
 
 
