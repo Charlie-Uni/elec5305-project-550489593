@@ -9,6 +9,7 @@
 | Remaining report edits | [Prioritised follow-up and verified capture counts](report_followup_20261110.md) |
 | Course submission | [Final checklist](final_submission_checklist_20261110.md) · [weighted rubric review](rubric_review_20261110.md) · [80 instructor suggestions](teacher_review_20261110.md) |
 | Code and recorded demonstration | [Run guide](code_demo.md) · [actual execution video](../results/final_submission_20261110/code_demo.mp4) |
+| Website publication | [Verified Pages workflow and recovery notes](pages_deployment.md) |
 | Presentation | [12-slide editable deck](../results/final_submission_20261110/presentation.pptx) · [PDF](../results/final_submission_20261110/presentation.pdf) · [exact narration script](video_narration_final.txt) |
 | Augmentation, seeds and prompts | [Extension protocol](extension_protocol_20261109.md) |
 | Rank and acoustic diagnostics | [Closing-analysis protocol](closing_protocol_20261110.md) |

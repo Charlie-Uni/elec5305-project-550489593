@@ -222,4 +222,5 @@ data/
 artifacts/
 tmp/
 output/
+_site/
 .DS_Store
