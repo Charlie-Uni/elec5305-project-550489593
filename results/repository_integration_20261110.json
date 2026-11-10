@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "baseline_commit": "3eee109ab99f56f1c07245ef9f692c5f36d20b29",
+  "original_result_example_files_unchanged": 712,
+  "relative_document_links_checked": 136,
+  "source_code_changed": false,
+  "reports_and_decks_changed": false,
+  "raw_results_changed": false,
+  "pending_manuscript_edits": "docs/report_followup_20261110.md",
+  "review": "Documentation navigation and default-branch integration only; experimental and submission statuses remain distinct",
+  "updated_document_hashes": {
+    "README.md": "654472d2a5ab51804bf8f6804fa73514c88c581f945aa3d0193745592c92d427",
+    "docs/README.md": "e09242a5bec2df353ac746f222050e94555a81360029f5c7a007c8d0ef7764d9",
+    "results/README.md": "2423063adf8da500dec2ed23f1ec454deb25ab8cb169caee30249147b29e107a",
+    "docs/report_followup_20261110.md": "af5c44f64ddbe19a8e588a08e6b0791ada8686c98bc9660537ebf8dc59cb343d",
+    "docs/code_demo.md": "e3f836ec17a55dc28834763c539ac2925174655eaebd68074f1f94f104515fc6",
+    "docs/rubric_review_20261110.md": "be022d7a1e97ba39f46d70fdc84b341f0ae30a5ea873fbdd8ea4e23de5f33703",
+    "docs/final_submission_checklist_20261110.md": "8336e9c4a39a4d1a26c083d773409c859acafa25fa011cb4351bb4dc0d469422",
+    "docs/teacher_review_20261110.md": "b14ecd0505e6c1a225c36e0bb9363538e6e750e4d0cfd6052e0384d44a16304d",
+    "index.html": "a13db69d5f0f58d46e06c87c5ae6b0258aea7c0b082c75ebff265a0b5056b6a7"
+  },
+  "merged": true,
+  "pr_url": "https://github.com/Charlie-Uni/elec5305-project-550489593/pull/1",
+  "merge_commit": "b1f92128fe31035003f52fbe542c5c4c1374334c",
+  "merged_at": "2026-11-10T07:47:18Z",
+  "default_branch": "main",
+  "homepage_url": "https://charlie-uni.github.io/elec5305-project-550489593/",
+  "feature_branch_retained": true,
+  "report_editorial_revisions_complete": false,
+  "author_narrated_video_complete": false,
+  "canvas_submitted": false,
+  "canvas_due_and_permitted_types_checked_privately": true
+}
