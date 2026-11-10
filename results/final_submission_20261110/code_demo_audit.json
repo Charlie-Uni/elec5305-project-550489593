@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "duration_seconds": 40.8,
+  "resolution": [
+    1280,
+    960
+  ],
+  "recording": "Actual isolated-browser screen recording; no simulated results",
+  "audio": "Source-derived PCM16 examples muxed at logged browser playback times; no narration",
+  "playback_segments": [
+    {
+      "id": "control",
+      "start_seconds": 22.711
+    },
+    {
+      "id": "mixture",
+      "start_seconds": 29.329
+    }
+  ],
+  "sha256": "f53d682e9962ba0abe533360182046561d9fdf89faa30f3bf20bfa7b93e02271",
+  "inference_outputs": {
+    "svm": "4461a8f1f643840bad311bfb3d22ca24a2d4137ff0e40efc2ee28ca2de2a7106",
+    "cnn": "e6a8554b026436b492ac4a8d98a9792958d42ab7bd85554f7060d21d5c71669b",
+    "clap": "eb5a01974c6e51694be781ccdca04169dd5e47a6ed3914eff4b2c1f00b52a619"
+  },
+  "author_narrated_presentation_complete": false
+}

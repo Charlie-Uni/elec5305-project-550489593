@@ -1,0 +1,32 @@
+{
+  "geometry": [
+    {
+      "figure": "01_robustness",
+      "size_inches": [
+        6.692913385826772,
+        3.35
+      ],
+      "out_of_bounds": []
+    },
+    {
+      "figure": "02_top_two",
+      "size_inches": [
+        6.692913385826772,
+        1.8
+      ],
+      "out_of_bounds": []
+    },
+    {
+      "figure": "03_acoustic_matching",
+      "size_inches": [
+        6.692913385826772,
+        2.35
+      ],
+      "out_of_bounds": []
+    }
+  ],
+  "source": "Unchanged audited core and closing tables; all figures use the final 170-mm report width",
+  "core_rows": 72,
+  "readout_rows": 192,
+  "acoustic_rows": 18
+}

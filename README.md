@@ -6,24 +6,32 @@ ELEC5305 project · Qihan Zhu · SID 550489593
 
 [Revised project proposal (PDF)](./ELEC5305_Project_proposal_550489593.pdf)
 
-[Research report draft](results/research_report_20261109_draft/research_report.pdf)
-· [10 November review against all 80 instructor recommendations](docs/teacher_review_20261110.md)
+[10-page final report](results/final_submission_20261110/final_report.pdf)
+· [Unchanged 26-page technical supplement](results/research_report_20261109_draft/research_report.pdf)
+· [Rubric-by-rubric review](docs/rubric_review_20261110.md)
+· [All 80 instructor recommendations](docs/teacher_review_20261110.md)
 · [Interactive project page](https://charlie-uni.github.io/elec5305-project-550489593/)
-· [Attributed listening examples](examples/listening_own_20261109/README.md)
-· [Video recording script](docs/video_narration_draft.txt)
-· [Editable presentation draft](results/presentation_20261109_draft/research_presentation.pptx)
+· [12-slide presentation](results/final_submission_20261110/presentation.pptx)
+· [Video recording script](docs/video_narration_final.txt)
+· [Real execution video](results/final_submission_20261110/code_demo.mp4)
+· [Run the code demonstration](docs/code_demo.md)
 · [Final submission checklist](docs/final_submission_checklist_20261110.md)
+· [Attributed listening examples](examples/listening_own_20261109/README.md)
 · [Exact evaluated mixture manifests](results/mixture_manifests_20261109/README.md)
 
-The core study and expanded interventions are complete and independently checked:
+The core study and declared extensions are complete and independently checked:
 14 variants, both power protocols, all three CNN seeds, 336 condition cells and
-156 paired intervention contrasts. The report, figures and editable presentation
-are prepared for author review. The recording script is preparation material,
-not a finished video submission.
+156 paired intervention contrasts. The two closing analyses cover exact ranked
+readout and spectral–temporal comparisons. No additional model or dataset is planned.
 
-The 10 November delivery update synchronizes both closing analyses across the
-26-page report, 16-slide editable presentation, speaker notes, video script and
-interactive page. [Cross-deliverable numerical checks](results/delivery_sync_20261110/consistency_audit.json) cover the native charts, tables, uncertainty intervals and all four website selector states. The 1,389-word script takes approximately 9.4–10.9 minutes including the two audio clips; the final course duration requirement still needs confirmation.
+The final delivery has a 10-page main report, the unchanged 26-page supplement,
+a 12-slide editable deck and synchronized 728-word narration (approximately
+5.4–6.1 minutes with demonstration pauses). The execution video shows fresh
+source-audio reconstruction and all three models, with checked predictions and
+two sound examples. It has no author narration; the author's final explanation,
+course-policy review and Canvas submission remain separate steps. The supplied
+brief specifies approximately 10 report pages and a brief video, not a fixed
+video duration. [Delivery audit](results/final_submission_20261110/delivery_audit.json).
 
 ## Research question
 
