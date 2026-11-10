@@ -26,6 +26,7 @@ from esc_robustness.local_alignment import (
     fused_scores,
     fusion_grid,
     grid_correct,
+    load_cached_ensemble,
     pack_components,
     paired_change,
     select_cross_fold,
@@ -227,6 +228,68 @@ def fake_frames(module, prepared):
         [module.get_audio_embedding_from_data(x=np.ascontiguousarray(c)) for c in chunks], axis=1
     )
     return pooled, unit_rows(frames)
+
+
+def test_identical_input_cache_preserves_scores_and_skips_reencoding():
+    names = {0: "first", 1: "second"}
+    text = np.random.default_rng(19).normal(size=(2, FakeCLAP.dimension))
+    calls = []
+
+    def counted(module, prepared):
+        calls.append(len(prepared))
+        return fake_frames(module, prepared)
+
+    cached = LocalAlignmentSystem(
+        FakeCLAP(), names, text, frame_source=counted, cache_encodings=True
+    )
+    plain = LocalAlignmentSystem(FakeCLAP(), names, text, frame_source=fake_frames)
+    first = np.linspace(-0.05, 0.05, 128)
+    second = np.linspace(0.02, 0.03, 128)
+    cached.evaluate_batch([1, 1], [first, first])
+    actual = cached.evaluate_batch([1, 1, 1], [second, first, second])
+    expected = plain.evaluate_batch([1, 1, 1], [second, first, second])
+    for a, b in zip(actual, expected):
+        np.testing.assert_allclose(a, b, atol=1e-7)
+    assert calls == [1, 1]
+    assert cached.provenance()["encoding_cache"]["unique_inputs"] == 2
+    assert cached.provenance()["encoding_cache"]["cache_hits"] == 3
+
+
+def test_text_cache_rejects_changed_model_templates_or_class_order(tmp_path):
+    from esc_robustness.artifacts import sha256_file
+
+    templates = tmp_path / "templates.txt"
+    templates.write_text("the sound of <sound>\na recording of <sound>\n")
+    names = {0: "first", 1: "second"}
+    per_prompt = unit_rows(np.random.default_rng(20).normal(size=(2, 2, 5)))
+    mean = unit_rows(per_prompt.mean(1))
+    cache = tmp_path / "cache"
+    cache.mkdir()
+    path = cache / "text_embeddings.npz"
+    np.savez_compressed(
+        path,
+        ensemble=mean,
+        per_prompt=per_prompt,
+        templates=np.array(templates.read_text().splitlines()),
+        class_names=np.array(list(names.values())),
+    )
+    (cache / "provenance.json").write_text(
+        json.dumps(
+            {
+                "checkpoint_sha256": "fixed-model",
+                "templates_sha256": sha256_file(templates),
+                "text_embeddings_sha256": sha256_file(path),
+            }
+        )
+    )
+    np.testing.assert_array_equal(load_cached_ensemble(cache, "fixed-model", templates, names), mean)
+    with pytest.raises(ValueError, match="checkpoint"):
+        load_cached_ensemble(cache, "different-model", templates, names)
+    with pytest.raises(ValueError, match="class order"):
+        load_cached_ensemble(cache, "fixed-model", templates, {0: "second", 1: "first"})
+    templates.write_text("changed <sound>\n")
+    with pytest.raises(ValueError, match="templates"):
+        load_cached_ensemble(cache, "fixed-model", templates, names)
 
 
 def test_system_run_and_analysis_on_toy_data(twelve_class_dataset, tmp_path):

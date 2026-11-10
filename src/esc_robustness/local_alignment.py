@@ -27,6 +27,8 @@ branch scores and are not cosine similarities.
 
 import argparse
 import csv
+import hashlib
+import json
 import platform
 from pathlib import Path
 from time import perf_counter
@@ -272,6 +274,7 @@ class LocalAlignmentSystem(CLAPSystem):
         feature_config=FeatureConfig(),
         checkpoint=None,
         frame_source=audio_frames,
+        cache_encodings=False,
     ):
         super().__init__(module, class_names, feature_config, checkpoint=checkpoint)
         self.single_text_embeddings = self.text_embeddings
@@ -287,6 +290,9 @@ class LocalAlignmentSystem(CLAPSystem):
         ]
         self.temperatures = tuple(float(t) for t in temperatures)
         self.frame_source = frame_source
+        self.cache_encodings = cache_encodings
+        self._encoding_cache = {}
+        self.cache_hits = 0
 
     def branch_scores(self, prepared, temperatures=None):
         pooled, frames = self.frame_source(self.module, prepared)
@@ -301,8 +307,22 @@ class LocalAlignmentSystem(CLAPSystem):
         if len(folds) != len(audios) or not audios:
             raise ValueError("Expected one fold per audio clip in a nonempty batch")
         prepared = np.stack([self.preprocess(audio) for audio in audios])
-        pooled, text_guided, audio_guided = self.branch_scores(prepared)
-        return pooled @ self.text_embeddings.T, pack_components(pooled, text_guided, audio_guided)
+        if not self.cache_encodings:
+            pooled, text_guided, audio_guided = self.branch_scores(prepared)
+            return pooled @ self.text_embeddings.T, pack_components(pooled, text_guided, audio_guided)
+        keys = [hashlib.sha256(row.tobytes()).digest() for row in prepared]
+        inputs = dict(zip(keys, prepared))
+        missing = [key for key in inputs if key not in self._encoding_cache]
+        self.cache_hits += len(keys) - len(missing)
+        if missing:
+            pooled, text_guided, audio_guided = self.branch_scores(
+                np.stack([inputs[key] for key in missing])
+            )
+            scores = pooled @ self.text_embeddings.T
+            packed = pack_components(pooled, text_guided, audio_guided)
+            for key, score, representation in zip(missing, scores, packed):
+                self._encoding_cache[key] = (score.copy(), representation.copy())
+        return tuple(np.stack([self._encoding_cache[key][i] for key in keys]) for i in (0, 1))
 
     def evaluate(self, fold, audio):
         scores, packed = self.evaluate_batch([fold], [audio])
@@ -330,6 +350,13 @@ class LocalAlignmentSystem(CLAPSystem):
             fixed_rule=FIXED_RULE,
             single_prompts=self.single_prompts,
             prompts=self.prompts,
+            encoding_cache={
+                "enabled": self.cache_encodings,
+                "key": "SHA256 of identical resampled and quantised float32 input bytes",
+                "unique_inputs": len(self._encoding_cache),
+                "cache_hits": self.cache_hits,
+                "scope": "in-memory for this frozen model, text ensemble and temperature grid",
+            },
         )
         return info
 
@@ -753,7 +780,33 @@ def benchmark_alignment(system, audio_path, feature_config=FeatureConfig(), runs
     }
 
 
-def build_system(checkpoint, templates_path, data_root, device="cpu"):
+def load_cached_ensemble(cache_dir, checkpoint_sha256, templates_path, class_names):
+    """Reuse text embeddings only after checking model, templates, names and file hashes."""
+    cache_dir, templates_path = Path(cache_dir), Path(templates_path)
+    provenance = json.loads((cache_dir / "provenance.json").read_text())
+    path = cache_dir / "text_embeddings.npz"
+    if provenance["checkpoint_sha256"] != checkpoint_sha256:
+        raise ValueError("Text cache checkpoint differs")
+    if provenance["templates_sha256"] != sha256_file(templates_path):
+        raise ValueError("Text cache templates differ")
+    if provenance["text_embeddings_sha256"] != sha256_file(path):
+        raise ValueError("Text cache file hash differs")
+    templates = [line.strip() for line in templates_path.read_text().splitlines() if line.strip()]
+    with np.load(path) as arrays:
+        if arrays["templates"].tolist() != templates:
+            raise ValueError("Text cache template order differs")
+        if arrays["class_names"].tolist() != [class_names[i] for i in sorted(class_names)]:
+            raise ValueError("Text cache class order differs")
+        ensemble = arrays["ensemble"]
+        expected = unit_rows(arrays["per_prompt"].mean(axis=1))
+    if not np.allclose(ensemble, expected, atol=1e-12, rtol=1e-12):
+        raise ValueError("Text cache is not the declared uniform ensemble")
+    return ensemble
+
+
+def build_system(
+    checkpoint, templates_path, data_root, device="cpu", text_cache=None, cache_encodings=False
+):
     from .prompt_ensemble import ensemble_embeddings
 
     templates_path = Path(templates_path)
@@ -761,12 +814,21 @@ def build_system(checkpoint, templates_path, data_root, device="cpu"):
     class_names = {c.target: c.category for c in load_metadata(data_root)}
     backend = load_laion_clap(checkpoint, device=device)
     start = perf_counter()
-    ensemble, _ = ensemble_embeddings(backend, class_names, templates)
-    system = LocalAlignmentSystem(backend, class_names, ensemble, checkpoint=checkpoint)
+    if text_cache is None:
+        ensemble, _ = ensemble_embeddings(backend, class_names, templates)
+    else:
+        ensemble = load_cached_ensemble(
+            text_cache, backend.checkpoint_sha256, templates_path, class_names
+        )
+    system = LocalAlignmentSystem(
+        backend, class_names, ensemble, checkpoint=checkpoint, cache_encodings=cache_encodings
+    )
     preparation = {
         "templates_sha256": sha256_file(templates_path),
         "templates_per_class": len(templates),
         "one_off_text_preparation_seconds": perf_counter() - start,
+        "text_preparation_kind": "encode_all_prompts" if text_cache is None else "verified_cache_load",
+        "text_cache": None if text_cache is None else str(text_cache),
     }
     return system, preparation
 
@@ -783,6 +845,8 @@ def run(
     device="cpu",
     limit=None,
     benchmark_audio=None,
+    text_cache=None,
+    cache_encodings=False,
 ):
     """Verify against cached references, encode everything once, then fuse and summarise."""
     from .clap_system import evaluate_clean
@@ -793,7 +857,9 @@ def run(
         raise FileExistsError("Choose a new local-alignment run directory")
     output.mkdir(parents=True, exist_ok=True)
     with threadpool_limits(limits=1):
-        system, preparation = build_system(checkpoint, templates_path, data_root, device)
+        system, preparation = build_system(
+            checkpoint, templates_path, data_root, device, text_cache, cache_encodings
+        )
         preflight = verify_reference(system, data_root, single_clean, ensemble_clean, clips=50)
         write_json(output / "preflight.json", preflight)
         if not preflight["passed"]:
@@ -831,6 +897,10 @@ def run(
             )
         if benchmark_audio is not None:
             write_json(output / "cost.json", benchmark_alignment(system, benchmark_audio))
+        write_json(
+            output / "encoding_cache.json",
+            {**system.provenance()["encoding_cache"], "source_sha256": sha256_file(Path(__file__))},
+        )
     summary = analyse(output, tuple(manifests))
     write_json(output / "complete.json", {"complete": True, "limit": limit})
     return summary
@@ -845,6 +915,7 @@ if __name__ == "__main__":
             command.add_argument(f"--{option}", type=Path, required=True)
         command.add_argument("--ensemble-clean", type=Path)
         command.add_argument("--device", choices=("cpu", "mps", "cuda"), default="cpu")
+        command.add_argument("--text-cache", type=Path, help="Verified existing prompt-ensemble run")
         if name == "run":
             command.add_argument("--output", type=Path, required=True)
             command.add_argument("--own", type=Path, help="Own-activity manifest directory")
@@ -852,6 +923,7 @@ if __name__ == "__main__":
             command.add_argument("--batch-size", type=int, default=8)
             command.add_argument("--limit", type=int, help="First rows only (smoke test)")
             command.add_argument("--benchmark-audio", type=Path)
+            command.add_argument("--cache-encodings", action="store_true")
         else:
             command.add_argument("--clips", type=int, default=50)
     again = commands.add_parser("analyse", help="Recompute the fusion from cached scores")
@@ -861,7 +933,9 @@ if __name__ == "__main__":
         analyse(args.run_dir)
     elif args.command == "preflight":
         with threadpool_limits(limits=1):
-            built, _ = build_system(args.checkpoint, args.templates, args.data_root, args.device)
+            built, _ = build_system(
+                args.checkpoint, args.templates, args.data_root, args.device, args.text_cache
+            )
             result = verify_reference(
                 built, args.data_root, args.single_clean, args.ensemble_clean, args.clips
             )
@@ -883,4 +957,6 @@ if __name__ == "__main__":
             args.device,
             args.limit,
             args.benchmark_audio,
+            args.text_cache,
+            args.cache_encodings,
         )

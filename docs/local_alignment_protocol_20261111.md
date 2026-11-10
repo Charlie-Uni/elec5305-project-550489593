@@ -82,6 +82,16 @@ each bootstrap. Target ranks break score ties in ascending class-ID order, consi
 with the argmax decision. These reporting and tie-handling clarifications precede any
 real-checkpoint alignment results and do not alter the declared parameter grid or preset.
 
+The Mac runner additionally supports `--text-cache` pointing to the existing fixed
+ensemble run. It checks the checkpoint, template bytes and order, class order and cache
+file SHA256, and recomputes the uniform mean from the saved per-prompt vectors. Its
+preparation timing then measures verified cache loading, not historical text encoding.
+`--cache-encodings` reuses scores only for byte-identical resampled/quantised float32
+inputs within the same frozen system and temperature grid. This avoids repeated controls
+and identical inputs across protocols; `encoding_cache.json` records unique inputs and
+hits. Deployment benchmarks bypass this input cache. Neither option changes the grid,
+preset, calibration population or mixture construction.
+
 ## Run (Mac, CLAP environment)
 
 ```bash
