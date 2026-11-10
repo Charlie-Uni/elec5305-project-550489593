@@ -1,0 +1,1379 @@
+{
+  "url": "http://127.0.0.1:8765/",
+  "states": [
+    {
+      "region": "own",
+      "variant": "clap_baseline",
+      "readout": "Same category / 2000\t43.95%\t26.05%\t23.35%\t6.65%\t37.34% (236/632)\nDifferent category / 2000\t44.60%\t21.00%\t24.05%\t10.35%\t33.17% (203/612)",
+      "acoustics": "SVM\t+1.90 [-4.42, +8.13]\t+8.43 [+2.78, +14.61]\nCNN\t+3.81 [-3.33, +11.79]\t+2.25 [-3.37, +7.96]\nCLAP\t-25.71 [-32.71, -19.05]\t-19.10 [-26.74, -11.80]",
+      "support": "Own activity power: 210 targets / 199 source clusters / 49 classes; 178 targets / 168 source clusters / 48 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    },
+    {
+      "region": "own",
+      "variant": "clap_prompt_ensemble",
+      "readout": "Same category / 2000\t41.55%\t36.65%\t19.05%\t2.75%\t47.60% (307/645)\nDifferent category / 2000\t45.55%\t28.45%\t22.90%\t3.10%\t38.60% (249/645)",
+      "acoustics": "SVM\t+1.90 [-4.42, +8.13]\t+8.43 [+2.78, +14.61]\nCNN\t+3.81 [-3.33, +11.79]\t+2.25 [-3.37, +7.96]\nCLAP\t-25.71 [-32.71, -19.05]\t-19.10 [-26.74, -11.80]",
+      "support": "Own activity power: 210 targets / 199 source clusters / 49 classes; 178 targets / 168 source clusters / 48 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    },
+    {
+      "region": "target",
+      "variant": "clap_baseline",
+      "readout": "Same category / 1998\t42.09%\t26.73%\t24.72%\t6.46%\t36.45% (242/664)\nDifferent category / 1999\t41.97%\t22.16%\t25.66%\t10.21%\t32.92% (213/647)",
+      "acoustics": "SVM\t+2.44 [-3.81, +8.96]\t+8.56 [+3.21, +14.05]\nCNN\t+3.90 [-3.94, +11.77]\t+3.74 [-2.12, +9.19]\nCLAP\t-23.41 [-30.30, -16.19]\t-16.04 [-23.28, -8.95]",
+      "support": "Target activity power: 205 targets / 195 source clusters / 49 classes; 187 targets / 178 source clusters / 47 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    },
+    {
+      "region": "target",
+      "variant": "clap_prompt_ensemble",
+      "readout": "Same category / 1998\t38.99%\t38.34%\t19.92%\t2.75%\t47.85% (322/673)\nDifferent category / 1999\t42.47%\t29.96%\t24.41%\t3.15%\t38.65% (264/683)",
+      "acoustics": "SVM\t+2.44 [-3.81, +8.96]\t+8.56 [+3.21, +14.05]\nCNN\t+3.90 [-3.94, +11.77]\t+3.74 [-2.12, +9.19]\nCLAP\t-23.41 [-30.30, -16.19]\t-16.04 [-23.28, -8.95]",
+      "support": "Target activity power: 205 targets / 195 source clusters / 49 classes; 187 targets / 178 source clusters / 47 classes (same; different category).",
+      "descriptor": "White-noise median dB Mel correlation is -0.728 for raw band energy, and -0.008 after bandwidth normalisation. Unequal Mel widths affect the descriptor; raw anticorrelation is not evidence that noise physically avoids the target spectrum. These are project DSP/CNN features, not CLAP’s internal frontend. The masking fraction is a proxy, not a perceptual masking model."
+    }
+  ],
+  "sizes": [
+    {
+      "target": "5-210612-A-37.wav",
+      "width": 1280,
+      "scroll": 1280
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "width": 1280,
+      "scroll": 1280
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "width": 320,
+      "scroll": 320
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "assets": 31,
+  "choices": 48,
+  "audio_loads": 96,
+  "all_visible_predictions_rates_and_ranks_match": true,
+  "video": {
+    "duration": 40.8,
+    "width": 1280,
+    "height": 960,
+    "error": null
+  },
+  "checks": [
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "white",
+      "level": "10",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 7.6% SVM, 18.6% CNN, 71.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: can opening",
+        "CNN · mixture predictionrainControl: can opening",
+        "CLAP · single prompt · mixture predictioncan openingControl: can opening"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000084_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000084_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "white",
+      "level": "5",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 5.4% SVM, 12.3% CNN, 64.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: can opening",
+        "CNN · mixture predictionrainControl: can opening",
+        "CLAP · single prompt · mixture predictioncan openingControl: can opening"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000085_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000085_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "white",
+      "level": "0",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 4.4% SVM, 6.9% CNN, 53.8% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: can opening",
+        "CNN · mixture predictionrainControl: can opening",
+        "CLAP · single prompt · mixture predictioncan openingControl: can opening"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000086_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000086_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "demand",
+      "level": "10",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 24.5% SVM, 40.1% CNN, 77.5% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionfootstepsControl: can opening",
+        "CNN · mixture predictionfootstepsControl: can opening",
+        "CLAP · single prompt · mixture predictioncan openingControl: can opening"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000087_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000087_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "demand",
+      "level": "5",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 17.9% SVM, 31.6% CNN, 74.0% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionfireworksControl: can opening",
+        "CNN · mixture predictionfootstepsControl: can opening",
+        "CLAP · single prompt · mixture predictioncan openingControl: can opening"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000088_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000088_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "demand",
+      "level": "0",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 11.3% SVM, 21.2% CNN, 67.1% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionfireworksControl: can opening",
+        "CNN · mixture predictionrainControl: can opening",
+        "CLAP · single prompt · mixture predictioncan openingControl: can opening"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000089_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000089_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "semantic_same",
+      "level": "10",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 10.8% SVM, 15.5% CNN, 21.6% CLAP of trials; accuracy was 29.3% SVM, 43.7% CNN, 61.6% CLAP.",
+      "note": "Target-active overlap: 100.0%. ",
+      "predictions": [
+        "SVM · mixture predictionchirping birdsControl: can opening",
+        "CNN · mixture predictionclock alarmControl: can opening",
+        "CLAP · single prompt · mixture predictionclock alarmControl: can openingTarget label ranked 2 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000090_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000090_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "semantic_same",
+      "level": "5",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 14.2% SVM, 20.2% CNN, 31.6% CLAP of trials; accuracy was 23.7% SVM, 35.6% CNN, 52.8% CLAP.",
+      "note": "Target-active overlap: 100.0%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictionchirping birdsControl: can opening",
+        "CNN · mixture predictionclock alarmControl: can opening",
+        "CLAP · single prompt · mixture predictionclock alarmControl: can openingTarget label ranked 3 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000091_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000091_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "semantic_same",
+      "level": "0",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 18.3% SVM, 26.6% CNN, 40.6% CLAP of trials; accuracy was 18.7% SVM, 27.4% CNN, 43.3% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictionchirping birdsControl: can opening",
+        "CNN · mixture predictionclock alarmControl: can opening",
+        "CLAP · single prompt · mixture predictionclock alarmControl: can openingTarget label ranked 7 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000092_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000092_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "semantic_different",
+      "level": "10",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 9.1% SVM, 13.1% CNN, 21.3% CLAP of trials; accuracy was 28.0% SVM, 41.6% CNN, 59.5% CLAP.",
+      "note": "Target-active overlap: 100.0%. ",
+      "predictions": [
+        "SVM · mixture predictioncar hornControl: can opening",
+        "CNN · mixture predictioncatControl: can opening",
+        "CLAP · single prompt · mixture predictioncatControl: can openingTarget label ranked 4 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000093_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000093_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "semantic_different",
+      "level": "5",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 12.3% SVM, 18.1% CNN, 30.6% CLAP of trials; accuracy was 22.6% SVM, 34.3% CNN, 49.3% CLAP.",
+      "note": "Target-active overlap: 100.0%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictioncar hornControl: can opening",
+        "CNN · mixture predictioncatControl: can opening",
+        "CLAP · single prompt · mixture predictioncatControl: can openingTarget label ranked 7 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000094_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000094_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-101404-A-34.wav",
+      "condition": "semantic_different",
+      "level": "0",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 16.6% SVM, 24.5% CNN, 38.8% CLAP of trials; accuracy was 17.3% SVM, 26.4% CNN, 40.4% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictioncar hornControl: can opening",
+        "CNN · mixture predictioncatControl: can opening",
+        "CLAP · single prompt · mixture predictioncatControl: can openingTarget label ranked 9 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000095_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000095_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "white",
+      "level": "10",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 7.6% SVM, 18.6% CNN, 71.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: clock alarm",
+        "CNN · mixture predictionglass breakingControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarm"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021516_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021516_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "white",
+      "level": "5",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 5.4% SVM, 12.3% CNN, 64.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: clock alarm",
+        "CNN · mixture predictionglass breakingControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarm"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021517_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021517_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "white",
+      "level": "0",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 4.4% SVM, 6.9% CNN, 53.8% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionvacuum cleanerControl: clock alarm",
+        "CLAP · single prompt · mixture predictiontoilet flushControl: clock alarm"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021518_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021518_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "demand",
+      "level": "10",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 24.5% SVM, 40.1% CNN, 77.5% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionglass breakingControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarm"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021519_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021519_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "demand",
+      "level": "5",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 17.9% SVM, 31.6% CNN, 74.0% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionglass breakingControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarm"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021520_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021520_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "demand",
+      "level": "0",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 11.3% SVM, 21.2% CNN, 67.1% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionsnoringControl: clock alarm",
+        "CNN · mixture predictionwashing machineControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarm"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021521_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021521_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "semantic_same",
+      "level": "10",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 10.8% SVM, 15.5% CNN, 21.6% CLAP of trials; accuracy was 29.3% SVM, 43.7% CNN, 61.6% CLAP.",
+      "note": "Target-active overlap: 92.5%. ",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarmTarget label ranked 1 of 50; competing label ranked 2."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021522_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021522_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "semantic_same",
+      "level": "5",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 14.2% SVM, 20.2% CNN, 31.6% CLAP of trials; accuracy was 23.7% SVM, 35.6% CNN, 52.8% CLAP.",
+      "note": "Target-active overlap: 92.5%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarmTarget label ranked 1 of 50; competing label ranked 2."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021523_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021523_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "semantic_same",
+      "level": "0",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 18.3% SVM, 26.6% CNN, 40.6% CLAP of trials; accuracy was 18.7% SVM, 27.4% CNN, 43.3% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarmTarget label ranked 1 of 50; competing label ranked 2."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021524_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021524_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "semantic_different",
+      "level": "10",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 9.1% SVM, 13.1% CNN, 21.3% CLAP of trials; accuracy was 28.0% SVM, 41.6% CNN, 59.5% CLAP.",
+      "note": "Target-active overlap: 100.0%. ",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarmTarget label ranked 1 of 50; competing label ranked 17."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021525_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021525_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "semantic_different",
+      "level": "5",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 12.3% SVM, 18.1% CNN, 30.6% CLAP of trials; accuracy was 22.6% SVM, 34.3% CNN, 49.3% CLAP.",
+      "note": "Target-active overlap: 100.0%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarmTarget label ranked 1 of 50; competing label ranked 14."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021526_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021526_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "5-210612-A-37.wav",
+      "condition": "semantic_different",
+      "level": "0",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 16.6% SVM, 24.5% CNN, 38.8% CLAP of trials; accuracy was 17.3% SVM, 26.4% CNN, 40.4% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: clock alarm",
+        "CNN · mixture predictionclock alarmControl: clock alarm",
+        "CLAP · single prompt · mixture predictionclock alarmControl: clock alarmTarget label ranked 1 of 50; competing label ranked 14."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_021527_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_021527_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "white",
+      "level": "10",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 7.6% SVM, 18.6% CNN, 71.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionvacuum cleanerControl: airplane",
+        "CNN · mixture predictionchainsawControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplane"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015612_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015612_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "white",
+      "level": "5",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 5.4% SVM, 12.3% CNN, 64.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionvacuum cleanerControl: airplane",
+        "CNN · mixture predictionchainsawControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplane"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015613_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015613_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "white",
+      "level": "0",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 4.4% SVM, 6.9% CNN, 53.8% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionvacuum cleanerControl: airplane",
+        "CNN · mixture predictionchainsawControl: airplane",
+        "CLAP · single prompt · mixture predictionvacuum cleanerControl: airplane"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015614_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015614_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "demand",
+      "level": "10",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 24.5% SVM, 40.1% CNN, 77.5% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: airplane",
+        "CNN · mixture predictionairplaneControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplane"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015615_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015615_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "demand",
+      "level": "5",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 17.9% SVM, 31.6% CNN, 74.0% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: airplane",
+        "CNN · mixture predictionairplaneControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplane"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015616_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015616_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "demand",
+      "level": "0",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 11.3% SVM, 21.2% CNN, 67.1% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: airplane",
+        "CNN · mixture predictionairplaneControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplane"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015617_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015617_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "semantic_same",
+      "level": "10",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 10.8% SVM, 15.5% CNN, 21.6% CLAP of trials; accuracy was 29.3% SVM, 43.7% CNN, 61.6% CLAP.",
+      "note": "Target-active overlap: 100.0%. ",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: airplane",
+        "CNN · mixture predictionairplaneControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplaneTarget label ranked 1 of 50; competing label ranked 2."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015618_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015618_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "semantic_same",
+      "level": "5",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 14.2% SVM, 20.2% CNN, 31.6% CLAP of trials; accuracy was 23.7% SVM, 35.6% CNN, 52.8% CLAP.",
+      "note": "Target-active overlap: 100.0%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: airplane",
+        "CNN · mixture predictionairplaneControl: airplane",
+        "CLAP · single prompt · mixture predictionchurch bellsControl: airplaneTarget label ranked 2 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015619_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015619_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "semantic_same",
+      "level": "0",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 18.3% SVM, 26.6% CNN, 40.6% CLAP of trials; accuracy was 18.7% SVM, 27.4% CNN, 43.3% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: airplane",
+        "CNN · mixture predictioncowControl: airplane",
+        "CLAP · single prompt · mixture predictionchurch bellsControl: airplaneTarget label ranked 2 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015620_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015620_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "semantic_different",
+      "level": "10",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 9.1% SVM, 13.1% CNN, 21.3% CLAP of trials; accuracy was 28.0% SVM, 41.6% CNN, 59.5% CLAP.",
+      "note": "Target-active overlap: 100.0%. ",
+      "predictions": [
+        "SVM · mixture predictioncar hornControl: airplane",
+        "CNN · mixture predictionairplaneControl: airplane",
+        "CLAP · single prompt · mixture predictionairplaneControl: airplaneTarget label ranked 1 of 50; competing label ranked 2."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015621_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015621_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "semantic_different",
+      "level": "5",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 12.3% SVM, 18.1% CNN, 30.6% CLAP of trials; accuracy was 22.6% SVM, 34.3% CNN, 49.3% CLAP.",
+      "note": "Target-active overlap: 100.0%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictioncar hornControl: airplane",
+        "CNN · mixture predictioncowControl: airplane",
+        "CLAP · single prompt · mixture predictioncatControl: airplaneTarget label ranked 2 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015622_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015622_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "4-161100-A-47.wav",
+      "condition": "semantic_different",
+      "level": "0",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 16.6% SVM, 24.5% CNN, 38.8% CLAP of trials; accuracy was 17.3% SVM, 26.4% CNN, 40.4% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictioncar hornControl: airplane",
+        "CNN · mixture predictioncowControl: airplane",
+        "CLAP · single prompt · mixture predictioncatControl: airplaneTarget label ranked 4 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261110/row_015623_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261110/row_015623_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "white",
+      "level": "10",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 7.6% SVM, 18.6% CNN, 71.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionrainControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionfrogControl: dog"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000000_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000000_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "white",
+      "level": "5",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 5.4% SVM, 12.3% CNN, 64.9% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionrainControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionfrogControl: dog"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000001_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000001_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "white",
+      "level": "0",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 4.4% SVM, 6.9% CNN, 53.8% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictioncricketsControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionrainControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionrainControl: dog"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000002_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000002_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "demand",
+      "level": "10",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 24.5% SVM, 40.1% CNN, 77.5% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionsnoringControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionfootstepsControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictiondogControl: dog"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000003_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000003_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "demand",
+      "level": "5",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 17.9% SVM, 31.6% CNN, 74.0% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionsnoringControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionfootstepsControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictiondogControl: dog"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000004_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000004_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "demand",
+      "level": "0",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: accuracy was 11.3% SVM, 21.2% CNN, 67.1% CLAP.",
+      "note": "The same noise realisation is used at all three levels.",
+      "predictions": [
+        "SVM · mixture predictionairplaneControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionrainControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionengineControl: dog"
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000005_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000005_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "semantic_same",
+      "level": "10",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 10.8% SVM, 15.5% CNN, 21.6% CLAP of trials; accuracy was 29.3% SVM, 43.7% CNN, 61.6% CLAP.",
+      "note": "Target-active overlap: 100.0%. ",
+      "predictions": [
+        "SVM · mixture predictionlaughingControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionfrogControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionfrogControl: dogTarget label ranked 7 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000006_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000006_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "semantic_same",
+      "level": "5",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 14.2% SVM, 20.2% CNN, 31.6% CLAP of trials; accuracy was 23.7% SVM, 35.6% CNN, 52.8% CLAP.",
+      "note": "Target-active overlap: 100.0%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictionlaughingControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionfrogControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionfrogControl: dogTarget label ranked 10 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000007_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000007_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "semantic_same",
+      "level": "0",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 18.3% SVM, 26.6% CNN, 40.6% CLAP of trials; accuracy was 18.7% SVM, 27.4% CNN, 43.3% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictionlaughingControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionfrogControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionfrogControl: dogTarget label ranked 13 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000008_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000008_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "semantic_different",
+      "level": "10",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 9.1% SVM, 13.1% CNN, 21.3% CLAP of trials; accuracy was 28.0% SVM, 41.6% CNN, 59.5% CLAP.",
+      "note": "Target-active overlap: 96.4%. ",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionclock alarmControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionclock alarmControl: dogTarget label ranked 3 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000009_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000009_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "semantic_different",
+      "level": "5",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 12.3% SVM, 18.1% CNN, 30.6% CLAP of trials; accuracy was 22.6% SVM, 34.3% CNN, 49.3% CLAP.",
+      "note": "Target-active overlap: 96.4%. The target is stronger under the declared activity-power convention.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionclock alarmControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionclock alarmControl: dogTarget label ranked 3 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000010_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000010_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    },
+    {
+      "target": "1-100032-A-0.wav",
+      "condition": "semantic_different",
+      "level": "0",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level.",
+      "rate": "Across all 2,000 targets in this condition at this level: the first choice was the competing event in 16.6% SVM, 24.5% CNN, 38.8% CLAP of trials; accuracy was 17.3% SVM, 26.4% CNN, 40.4% CLAP.",
+      "note": "0 dB: two meaningful events have equal measured power. The single target label is deliberately ambiguous.",
+      "predictions": [
+        "SVM · mixture predictionclock alarmControl: glass breaking (already wrong without interference)",
+        "CNN · mixture predictionclock alarmControl: sneezing (already wrong without interference)",
+        "CLAP · single prompt · mixture predictionclock alarmControl: dogTarget label ranked 4 of 50; competing label ranked 1."
+      ],
+      "audio": [
+        {
+          "src": "examples/listening_own_20261109/row_000011_clean_matched.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        },
+        {
+          "src": "examples/listening_own_20261109/row_000011_mixture.wav",
+          "duration": 5,
+          "ready": 4,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

@@ -39,6 +39,15 @@ replace the author's explanation. The latest report review identifies specific
 presentation and literature gaps; see the [revision checklist](docs/report_followup_20261110.md).
 [Numerical delivery audit](results/final_submission_20261110/delivery_audit.json)
 and [attributed listening examples](examples/listening_own_20261109/README.md) remain available.
+The website's listening section uses four targets: these two plus
+[two added on 10 November](examples/listening_own_20261110/README.md), chosen so the
+examples also show a model resisting a competing event and a target that drops to
+second place. `examples/listening_own_20261110/context.json` holds the description of
+each target and the full-experiment rates shown beside them; it is written by
+`scripts/build_listening_context.py`, which checks every description against the results.
+The [listening-page verification](results/listening_site_20261110/README.md) records
+waveform reconstruction, all 48 selections and the distinction between captures
+per trial and captures per error.
 
 ## Research question
 

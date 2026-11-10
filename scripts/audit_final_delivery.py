@@ -38,7 +38,7 @@ def close(values, expected):
     assert all(math.isclose(float(a), float(b), abs_tol=1e-10) for a, b in zip(values, expected))
 
 
-def audit(browser):
+def audit(browser, output=None):
     destination = ROOT / "results/final_submission_20261110"
     deck = destination
     data = json.loads((deck / "presentation_data.json").read_text())
@@ -395,11 +395,15 @@ def audit(browser):
         },
         claim_boundary="Checked numerical consistency, original-file preservation and actual demonstration inference. Author review, full narration and Canvas submission remain.",
     )
-    (destination / "delivery_audit.json").write_text(json.dumps(result, indent=2) + "\n")
+    audit_path = output if output is not None else destination / "delivery_audit.json"
+    audit_path.parent.mkdir(parents=True, exist_ok=True)
+    audit_path.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--browser-audit", type=Path, required=True)
-    audit(parser.parse_args().browser_audit)
+    parser.add_argument("--output", type=Path, help="Save a new audit without replacing an earlier one")
+    args = parser.parse_args()
+    audit(args.browser_audit, args.output)

@@ -1,0 +1,331 @@
+{
+  "note": "Illustrative targets from the final own-activity manifest; rates use all 2,000 targets.",
+  "sources": {
+    "results/clap_full_20261109/all_conditions_verified.csv": "8ac09b3dbfa574c1a71ffae3eea285cc5a7929416137b28ef5717773245f68bf",
+    "results/closing_20261110/readout_trials.csv": "05dd65c36e28c018e2565bf06793ecd378d3ff852e5b47caf46c5ebf17d918dc",
+    "examples/listening_own_20261109/examples.json": "0c01ce88a1df0e97798a5739f409ebb01f4458afb3c42394e9beafbbb944ebb9",
+    "examples/listening_own_20261110/examples.json": "90de2773cf6e350766e74eb90c2a0fa77fdba0b57bfede5b28e378869a5ae4f4"
+  },
+  "targets": {
+    "1-101404-A-34.wav": {
+      "tag": "a competing event takes first place",
+      "summary": "Opening a can while an alarm clock rings. Each model names the can when it is alone. At +10 and +5 dB white noise breaks the SVM and CNN but not CLAP, while the competing event takes first place from both the CNN and CLAP at every level."
+    },
+    "5-210612-A-37.wav": {
+      "tag": "all three models hold",
+      "summary": "An alarm clock rings while a can is opened, using different source recordings from the can-opening example. All three models keep the alarm clock under both competing events at every level. A competing event does not always win."
+    },
+    "4-161100-A-47.wav": {
+      "tag": "the target slips to second place",
+      "summary": "An aircraft passes while church bells ring. At +10 dB CLAP still answers airplane. At +5 dB the bells take first place and airplane drops to second, while the SVM and CNN keep airplane."
+    },
+    "1-100032-A-0.wav": {
+      "tag": "two models are already wrong on the clean clip",
+      "summary": "A dog bark. The SVM and CNN mislabel this clip even without interference, so their mixture predictions say little about interference here. CLAP is right on the clean clip and is captured by the competing event at every level."
+    }
+  },
+  "base_rates": {
+    "white@10": {
+      "svm": {
+        "accuracy": 0.07550000000000001,
+        "n": 2000
+      },
+      "cnn": {
+        "accuracy": 0.1855,
+        "n": 2000
+      },
+      "clap": {
+        "accuracy": 0.7190000000000001,
+        "n": 2000
+      }
+    },
+    "white@5": {
+      "svm": {
+        "accuracy": 0.054000000000000006,
+        "n": 2000
+      },
+      "cnn": {
+        "accuracy": 0.12250000000000001,
+        "n": 2000
+      },
+      "clap": {
+        "accuracy": 0.649,
+        "n": 2000
+      }
+    },
+    "white@0": {
+      "svm": {
+        "accuracy": 0.0435,
+        "n": 2000
+      },
+      "cnn": {
+        "accuracy": 0.0685,
+        "n": 2000
+      },
+      "clap": {
+        "accuracy": 0.5375,
+        "n": 2000
+      }
+    },
+    "demand@10": {
+      "svm": {
+        "accuracy": 0.2445,
+        "n": 2000
+      },
+      "cnn": {
+        "accuracy": 0.40049999999999997,
+        "n": 2000
+      },
+      "clap": {
+        "accuracy": 0.7745,
+        "n": 2000
+      }
+    },
+    "demand@5": {
+      "svm": {
+        "accuracy": 0.17850000000000002,
+        "n": 2000
+      },
+      "cnn": {
+        "accuracy": 0.3155,
+        "n": 2000
+      },
+      "clap": {
+        "accuracy": 0.7394999999999999,
+        "n": 2000
+      }
+    },
+    "demand@0": {
+      "svm": {
+        "accuracy": 0.11300000000000002,
+        "n": 2000
+      },
+      "cnn": {
+        "accuracy": 0.21200000000000002,
+        "n": 2000
+      },
+      "clap": {
+        "accuracy": 0.6704999999999999,
+        "n": 2000
+      }
+    },
+    "semantic_same@10": {
+      "svm": {
+        "accuracy": 0.29250000000000004,
+        "n": 2000,
+        "captures": 216,
+        "capture_fraction": 0.108
+      },
+      "cnn": {
+        "accuracy": 0.437,
+        "n": 2000,
+        "captures": 309,
+        "capture_fraction": 0.1545
+      },
+      "clap": {
+        "accuracy": 0.6159999999999999,
+        "n": 2000,
+        "captures": 432,
+        "capture_fraction": 0.216
+      }
+    },
+    "semantic_same@5": {
+      "svm": {
+        "accuracy": 0.23650000000000002,
+        "n": 2000,
+        "captures": 283,
+        "capture_fraction": 0.1415
+      },
+      "cnn": {
+        "accuracy": 0.35550000000000004,
+        "n": 2000,
+        "captures": 403,
+        "capture_fraction": 0.2015
+      },
+      "clap": {
+        "accuracy": 0.5279999999999999,
+        "n": 2000,
+        "captures": 632,
+        "capture_fraction": 0.316
+      }
+    },
+    "semantic_same@0": {
+      "svm": {
+        "accuracy": 0.187,
+        "n": 2000,
+        "captures": 365,
+        "capture_fraction": 0.1825
+      },
+      "cnn": {
+        "accuracy": 0.2735,
+        "n": 2000,
+        "captures": 532,
+        "capture_fraction": 0.266
+      },
+      "clap": {
+        "accuracy": 0.4325,
+        "n": 2000,
+        "captures": 811,
+        "capture_fraction": 0.4055
+      }
+    },
+    "semantic_different@10": {
+      "svm": {
+        "accuracy": 0.2795,
+        "n": 2000,
+        "captures": 182,
+        "capture_fraction": 0.091
+      },
+      "cnn": {
+        "accuracy": 0.4154999999999999,
+        "n": 2000,
+        "captures": 262,
+        "capture_fraction": 0.131
+      },
+      "clap": {
+        "accuracy": 0.5945,
+        "n": 2000,
+        "captures": 426,
+        "capture_fraction": 0.213
+      }
+    },
+    "semantic_different@5": {
+      "svm": {
+        "accuracy": 0.22600000000000003,
+        "n": 2000,
+        "captures": 246,
+        "capture_fraction": 0.123
+      },
+      "cnn": {
+        "accuracy": 0.3425,
+        "n": 2000,
+        "captures": 362,
+        "capture_fraction": 0.181
+      },
+      "clap": {
+        "accuracy": 0.4925,
+        "n": 2000,
+        "captures": 612,
+        "capture_fraction": 0.306
+      }
+    },
+    "semantic_different@0": {
+      "svm": {
+        "accuracy": 0.17250000000000001,
+        "n": 2000,
+        "captures": 332,
+        "capture_fraction": 0.166
+      },
+      "cnn": {
+        "accuracy": 0.2635,
+        "n": 2000,
+        "captures": 490,
+        "capture_fraction": 0.245
+      },
+      "clap": {
+        "accuracy": 0.404,
+        "n": 2000,
+        "captures": 776,
+        "capture_fraction": 0.388
+      }
+    }
+  },
+  "clap_ranks": {
+    "6": {
+      "target_rank": 7,
+      "distractor_rank": 1
+    },
+    "7": {
+      "target_rank": 10,
+      "distractor_rank": 1
+    },
+    "8": {
+      "target_rank": 13,
+      "distractor_rank": 1
+    },
+    "9": {
+      "target_rank": 3,
+      "distractor_rank": 1
+    },
+    "10": {
+      "target_rank": 3,
+      "distractor_rank": 1
+    },
+    "11": {
+      "target_rank": 4,
+      "distractor_rank": 1
+    },
+    "90": {
+      "target_rank": 2,
+      "distractor_rank": 1
+    },
+    "91": {
+      "target_rank": 3,
+      "distractor_rank": 1
+    },
+    "92": {
+      "target_rank": 7,
+      "distractor_rank": 1
+    },
+    "93": {
+      "target_rank": 4,
+      "distractor_rank": 1
+    },
+    "94": {
+      "target_rank": 7,
+      "distractor_rank": 1
+    },
+    "95": {
+      "target_rank": 9,
+      "distractor_rank": 1
+    },
+    "15618": {
+      "target_rank": 1,
+      "distractor_rank": 2
+    },
+    "15619": {
+      "target_rank": 2,
+      "distractor_rank": 1
+    },
+    "15620": {
+      "target_rank": 2,
+      "distractor_rank": 1
+    },
+    "15621": {
+      "target_rank": 1,
+      "distractor_rank": 2
+    },
+    "15622": {
+      "target_rank": 2,
+      "distractor_rank": 1
+    },
+    "15623": {
+      "target_rank": 4,
+      "distractor_rank": 1
+    },
+    "21522": {
+      "target_rank": 1,
+      "distractor_rank": 2
+    },
+    "21523": {
+      "target_rank": 1,
+      "distractor_rank": 2
+    },
+    "21524": {
+      "target_rank": 1,
+      "distractor_rank": 2
+    },
+    "21525": {
+      "target_rank": 1,
+      "distractor_rank": 17
+    },
+    "21526": {
+      "target_rank": 1,
+      "distractor_rank": 14
+    },
+    "21527": {
+      "target_rank": 1,
+      "distractor_rank": 14
+    }
+  }
+}

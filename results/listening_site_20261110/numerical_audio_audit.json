@@ -1,0 +1,1176 @@
+{
+  "verified": true,
+  "base_commit": "069240f",
+  "targets": 4,
+  "mixture_choices": 48,
+  "audio_files": 96,
+  "new_audio_files": 48,
+  "predictions_checked": 144,
+  "semantic_clap_ranks_checked": 24,
+  "full_experiment_cells_checked": 36,
+  "original_result_example_files_unchanged": 714,
+  "all_audio_byte_identical_to_manifest_reconstruction": true,
+  "source_attribution_matches_pinned_esc50_license": true,
+  "human_listening_assessed": false,
+  "claim_boundary": "Technical waveform and saved-score validation does not certify human audibility. Illustrations are selected cases, not an unbiased performance sample.",
+  "input_patch_sha256": "c96c9ac259655a6fd16efbf267d29d2c7d35fc2e9a05a59e33d64977607ca471",
+  "input_zip_sha256": "663635e9950ec46879968ade2fbe57af48fe58322939005fc738465bf5356c86",
+  "base_rates": [
+    {
+      "condition": "white",
+      "level_db": 10.0,
+      "system": "svm",
+      "accuracy": 0.07550000000000001,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 10.0,
+      "system": "cnn",
+      "accuracy": 0.1855,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 10.0,
+      "system": "clap",
+      "accuracy": 0.7190000000000001,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 5.0,
+      "system": "svm",
+      "accuracy": 0.054000000000000006,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 5.0,
+      "system": "cnn",
+      "accuracy": 0.12250000000000001,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 5.0,
+      "system": "clap",
+      "accuracy": 0.649,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 0.0,
+      "system": "svm",
+      "accuracy": 0.0435,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 0.0,
+      "system": "cnn",
+      "accuracy": 0.0685,
+      "n": 2000
+    },
+    {
+      "condition": "white",
+      "level_db": 0.0,
+      "system": "clap",
+      "accuracy": 0.5375,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 10.0,
+      "system": "svm",
+      "accuracy": 0.2445,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 10.0,
+      "system": "cnn",
+      "accuracy": 0.40049999999999997,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 10.0,
+      "system": "clap",
+      "accuracy": 0.7745,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 5.0,
+      "system": "svm",
+      "accuracy": 0.17850000000000002,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 5.0,
+      "system": "cnn",
+      "accuracy": 0.3155,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 5.0,
+      "system": "clap",
+      "accuracy": 0.7394999999999999,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 0.0,
+      "system": "svm",
+      "accuracy": 0.11300000000000002,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 0.0,
+      "system": "cnn",
+      "accuracy": 0.21200000000000002,
+      "n": 2000
+    },
+    {
+      "condition": "demand",
+      "level_db": 0.0,
+      "system": "clap",
+      "accuracy": 0.6704999999999999,
+      "n": 2000
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 10.0,
+      "system": "svm",
+      "accuracy": 0.29250000000000004,
+      "n": 2000,
+      "captures": 216,
+      "capture_fraction": 0.108
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 10.0,
+      "system": "cnn",
+      "accuracy": 0.437,
+      "n": 2000,
+      "captures": 309,
+      "capture_fraction": 0.1545
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 10.0,
+      "system": "clap",
+      "accuracy": 0.6159999999999999,
+      "n": 2000,
+      "captures": 432,
+      "capture_fraction": 0.216
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 5.0,
+      "system": "svm",
+      "accuracy": 0.23650000000000002,
+      "n": 2000,
+      "captures": 283,
+      "capture_fraction": 0.1415
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 5.0,
+      "system": "cnn",
+      "accuracy": 0.35550000000000004,
+      "n": 2000,
+      "captures": 403,
+      "capture_fraction": 0.2015
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 5.0,
+      "system": "clap",
+      "accuracy": 0.5279999999999999,
+      "n": 2000,
+      "captures": 632,
+      "capture_fraction": 0.316
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 0.0,
+      "system": "svm",
+      "accuracy": 0.187,
+      "n": 2000,
+      "captures": 365,
+      "capture_fraction": 0.1825
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 0.0,
+      "system": "cnn",
+      "accuracy": 0.2735,
+      "n": 2000,
+      "captures": 532,
+      "capture_fraction": 0.266
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 0.0,
+      "system": "clap",
+      "accuracy": 0.4325,
+      "n": 2000,
+      "captures": 811,
+      "capture_fraction": 0.4055
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 10.0,
+      "system": "svm",
+      "accuracy": 0.2795,
+      "n": 2000,
+      "captures": 182,
+      "capture_fraction": 0.091
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 10.0,
+      "system": "cnn",
+      "accuracy": 0.4154999999999999,
+      "n": 2000,
+      "captures": 262,
+      "capture_fraction": 0.131
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 10.0,
+      "system": "clap",
+      "accuracy": 0.5945,
+      "n": 2000,
+      "captures": 426,
+      "capture_fraction": 0.213
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 5.0,
+      "system": "svm",
+      "accuracy": 0.22600000000000003,
+      "n": 2000,
+      "captures": 246,
+      "capture_fraction": 0.123
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 5.0,
+      "system": "cnn",
+      "accuracy": 0.3425,
+      "n": 2000,
+      "captures": 362,
+      "capture_fraction": 0.181
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 5.0,
+      "system": "clap",
+      "accuracy": 0.4925,
+      "n": 2000,
+      "captures": 612,
+      "capture_fraction": 0.306
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 0.0,
+      "system": "svm",
+      "accuracy": 0.17250000000000001,
+      "n": 2000,
+      "captures": 332,
+      "capture_fraction": 0.166
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 0.0,
+      "system": "cnn",
+      "accuracy": 0.2635,
+      "n": 2000,
+      "captures": 490,
+      "capture_fraction": 0.245
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 0.0,
+      "system": "clap",
+      "accuracy": 0.404,
+      "n": 2000,
+      "captures": 776,
+      "capture_fraction": 0.388
+    }
+  ],
+  "files": [
+    {
+      "file": "examples/listening_own_20261109/row_000000_mixture.wav",
+      "sha256": "ec1c48d646165d91f0bdfcef96a5c2c965c079b980c79d8bc4dc56af0923cdfb",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -24.182509058454045,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517298486380448e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000000_clean_matched.wav",
+      "sha256": "6220afaeb06d9914e2ad03def5d844f4af9fa04b34e0642526988278e78d69eb",
+      "peak": 0.931304931640625,
+      "rms_dbfs": -28.24184704568866,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0514305048051638e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000001_mixture.wav",
+      "sha256": "10cf6f375974cda1979686d97250ced6147d632aee330090e002798e773e7b90",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -21.426193368429164,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517279314211387e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000001_clean_matched.wav",
+      "sha256": "a96168b26dd520741d73ea97af59963d2a7aa2b545a24f1be777bb99e1bccd23",
+      "peak": 0.841827392578125,
+      "rms_dbfs": -29.119011330844586,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0509278201446e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000002_mixture.wav",
+      "sha256": "5295c893f80abdc74566dc0ede3590b2ea5a99e3ccfcdb83b880e539c35fe7af",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -18.338406592801395,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051694037145558e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000002_clean_matched.wav",
+      "sha256": "ed5dc9eacb2e19d6d5084c64d8d21eb4e3cc1c8231155017ac1ee4b7eb5fa7ee",
+      "peak": 0.719024658203125,
+      "rms_dbfs": -30.488759305473764,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516291237792093e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000003_mixture.wav",
+      "sha256": "93354c752fd68de37a698aecccc4c2159891ef26ff42dc95676d74298d475a1d",
+      "peak": 0.989990234375,
+      "rms_dbfs": -23.970058297358328,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051706627176659e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000003_clean_matched.wav",
+      "sha256": "e940a1c030ffad651eeeb328a5ecd88e38beae38ce1066f404b164addd124428",
+      "peak": 0.956329345703125,
+      "rms_dbfs": -28.011367542564564,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.050792107717193e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000004_mixture.wav",
+      "sha256": "dee36755a4951a085d710d4d85af892d20cf20f7618017008b50ba4d04d085bb",
+      "peak": 0.989990234375,
+      "rms_dbfs": -20.58874507109248,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517340576810548e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000004_clean_matched.wav",
+      "sha256": "426a3444d7bf097c35992f023100a4fda21f244bd058a53fc808f5b65cc3b2b8",
+      "peak": 0.92852783203125,
+      "rms_dbfs": -28.26768285656234,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051584385931061e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000005_mixture.wav",
+      "sha256": "f19e7ef6558273c546a7ac0113546a8429677f31e81a391e9001d5200228104c",
+      "peak": 0.989990234375,
+      "rms_dbfs": -16.591211291829172,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051722699232151e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000005_clean_matched.wav",
+      "sha256": "9d089f67c3aa241d40a18df0c921e3b29b96b8eb7f45604ee255f8f7ff93a0b6",
+      "peak": 0.880126953125,
+      "rms_dbfs": -28.732741214884832,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0511578503811254e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000006_mixture.wav",
+      "sha256": "305e2ad0f25bd736456b692fb893bb7ab0aaa2e31ef72c66bee9e907a24acfbc",
+      "peak": 0.989990234375,
+      "rms_dbfs": -23.87767814239021,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051648201685131e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000006_clean_matched.wav",
+      "sha256": "e32d1c5b9aabd6a4b4a01a26a1b87d7b4fdb3455ba1bfce64fb4427f9dc9b987",
+      "peak": 0.9598388671875,
+      "rms_dbfs": -27.97971023369667,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0508991532993135e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000007_mixture.wav",
+      "sha256": "c0ead6a7b04f58986bb0dd4e9614cb738eb46af7729657978144b4d4febc716b",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -21.440842336652178,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516915497325048e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000007_clean_matched.wav",
+      "sha256": "6479e1a67def23417d5e92da958c3bdc9a03f14186b82d53ed1132cd5263032b",
+      "peak": 0.837249755859375,
+      "rms_dbfs": -29.166597559848213,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.050578412999521e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000008_mixture.wav",
+      "sha256": "7dca7f6d3176f437a20e48f4fccb0bc502aaf6c33353cfd84151f6c5ff348697",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -20.568823394851993,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051705102308233e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000008_clean_matched.wav",
+      "sha256": "d8b8b8bb13e75dd677c7c4c6f04e646979e61e8f5508a68d63c3f4566f22facc",
+      "peak": 0.554840087890625,
+      "rms_dbfs": -32.740192875041224,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516033520021357e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000009_mixture.wav",
+      "sha256": "abd2411d61ef99450f53dec74552706b77cbb42ba1bc412b4f70d048862f2a2c",
+      "peak": 0.975372314453125,
+      "rms_dbfs": -24.935521429678822,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.05170872331971e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000009_clean_matched.wav",
+      "sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "peak": 0.99884033203125,
+      "rms_dbfs": -27.633858325194485,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 0.0
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000010_mixture.wav",
+      "sha256": "bbdd3b4028ffebf6e9d873ba4ac19723b9b02d3e47f7613fbb0e5343c6ba1601",
+      "peak": 0.961029052734375,
+      "rms_dbfs": -21.92497269992596,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051686137386933e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000010_clean_matched.wav",
+      "sha256": "f40a849a2375c8c63312a73dd2dd6c74007301fcc21b4be2ece29a642831e3d8",
+      "peak": 0.99884033203125,
+      "rms_dbfs": -27.633858325194485,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 0.0
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000011_mixture.wav",
+      "sha256": "d60f510fa66d322111ea9c5129557dba0bd46721728708262287bd0d9e3f04fb",
+      "peak": 0.989990234375,
+      "rms_dbfs": -18.273852044145706,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051723045092991e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000011_clean_matched.wav",
+      "sha256": "7573ec2b5d5b2fdb2a33e7ecd04a997b5bc53c0d57d6777df9f34d2f797b5f63",
+      "peak": 0.946563720703125,
+      "rms_dbfs": -28.10072118453188,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051574284920755e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000084_mixture.wav",
+      "sha256": "bdf5bc94fd927336e832705d63cddd4f1004259dd2195a30ceba11cdc5a9b781",
+      "peak": 0.989990234375,
+      "rms_dbfs": -24.393766436532847,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051729199232689e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000084_clean_matched.wav",
+      "sha256": "e581f3359c879069c47ba1935d46acc391b76a3f7c2a1b7385cfe846b22c5cc5",
+      "peak": 0.9263916015625,
+      "rms_dbfs": -26.441964539881248,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0512917446132853e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000085_mixture.wav",
+      "sha256": "81ab1dc399bea8836480833417e13747bade64f0f3f02a0149d008ab82d9ddeb",
+      "peak": 0.989990234375,
+      "rms_dbfs": -22.34113432076367,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517103563817982e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000085_clean_matched.wav",
+      "sha256": "8851c3417ecfbbb44397d40836dd87a5a0bf7023c4c2c236cfd7cbf17d9a9fbd",
+      "peak": 0.870635986328125,
+      "rms_dbfs": -26.981150668640087,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0509010837362002e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000086_mixture.wav",
+      "sha256": "573d3420ecab0c30c3cfedf54349298d5c2464a85b97648f8c6337d7d64f616c",
+      "peak": 0.989990234375,
+      "rms_dbfs": -19.381538764132497,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517192349352462e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000086_clean_matched.wav",
+      "sha256": "01d09f75fc6e7252a77835595ed8151a870e0f1faed3064fe6eca118c33bb117",
+      "peak": 0.786468505859375,
+      "rms_dbfs": -27.864359380784993,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051251603747307e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000087_mixture.wav",
+      "sha256": "fc35e3d3ad3cb30b1bfae3318687c18a71452e0498defcae6bd15e467e06f669",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -24.67875426460242,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517068240254464e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000087_clean_matched.wav",
+      "sha256": "4586dab9ea042faac8cce171760a03dc32237e327353ced590eb8202a310cc6b",
+      "peak": 0.896942138671875,
+      "rms_dbfs": -26.722466446809445,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0513637686009273e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000088_mixture.wav",
+      "sha256": "e723c8871bae723048903864527499e425a27f241e4184e64a56adc3864b5d2a",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -22.700123706127165,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.05173014292226e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000088_clean_matched.wav",
+      "sha256": "1a6f157fb51906bff55468efb9dbcc0cdfc21ef4032328177d59d5e3798fde91",
+      "peak": 0.8358154296875,
+      "rms_dbfs": -27.335744993409882,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051555570592751e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000089_mixture.wav",
+      "sha256": "e0616b4b56d261e95739fa440844464572d5c446c3572b535c4dc765aa0c0445",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -19.85006267205854,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051716090937337e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000089_clean_matched.wav",
+      "sha256": "dcaac99b75aff46b2470679e6349e41bcc989a6a6ea1b2365b05f6c468d74b35",
+      "peak": 0.74542236328125,
+      "rms_dbfs": -28.329668179573076,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051647631915899e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000090_mixture.wav",
+      "sha256": "0a505af4bc059359aa146cecba02ec8f808a011b5a53b57d9d1c4af679ec5b00",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -24.60120443048263,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051732512261013e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000090_clean_matched.wav",
+      "sha256": "c6762a6422d95c1d3df957b9c3ec518422808250020764fa2193018c8e519c05",
+      "peak": 0.903045654296875,
+      "rms_dbfs": -26.6635248660001,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0512206705413103e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000091_mixture.wav",
+      "sha256": "a352507ac3e75372e3274da701ddc66d23ae77f1993457cc1533e28a871b037b",
+      "peak": 0.989990234375,
+      "rms_dbfs": -23.02411731554646,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516942504853206e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000091_clean_matched.wav",
+      "sha256": "aec5da90ad5062b25d1f896f80bb46c03c6cc27cb92cf8784de0fee58caea48f",
+      "peak": 0.80352783203125,
+      "rms_dbfs": -27.67795103522319,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516185075775415e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000092_mixture.wav",
+      "sha256": "a90f8f6d4aff72e5ca0c457003156ca7010d43c60b3457e2f78ff0dd1dde2410",
+      "peak": 0.989990234375,
+      "rms_dbfs": -20.93767505212972,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517334872109947e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000092_clean_matched.wav",
+      "sha256": "edcdf500ca16643cc796a62c90fe53329cccdfdfa6e9f378d5518188e435694a",
+      "peak": 0.65667724609375,
+      "rms_dbfs": -29.43066077208984,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051557542023669e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000093_mixture.wav",
+      "sha256": "182c0f5efb14509f84a86592abeee348d4ec7071d5e870ea5e1243c881b9e895",
+      "peak": 0.989990234375,
+      "rms_dbfs": -24.370391496820247,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517236668431034e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000093_clean_matched.wav",
+      "sha256": "57e030784d6803108aae0c4e43096c9a52e5ba39f0f7ec82e4cba443fcff0ad1",
+      "peak": 0.9273681640625,
+      "rms_dbfs": -26.432773025897717,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0512626665042675e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000094_mixture.wav",
+      "sha256": "cc89b6fa3bedeff8e0d53def33e3de6bc0527a88ba70f947efbbf02f6af2c733",
+      "peak": 0.989990234375,
+      "rms_dbfs": -22.196615688027105,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051723488046857e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000094_clean_matched.wav",
+      "sha256": "8fd0eb3d960f857d001ebeab92fa535c40a4a081ccc8a5bdb8d76eb2104c5713",
+      "peak": 0.883819580078125,
+      "rms_dbfs": -26.850528440898316,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051016788691019e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000095_mixture.wav",
+      "sha256": "4e08e0a37438050c03bcf01e0642f62f313f0295af85e040640247d64989fd0c",
+      "peak": 0.989990234375,
+      "rms_dbfs": -19.05410829725339,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517179041266926e-05
+    },
+    {
+      "file": "examples/listening_own_20261109/row_000095_clean_matched.wav",
+      "sha256": "211b237bce439d10ea80f5dea8b12013e64c3c39c7a47adab09e25c4bb56d9a5",
+      "peak": 0.815704345703125,
+      "rms_dbfs": -27.54714883440306,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0512942259162956e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015612_mixture.wav",
+      "sha256": "9917bbc739d2ebfca0dd46cf8ea7099005cdbca1fb36eb54f9ca97103ccdd92f",
+      "peak": 0.989990234375,
+      "rms_dbfs": -10.36201487805891,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517073854666177e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015612_clean_matched.wav",
+      "sha256": "ac0b72909ed2735486f0a864fd711ca705d696d5235a600b8a83d7d62bd0f633",
+      "peak": 0.663604736328125,
+      "rms_dbfs": -10.772877908924182,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051595922853867e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015613_mixture.wav",
+      "sha256": "0f508a86bbdcbd83cbb9754179d68479fa5520c8bccfae0d89d72da7457c90b7",
+      "peak": 0.989990234375,
+      "rms_dbfs": -11.568245702407495,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516830157811814e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015613_clean_matched.wav",
+      "sha256": "099537c842466dabb67dabb6517d3cfbbf97800dd79ce30098d7409195a2c2f8",
+      "peak": 0.528076171875,
+      "rms_dbfs": -12.757003122794927,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516039382644244e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015614_mixture.wav",
+      "sha256": "bd0fb33bcc3568bccb20a53ad34ab6bfdd46ce009d4bc809b69c04785595a402",
+      "peak": 0.989990234375,
+      "rms_dbfs": -12.442957292071188,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517314959399577e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015614_clean_matched.wav",
+      "sha256": "f0b8043f19c16411e2474859f0902b54b01d621161af968b9a97272109220ebd",
+      "peak": 0.38739013671875,
+      "rms_dbfs": -15.44795514535446,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051662204855976e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015615_mixture.wav",
+      "sha256": "dac988b8ce151262620ebb6ea1a77a16df357f1d94c2d2484af6309903782253",
+      "peak": 0.989990234375,
+      "rms_dbfs": -9.257997372910403,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517267378918356e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015615_clean_matched.wav",
+      "sha256": "f2d0fb7ff16180d7405fb216f556b52edffeca299d5f0463e52cc5fc5d23ceef",
+      "peak": 0.752716064453125,
+      "rms_dbfs": -9.67840833768063,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516974735661506e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015616_mixture.wav",
+      "sha256": "6e473616f91ddbe3b285754545f1df7b5cc0e3a71bc141e837d472e0a9e74100",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -10.246143300043446,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517344159097792e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015616_clean_matched.wav",
+      "sha256": "ba21b6d651ffd4dab939ade314c16a9d819288449fba7e2e802da6ccfe9904d1",
+      "peak": 0.6138916015625,
+      "rms_dbfs": -11.449131360201,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051686940247489e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015617_mixture.wav",
+      "sha256": "ec8d74d11a043bf9f68ea0e2cf0c081d506cc2c752c62704372f1b635cac9b50",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -11.720527862028689,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517294974635734e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015617_clean_matched.wav",
+      "sha256": "60764acb47ba2f69923057cdb7db27f763ad485659dc594bf55887b85e47cd1a",
+      "peak": 0.420196533203125,
+      "rms_dbfs": -14.742139606282286,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517018182296685e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015618_mixture.wav",
+      "sha256": "ff29948199a0c44ad55197dd0904e3f9ecc4d0724e95574003076bde86e5b38b",
+      "peak": 0.989990234375,
+      "rms_dbfs": -11.807988811766412,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517142111219364e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015618_clean_matched.wav",
+      "sha256": "edeecbadd03a2321907d222251b405c4583b354c7f352f13b49cf1ae1aa6aa13",
+      "peak": 0.5611572265625,
+      "rms_dbfs": -12.229157118795044,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051670578407828e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015619_mixture.wav",
+      "sha256": "3b0d54f773c32fa7e4ec8bd7ba7b23db5eb8a3fabaaa6cd7d55cfdefc4822483",
+      "peak": 0.989990234375,
+      "rms_dbfs": -13.548681298049168,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517315223854702e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015619_clean_matched.wav",
+      "sha256": "325f8a6579d3d0ac2724992750b158613aa9a92484b63ea16df6d1b4fb182760",
+      "peak": 0.419677734375,
+      "rms_dbfs": -14.7527187924167,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051684405210031e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015620_mixture.wav",
+      "sha256": "c9992521b304a0246e24826ab2254ffab797fe1dbce55f59693984d20e99a749",
+      "peak": 0.989990234375,
+      "rms_dbfs": -14.947484861877845,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051723158671582e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015620_clean_matched.wav",
+      "sha256": "2b333890251619e225a9597c5e40a91be4d504e0025cfcf17acbd5045c6584cb",
+      "peak": 0.289764404296875,
+      "rms_dbfs": -17.970326877894703,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517257831541578e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015621_mixture.wav",
+      "sha256": "d77061187d8a251b98ef6bc09e362d959c3b8d8dce1655c6f1c19223c2a442f5",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -10.744016367382025,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517073925581673e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015621_clean_matched.wav",
+      "sha256": "101d12bbb27346c829e0cf4a46a52ef74acc5a8da765d98ea9b2b516b0c8228f",
+      "peak": 0.63702392578125,
+      "rms_dbfs": -11.128018950046181,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517141074187792e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015622_mixture.wav",
+      "sha256": "c6c112c7c04efc8286f6919832e723f54cde4e88849d70e869a1308348529976",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -12.106538208156772,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517121450218676e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015622_clean_matched.wav",
+      "sha256": "c882e55fc8b279892a427a15bb16feb93678e595f5d1e748262fdcdcff159d2d",
+      "peak": 0.498626708984375,
+      "rms_dbfs": -13.255347355205398,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051557724337295e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015623_mixture.wav",
+      "sha256": "816ca7a09a5fa9a9e80a501ec0c272fae90a856dd5f69b1c4af7287ef42bc804",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -13.177646923809519,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517215006631293e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_015623_clean_matched.wav",
+      "sha256": "97df0a8e01bb541cc83eb1d18529841eb86dcc9e3823339ad642a85e88f02877",
+      "peak": 0.35791015625,
+      "rms_dbfs": -16.135824496324926,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517207419672454e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021516_mixture.wav",
+      "sha256": "a9761e208ac88c2174db33fef362c1af8449c4fbaaae839c37691a8e1f0d793a",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -15.30795539363871,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517328180060255e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021516_clean_matched.wav",
+      "sha256": "680ce9dc3fbcfbed1f82f25bc544b64f8701b0c3263b3eefab2a1b445b04234c",
+      "peak": 0.9637451171875,
+      "rms_dbfs": -15.744996908772828,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516563370108774e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021517_mixture.wav",
+      "sha256": "c15fc39b315b5714ffbc1393e37031e4954c35f0bca28244092c9bbe57a6456c",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -15.003253687687824,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517279586658383e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021517_clean_matched.wav",
+      "sha256": "d8fba14bbe98e5583ca8915c60179215a203ac508a2250f8f640750f23557ed5",
+      "peak": 0.908905029296875,
+      "rms_dbfs": -16.254033432575714,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516187820732454e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021518_mixture.wav",
+      "sha256": "a94f13f2adb7f13823294e780f850226dde705b64ff420463297c1d7584ac61f",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -15.041075753321259,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517307425093065e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021518_clean_matched.wav",
+      "sha256": "3af9f10d074d2a111767d44cf1868c7095f14f35c9d2018aced8d9c18b330a2a",
+      "peak": 0.72930908203125,
+      "rms_dbfs": -18.166259991377494,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516684937947902e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021519_mixture.wav",
+      "sha256": "17e85fca6fc4d58969b254b02d8e911cc7440567bfa9c15b55ba6144f05999de",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -15.156541369555248,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051724066328171e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021519_clean_matched.wav",
+      "sha256": "7460ce1071e808ec7026fd694d82cf46d3c0c5c94638848829df4ad9d49d5588",
+      "peak": 0.981231689453125,
+      "rms_dbfs": -15.589007821119552,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516391739177084e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021520_mixture.wav",
+      "sha256": "a3bde19ee38ce3d64638548a104ae1839e3c52a3be7d9b54de885571c0654bfd",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -14.790212240587653,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517065620336292e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021520_clean_matched.wav",
+      "sha256": "e73e718284668d53a7e9885574caedf1edb4cf161df4e4b4c8d1b972352468ce",
+      "peak": 0.93218994140625,
+      "rms_dbfs": -16.034244913296412,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051692195343847e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021521_mixture.wav",
+      "sha256": "825da9be392163a181ca209f1ebbde2311a818d842a572e6e8906bc3fb95d678",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -14.767261335301214,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051727322536668e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021521_clean_matched.wav",
+      "sha256": "329c7334f71d2fff88333c132e1264b9d637d6a7f7ba01cad8cdca8f3f0d6263",
+      "peak": 0.753326416015625,
+      "rms_dbfs": -17.884649596240166,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.051719398439179e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021522_mixture.wav",
+      "sha256": "7ab6cc519ab504b273b90bd966384af8813ad7c1a1f5528f1b5a8409b3855fb1",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -16.356552383048683,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517333261446955e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021522_clean_matched.wav",
+      "sha256": "16836660e41eda3ab3223f5b99f53d2f7ad2cb5b4cf5f71d09182ae44f00f9b8",
+      "peak": 0.85791015625,
+      "rms_dbfs": -16.755661131713314,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0515770035211e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021523_mixture.wav",
+      "sha256": "4daa5a298b4db9d1cb1db4ebb6a0f439c4ebaf2e9510a25998233d6de512180c",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -17.737836481796336,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517320819323235e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021523_clean_matched.wav",
+      "sha256": "9fe772d489e2c57de049ee5649347ee2d9a5ab401ed0bc7f1bf2a1356c4f0b12",
+      "peak": 0.67034912109375,
+      "rms_dbfs": -18.898312511516323,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516598595708988e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021524_mixture.wav",
+      "sha256": "d78706619c95629d6568c3c159fc6e18d0b9a8ae59ec5014e558a99ddc6a57d8",
+      "peak": 0.990020751953125,
+      "rms_dbfs": -18.80153130505648,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517343471398763e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021524_clean_matched.wav",
+      "sha256": "ceb10a22e47d302677cad22c9bae4bf3931a2a1bed4843d0e4a69786a3c17110",
+      "peak": 0.482696533203125,
+      "rms_dbfs": -21.75080281474385,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517126163226438e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021525_mixture.wav",
+      "sha256": "bc447e87a9ef15dc263b58410751bb47ce003758da8bd4b14733ef9ebdbe0678",
+      "peak": 0.989990234375,
+      "rms_dbfs": -21.97646883900132,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517067323226725e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021525_clean_matched.wav",
+      "sha256": "ffba543823799885cdc972d5e7796944abceb3fb555ce8bfcc250fbcb4971290",
+      "peak": 0.447296142578125,
+      "rms_dbfs": -22.412670799950654,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0515429211596876e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021526_mixture.wav",
+      "sha256": "f89e3690dec8c24bd115177d83f4bb04d87526ad81b1e0f3c2ffffc9c27b8f7c",
+      "peak": 0.989990234375,
+      "rms_dbfs": -25.685818756542083,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517095936651722e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021526_clean_matched.wav",
+      "sha256": "7d9810ff452af72d5a8eb249cde9ba1a86f788c1a9f198c9d3bf835f55a84944",
+      "peak": 0.2657470703125,
+      "rms_dbfs": -26.93535417694917,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517324016463704e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021527_mixture.wav",
+      "sha256": "f90c59bb87423c88c9c90c0f1283fd3bc094071a81e4252360786dadbe623799",
+      "peak": 0.989990234375,
+      "rms_dbfs": -28.5312051777146,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0517274372844627e-05
+    },
+    {
+      "file": "examples/listening_own_20261110/row_021527_clean_matched.wav",
+      "sha256": "22c941645d14a090cb17f0ceaf5668d7cebb41b4732c009c25c2f59089530d33",
+      "peak": 0.15435791015625,
+      "rms_dbfs": -31.654937960538447,
+      "duration_seconds": 5,
+      "pcm_rebuild_byte_identical": true,
+      "max_quantisation_error": 3.0516878177552775e-05
+    }
+  ],
+  "current_site_sha256": "87a98c233ee05fde94cba91bb45f518b4939292c64b9d50c6bba289cf2979450",
+  "context_sha256": "bc40c317ab2cedddfb989c53d4f79fd68e9144ad11d94f19e4e3949942a81761"
+}

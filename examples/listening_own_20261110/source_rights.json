@@ -1,0 +1,52 @@
+{
+  "esc50_attribution_source_sha256": "f6aec3a3283a2efdcbb1feff334adad7ab17c097bdec0cbb4eebdb9e16886074",
+  "esc50_attribution_url": "https://raw.githubusercontent.com/karolpiczak/ESC-50/master/LICENSE",
+  "demand_metadata_source": "https://api.datacite.org/dois/10.5281/zenodo.1227121",
+  "demand_rights": [
+    {
+      "rights": "Creative Commons Attribution 4.0",
+      "rightsUri": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+      "rights": "Open Access",
+      "rightsUri": "info:eu-repo/semantics/openAccess"
+    }
+  ],
+  "demand_creators": [
+    {
+      "name": "Thiemann, Joachim",
+      "nameType": "Personal",
+      "givenName": "Joachim",
+      "familyName": "Thiemann",
+      "affiliation": [
+        "IRISA-CNRS"
+      ],
+      "nameIdentifiers": [
+        {
+          "nameIdentifier": "https://orcid.org/0000-0002-8617-8330",
+          "nameIdentifierScheme": "ORCID"
+        }
+      ]
+    },
+    {
+      "name": "Ito, Nobutaka",
+      "nameType": "Personal",
+      "givenName": "Nobutaka",
+      "familyName": "Ito",
+      "affiliation": [
+        "University of Tokyo"
+      ],
+      "nameIdentifiers": []
+    },
+    {
+      "name": "Vincent, Emmanuel",
+      "nameType": "Personal",
+      "givenName": "Emmanuel",
+      "familyName": "Vincent",
+      "affiliation": [
+        "INRIA"
+      ],
+      "nameIdentifiers": []
+    }
+  ]
+}
