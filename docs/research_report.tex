@@ -15,12 +15,13 @@
 \renewcommand{\floatpagefraction}{0.7}
 \newcommand{\corefig}[3]{\begin{figure}[tbp]\centering\includegraphics{../results/report_figure_assets_20261109/#1.pdf}\caption{#2}\label{#3}\end{figure}}
 \newcommand{\diagfig}[3]{\begin{figure}[tbp]\centering\includegraphics{../results/extensions_20261109/figures/#1.pdf}\caption{#2}\label{#3}\end{figure}}
+\newcommand{\closingfig}[3]{\begin{figure}[tbp]\centering\includegraphics{../results/closing_20261110/figures/#1.pdf}\caption{#2}\label{#3}\end{figure}}
 \begin{document}
 \begin{center}
 {\LARGE\bfseries When Background Noise Has Meaning}\\[4pt]
 {\Large Environmental Sound Classification under Semantic Interference}\\[7pt]
 Qihan Zhu \quad SID 550489593 \quad ELEC5305\\[3pt]
-Research report draft --- experiments 9 November; reviewed 10 November 2026
+Research report draft --- closing analyses and review 10 November 2026
 \end{center}
 
 \begin{abstract}
@@ -41,7 +42,11 @@ advantages over WGN training do not pass the declared multiplicity correction.
 A fixed prompt ensemble raises CLAP clean accuracy from 81.75\% to 92.90\%
 without changing audio embeddings, yet a substantial semantic-interference gap
 remains. Capture destinations, full-class rankings and within-model feature
-shifts expose failure structure that aggregate accuracy misses. The contribution
+shifts expose failure structure that aggregate accuracy misses. At +5 dB,
+one-third of single-template CLAP captures retain the target at rank two.
+On small subsets matched closely on measured spectral and temporal proxies,
+CLAP retains a semantic-minus-DEMAND accuracy disadvantage while CNN intervals
+include zero; selection and unmeasured acoustics limit this interpretation. The contribution
 is a reproducible DSP experiment with measured robustness trade-offs, rather
 than an equal-data model contest or causal isolation of meaning from acoustics.
 \end{abstract}
@@ -315,6 +320,7 @@ association within each condition and fold, not causal explanation.
 \diagfig{11_clap_distractor_ranking}{CLAP distractor ranking among all 50 classes. Lower rank is stronger; rank 1 is highest. Top-five fractions use all semantic trials, unlike error-conditioned capture rate. Grey curves are gain-matched clean controls.}{fig:ranks}
 
 \input{report_review_competitors.tex}
+\input{report_closing_analyses.tex}
 
 \section{Deployment cost and limits}
 \input{report_cost_panel.tex}
@@ -331,7 +337,9 @@ quantities. CLAP's 1.86-GB checkpoint must not be compared to a small supervised
 model file as though both contain identical kinds of state. The project measures
 local deployment cost, not total lifetime training energy.
 
-Power matching leaves spectral, temporal and perceptual differences uncontrolled.
+Power matching alone leaves spectral, temporal and perceptual differences uncontrolled.
+The closing analysis measures several spectral and temporal proxies, but its
+restricted matching does not eliminate the remaining acoustic or perceptual differences.
 Only three DEMAND environments and one semantic pair of each category type per
 target are sampled. Coarse ESC categories are not a direct measure of perceptual
 similarity. At 0 dB either event may be a reasonable description. Frozen CLAP
@@ -367,14 +375,18 @@ steps is silently incorporated into the core CLAP reference.
 \subsection{Verified results}
 \input{report_extension_status.tex}
 
-\section{Remaining scope and further experiments}
+\section{Completed scope and remaining limitations}
 The declared extension is complete: three clean CNN seeds, WGN and semantic
 training for SVM/CNN, fixed prompt ensembling, representation diagnostics and
 balanced deployment timing. The prompt experiment uses the released PAT template
 list, but does not implement PAT's full audio--text mutual alignment. Full PAT
-and Mix-CLAP are therefore not reported as reproduced methods.
+and Mix-CLAP are therefore not reported as reproduced methods. The two closing
+analyses---exact ranked-label readout and spectral--temporal overlap with DEMAND
+completion---are also complete. Experimental work is closed at this scope;
+no further models, datasets or training runs are proposed for this delivery.
 
-The strongest next experiments would reduce identified uncertainties. First,
+Potential future studies, outside this project's completed scope, could reduce
+identified uncertainties. First,
 repeat held-out pairing with several fixed random seeds while keeping models
 frozen; report variability across distractor choices rather than assuming one
 pair per category type represents every competing scene. Second, construct and
@@ -385,8 +397,9 @@ limit causal interpretation. Third, vary onset alignment for fixed source pairs
 and use a denser SIR grid on a declared subset, checking event truncation and
 achieved power after each shift. This would test overlap effects within pairs
 and support transition-threshold estimates that three SIR points cannot provide.
-Additional top-two or two-source retrieval diagnostics at 0 dB could complement,
-but should not retrospectively replace, the designated-target metric.
+The completed top-two diagnostic complements, but does not retrospectively
+replace, the designated-target metric. A calibrated detector or a dataset with
+exhaustive multi-event annotations would be a different evaluation task.
 
 \section{Conclusion}
 Interference power alone does not describe environmental-sound classifier
@@ -394,14 +407,20 @@ failure. The SVM is vulnerable to white-noise-induced feature change, while
 CLAP shows substantial competing-event capture despite strong background-noise
 performance. Both power protocols and matched overlap strata are needed to
 interpret that pattern. The CNN contrast is directionally consistent across
-three seeds; the original seed's corrected test remains inconclusive.
+three seeds in the high-overlap population; the original seed's corrected test
+remains inconclusive. The smaller acoustic-closeness subsets do not reproduce
+a negative CNN contrast, whereas CLAP retains a substantial negative contrast.
+This population-dependent evidence rules out a simple explanation by nominal
+power alone, without isolating semantics causally.
 
 Training interventions reveal a practical trade-off. WGN augmentation strongly
 protects the CNN against white noise but transfers little to semantic mixtures.
 Semantic augmentation gives larger semantic point-estimate gains while reducing
 clean CNN performance; its direct paired accuracy advantages over WGN training
 remain uncertain after the declared correction. Prompt ensembling improves
-CLAP's class readout without removing competing-event failures. The project
+CLAP's class readout without removing competing-event failures. Exact top-two
+readout recovers the target rank in some original captures, but many mixtures
+still exclude it from the returned pair. The project
 therefore connects controlled DSP, representation diagnostics and deployment
 cost with an explicit account of which robustness gains transfer and which do not.
 
@@ -429,6 +448,7 @@ remain separate from these research outputs.
 \bibitem{pat} A. Seth et al., ``PAT: Parameter-Free Audio-Text Aligner to Boost Zero-Shot Audio Classification,'' NAACL, 2025, pp. 12376--12394. \href{https://aclanthology.org/2025.naacl-long.616/}{doi:10.18653/v1/2025.naacl-long.616}.
 \bibitem{mixclap} W. Kohno et al., ``Mix-CLAP: Adaptive Fusion of Knowledge-Distilled Audio Embeddings for Noise-Aware Audio-Language Models,'' ICASSP, 2026. \href{https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206}{Official conference record}.
 \bibitem{rsa} Y. Zhang et al., ``RSA-Bench: Benchmarking Audio Large Models in Real-World Acoustic Scenarios,'' Findings of ACL, 2026, pp. 18350--18374. \href{https://aclanthology.org/2026.findings-acl.913/}{doi:10.18653/v1/2026.findings-acl.913}.
+\bibitem{noncollapsibility} N. A. Schuster et al., ``Noncollapsibility and its role in quantifying confounding bias in logistic regression,'' BMC Medical Research Methodology, 2021. \href{https://doi.org/10.1186/s12874-021-01316-8}{doi:10.1186/s12874-021-01316-8}.
 \end{thebibliography}
 
 \clearpage
@@ -446,4 +466,6 @@ power convention, each with numerical source tables and export audits.
 \corefig{fig7_robustness_vs_cost}{Original own-protocol robustness and CPU microbenchmark at +5 dB different-category interference. The horizontal coordinate sums the median preprocessing and median inference times for one clip; it is not the median total over the balanced panel. Cached CLAP text embeddings are used; open markers show clean macro-F1. External pretraining cost is excluded.}{fig:cost}
 \diagfig{12_displacement_error_association}{Association between representation displacement and classification error at +5 dB. Dots show the five official folds and short bars their means. AUC above 0.5 indicates larger movement tends to accompany errors; this is descriptive, not a causal semantic-effect estimate.}{fig:auc}
 \corefig{fig8_overlap_strata}{Overlap-stratified semantic versus DEMAND comparisons on matched target sets. Read accuracy together with class coverage; macro-F1 with all 50 labels is sensitive to absent classes in small strata.}{fig:overlap}
+\closingfig{21_capture_rank_retention}{Target inclusion among original argmax captures at +5 dB as the number of returned labels increases. Pointwise 95\% intervals resample original target-source clusters (2,000 replicates); repeated clips remain together. The target cannot be first in an argmax capture, so the $k=1$ value is zero by definition. Larger $k$ mechanically relaxes retrieval.}{fig:retention}
+\closingfig{24_accuracy_by_masking}{Accuracy inside fixed time--frequency masking bins at +5 dB. Points and source-bootstrap intervals require at least 30 targets and source clusters. Condition groups inside a bin can contain different targets and classes; this display is descriptive, unlike the same-target comparisons in Figure~\ref{fig:acoustic-matched}. Empty or small bins are not interpolated.}{fig:masking-bins}
 \end{document}

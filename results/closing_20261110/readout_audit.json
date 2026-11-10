@@ -1,0 +1,147 @@
+{
+  "verified": true,
+  "trial_rows": 95964,
+  "outcome_cells": 192,
+  "intervals": 768,
+  "sources": {
+    "svm_baseline/own": {
+      "predictions_sha256": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+      "scores_sha256": "f836551604f034edee2618bca6b78af1f2e9a8ba902f148172036513b9c61fbd",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "svm_baseline/target": {
+      "predictions_sha256": "9bf2100917e525e7e5a306cea25b4ec0c30997dd34741f5d144c83b1ee48b3ba",
+      "scores_sha256": "1007c6d7c42b1ad9ea6248ab19fb5b931ae24f7b13189f9d482409176c9bc3d0",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "cnn_baseline/own": {
+      "predictions_sha256": "2530061f2bb5c0016a1ff986d70571aed36d9d46becb7c0743ab5e51a684121e",
+      "scores_sha256": "d456439311a11b9be4ae38cbdb99cbd46b974c5b6c7bb344868a8140688db651",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "cnn_baseline/target": {
+      "predictions_sha256": "5a402d3bcd20bee14b702df0d902c7dd2bfc9ca1f33174e6e95c0ecf4a3246b8",
+      "scores_sha256": "cd8baacd7e7404ba88da3cccaf63c157449cc6909f26bd4f9960b5286c884c4d",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "clap_baseline/own": {
+      "predictions_sha256": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+      "scores_sha256": "90c904f46947279301b6cbb7a6441e396bf298427e7ef0b41e91abe9c8025b01",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "clap_baseline/target": {
+      "predictions_sha256": "7ac200ccc603ce3b9eaa8ecba3e4bd28e1fc4ce931b26e31786d77d12201f239",
+      "scores_sha256": "bf8da580fe7c3b609c702ed84912456cfdcfaaa93665cc05807b14171802d4c6",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "clap_prompt_ensemble/own": {
+      "predictions_sha256": "57c1bfcca85bc51d0723cd06c4a5403cbd11c74df461f4fb4551f81be1038669",
+      "scores_sha256": "e991fa2d01798c178b824b8643e5e577d2c0da5fd2b8047d10a5be02a471bf27",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    },
+    "clap_prompt_ensemble/target": {
+      "predictions_sha256": "ee02a55d04f3ec8c36bb28a71ac82b1428d1d73476e55398b165f6aa96a21bda",
+      "scores_sha256": "c97df091dfd30db4e11b2fb4ba00ec9684aec867a0f066e66b687a05e3ab0378",
+      "boundary_ties_mixture": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "boundary_ties_control": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "5": 0
+      },
+      "score_argmax_vs_original_prediction_disagreements": 0
+    }
+  },
+  "replicates": 2000,
+  "seed": 530510,
+  "interpretation": "Exact rank inclusion, not calibrated detection or proof of source perception"
+}

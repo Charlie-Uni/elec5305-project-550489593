@@ -56,6 +56,7 @@ def _matplotlib():
             "axes.spines.top": False,
             "axes.spines.right": False,
             "axes.grid": True,
+            "axes.axisbelow": True,
             "axes.grid.axis": "y",
             "grid.color": GRID,
             "grid.linewidth": 0.8,

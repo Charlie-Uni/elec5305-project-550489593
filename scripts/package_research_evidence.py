@@ -91,6 +91,7 @@ def package(repo, runtime, run, destination):
         "extensions_20261109/intervention_figures",
         "extensions_20261109/replication_figures",
         "extensions_20261109/cost_figures",
+        "closing_20261110/figures",
     ):
         for path in sorted((repo / "results" / folder).glob("*.png")):
             if not path.name.endswith("_gray.png"):

@@ -98,7 +98,7 @@
       "number": 15,
       "status": "已落实",
       "recommendation": "检查功率是否足以解释失败",
-      "assessment": "固定标称相对功率下比较失效差异；不把它当作语义因果隔离。"
+      "assessment": "固定标称相对功率下比较失效差异；不把它当作语义因果隔离。 补齐 47,991 条频谱/时间描述量及相同目标声学接近子集；剩余差异仍非语义因果证据。"
     },
     {
       "number": 16,
@@ -116,7 +116,7 @@
       "number": 18,
       "status": "已落实",
       "recommendation": "谨慎解释 0 dB",
-      "assessment": "明确为单标签有歧义的等功率压力测试。"
+      "assessment": "明确为单标签有歧义的等功率压力测试。 新增 top-2 四种结局和 top-1/3/5 敏感性，保留原始单标签压力测试。"
     },
     {
       "number": 19,
@@ -152,13 +152,13 @@
       "number": 24,
       "status": "已落实",
       "recommendation": "分析错误目的地",
-      "assessment": "区分目标、干扰类和其他类；补充增益对照到混合的变化。"
+      "assessment": "区分目标、干扰类和其他类；补充增益对照到混合的变化。 新增精确 top-k 读出及干净增益对照，区分首位捕获与目标排名保留。"
     },
     {
       "number": 25,
       "status": "已落实",
       "recommendation": "条件 capture rate",
-      "assessment": "分母为错误数，另报全试验捕获比例与原始计数。"
+      "assessment": "分母为错误数，另报全试验捕获比例与原始计数。 另报捕获中目标仍入前二的比例，明确分母不等于全部试次。"
     },
     {
       "number": 26,
@@ -194,13 +194,13 @@
       "number": 31,
       "status": "已落实",
       "recommendation": "谨慎匹配干扰功率",
-      "assessment": "own 与原提案 target 两套全量结果均保留，不把标称功率当作全部声学匹配。"
+      "assessment": "own 与原提案 target 两套全量结果均保留，不把标称功率当作全部声学匹配。 新增频谱、时频遮蔽、时间重叠的联合筛选；披露保留目标约 9–10.5%。"
     },
     {
       "number": 32,
       "status": "已落实",
       "recommendation": "活动区功率",
-      "assessment": "40 dB 活动帧定义，并记录活动区重叠；不把 own 改动归为老师明确指令。"
+      "assessment": "40 dB 活动帧定义，并记录活动区重叠；不把 own 改动归为老师明确指令。 时间重叠与目标活动帧频谱均纳入；未改变对齐或做新的时移实验。"
     },
     {
       "number": 33,
@@ -296,7 +296,7 @@
       "number": 48,
       "status": "已落实",
       "recommendation": "检查其他竞争类文本分数",
-      "assessment": "保存 top 3 其他类；本轮增加最强其他类分数变化和三类预测去向表。"
+      "assessment": "保存 top 3 其他类；本轮增加最强其他类分数变化和三类预测去向表。 补齐 50 类分数的精确 top-1/2/3/5，含已有固定提示集合。"
     },
     {
       "number": 49,
@@ -488,7 +488,10 @@
       "number": 80,
       "status": "已回应",
       "recommendation": "整体研究目标",
-      "assessment": "研究声学破坏与标签竞争的不同失效模式；现有实验不等于语义因果隔离。"
+      "assessment": "研究声学破坏与标签竞争的不同失效模式；现有实验不等于语义因果隔离。 两项收尾分析已完成；保留读出、声学、未测显著性之间的解释界限，不再增加模型或数据集。"
     }
-  ]
+  ],
+  "closing_analyses_complete": true,
+  "closing_evidence": "results/closing_20261110/independent_audit.json",
+  "experimental_scope_closed": true
 }

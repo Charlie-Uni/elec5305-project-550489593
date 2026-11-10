@@ -274,6 +274,44 @@ def main(argv=None):
     augmented_svm.add_argument("--mode", choices=["wgn", "semantic"], required=True)
     augmented_svm.add_argument("--config", type=Path)
     augmented_svm.add_argument("--output", type=Path, required=True)
+    overlap = commands.add_parser(
+        "overlap-features", help="Spectral/temporal overlap measures for every manifest row"
+    )
+    overlap.add_argument("--manifest", type=Path, required=True)
+    overlap.add_argument("--output", type=Path, required=True)
+    overlap.add_argument("--data-root", type=Path)
+    overlap.add_argument("--limit", type=int)
+    overlap.add_argument("--require-demand", action="store_true")
+    overlap_tables = commands.add_parser(
+        "analyse-overlap", help="Accuracy by acoustic overlap; matched semantic vs DEMAND"
+    )
+    overlap_tables.add_argument("--features", type=Path, required=True)
+    overlap_tables.add_argument("--output", type=Path, required=True)
+    overlap_tables.add_argument("--svm-eval", type=Path)
+    overlap_tables.add_argument("--cnn-eval", type=Path)
+    overlap_tables.add_argument("--clap-eval", type=Path)
+    overlap_tables.add_argument("--level", type=float, default=5.0)
+    readout = commands.add_parser(
+        "analyse-readout", help="Exact top-k readout outcomes for semantic mixtures"
+    )
+    readout.add_argument("--output", type=Path, required=True)
+    readout.add_argument("--k", type=int, default=2)
+    readout.add_argument("--system", choices=["svm", "cnn", "clap"], default="clap")
+    readout.add_argument(
+        "--scores",
+        type=Path,
+        nargs="*",
+        default=[],
+        help="region=path/to/eval_dir pairs holding SYSTEM_scores.npz and SYSTEM_predictions.csv",
+    )
+    readout.add_argument("--competition-csv", type=Path, help="clap_competition_trials.csv")
+    readout.add_argument(
+        "--predictions",
+        type=Path,
+        nargs="*",
+        default=[],
+        help="region=path/to/clap_predictions.csv pairs (with --competition-csv)",
+    )
     args = parser.parse_args(argv)
     try:
         if args.command == "validate-stft":
@@ -524,6 +562,46 @@ def main(argv=None):
                 args.additional_evaluation,
                 args.svm_models,
             )
+        elif args.command == "overlap-features":
+            from .overlap_analysis import compute_overlap_features
+
+            result = compute_overlap_features(
+                args.manifest, args.output, args.data_root, args.limit, args.require_demand
+            )
+        elif args.command == "analyse-overlap":
+            from .overlap_analysis import analyse_overlap
+
+            prediction_dirs = {
+                name: path
+                for name, path in (
+                    ("svm", args.svm_eval),
+                    ("cnn", args.cnn_eval),
+                    ("clap", args.clap_eval),
+                )
+                if path is not None
+            }
+            summary = analyse_overlap(args.features, prediction_dirs, args.output, args.level)
+            result = {"output": str(args.output), "systems": list(summary["systems"])}
+        elif args.command == "analyse-readout":
+            from .readout_analysis import analyse_readout, load_trials
+
+            def pairs(values):
+                parsed = {}
+                for value in values:
+                    region, _, path = str(value).partition("=")
+                    if not path:
+                        raise ValueError("Expected region=path")
+                    parsed[region] = Path(path)
+                return parsed
+
+            trials = load_trials(
+                scores=pairs(args.scores),
+                competition_csv=args.competition_csv,
+                predictions=pairs(args.predictions),
+                system=args.system,
+            )
+            summary = analyse_readout(trials, args.output, args.k)
+            result = {"output": str(args.output), "trials": summary["trials"]}
         else:
             result = benchmark(args.model, args.audio, args.runs, args.warmup)
         if (

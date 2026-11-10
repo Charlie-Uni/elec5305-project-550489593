@@ -852,6 +852,52 @@ Timing drift is visible even in identical CNN frontends, so both passes are
 reported and no causal augmentation-cost claim is made. See the
 [repeatability check](results/extensions_20261109/cost_repeatability/audit.json).
 
+### Ranked readout and spectral–temporal overlap: completed closing analyses
+
+The final two analyses use existing scores and reconstructed mixtures only. Original
+predictions, core figures and intervention results are preserved. Experimental work
+is closed: no new models, datasets or training runs are required for this delivery.
+The [fixed exploratory protocol](docs/closing_protocol_20261110.md),
+[verified results and reproduction commands](results/closing_20261110/README.md),
+[seven new figures](results/closing_20261110/figures) and updated
+[research report](results/research_report_20261109_draft/research_report.pdf) are available.
+
+- **Exact top-k readout** (`analyse-readout`): complete mixture and gain-matched-control
+  scores give four exhaustive states—target only, both, distractor only, neither.
+  Top-2 is primary; 1/3/5 are sensitivities. All 23,991 semantic trials per variant
+  are included for SVM, CNN, frozen CLAP and its existing prompt ensemble.
+  At +5 dB under own power, the single-template CLAP target remains second in
+  37.34% / 33.17% of same-/different-category argmax captures. Yet 23.35% / 24.05%
+  of all semantic trials include only the distractor among the two designated labels.
+  Rank inclusion is not proof of hearing both sources or a calibrated detection result.
+- **Spectral and temporal overlap** (`overlap-features`, `analyse-overlap`): all
+  24,000 own and 23,991 target rows are complete, including 6,000 DEMAND rows each.
+  These use the project's 64-band DSP/CNN frontend, not CLAP's internal frontend.
+  The raw white-noise dB Mel correlation median changes from −0.728 to −0.008 after
+  normalising by Mel-filter bandwidth; raw anticorrelation cannot be read as a
+  physical anti-spectrum effect. Time–frequency masking remains a proxy.
+- **Same-target acoustic-closeness comparisons**: under both power conventions,
+  CLAP's semantic-minus-DEMAND accuracy is about −16 to −26 percentage points in
+  the primary selected subsets. CNN intervals include zero. Only about 9–10.5% of
+  targets meet the three calipers, so these are selected-population associations,
+  not a decomposition of the original contrast or proof of semantic causation.
+  Intervals resample original target-source clusters; counts and class coverage
+  accompany every comparison. Logistic coefficient attenuation is **not** reported
+  as a percentage explained.
+
+The score-file route is exact; competition-only CSVs cannot recover all control
+ranks and are not used for the final results. `--system svm|cnn|clap` selects the
+score format (default CLAP). Example:
+
+```bash
+esc-baseline analyse-readout --k 2 --scores own=artifacts/interference/eval_own_clap target=artifacts/interference/eval_target_clap --output results/readout_top2
+esc-baseline overlap-features --manifest artifacts/interference/manifest_own --data-root data/ESC-50 --require-demand --output results/overlap_own
+```
+
+The manifest metadata locates the verified DEMAND cache. `--require-demand`
+prevents a partial acoustic run from being mistaken for completion. The closing
+results README supplies the full local orchestration and independent-audit commands.
+
 ## Repository layout
 
 ```text

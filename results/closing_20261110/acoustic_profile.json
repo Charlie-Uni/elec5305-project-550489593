@@ -1,0 +1,945 @@
+{
+  "source": "/Users/leaf/Projects/elec5305-local/runs/closing_20261110/overlap_own/overlap_features.csv",
+  "n_rows": 24000,
+  "n_cols": 20,
+  "columns": {
+    "row": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 11999.5,
+      "median": 11999.5,
+      "sd": 6928.347566339322,
+      "min": 0.0,
+      "max": 23999.0,
+      "skewness": 0.0,
+      "skew_label": "approximately symmetric",
+      "n_outliers_iqr": 0,
+      "outlier_lo": -11999.5,
+      "outlier_hi": 35998.5,
+      "needs_log_axis": false
+    },
+    "condition": {
+      "type": "unknown",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "ratio_type": {
+      "type": "unknown",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "level_db": {
+      "type": "ordinal",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "n_unique": 3,
+      "categories": [
+        [
+          "10.0",
+          8000
+        ],
+        [
+          "5.0",
+          8000
+        ],
+        [
+          "0.0",
+          8000
+        ]
+      ],
+      "min_group_n": 8000,
+      "max_group_n": 8000,
+      "small_groups_flag": false
+    },
+    "fold": {
+      "type": "ordinal",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "n_unique": 5,
+      "categories": [
+        [
+          "1",
+          4800
+        ],
+        [
+          "2",
+          4800
+        ],
+        [
+          "3",
+          4800
+        ],
+        [
+          "4",
+          4800
+        ],
+        [
+          "5",
+          4800
+        ]
+      ],
+      "min_group_n": 4800,
+      "max_group_n": 4800,
+      "small_groups_flag": false
+    },
+    "target_file": {
+      "type": "unknown",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "target_class": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 24.5,
+      "median": 24.5,
+      "sd": 14.43117034217577,
+      "min": 0.0,
+      "max": 49.0,
+      "skewness": 2.3684757858670005e-18,
+      "skew_label": "approximately symmetric",
+      "n_outliers_iqr": 0,
+      "outlier_lo": -25.5,
+      "outlier_hi": 74.5,
+      "needs_log_axis": false
+    },
+    "target_coarse": {
+      "type": "unknown",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "interferer": {
+      "type": "unknown",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "interferer_class": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 12000,
+      "missing_rate": 0.5,
+      "n": 12000,
+      "mean": 24.59875,
+      "median": 25.0,
+      "sd": 14.441749505567708,
+      "min": 0.0,
+      "max": 49.0,
+      "skewness": -0.007271173633851838,
+      "skew_label": "approximately symmetric",
+      "n_outliers_iqr": 0,
+      "outlier_lo": -25.5,
+      "outlier_hi": 74.5,
+      "needs_log_axis": false
+    },
+    "interferer_coarse": {
+      "type": "unknown",
+      "n_total": 24000,
+      "n_null": 12000,
+      "missing_rate": 0.5
+    },
+    "common_gain": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.899576690275467,
+      "median": 1.0,
+      "sd": 0.18321212285348717,
+      "min": 0.030139127657604247,
+      "max": 1.0,
+      "skewness": -2.1498459305530875,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 2956,
+      "outlier_lo": 0.6803090424727767,
+      "outlier_hi": 1.191814574516334,
+      "needs_log_axis": "False"
+    },
+    "activity_overlap": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.9173686335160849,
+      "median": 1.0,
+      "sd": 0.21138562424818355,
+      "min": 0.0,
+      "max": 1.0,
+      "skewness": -2.6121782500932325,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 4815,
+      "outlier_lo": 1.0,
+      "outlier_hi": 1.0,
+      "needs_log_axis": false
+    },
+    "spectral_correlation_db": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.27473091120591053,
+      "median": 0.5378196875555015,
+      "sd": 0.6162579920087199,
+      "min": -0.9949426393286582,
+      "max": 0.9840673918221338,
+      "skewness": -0.8097879804454254,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 0,
+      "outlier_lo": -1.6705805604623645,
+      "outlier_hi": 2.2339813117339666,
+      "needs_log_axis": false
+    },
+    "spectral_cosine": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.2521481093520514,
+      "median": 0.15466353018691661,
+      "sd": 0.24904605687757098,
+      "min": 9.392954635596624e-06,
+      "max": 0.9992943338981465,
+      "skewness": 1.2002845032285494,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 852,
+      "outlier_lo": -0.42007682571373606,
+      "outlier_hi": 0.8577290658322764,
+      "needs_log_axis": "True"
+    },
+    "masked_cell_fraction": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.20746373339432625,
+      "median": 0.15605145473690474,
+      "sd": 0.17395025691455634,
+      "min": 0.0,
+      "max": 0.9090862237798278,
+      "skewness": 0.9929740418513626,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 304,
+      "outlier_lo": -0.2952919800284998,
+      "outlier_hi": 0.6733864747146494,
+      "needs_log_axis": false
+    },
+    "masked_energy_fraction": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.025201881560251653,
+      "median": 0.012865339070899215,
+      "sd": 0.034101308483868234,
+      "min": 1.5010336054601744e-08,
+      "max": 0.37348679307879257,
+      "skewness": 3.1315743882300557,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 2013,
+      "outlier_lo": -0.032331929196694684,
+      "outlier_hi": 0.06873085341355457,
+      "needs_log_axis": "True"
+    },
+    "interferer_energy_share": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.3043224219043763,
+      "median": 0.24094072018011387,
+      "sd": 0.2099110424638124,
+      "min": 0.004349100210735855,
+      "max": 0.9579017666227958,
+      "skewness": 0.6900767883745926,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 0,
+      "outlier_lo": -0.4733321390905134,
+      "outlier_hi": 1.0671232812720775,
+      "needs_log_axis": "True"
+    },
+    "target_activity_spectral_cosine": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 9,
+      "missing_rate": 0.000375,
+      "n": 23991,
+      "mean": 0.25101959893570824,
+      "median": 0.15378183629669384,
+      "sd": 0.24855496280492048,
+      "min": 9.392954635596624e-06,
+      "max": 0.9995187048075473,
+      "skewness": 1.2106171463977653,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 885,
+      "outlier_lo": -0.4168159922453099,
+      "outlier_hi": 0.8522984772113119,
+      "needs_log_axis": "True"
+    },
+    "density_spectral_correlation_db": {
+      "type": "continuous",
+      "n_total": 24000,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 24000,
+      "mean": 0.5433237006054701,
+      "median": 0.7193142840574314,
+      "sd": 0.38806229433386225,
+      "min": -0.7306781589164442,
+      "max": 0.9898122829562584,
+      "skewness": -0.7505705762438531,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 0,
+      "outlier_lo": -0.8682869423718482,
+      "outlier_hi": 1.9029967872648812,
+      "needs_log_axis": false
+    }
+  },
+  "correlation": {
+    "columns": [
+      "row",
+      "target_class",
+      "interferer_class",
+      "common_gain",
+      "activity_overlap",
+      "spectral_correlation_db",
+      "spectral_cosine",
+      "masked_cell_fraction",
+      "masked_energy_fraction",
+      "interferer_energy_share",
+      "target_activity_spectral_cosine",
+      "density_spectral_correlation_db"
+    ],
+    "matrix": {
+      "row": {
+        "row": 1.0,
+        "target_class": -0.002,
+        "interferer_class": -0.009,
+        "common_gain": 0.008,
+        "activity_overlap": 0.013,
+        "spectral_correlation_db": -0.007,
+        "spectral_cosine": -0.022,
+        "masked_cell_fraction": -0.002,
+        "masked_energy_fraction": 0.001,
+        "interferer_energy_share": 0.003,
+        "target_activity_spectral_cosine": -0.021,
+        "density_spectral_correlation_db": -0.009
+      },
+      "target_class": {
+        "row": -0.002,
+        "target_class": 1.0,
+        "interferer_class": 0.343,
+        "common_gain": -0.057,
+        "activity_overlap": 0.018,
+        "spectral_correlation_db": -0.012,
+        "spectral_cosine": 0.065,
+        "masked_cell_fraction": 0.041,
+        "masked_energy_fraction": 0.068,
+        "interferer_energy_share": 0.005,
+        "target_activity_spectral_cosine": 0.067,
+        "density_spectral_correlation_db": -0.01
+      },
+      "interferer_class": {
+        "row": -0.009,
+        "target_class": 0.343,
+        "interferer_class": 1.0,
+        "common_gain": -0.036,
+        "activity_overlap": 0.012,
+        "spectral_correlation_db": 0.006,
+        "spectral_cosine": 0.094,
+        "masked_cell_fraction": 0.085,
+        "masked_energy_fraction": 0.079,
+        "interferer_energy_share": 0.006,
+        "target_activity_spectral_cosine": 0.092,
+        "density_spectral_correlation_db": 0.016
+      },
+      "common_gain": {
+        "row": 0.008,
+        "target_class": -0.057,
+        "interferer_class": -0.036,
+        "common_gain": 1.0,
+        "activity_overlap": -0.043,
+        "spectral_correlation_db": 0.07,
+        "spectral_cosine": 0.017,
+        "masked_cell_fraction": -0.102,
+        "masked_energy_fraction": -0.092,
+        "interferer_energy_share": -0.236,
+        "target_activity_spectral_cosine": 0.019,
+        "density_spectral_correlation_db": 0.059
+      },
+      "activity_overlap": {
+        "row": 0.013,
+        "target_class": 0.018,
+        "interferer_class": 0.012,
+        "common_gain": -0.043,
+        "activity_overlap": 1.0,
+        "spectral_correlation_db": 0.124,
+        "spectral_cosine": 0.076,
+        "masked_cell_fraction": 0.435,
+        "masked_energy_fraction": 0.295,
+        "interferer_energy_share": 0.366,
+        "target_activity_spectral_cosine": 0.077,
+        "density_spectral_correlation_db": 0.122
+      },
+      "spectral_correlation_db": {
+        "row": -0.007,
+        "target_class": -0.012,
+        "interferer_class": 0.006,
+        "common_gain": 0.07,
+        "activity_overlap": 0.124,
+        "spectral_correlation_db": 1.0,
+        "spectral_cosine": 0.485,
+        "masked_cell_fraction": 0.239,
+        "masked_energy_fraction": 0.292,
+        "interferer_energy_share": -0.032,
+        "target_activity_spectral_cosine": 0.478,
+        "density_spectral_correlation_db": 0.941
+      },
+      "spectral_cosine": {
+        "row": -0.022,
+        "target_class": 0.065,
+        "interferer_class": 0.094,
+        "common_gain": 0.017,
+        "activity_overlap": 0.076,
+        "spectral_correlation_db": 0.485,
+        "spectral_cosine": 1.0,
+        "masked_cell_fraction": 0.161,
+        "masked_energy_fraction": 0.393,
+        "interferer_energy_share": -0.009,
+        "target_activity_spectral_cosine": 0.983,
+        "density_spectral_correlation_db": 0.478
+      },
+      "masked_cell_fraction": {
+        "row": -0.002,
+        "target_class": 0.041,
+        "interferer_class": 0.085,
+        "common_gain": -0.102,
+        "activity_overlap": 0.435,
+        "spectral_correlation_db": 0.239,
+        "spectral_cosine": 0.161,
+        "masked_cell_fraction": 1.0,
+        "masked_energy_fraction": 0.609,
+        "interferer_energy_share": 0.529,
+        "target_activity_spectral_cosine": 0.163,
+        "density_spectral_correlation_db": 0.242
+      },
+      "masked_energy_fraction": {
+        "row": 0.001,
+        "target_class": 0.068,
+        "interferer_class": 0.079,
+        "common_gain": -0.092,
+        "activity_overlap": 0.295,
+        "spectral_correlation_db": 0.292,
+        "spectral_cosine": 0.393,
+        "masked_cell_fraction": 0.609,
+        "masked_energy_fraction": 1.0,
+        "interferer_energy_share": 0.446,
+        "target_activity_spectral_cosine": 0.396,
+        "density_spectral_correlation_db": 0.286
+      },
+      "interferer_energy_share": {
+        "row": 0.003,
+        "target_class": 0.005,
+        "interferer_class": 0.006,
+        "common_gain": -0.236,
+        "activity_overlap": 0.366,
+        "spectral_correlation_db": -0.032,
+        "spectral_cosine": -0.009,
+        "masked_cell_fraction": 0.529,
+        "masked_energy_fraction": 0.446,
+        "interferer_energy_share": 1.0,
+        "target_activity_spectral_cosine": -0.017,
+        "density_spectral_correlation_db": -0.025
+      },
+      "target_activity_spectral_cosine": {
+        "row": -0.021,
+        "target_class": 0.067,
+        "interferer_class": 0.092,
+        "common_gain": 0.019,
+        "activity_overlap": 0.077,
+        "spectral_correlation_db": 0.478,
+        "spectral_cosine": 0.983,
+        "masked_cell_fraction": 0.163,
+        "masked_energy_fraction": 0.396,
+        "interferer_energy_share": -0.017,
+        "target_activity_spectral_cosine": 1.0,
+        "density_spectral_correlation_db": 0.472
+      },
+      "density_spectral_correlation_db": {
+        "row": -0.009,
+        "target_class": -0.01,
+        "interferer_class": 0.016,
+        "common_gain": 0.059,
+        "activity_overlap": 0.122,
+        "spectral_correlation_db": 0.941,
+        "spectral_cosine": 0.478,
+        "masked_cell_fraction": 0.242,
+        "masked_energy_fraction": 0.286,
+        "interferer_energy_share": -0.025,
+        "target_activity_spectral_cosine": 0.472,
+        "density_spectral_correlation_db": 1.0
+      }
+    },
+    "pairs_sorted": [
+      {
+        "a": "spectral_cosine",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.9834930721050621,
+        "magnitude": "very strong"
+      },
+      {
+        "a": "spectral_correlation_db",
+        "b": "density_spectral_correlation_db",
+        "r": 0.9414581161873952,
+        "magnitude": "very strong"
+      },
+      {
+        "a": "masked_cell_fraction",
+        "b": "masked_energy_fraction",
+        "r": 0.6090333881755403,
+        "magnitude": "strong"
+      },
+      {
+        "a": "masked_cell_fraction",
+        "b": "interferer_energy_share",
+        "r": 0.5291214243993018,
+        "magnitude": "strong"
+      },
+      {
+        "a": "spectral_correlation_db",
+        "b": "spectral_cosine",
+        "r": 0.48469927290008147,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "spectral_cosine",
+        "b": "density_spectral_correlation_db",
+        "r": 0.47789875397367176,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "spectral_correlation_db",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.47783518621957605,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "target_activity_spectral_cosine",
+        "b": "density_spectral_correlation_db",
+        "r": 0.4715554627489776,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "masked_energy_fraction",
+        "b": "interferer_energy_share",
+        "r": 0.4463108192704724,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "masked_cell_fraction",
+        "r": 0.4353292663243576,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "masked_energy_fraction",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.39647216871740315,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "spectral_cosine",
+        "b": "masked_energy_fraction",
+        "r": 0.3932586719599077,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "interferer_energy_share",
+        "r": 0.36621291319224863,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "target_class",
+        "b": "interferer_class",
+        "r": 0.3425135487248905,
+        "magnitude": "moderate"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "masked_energy_fraction",
+        "r": 0.29452322452574115,
+        "magnitude": "weak"
+      },
+      {
+        "a": "spectral_correlation_db",
+        "b": "masked_energy_fraction",
+        "r": 0.29159542080965306,
+        "magnitude": "weak"
+      },
+      {
+        "a": "masked_energy_fraction",
+        "b": "density_spectral_correlation_db",
+        "r": 0.28628773855145445,
+        "magnitude": "weak"
+      },
+      {
+        "a": "masked_cell_fraction",
+        "b": "density_spectral_correlation_db",
+        "r": 0.24170623575653935,
+        "magnitude": "weak"
+      },
+      {
+        "a": "spectral_correlation_db",
+        "b": "masked_cell_fraction",
+        "r": 0.2388624121729439,
+        "magnitude": "weak"
+      },
+      {
+        "a": "common_gain",
+        "b": "interferer_energy_share",
+        "r": -0.2358406775579118,
+        "magnitude": "weak"
+      },
+      {
+        "a": "masked_cell_fraction",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.16332913248511163,
+        "magnitude": "weak"
+      },
+      {
+        "a": "spectral_cosine",
+        "b": "masked_cell_fraction",
+        "r": 0.16142632918958227,
+        "magnitude": "weak"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "spectral_correlation_db",
+        "r": 0.1241860539017408,
+        "magnitude": "weak"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "density_spectral_correlation_db",
+        "r": 0.12161144555740411,
+        "magnitude": "weak"
+      },
+      {
+        "a": "common_gain",
+        "b": "masked_cell_fraction",
+        "r": -0.10230795215542893,
+        "magnitude": "weak"
+      },
+      {
+        "a": "interferer_class",
+        "b": "spectral_cosine",
+        "r": 0.09351861531157607,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.09216890911434096,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "common_gain",
+        "b": "masked_energy_fraction",
+        "r": -0.09175954667057828,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "masked_cell_fraction",
+        "r": 0.08506168388309218,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "masked_energy_fraction",
+        "r": 0.07865010146608195,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.07737992921774701,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "activity_overlap",
+        "b": "spectral_cosine",
+        "r": 0.07569853860981468,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "common_gain",
+        "b": "spectral_correlation_db",
+        "r": 0.07047840709726441,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "masked_energy_fraction",
+        "r": 0.06825176345493,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.06706116017974097,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "spectral_cosine",
+        "r": 0.06507216609108739,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "common_gain",
+        "b": "density_spectral_correlation_db",
+        "r": 0.05880448875280025,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "common_gain",
+        "r": -0.057333349712872156,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "common_gain",
+        "b": "activity_overlap",
+        "r": -0.042559185911016525,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "masked_cell_fraction",
+        "r": 0.040883029678632776,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "common_gain",
+        "r": -0.03558334191290165,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "spectral_correlation_db",
+        "b": "interferer_energy_share",
+        "r": -0.03163792980776995,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_energy_share",
+        "b": "density_spectral_correlation_db",
+        "r": -0.024977395498447758,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "spectral_cosine",
+        "r": -0.021656735783272638,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "target_activity_spectral_cosine",
+        "r": -0.021034827275331777,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "common_gain",
+        "b": "target_activity_spectral_cosine",
+        "r": 0.019373852679902184,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "activity_overlap",
+        "r": 0.018236471061261462,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_energy_share",
+        "b": "target_activity_spectral_cosine",
+        "r": -0.017474767397540246,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "common_gain",
+        "b": "spectral_cosine",
+        "r": 0.016581411286876548,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "density_spectral_correlation_db",
+        "r": 0.015555822949265032,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "activity_overlap",
+        "r": 0.01333708535450742,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "activity_overlap",
+        "r": 0.011761786594365761,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "spectral_correlation_db",
+        "r": -0.011753862563010711,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "density_spectral_correlation_db",
+        "r": -0.010237263739689001,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "interferer_class",
+        "r": -0.009342952677941031,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "density_spectral_correlation_db",
+        "r": -0.00930603426472338,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "spectral_cosine",
+        "b": "interferer_energy_share",
+        "r": -0.009046537792349362,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "common_gain",
+        "r": 0.008225562199278606,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "spectral_correlation_db",
+        "r": -0.007478945711746322,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "interferer_energy_share",
+        "r": 0.006080402148928082,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "interferer_class",
+        "b": "spectral_correlation_db",
+        "r": 0.005539141339203267,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "target_class",
+        "b": "interferer_energy_share",
+        "r": 0.004633405323309825,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "interferer_energy_share",
+        "r": 0.0030285871528748045,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "target_class",
+        "r": -0.0015752943402087829,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "masked_cell_fraction",
+        "r": -0.0015673541613810957,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "row",
+        "b": "masked_energy_fraction",
+        "r": 0.0007226546518434249,
+        "magnitude": "negligible"
+      }
+    ]
+  },
+  "group_summary": {
+    "by": [
+      "condition"
+    ],
+    "n_groups": 4,
+    "min_n_per_group": 6000,
+    "max_n_per_group": 6000,
+    "median_n_per_group": 6000,
+    "small_groups_flag": false,
+    "tiny_groups_flag": false,
+    "per_group_counts": [
+      [
+        "demand",
+        6000
+      ],
+      [
+        "semantic_different",
+        6000
+      ],
+      [
+        "semantic_same",
+        6000
+      ],
+      [
+        "white",
+        6000
+      ]
+    ]
+  },
+  "warnings": [
+    "列 'interferer_class' 缺失率 50% — 画图前考虑是否填补、剔除、或在图注中交代。",
+    "列 'interferer_coarse' 缺失率 50% — 画图前考虑是否填补、剔除、或在图注中交代。"
+  ],
+  "suggestions": [
+    "分类 vs 连续，样本量充足 → 箱线图 / 小提琴图，或带误差棒的柱状图（误差棒说明 SD/SEM/CI）",
+    "≥3 个连续变量 → 相关性热力图（['row', 'target_class', 'interferer_class', 'common_gain', 'activity_overlap']）或 pairplot 散点矩阵",
+    "分类维度组合数 = 15（level_db, fold 全交叉），**一张图塞不下**——建议按某一维拆成多面板，或选择子集。",
+    "common_gain 高度偏态（skew=-2.15）→ 考虑对数变换或小提琴图代替均值柱图",
+    "activity_overlap 高度偏态（skew=-2.61）→ 考虑对数变换或小提琴图代替均值柱图",
+    "spectral_cosine 跨数个量级（9.39e-06 ~ 0.999）→ 用对数 y 轴",
+    "masked_energy_fraction 跨数个量级（1.5e-08 ~ 0.373）→ 用对数 y 轴",
+    "interferer_energy_share 跨数个量级（0.00435 ~ 0.958）→ 用对数 y 轴",
+    "target_activity_spectral_cosine 跨数个量级（9.39e-06 ~ 1）→ 用对数 y 轴"
+  ]
+}

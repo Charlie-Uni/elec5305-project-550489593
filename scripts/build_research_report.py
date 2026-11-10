@@ -9,6 +9,7 @@ import subprocess
 from pathlib import Path
 
 import numpy as np
+from build_closing_report import build_closing_report
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -544,6 +545,7 @@ def build(compiler, extension_run=None, only_cached=False):
     (ROOT / "docs/report_extension_status.tex").write_text(status)
     (ROOT / "docs/report_cost_panel.tex").write_text(cost_table())
     review_tables()
+    build_closing_report()
     destination = ROOT / "results/research_report_20261109_draft"
     destination.mkdir(exist_ok=True)
     build_directory = ROOT / "tmp/research_report_build"
@@ -579,6 +581,12 @@ def build(compiler, extension_run=None, only_cached=False):
         ROOT / "docs/report_cost_panel.tex",
         ROOT / "docs/report_review_controls.tex",
         ROOT / "docs/report_review_competitors.tex",
+        ROOT / "docs/report_closing_analyses.tex",
+        ROOT / "scripts/build_closing_report.py",
+        ROOT / "docs/closing_protocol_20261110.md",
+        ROOT / "results/closing_20261110/independent_audit.json",
+        ROOT / "results/closing_20261110/readout_outcomes.csv",
+        ROOT / "results/closing_20261110/acoustic_matched_comparisons.csv",
         ROOT / "results/report_review_20261110/audit.json",
         ROOT / "results/report_review_20261110/gain_control_effects.csv",
         ROOT / "results/report_review_20261110/clap_other_competitors.csv",
@@ -591,6 +599,7 @@ def build(compiler, extension_run=None, only_cached=False):
         "extensions_20261109/replication_figures",
         "extensions_20261109/intervention_figures",
         "extensions_20261109/cost_figures",
+        "closing_20261110/figures",
     ):
         inputs.extend(sorted((ROOT / "results" / folder).glob("*.pdf")))
     metadata = {

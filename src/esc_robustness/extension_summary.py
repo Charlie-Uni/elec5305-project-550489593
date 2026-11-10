@@ -76,7 +76,11 @@ def variant_paths(repo, runtime, root, trial_evidence=None):
         evidence = Path(trial_evidence)
         return [
             (
-                name, system, regime, seed, evidence / "clean" / name,
+                name,
+                system,
+                regime,
+                seed,
+                evidence / "clean" / name,
                 {region: evidence / region / name for region in ("own", "target")},
             )
             for name, system, regime, seed, _, _ in variants
@@ -278,9 +282,7 @@ def summarise(repo, runtime, root, output, replicates=2000, trial_evidence=None)
 
     comparisons = []
     for region in ("own", "target"):
-        for name, reference, system, regime, seed, comparison_type in comparison_specs(
-            variants
-        ):
+        for name, reference, system, regime, seed, comparison_type in comparison_specs(variants):
             comparisons_to_run = [
                 (c, False) for c in ("white", "demand", "semantic_same", "semantic_different")
             ]
@@ -342,7 +344,9 @@ if __name__ == "__main__":
         p.add_argument(f"--{name}", type=Path, required=True)
     p.add_argument("--replicates", type=int, default=2000)
     p.add_argument("--replication-only", action="store_true")
-    p.add_argument("--trial-evidence", type=Path, help="Portable evidence ZIP's trial_evidence directory")
+    p.add_argument(
+        "--trial-evidence", type=Path, help="Portable evidence ZIP's trial_evidence directory"
+    )
     a = p.parse_args()
     if a.replication_only and a.trial_evidence:
         p.error("Use --trial-evidence for the full portable summary, without --replication-only")

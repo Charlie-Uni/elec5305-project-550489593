@@ -1,0 +1,33 @@
+{
+  "manifest": "../runs/clap_v4_20261109/manifest_target",
+  "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+  "power_region": "target",
+  "rows_written": 23991,
+  "features_sha256": "c4a8ece5d24acaaa941d4dd6fd42108c0d8f188ed4f11f226706a9b761a6605e",
+  "demand_rows_skipped": 0,
+  "demand_available": true,
+  "measures": {
+    "spectral_correlation_db": "Pearson correlation of long-term 64-band Mel spectra in dB",
+    "spectral_cosine": "cosine of long-term linear Mel power spectra (reference)",
+    "masked_cell_fraction": "fraction of target Mel TF cells within 40.0 dB of its loudest cell where interferer power exceeds target power",
+    "masked_energy_fraction": "share of target Mel TF energy in cells where interferer power exceeds target",
+    "interferer_energy_share": "interferer / (target + interferer) Mel energy",
+    "activity_overlap": "from the manifest"
+  },
+  "frontend": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "source_sha256": {
+    "overlap_analysis.py": "9f6d0f2c5ce71319fea2ce613f2d37c27a121d143e26bef1bcf69566a5f6dedc",
+    "mixing.py": "312f50b2686dff2bab93cfddc3c3f56067112f9926d501c006fd4f89d67bf21a",
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b"
+  }
+}

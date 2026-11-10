@@ -1,10 +1,10 @@
 {
   "verified": true,
   "test_suite": {
-    "passed": 87,
+    "passed": 96,
     "skipped": 1,
     "skip_reason": "CUDA unavailable on Apple M3",
-    "log_sha256": "dd739a33ddfb13d246c6397a74db71fad0829a2e3d7ef4144ed2a9cfe37f730a",
+    "log_sha256": "5b503dd7118854ba7d83a6a89e1bdcd4860db0cbc8eb44d2700dc141246fa29c",
     "last_run": "2026-11-10"
   },
   "lint": "ruff check src scripts tests passed",
@@ -12,7 +12,7 @@
   "condition_cells": 336,
   "paired_intervention_contrasts": 156,
   "evaluation_queue_completed": 22,
-  "report_pages": 21,
+  "report_pages": 26,
   "presentation_slides": 13,
   "video_recorded": false,
   "course_submission_performed": false,
@@ -27,5 +27,14 @@
   ],
   "last_review_date": "2026-11-10",
   "teacher_recommendations_review": "docs/teacher_review_20261110.md",
-  "core_figure_records_recomputed": 348
+  "core_figure_records_recomputed": 348,
+  "closing_analyses": {
+    "complete": true,
+    "acoustic_rows": 47991,
+    "semantic_readout_rows": 95964,
+    "figures": 7,
+    "original_results_preserved": true,
+    "experimental_scope_closed": true
+  },
+  "presentation_scope": "Earlier 13-slide core/intervention draft; the closing analyses are in the updated report and separate figure exports, not inserted into this deck."
 }
