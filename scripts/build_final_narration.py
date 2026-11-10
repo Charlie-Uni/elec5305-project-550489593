@@ -17,14 +17,14 @@ def main():
     extra = 30
     estimates = [round(words / rate + extra / 60, 2) for rate in [150, 130]]
     text = f"""ELEC5305 FINAL PRESENTATION — RECORDING SCRIPT
-Qihan Zhu | When Background Noise Has Meaning | 10 November 2026
+Qihan Zhu | When Background Noise Has Meaning | 11 November 2026
 
-Matches the 12-slide concise deck and the 10-page report.
+Matches the 12-slide concise deck and the 11-page report.
 Narration: {words} words. Speech at 130–150 words/minute plus 30 seconds
 of demonstration pauses: approximately {estimates[0]:.1f}–{estimates[1]:.1f} minutes.
 Loading speed and personal delivery may add time. The course says “brief”; it
 specifies no minute limit in the supplied requirements. This is a production
-estimate, not a course rule. The exact 26-page report remains a supplement.
+estimate, not a course rule. The single formal report contains five core figures; detailed data remain in the repository.
 
 SETUP
 Use presentation.pptx or presentation.pdf in results/final_submission_20261110.

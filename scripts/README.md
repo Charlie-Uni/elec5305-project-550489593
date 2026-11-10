@@ -34,6 +34,7 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 
 | Script | Purpose |
 |---|---|
+| [audit_single_report.py](audit_single_report.py) | Independently verify the added diagnostic figures and single-report claims. |
 | [audit_final_delivery.py](audit_final_delivery.py) | Check the report, slide charts, narration and website against saved evidence. |
 | [audit_report_claims.py](audit_report_claims.py) | Recheck the core figure data and expose controls and third-class competition. |
 | [audit_closing_analyses.py](audit_closing_analyses.py) | Independent score-set/count audit and sampled SciPy acoustic reconstruction. |
@@ -75,4 +76,4 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 | [build_video_narration.py](build_video_narration.py) | Synchronise the recording script with the deck's exact speaker notes. |
 | [delivery_claims.py](delivery_claims.py) | One audited numerical source for slides, narration and the public project page. |
 
-Historical builders and audit scripts are retained because saved outputs record their source hashes. The current manuscript is the 10-page report; rebuilding the earlier detailed report does not replace it.
+Historical builders and audit scripts are retained because saved outputs record their source hashes. The current manuscript is the 11-page report; rebuilding the earlier detailed report does not replace it.

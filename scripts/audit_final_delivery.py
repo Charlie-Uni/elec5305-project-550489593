@@ -249,12 +249,12 @@ def audit(browser, output=None):
                 )
                 assert formatted in state["acoustics"]
     report = destination / "final_report.pdf"
-    word_audit = json.loads((destination / "docx_audit.json").read_text())
-    assert word_audit["verified"] and word_audit["rendered_pages"] == 10
+    word_audit = json.loads((destination / "single_report_docx_audit.json").read_text())
+    assert word_audit["verified"] and word_audit["rendered_pages"] == 11
     assert word_audit["word_sha256"] == sha(destination / "final_report.docx")
     assert word_audit["source_sha256"] == sha(ROOT / "docs/final_report.tex")
     pdf = pdfium.PdfDocument(report)
-    assert len(pdf) == 10
+    assert len(pdf) == 11
     pages = []
     for page in pdf:
         textpage = page.get_textpage()
@@ -263,7 +263,7 @@ def audit(browser, output=None):
         page.close()
     pdf.close()
     report_text = "\n".join(pages)
-    assert "Contents" in pages[0] and "References" in pages[9]
+    assert "Contents" in pages[0] and "References" in pages[10]
     assert "??" not in report_text and "\ufffd" not in report_text
     for row in editorial["capture"]:
         rate = 100 * int(row["errors_equal_distractor"]) / int(row["errors"])
@@ -275,8 +275,8 @@ def audit(browser, output=None):
     for value in ("39.60", "64.50", "81.30", "92.90", "0.0604", "GPT-6 Astra"):
         assert value in report_text, value
     assert "Acoustics, Speech and Signal Processing" in pages[0]
-    assert "Between-class Examples" in pages[9]
-    assert "version not recorded" in pages[8]
+    assert "Between-class Examples" in pages[10]
+    assert "version not recorded" in pages[9]
     for value in (
         "37.34",
         "33.17",
@@ -357,12 +357,17 @@ def audit(browser, output=None):
     assert base + "docs/code_demo.md" in uris
     supplement = ROOT / "results/research_report_20261109_draft/research_report.pdf"
     assert sha(supplement) == "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35"
+    assert "supplement" not in report_text.lower()
+    from audit_single_report import audit as audit_single_report
+
+    added_figures = audit_single_report()
     # Revisions may update the current delivery only. Preserve experiment evidence,
     # the earlier deck/report, example audio and original execution recording.
-    baseline = "8cec8748ba8f34f0f4c6ac5018f273c1a36bfc62"
+    baseline = "c08a3f241eecd802fdfa77ce1c59cab15c7e3c98"
     mutable = {
         "README.md",
         "final_report.pdf",
+        "final_report.docx",
         "presentation.pdf",
         "presentation.pptx",
         "presentation_data.json",
@@ -392,6 +397,8 @@ def audit(browser, output=None):
     original_count = 0
     for line in tree.splitlines():
         metadata, relative = line.split("\t", 1)
+        if relative == "results/README.md":
+            continue
         if (
             relative.startswith("results/final_submission_20261110/")
             and relative.removeprefix("results/final_submission_20261110/") in mutable
@@ -417,13 +424,15 @@ def audit(browser, output=None):
     assert video["sha256"] == sha(destination / "code_demo.mp4")
     result = dict(
         verified=True,
-        report_pages=10,
-        word_rendered_pages=10,
+        report_pages=11,
+        word_rendered_pages=11,
         word_native_tables=word_audit["native_tables"],
         word_native_math_objects=word_audit["native_math_objects"],
         presentation_slides=12,
         native_chart_values_checked=native_values,
         native_charts=2,
+        report_figures=5,
+        added_figure_claims=added_figures,
         intervention_table_cells=30,
         capture_table_cells=6,
         preservation_baseline=baseline,
@@ -451,14 +460,14 @@ def audit(browser, output=None):
                 destination / "code_demo.mp4",
                 destination / "presentation_data.json",
                 ROOT / "docs/video_narration_final.txt",
-                ROOT / "docs/rubric_review_20261110.md",
+                ROOT / "docs/rubric_review_20261111.md",
                 ROOT / "index.html",
                 ROOT / "site-data.json",
             ]
         },
         claim_boundary="Checked numerical consistency, original-file preservation and actual demonstration inference. Author review, full narration and Canvas submission remain.",
     )
-    audit_path = output if output is not None else destination / "delivery_audit.json"
+    audit_path = output if output is not None else destination / "single_report_delivery_audit.json"
     audit_path.parent.mkdir(parents=True, exist_ok=True)
     audit_path.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))

@@ -146,17 +146,17 @@ def format_document(doc):
         ("Environmental Sound Classification under Semantic Interference", "Subtitle"),
         ("Qihan Zhu   SID 550489593", "Normal"),
         ("ELEC5305 Acoustics, Speech and Signal Processing", "Normal"),
-        ("10 November 2026", "Normal"),
+        ("11 November 2026", "Normal"),
     ]
     toc = [
-        ("1 Introduction", 2),
+        ("1 Introduction", 1),
         ("2 Literature review", 2),
         ("3 Methods", 3),
         ("4 Results", 5),
         ("5 Discussion", 8),
         ("6 Conclusion", 9),
         ("7 Implementation, reproduction and attribution", 9),
-        ("References", 10),
+        ("References", 11),
     ]
     for p in list(doc.paragraphs):
         if p.text == "TITLEBLOCKMARKER":

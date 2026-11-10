@@ -1,6 +1,6 @@
 {
   "slides": 12,
-  "concise_report_pages": 10,
+  "concise_report_pages": 11,
   "real_code_demo": true,
   "closing_analyses_complete": true,
   "editable_charts": true,
@@ -10,7 +10,7 @@
   "draft": false,
   "pptxgenjs": "4.0.1",
   "node": "v24.22.1",
-  "source_sha256": "042cf797cdf06dec189a488a2b9ad96a9b1ae41de8581bcb2d0b36225fd54ef2",
+  "source_sha256": "b3fe889985c45c5c89519e0a7718a7774b4995b30b45a4424d2e3cb24f06aa6c",
   "data_sha256": "7c24b705c18ea978196da743a4c9d73d8f0ec89e345bc8ea9a2a18019d05a20a",
-  "pptx_sha256": "49c7cd27d7bb5e90dd63c5d4773a533998d40b2dce1c361c162072260c696584"
+  "pptx_sha256": "e8a63088fd065cce4934f89ed7b9be966a9068a8b3201369d1b7ddcadb618e0c"
 }

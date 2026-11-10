@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "capture_points": 18,
+  "margin_median_iqr_records": 18,
+  "displacement_median_iqr_records": 24,
+  "larger_error_group_medians": 12,
+  "illustrative_capture_pairs_checked": 2,
+  "own_minus_target_semantic_f1_pp": [
+    1.3366254652410618,
+    0.46899115105725475,
+    0.8993452653207001,
+    1.0766623285158872,
+    1.1056174745971759,
+    2.3521038079686973
+  ],
+  "reference_line": "Uniform allocation over 49 wrong labels; not an empirical randomisation test",
+  "interpretation": "Descriptive medians and IQR; no causal semantic claim or cross-architecture distance comparison",
+  "source_sha256": {
+    "results/figures_three_systems_own_20261109/fig2_capture_rate_vs_sir.csv": "e55e2026cb753f861f8bbfdeb7ed11982185f1bb7f9940ff510e538370107d86",
+    "results/figures_three_systems_own_20261109/fig3_margin_vs_sir.csv": "813ea3f87c7c94a5107838a27ce868c409daf7edb5444f098c5913feaa2e6bc0",
+    "results/figures_three_systems_own_20261109/fig5_representation_displacement.csv": "004f537f04a4a4040ee77bae733db5c5f5d1d36a286cabb910c75f8a114a7cbb",
+    "results/figures_three_systems_own_20261109/fig6_confusion_flow.csv": "887c6090746f575f36ac4157899089a42fecd61e38d9e6fee16a896151a54e03"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "slides": 12,
-  "words": 822,
+  "words": 825,
   "estimated_minutes_at_130_to_150_wpm": [
-    5.98,
-    6.82
+    6.0,
+    6.85
   ],
-  "timeline_seconds": 375,
+  "timeline_seconds": 376,
   "extra_demo_pause_seconds": 30,
   "final_narrated_video_recorded": false,
   "segments": [
@@ -89,8 +89,8 @@
     {
       "slide": 12,
       "start_seconds": 341,
-      "seconds": 34,
-      "words": 81,
+      "seconds": 35,
+      "words": 84,
       "extra_pause_seconds": 0
     }
   ]

@@ -1,12 +1,12 @@
 ELEC5305 FINAL PRESENTATION — RECORDING SCRIPT
-Qihan Zhu | When Background Noise Has Meaning | 10 November 2026
+Qihan Zhu | When Background Noise Has Meaning | 11 November 2026
 
-Matches the 12-slide concise deck and the 10-page report.
-Narration: 822 words. Speech at 130–150 words/minute plus 30 seconds
+Matches the 12-slide concise deck and the 11-page report.
+Narration: 825 words. Speech at 130–150 words/minute plus 30 seconds
 of demonstration pauses: approximately 6.0–6.8 minutes.
 Loading speed and personal delivery may add time. The course says “brief”; it
 specifies no minute limit in the supplied requirements. This is a production
-estimate, not a course rule. The exact 26-page report remains a supplement.
+estimate, not a course rule. The single formal report contains five core figures; detailed data remain in the repository.
 
 SETUP
 Use presentation.pptx or presentation.pdf in results/final_submission_20261110.
@@ -79,7 +79,7 @@ Visual: corresponding slide in the concise presentation.
 Narration:
 Argmax forces one label. At own power and plus five decibels, 236 of 632 same-category captures retain the target second, or 37.34 percent. Different-category retention is 203 of 612, or 33.17 percent. The chart instead uses all trials as its denominator. Top-two ranking partially recovers the target; it is not a calibrated event detector. Fixed prompt ensembling also changes readout without retraining CLAP.
 
-Evidence (not spoken): closing_20261110/readout_outcomes.csv; 26-page supplement Section 6.2, Table 5. Complete mixture and control ranks; source-cluster intervals in readout_uncertainty.csv.
+Evidence (not spoken): closing_20261110/readout_outcomes.csv; Complete mixture and control ranks; source-cluster intervals in readout_uncertainty.csv.
 
 03:34–04:01 | SLIDE 9 | CLAP retains a gap in acoustically close subsets
 Visual: corresponding slide in the concise presentation.
@@ -87,7 +87,7 @@ Visual: corresponding slide in the concise presentation.
 Narration:
 Raw white-noise Mel correlation changes from minus 0.728 to minus 0.008 after bandwidth normalisation. Acoustic descriptors therefore need care. On subsets close in spectral similarity, masking fraction and temporal overlap, CLAP remains sixteen to twenty-six accuracy points below DEMAND across both power conventions. CNN intervals include zero. Only about nine to ten percent of targets remain; this is conditional association, not semantic causation.
 
-Evidence (not spoken): closing_20261110/acoustic_matched_comparisons.csv; 26-page supplement Section 6.4, Table 6. Calipers: 0.10 target-active spectral cosine, 0.05 masked-cell fraction, 0.10 temporal overlap. Core CNN seed 5305, single-template CLAP.
+Evidence (not spoken): closing_20261110/acoustic_matched_comparisons.csv; Calipers: 0.10 target-active spectral cosine, 0.05 masked-cell fraction, 0.10 temporal overlap. Core CNN seed 5305, single-template CLAP.
 
 04:01–05:06 | SLIDE 10 | Real code execution and sound examples
 Visual: switch to the real local execution interface; show source processing and outputs.
@@ -105,11 +105,11 @@ Representation, training and readout answer different questions. For CLAP under 
 
 Evidence (not spoken): Research report conclusions and limitations.
 
-05:41–06:15 | SLIDE 12 | Report, supplement and reproducible code
+05:41–06:16 | SLIDE 12 | Report and reproducible code
 Visual: corresponding slide in the concise presentation.
 
 Narration:
-The ten-page report contains the main argument and numerical literature comparison. The unchanged twenty-six-page supplement preserves complete diagnostics. The website links the code, attributed audio and execution clip. I used OpenAI Codex with GPT-6 Astra and incorporated Anthropic Claude code and review material, whose model version was not recorded. Assistance included implementation, analyses and writing, beyond language editing. I remain responsible for the work. The execution clip is a component of the video; the final submission also needs my own explanation.
+The eleven-page report contains the main argument, numerical literature comparison and five core figures. Complete diagnostics remain in the code repository. The website links the code, attributed audio and execution clip. I used OpenAI Codex with GPT-6 Astra and incorporated Anthropic Claude code and review material, whose model version was not recorded. Assistance included implementation, analyses and writing, beyond language editing. I remain responsible for the work. The execution clip is a component of the video; the final submission also needs my own explanation.
 
 Evidence (not spoken): https://github.com/karolpiczak/ESC-50 ; https://arxiv.org/abs/2211.06687v4 ; https://arxiv.org/abs/1711.10282 ; https://aclanthology.org/2025.naacl-long.616/ ; https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206 ; https://aclanthology.org/2026.findings-acl.913/ ; DEMAND https://doi.org/10.5281/zenodo.1227121
 

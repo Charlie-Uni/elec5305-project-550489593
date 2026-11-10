@@ -1,0 +1,56 @@
+{
+  "verified": true,
+  "report_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "word_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "report_pages": 11,
+  "word_pages": 11,
+  "figures": 5,
+  "grayscale_diagnostics_checked": true,
+  "native_word_math_objects": 44,
+  "word_pm_symbols_checked": true,
+  "slide_12_revised_and_inspected": true,
+  "other_slides_pixel_identical_to_prior_review": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "findings": [],
+  "sha256": {
+    "final_report.pdf": "692fd42c2c945697e6f3469e78b74619a5876eb46c0b1754a9b653e4f72a63d1",
+    "final_report.docx": "0b06caae9b28471a991a805cac94c872d48a0e4b611ccc89b8fc341b9311536b",
+    "presentation.pptx": "e8a63088fd065cce4934f89ed7b9be966a9068a8b3201369d1b7ddcadb618e0c",
+    "presentation.pdf": "8cec709d376e95fc60d9af11a459d7c2bccf1955b993b55b45ef42e580545862"
+  }
+}

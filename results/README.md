@@ -6,8 +6,7 @@
 
 | Material | Canonical file |
 |---|---|
-| **Main report** | **[10-page PDF](final_submission_20261110/final_report.pdf)** |
-| **Technical supplement** | **[Original 26-page PDF, unchanged](research_report_20261109_draft/research_report.pdf)** |
+| **Main report** | **[11-page PDF](final_submission_20261110/final_report.pdf)** |
 | Presentation | [12-slide PDF](final_submission_20261110/presentation.pdf) · [PowerPoint](final_submission_20261110/presentation.pptx) |
 | Real code execution | [Video](final_submission_20261110/code_demo.mp4) · [local run guide](../docs/code_demo.md) |
 | Narration and delivery checks | [Script](../docs/video_narration_final.txt) · [delivery evidence](final_submission_20261110/README.md) |
@@ -43,7 +42,7 @@ versions of the main submission to choose between.
 | `figures_svm_cnn_own_20261109/` | Earlier two-system figure exports and visual checks |
 | `report_figure_assets_20261109/` | Figure inputs/exports used to build the detailed report |
 | `presentation_20261109_draft/` | Earlier presentation, source data, narration and audit trail |
-| `research_report_20261109_draft/` | The preserved 26-page technical supplement and build records; the historical directory name does not change its role |
+| `research_report_20261109_draft/` | Earlier 26-page detailed report and build records, kept for provenance; not part of the submission |
 | [Report review](report_review_20261110/audit.json) | Recomputed figure claims, gain controls and other-class competition |
 | [Delivery synchronisation](delivery_sync_20261110/README.md) | Checks of the earlier report, presentation, narration and public files |
 | [Listening-page checks](listening_site_20261110/README.md) | Four-target reconstruction, predictions, rates and audio checks |

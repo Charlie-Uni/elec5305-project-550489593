@@ -1,6 +1,6 @@
 # Report revision record and remaining author tasks
 
-The reporting revisions below are complete in the 10-page report, 12-slide presentation, 822-word narration and Pages. The original experiment results, execution video and 26-page supplement are unchanged. No model, dataset or experiment was added. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
+The reporting revisions below are complete in the 11-page report, 12-slide presentation, 825-word narration and Pages. The original experiment results, execution video are unchanged; the older detailed report is an unlinked historical archive. No model, dataset or experiment was added. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
 
 ## Completed editorial changes
 
@@ -9,7 +9,7 @@ The reporting revisions below are complete in the 10-page report, 12-slide prese
 - Added the original-seed high-overlap CNN contrasts, target counts and Holm qualification; retained the distinction from acoustically close subsets.
 - Added published numerical context from the official ESC-50 record and the revised CLAP paper. Different pipelines, evaluation exclusions and checkpoint/prompt choices prevent controlled superiority claims.
 - Added BC learning and distinguished its proportional-label objective from designated-target augmentation.
-- Added CLAP margin and representation-displacement results, with supplement pointers and descriptive interpretation.
+- Added CLAP margin and representation-displacement results, in the report with descriptive interpretation.
 - Corrected the course title, separated conclusion from implementation/attribution and removed the production-process sentence.
 - Added a first-person AI acknowledgement: OpenAI Codex, GPT-6 Astra (confirmed by the author); Anthropic Claude contributions, model version not recorded. The declaration explicitly includes substantial code, analyses and document preparation, beyond language editing.
 
@@ -39,4 +39,8 @@ The University's [Current Students guidance](https://www.sydney.edu.au/students/
 
 ## Verification and preservation
 
-The [current editorial audit](../results/final_submission_20261110/editorial_delivery_audit.json) checks report values, native slide charts/tables, exact narration, website selector states and preserved experiment/example files against repository commit `8cec874`. Earlier dated audits remain records of their respective versions. The source builders regenerate the delivery from unchanged evidence; the newly added capture/margin/displacement data are shared across the report, deck and page.
+The [current editorial audit](../results/final_submission_20261110/single_report_delivery_audit.json) checks report values, native slide charts/tables, exact narration, website selector states and preserved experiment/example files against repository commit `8cec874`. Earlier dated audits remain records of their respective versions. The source builders regenerate the delivery from unchanged evidence; the newly added capture/margin/displacement data are shared across the report, deck and page.
+
+## Single-document revision — 11 November 2026
+
+The formal report is now 11 pages with five figures. Capture/margin and representation-displacement diagnostics are in the main report. The new [rubric review](rubric_review_20261111.md) checks all eight criteria. Two submitted patches were applied, then wording was corrected for limited augmentation transfer, outcome-conditioned medians, power-protocol sensitivity and unconfirmed model-version details.

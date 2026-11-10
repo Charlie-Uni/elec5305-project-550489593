@@ -312,6 +312,11 @@ def build_assets():
 
 def build():
     build_assets()
+    from build_report_extra_figures import capture_and_margin, displacement, style
+
+    style()
+    capture_and_margin()
+    displacement()
     temp = ROOT.parent / "runs/final_submission_20261110/report_build"
     temp.mkdir(parents=True, exist_ok=True)
     r = subprocess.run(

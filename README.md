@@ -10,12 +10,11 @@ Qihan Zhu · SID 550489593
 
 | Material | Direct link | What it contains |
 |---|---|---|
-| **Main report** | **[10-page PDF](results/final_submission_20261110/final_report.pdf)** · [editable Word](results/final_submission_20261110/final_report.docx) · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
+| **Main report** | **[11-page PDF](results/final_submission_20261110/final_report.pdf)** · [editable Word](results/final_submission_20261110/final_report.docx) · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
 | **Project website** | **[Open the live website](https://charlie-uni.github.io/elec5305-project-550489593/)** | Interactive results, figures, downloads and four target sounds to explore |
 | **Working code** | **[Source-code map](src/esc_robustness/README.md)** · [reproduction guides](docs/README.md#reproduce-the-study) | DSP, SVM, CNN, frozen CLAP, controlled mixing and analysis |
 | **Presentation** | **[12-slide PDF](results/final_submission_20261110/presentation.pdf)** · [editable PowerPoint](results/final_submission_20261110/presentation.pptx) | Selected findings, speaker notes and embedded audio |
 | **Code demonstration** | **[Watch actual execution](https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/code_demo.mp4)** · [run it locally](docs/code_demo.md) | Source reconstruction, SIR verification and fresh three-model inference |
-| **Technical supplement** | **[Original 26-page PDF](results/research_report_20261109_draft/research_report.pdf)** | Detailed diagnostics and both power conventions; preserved unchanged |
 | **Evidence** | **[Results index](results/README.md)** · [recording script](docs/video_narration_final.txt) | Original results, numerical checks and narration |
 
 The 40.8-second execution clip includes audio but no author narration. The
@@ -88,7 +87,7 @@ docs/                     Report sources, protocols and submission documentation
 results/                  Original results, published deliverables and dated audits
   README.md               Canonical results versus historical evidence
   final_submission_20261110/      Main report, presentation and execution video
-  research_report_20261109_draft/ Preserved 26-page technical supplement
+  research_report_20261109_draft/ Earlier detailed report, kept for provenance; not part of the submission
 examples/                 Four attributed target examples and matched controls
 demo/                     Local interface for actual model execution
 index.html + site-data.json       Public project website
@@ -107,7 +106,7 @@ with AI assistance. NumPy, SciPy, scikit-learn and PyTorch are external librarie
 LAION-CLAP supplies pretrained code and weights. See the
 [references and external-code notes](docs/guides/proposal_and_references.md),
 [audio attribution](examples/README.md) and
-[formal submission review](docs/rubric_review_20261110.md).
+[formal submission review](docs/rubric_review_20261111.md).
 
 `main` contains the integrated project. The older `feature/interference` branch
 remains available for existing links. Pages publishes from the verified `main`
