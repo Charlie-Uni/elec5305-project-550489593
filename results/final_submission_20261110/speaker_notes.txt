@@ -9,9 +9,9 @@ The experiment retains all two thousand ESC-50 clips and the five official folds
 Evidence: Final manifest audits; report methods.
 
 SLIDE 3
-The course feature and STFT material explains the signal representation. Piczak motivates learned spectro-temporal features, and Salamon and Bello motivate augmentation as an intervention. CLAP supplies a frozen audio-language reference. PAT shows that readout and alignment can matter. This project examines their implications under controlled competing events; it does not reproduce every referenced method.
+The official ESC-50 record lists 39.6 percent accuracy for its MFCC and zero-crossing SVM, and 64.5 for Piczak’s CNN. Our 48.9 and 67.9 provide context, not a controlled improvement, because the pipelines differ. Between-class learning mixes sounds with proportional labels; our augmentation retains one target label. The revised CLAP paper reports 88 to 91 percent after overlap exclusions. Our 81.75 uses all two thousand clips, a specified checkpoint and a different prompt, so the gap cannot be attributed to prompts alone.
 
-Evidence: Course Lectures 3/4/6; Piczak 2015; Salamon and Bello 2017 https://arxiv.org/abs/1608.04363; CLAP https://arxiv.org/abs/2211.06687; PAT https://aclanthology.org/2025.naacl-long.616/
+Evidence: Course Lectures 3/4/6; ESC-50 https://github.com/karolpiczak/ESC-50; BC learning https://arxiv.org/abs/1711.10282; CLAP revised Table 4 and Appendix H https://arxiv.org/abs/2211.06687v4; PAT https://aclanthology.org/2025.naacl-long.616/
 
 SLIDE 4
 The SVM uses ninety-two interpretable features, the compact CNN learns from sixty-four log-Mel bands, and CLAP compares audio with fifty fixed text descriptions. I keep training, validation and testing separate. The custom STFT agrees with SciPy and with corresponding frames from the actual course MATLAB code. CLAP has a large external pretraining advantage.
@@ -24,12 +24,12 @@ The proposal measured both component powers on the target activity mask. Sparse 
 Evidence: Report equations and documented proposal deviation.
 
 SLIDE 6
-At plus five decibels, the SVM has about two percent macro-F1 under white noise. CLAP reaches about seventy-one percent under DEMAND but about forty-nine percent under same-category competition. Equal nominal power does not create equal difficulty. The main report shows all three levels with fold variation, and the supplement preserves the complete target-power counterpart.
+At plus five decibels, white noise reduces SVM macro-F1 to 2.03 percent. CLAP reaches 71.49 under DEMAND and 48.86 under same-category competition. The new table uses errors as its denominator: same-category capture is 18.53 percent for SVM, 31.26 for CNN and 66.95 for CLAP. These are not the all-trial percentages in the listening examples. On high-overlap targets, the original CNN loses 3.28 and 2.94 accuracy points relative to matched DEMAND; neither contrast passes the declared Holm correction.
 
-Evidence: all_conditions_verified.csv, own +5 dB.
+Evidence: all_conditions_verified.csv; fig2_capture_rate_vs_sir.csv; cnn_overlap_replication.csv, own +5 dB, seed 5305.
 
 SLIDE 7
-Across three CNN seeds, white-noise training raises white-noise macro-F1 from 7.48 to 43.95 percent, but same-category performance changes little. Semantic training reaches 36.05 percent while clean performance falls to 61.70. Direct semantic-over-white augmentation accuracy gains remain inconclusive after the declared correction. These results extend the literature’s augmentation question with measured transfer limits.
+Across three CNN seeds, white-noise training raises white-noise macro-F1 from 7.48 to 43.95 percent, but same-category performance changes little. Semantic training reaches 36.05 percent while clean performance falls to 61.70. Direct semantic-over-white augmentation accuracy gains remain inconclusive after correction. Unlike between-class learning, these mixtures keep the target label. The result tests target retention, not proportional multi-event prediction.
 
 Evidence: Extension protocol and independently audited intervention tables.
 
@@ -49,11 +49,11 @@ I now switch to the local code demonstration and select Run. The program reads t
 Evidence: examples/listening_own_20261109/examples.json, row 91. Can Open.WAV by LG, CC BY: https://freesound.org/people/LG/sounds/101404/ . alarm clock.aif by hookhead, CC0: https://freesound.org/people/hookhead/sounds/13613/ . ESC-50 compilation by Karol J. Piczak, CC BY-NC 3.0: https://creativecommons.org/licenses/by-nc/3.0/ . Changes: ESC-50 cropping, controlled mixing, common attenuation and PCM16 export.
 
 SLIDE 11
-The results answer different parts of the research question. Interpretable features help diagnose white-noise sensitivity. Augmentation improves its matched corruption but transfers unevenly, extending the question in Salamon and Bello. CLAP readout can retain a target that loses first place. Acoustic restriction narrows the claim and does not reproduce the larger high-overlap CNN contrast on the same population. Shared sources, limited backgrounds and unknown pretraining overlap constrain generalisation.
+Representation, training and readout answer different questions. For CLAP under same-category interference at plus five decibels, the median target-minus-distractor margin is 0.0873; 38.05 percent of margins are negative. Median representation displacement is 0.1905 on correct trials and 0.4087 on errors. These associations do not establish a mechanism. About one-third of captured targets remain second. Acoustic restriction retains a CLAP gap, while CNN intervals include zero in those smaller subsets. Limited backgrounds, shared sources and unknown pretraining overlap constrain generalisation.
 
 Evidence: Research report conclusions and limitations.
 
 SLIDE 12
-The ten-page report contains the main argument, literature review and discussion. The unchanged twenty-six-page supplement retains complete diagnostics and costs: the compact CNN remains the fastest of the three systems in both measured model orders. The website provides code instructions, the execution video and attributed audio. AI assistance and external code are disclosed. The contribution is a reproducible comparison with clear evidence for its claims and explicit limits on generalisation.
+The ten-page report contains the main argument and numerical literature comparison. The unchanged twenty-six-page supplement preserves complete diagnostics. The website links the code, attributed audio and execution clip. I used OpenAI Codex with GPT-6 Astra and incorporated Anthropic Claude code and review material, whose model version was not recorded. Assistance included implementation, analyses and writing, beyond language editing. I remain responsible for the work. The execution clip is a component of the video; the final submission also needs my own explanation.
 
-Evidence: https://github.com/karolpiczak/ESC-50 ; https://arxiv.org/abs/2211.06687 ; https://aclanthology.org/2025.naacl-long.616/ ; https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206 ; https://aclanthology.org/2026.findings-acl.913/ ; DEMAND https://doi.org/10.5281/zenodo.1227121
+Evidence: https://github.com/karolpiczak/ESC-50 ; https://arxiv.org/abs/2211.06687v4 ; https://arxiv.org/abs/1711.10282 ; https://aclanthology.org/2025.naacl-long.616/ ; https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206 ; https://aclanthology.org/2026.findings-acl.913/ ; DEMAND https://doi.org/10.5281/zenodo.1227121

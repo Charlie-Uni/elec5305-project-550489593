@@ -6,7 +6,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from delivery_claims import closing_claims
+from delivery_claims import closing_claims, editorial_claims
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,6 +36,7 @@ def build(run):
     ensemble = (run / "clap_prompt_ensemble/complete.json").exists()
     state = {
         "closing": closing_claims(),
+        "editorial": editorial_claims(),
         "updated": datetime.now(timezone.utc).isoformat(),
         "clean": clean,
         "conditions": conditions,

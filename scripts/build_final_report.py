@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-from delivery_claims import closing_claims
+from delivery_claims import closing_claims, editorial_claims
 from PIL import Image
 from pypdf import PdfReader
 
@@ -42,6 +42,7 @@ def build_assets():
     data = json.loads(
         (ROOT / "results/presentation_20261109_draft/presentation_data.json").read_text()
     )
+    data["editorial"] = editorial_claims()
     clean = {
         s: json.loads((ROOT / p).read_text())
         for s, p in {
@@ -231,6 +232,15 @@ def build_assets():
             f"{100 * clean[s][m]['mean']:.2f} $\\pm$ {100 * clean[s][m]['sample_std']:.2f}"
             for m in ["accuracy", "macro_f1"]
         ]
+        for condition in ("semantic_same", "semantic_different"):
+            row = next(
+                r
+                for r in data["editorial"]["capture"]
+                if r["system"] == s and r["condition"] == condition
+            )
+            vals.append(
+                f"{100 * float(row['capture_rate']):.2f} ({row['errors_equal_distractor']}/{row['errors']})"
+            )
         rows.append(NAMES[s] + " & " + " & ".join(vals) + r" \\")
     text = "\\newcommand{\\CleanRows}{\n" + "\n".join(rows) + "\n}\n"
     rows = []

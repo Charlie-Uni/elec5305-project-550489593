@@ -1,16 +1,16 @@
 # Final submission checklist
 
-2026-11-10. The deliverables have been shortened and synchronised against the final project instructions and rubric supplied by the user. The experimental scope is closed: no further models, datasets or training will be added. The repository has been integrated into `main`; the new [report revision checklist](report_followup_20261110.md) still needs to be completed. Passing experimental verification does not mean that the report is fully finalised. See the [rubric review](rubric_review_20261110.md) for item-by-item evidence.
+2026-11-10. The deliverables have been shortened and synchronised against the final project instructions and rubric supplied by the user. The experimental scope is closed: no further models, datasets or training will be added. The repository has been integrated into `main`; the [report revision record](report_followup_20261110.md) now records the completed editorial changes. Personal review, narrated video and formal submission remain. See the [rubric review](rubric_review_20261110.md) for item-by-item evidence.
 
 ## Materials ready for review
 
-- [Formal report](../results/final_submission_20261110/final_report.pdf): 10 pages, including the contents, literature review, methods, selected results, discussion and 12 references.
+- [Formal report](../results/final_submission_20261110/final_report.pdf): 10 pages, including the contents, literature review, methods, selected results, discussion and 13 references. An [editable Word companion](../results/final_submission_20261110/final_report.docx) has the same content; the PDF fixes the submission layout.
 - [Technical supplement](../results/research_report_20261109_draft/research_report.pdf): the original 26-page detailed report, preserved byte for byte.
 - [Editable presentation](../results/final_submission_20261110/presentation.pptx) and [PDF](../results/final_submission_20261110/presentation.pdf): 12 slides, with editable charts, notes and two real audio clips.
-- [Final video narration](video_narration_final.txt): 728 English words, estimated at 5.4–6.1 minutes including planned demonstration pauses; actual speaking speed and loading may increase this. The course instructions give no specific duration limit.
+- [Final video narration](video_narration_final.txt): 822 English words, estimated at 6.0–6.8 minutes including planned demonstration pauses; actual speaking speed and loading may increase this. The course instructions give no specific duration limit.
 - [Actual code execution video](../results/final_submission_20261110/code_demo.mp4) and [run guide](code_demo.md): reload source audio, mix it, verify SIR, run SVM/CNN/CLAP and check against historical results. The video includes actual audio examples but no author narration.
 - [Pages](https://charlie-uni.github.io/elec5305-project-550489593/): the main report, supplement, presentation, narration, actual execution clip, interactive results and code links.
-- [New delivery verification record](../results/final_submission_20261110/delivery_audit.json); the [two original closing analyses](../results/closing_20261110/README.md) and original experimental results are retained.
+- [New delivery verification record](../results/final_submission_20261110/editorial_delivery_audit.json); the [two original closing analyses](../results/closing_20261110/README.md) and original experimental results are retained.
 
 ## Remaining author tasks
 

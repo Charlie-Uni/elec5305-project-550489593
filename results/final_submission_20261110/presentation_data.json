@@ -24306,5 +24306,150 @@
       "total_p95_ms": "53.04451873525977",
       "serialized_bytes_per_fold_median": "1863587645"
     }
-  ]
+  ],
+  "editorial": {
+    "region": "own",
+    "level_db": 5,
+    "capture": [
+      {
+        "system": "svm",
+        "condition": "semantic_same",
+        "level_db": "5.0",
+        "n": "2000",
+        "errors": "1527",
+        "errors_equal_distractor": "283",
+        "capture_rate": "0.1853307138179437",
+        "capture_fraction": "0.1415"
+      },
+      {
+        "system": "svm",
+        "condition": "semantic_different",
+        "level_db": "5.0",
+        "n": "2000",
+        "errors": "1548",
+        "errors_equal_distractor": "246",
+        "capture_rate": "0.15891472868217055",
+        "capture_fraction": "0.123"
+      },
+      {
+        "system": "cnn",
+        "condition": "semantic_same",
+        "level_db": "5.0",
+        "n": "2000",
+        "errors": "1289",
+        "errors_equal_distractor": "403",
+        "capture_rate": "0.3126454615981381",
+        "capture_fraction": "0.2015"
+      },
+      {
+        "system": "cnn",
+        "condition": "semantic_different",
+        "level_db": "5.0",
+        "n": "2000",
+        "errors": "1315",
+        "errors_equal_distractor": "362",
+        "capture_rate": "0.2752851711026616",
+        "capture_fraction": "0.181"
+      },
+      {
+        "system": "clap",
+        "condition": "semantic_same",
+        "level_db": "5.0",
+        "n": "2000",
+        "errors": "944",
+        "errors_equal_distractor": "632",
+        "capture_rate": "0.6694915254237288",
+        "capture_fraction": "0.316"
+      },
+      {
+        "system": "clap",
+        "condition": "semantic_different",
+        "level_db": "5.0",
+        "n": "2000",
+        "errors": "1015",
+        "errors_equal_distractor": "612",
+        "capture_rate": "0.6029556650246305",
+        "capture_fraction": "0.306"
+      }
+    ],
+    "cnn_high_overlap": [
+      {
+        "region": "own",
+        "seed": "5305",
+        "condition": "semantic_same",
+        "level_db": "5.0",
+        "stratum": "overlap_ge_0.8",
+        "n": "1464",
+        "folds": "5",
+        "replicates": "2000",
+        "macro_f1_difference": "-0.048599695116346486",
+        "macro_f1_ci_low": "-0.0687755408767803",
+        "macro_f1_ci_high": "-0.019677450197967267",
+        "accuracy_difference": "-0.032786885245901676",
+        "accuracy_ci_low": "-0.05942622950819672",
+        "accuracy_ci_high": "-0.0068306010928961755",
+        "a_only_correct": "171",
+        "b_only_correct": "219",
+        "mcnemar_exact_p": "0.017203900764339565",
+        "holm_p_across_cnn_replication": "0.06039388787867852"
+      },
+      {
+        "region": "own",
+        "seed": "5305",
+        "condition": "semantic_different",
+        "level_db": "5.0",
+        "stratum": "overlap_ge_0.8",
+        "n": "1465",
+        "folds": "5",
+        "replicates": "2000",
+        "macro_f1_difference": "-0.03372247740853033",
+        "macro_f1_ci_low": "-0.05640872119970436",
+        "macro_f1_ci_high": "-0.00844740641425489",
+        "accuracy_difference": "-0.029351535836177445",
+        "accuracy_ci_low": "-0.054607508532423216",
+        "accuracy_ci_high": "-0.00477815699658703",
+        "a_only_correct": "154",
+        "b_only_correct": "197",
+        "mcnemar_exact_p": "0.02483583722175348",
+        "holm_p_across_cnn_replication": "0.06039388787867852"
+      }
+    ],
+    "clap_same_margin": {
+      "system": "clap",
+      "score_type": "cosine_similarity",
+      "condition": "semantic_same",
+      "level_db": "5.0",
+      "n": "2000",
+      "median": "0.08732586207224188",
+      "q1": "-0.09160040311774519",
+      "q3": "0.2516071382580969",
+      "fraction_negative": "0.3805"
+    },
+    "clap_same_displacement": [
+      {
+        "system": "clap",
+        "displacement": "cosine distance of embeddings",
+        "level_db": "5",
+        "condition": "semantic_same",
+        "outcome": "correct",
+        "n": "1056",
+        "median": "0.1904674765040557",
+        "q1": "0.09189219220397835",
+        "q3": "0.30428840119209233"
+      },
+      {
+        "system": "clap",
+        "displacement": "cosine distance of embeddings",
+        "level_db": "5",
+        "condition": "semantic_same",
+        "outcome": "incorrect",
+        "n": "944",
+        "median": "0.40872204629340375",
+        "q1": "0.25567793823792373",
+        "q3": "0.563723411047702"
+      }
+    ],
+    "capture_denominator": "All incorrect predictions, pooled across the five folds",
+    "interpretation": "High-overlap original-seed contrasts do not pass Holm correction; margin and displacement are descriptive associations."
+  }
 }

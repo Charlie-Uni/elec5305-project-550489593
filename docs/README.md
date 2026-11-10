@@ -6,7 +6,7 @@
 
 | Purpose | Document |
 |---|---|
-| Main manuscript | [10-page PDF](../results/final_submission_20261110/final_report.pdf) · [LaTeX source](final_report.tex) · [generated tables](final_report_tables.tex) |
+| Main manuscript | [10-page PDF](../results/final_submission_20261110/final_report.pdf) · [editable Word](../results/final_submission_20261110/final_report.docx) · [LaTeX source](final_report.tex) · [generated tables](final_report_tables.tex) |
 | Detailed technical supplement | [Original 26-page PDF](../results/research_report_20261109_draft/research_report.pdf) · [source](research_report.tex) |
 | Presentation | [12-slide PDF](../results/final_submission_20261110/presentation.pdf) · [editable PowerPoint](../results/final_submission_20261110/presentation.pptx) |
 | Code demonstration | [Run guide](code_demo.md) · [actual execution video](../results/final_submission_20261110/code_demo.mp4) · [recording script](video_narration_final.txt) |

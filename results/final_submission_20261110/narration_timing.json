@@ -1,11 +1,11 @@
 {
   "slides": 12,
-  "words": 728,
+  "words": 822,
   "estimated_minutes_at_130_to_150_wpm": [
-    5.35,
-    6.1
+    5.98,
+    6.82
   ],
-  "timeline_seconds": 336,
+  "timeline_seconds": 375,
   "extra_demo_pause_seconds": 30,
   "final_narrated_video_recorded": false,
   "segments": [
@@ -26,71 +26,71 @@
     {
       "slide": 3,
       "start_seconds": 45,
-      "seconds": 23,
-      "words": 54,
+      "seconds": 36,
+      "words": 86,
       "extra_pause_seconds": 0
     },
     {
       "slide": 4,
-      "start_seconds": 68,
+      "start_seconds": 81,
       "seconds": 22,
       "words": 53,
       "extra_pause_seconds": 0
     },
     {
       "slide": 5,
-      "start_seconds": 90,
+      "start_seconds": 103,
       "seconds": 22,
       "words": 53,
       "extra_pause_seconds": 0
     },
     {
       "slide": 6,
-      "start_seconds": 112,
-      "seconds": 23,
-      "words": 54,
+      "start_seconds": 125,
+      "seconds": 36,
+      "words": 85,
       "extra_pause_seconds": 0
     },
     {
       "slide": 7,
-      "start_seconds": 135,
-      "seconds": 24,
-      "words": 56,
+      "start_seconds": 161,
+      "seconds": 26,
+      "words": 61,
       "extra_pause_seconds": 0
     },
     {
       "slide": 8,
-      "start_seconds": 159,
+      "start_seconds": 187,
       "seconds": 27,
       "words": 65,
       "extra_pause_seconds": 0
     },
     {
       "slide": 9,
-      "start_seconds": 186,
+      "start_seconds": 214,
       "seconds": 27,
       "words": 65,
       "extra_pause_seconds": 0
     },
     {
       "slide": 10,
-      "start_seconds": 213,
+      "start_seconds": 241,
       "seconds": 65,
       "words": 84,
       "extra_pause_seconds": 30
     },
     {
       "slide": 11,
-      "start_seconds": 278,
-      "seconds": 29,
-      "words": 68,
+      "start_seconds": 306,
+      "seconds": 35,
+      "words": 83,
       "extra_pause_seconds": 0
     },
     {
       "slide": 12,
-      "start_seconds": 307,
-      "seconds": 29,
-      "words": 70,
+      "start_seconds": 341,
+      "seconds": 34,
+      "words": 81,
       "extra_pause_seconds": 0
     }
   ]

@@ -20,6 +20,7 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 
 | Script | Purpose |
 |---|---|
+| [build_final_docx.py](build_final_docx.py) | Create the editable Word companion from the same concise LaTeX source using Pandoc and python-docx. |
 | [build_final_report.py](build_final_report.py) | Build the concise submission report from unchanged, audited experiment tables. |
 | [build_final_presentation.cjs](build_final_presentation.cjs) | Build the 12-slide editable final presentation. |
 | [build_final_narration.py](build_final_narration.py) | Keep the concise recording guide identical to the deck's speaker notes. |

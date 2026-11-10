@@ -10,7 +10,7 @@ Qihan Zhu · SID 550489593
 
 | Material | Direct link | What it contains |
 |---|---|---|
-| **Main report** | **[10-page PDF](results/final_submission_20261110/final_report.pdf)** · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
+| **Main report** | **[10-page PDF](results/final_submission_20261110/final_report.pdf)** · [editable Word](results/final_submission_20261110/final_report.docx) · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
 | **Project website** | **[Open the live website](https://charlie-uni.github.io/elec5305-project-550489593/)** | Interactive results, figures, downloads and four target sounds to explore |
 | **Working code** | **[Source-code map](src/esc_robustness/README.md)** · [reproduction guides](docs/README.md#reproduce-the-study) | DSP, SVM, CNN, frozen CLAP, controlled mixing and analysis |
 | **Presentation** | **[12-slide PDF](results/final_submission_20261110/presentation.pdf)** · [editable PowerPoint](results/final_submission_20261110/presentation.pptx) | Selected findings, speaker notes and embedded audio |
@@ -21,7 +21,7 @@ Qihan Zhu · SID 550489593
 The 40.8-second execution clip includes audio but no author narration. The
 [submission checklist](docs/final_submission_checklist_20261110.md) and
 [report follow-up](docs/report_followup_20261110.md) distinguish completed
-experiments from remaining manuscript, narrated-video and Canvas submission tasks.
+research and editorial revisions from remaining personal review, narrated-video and Canvas submission tasks.
 
 ## What the project studies
 

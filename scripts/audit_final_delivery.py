@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 import pypdfium2 as pdfium
-from delivery_claims import ROOT, closing_claims
+from delivery_claims import ROOT, closing_claims, editorial_claims
 
 NS = {
     "c": "http://schemas.openxmlformats.org/drawingml/2006/chart",
@@ -45,6 +45,8 @@ def audit(browser, output=None):
     site = json.loads((ROOT / "site-data.json").read_text())
     closing = closing_claims()
     assert data["closing"] == site["closing"] == closing
+    editorial = editorial_claims()
+    assert data["editorial"] == site["editorial"] == editorial
     core = read("results/clap_full_20261109/all_conditions_verified.csv")
     assert core == data["core"] == site["conditions"]
     conditions = ("white", "demand", "semantic_same", "semantic_different")
@@ -144,6 +146,20 @@ def audit(browser, output=None):
                     else 100 * float(collection[0]["macro_f1_fold_sd"])
                 )
                 assert f"{mean:.1f} ± {sd:.1f}" in cells[i + 1][j + 1]
+        capture_table = ET.fromstring(z.read("ppt/slides/slide6.xml")).find(".//a:tbl", NS)
+        capture_cells = [
+            ["".join(cell.itertext()) for cell in row.findall("a:tc", NS)]
+            for row in capture_table.findall("a:tr", NS)
+        ]
+        for i, system in enumerate(("svm", "cnn", "clap")):
+            for j, condition in enumerate(conditions[2:]):
+                row = next(
+                    r
+                    for r in editorial["capture"]
+                    if r["system"] == system and r["condition"] == condition
+                )
+                value = 100 * int(row["errors_equal_distractor"]) / int(row["errors"])
+                assert f"{value:.2f}" in capture_cells[i + 1][j + 1]
         # New interval chart uses editable native points and lines, not a bitmap.
         slide = ET.fromstring(z.read("ppt/slides/slide9.xml"))
         geometry = []
@@ -233,6 +249,10 @@ def audit(browser, output=None):
                 )
                 assert formatted in state["acoustics"]
     report = destination / "final_report.pdf"
+    word_audit = json.loads((destination / "docx_audit.json").read_text())
+    assert word_audit["verified"] and word_audit["rendered_pages"] == 10
+    assert word_audit["word_sha256"] == sha(destination / "final_report.docx")
+    assert word_audit["source_sha256"] == sha(ROOT / "docs/final_report.tex")
     pdf = pdfium.PdfDocument(report)
     assert len(pdf) == 10
     pages = []
@@ -245,6 +265,18 @@ def audit(browser, output=None):
     report_text = "\n".join(pages)
     assert "Contents" in pages[0] and "References" in pages[9]
     assert "??" not in report_text and "\ufffd" not in report_text
+    for row in editorial["capture"]:
+        rate = 100 * int(row["errors_equal_distractor"]) / int(row["errors"])
+        count = f"{row['errors_equal_distractor']}/{row['errors']}"
+        assert f"{rate:.2f}" in report_text and count in report_text
+        assert f"{rate:.2f}% ({count})" in web["capture"]
+    for value in ("0.0873", "38.05", "0.1905", "0.4087"):
+        assert value in report_text and value in web["diagnostic"] and value in script
+    for value in ("39.60", "64.50", "81.30", "92.90", "0.0604", "GPT-6 Astra"):
+        assert value in report_text, value
+    assert "Acoustics, Speech and Signal Processing" in pages[0]
+    assert "Between-class Examples" in pages[9]
+    assert "version not recorded" in pages[8]
     for value in (
         "37.34",
         "33.17",
@@ -325,13 +357,31 @@ def audit(browser, output=None):
     assert base + "docs/code_demo.md" in uris
     supplement = ROOT / "results/research_report_20261109_draft/research_report.pdf"
     assert sha(supplement) == "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35"
-    # Every pre-existing result/example blob remains unchanged, including the old deck.
+    # Revisions may update the current delivery only. Preserve experiment evidence,
+    # the earlier deck/report, example audio and original execution recording.
+    baseline = "8cec8748ba8f34f0f4c6ac5018f273c1a36bfc62"
+    mutable = {
+        "README.md",
+        "final_report.pdf",
+        "presentation.pdf",
+        "presentation.pptx",
+        "presentation_data.json",
+        "build_status.json",
+        "narration_segments.json",
+        "narration_timing.json",
+        "speaker_notes.txt",
+    }
+    mutable |= {
+        f"figures/{stem}.{ext}"
+        for stem in ("01_robustness", "02_top_two", "03_acoustic_matching")
+        for ext in ("pdf", "svg")
+    }
     tree = subprocess.check_output(
         [
             "git",
             "ls-tree",
             "-r",
-            "889a6b82dcdc81de6ce8cef6c40dc62954a2fb5c",
+            baseline,
             "--",
             "results",
             "examples",
@@ -342,6 +392,11 @@ def audit(browser, output=None):
     original_count = 0
     for line in tree.splitlines():
         metadata, relative = line.split("\t", 1)
+        if (
+            relative.startswith("results/final_submission_20261110/")
+            and relative.removeprefix("results/final_submission_20261110/") in mutable
+        ):
+            continue
         content = (ROOT / relative).read_bytes()
         digest = hashlib.sha1(b"blob " + str(len(content)).encode() + b"\x00" + content).hexdigest()
         assert digest == metadata.split()[2], relative
@@ -363,10 +418,17 @@ def audit(browser, output=None):
     result = dict(
         verified=True,
         report_pages=10,
+        word_rendered_pages=10,
+        word_native_tables=word_audit["native_tables"],
+        word_native_math_objects=word_audit["native_math_objects"],
         presentation_slides=12,
         native_chart_values_checked=native_values,
         native_charts=2,
         intervention_table_cells=30,
+        capture_table_cells=6,
+        preservation_baseline=baseline,
+        current_delivery_revision_allowlist=sorted(mutable),
+        editorial_claims_checked=True,
         interval_lines_checked=6,
         exact_narration_segments=12,
         browser_selector_states=4,
@@ -382,6 +444,7 @@ def audit(browser, output=None):
             str(p.relative_to(ROOT)): sha(p)
             for p in [
                 report,
+                destination / "final_report.docx",
                 supplement,
                 destination / "presentation.pptx",
                 destination / "presentation.pdf",
@@ -404,6 +467,8 @@ def audit(browser, output=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--browser-audit", type=Path, required=True)
-    parser.add_argument("--output", type=Path, help="Save a new audit without replacing an earlier one")
+    parser.add_argument(
+        "--output", type=Path, help="Save a new audit without replacing an earlier one"
+    )
     args = parser.parse_args()
     audit(args.browser_audit, args.output)

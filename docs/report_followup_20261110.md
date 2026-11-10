@@ -1,16 +1,23 @@
-# Remaining report revisions after repository integration
+# Report revision record and remaining author tasks
 
-The experiments and evidence are complete; these are reporting changes, not new modelling work. The existing 10-page report, 26-page supplement, decks and original data have not been rewritten during this repository-integration step. The 26-page supplement stays unchanged. Do not describe the current manuscript as meeting every grading descriptor.
+The reporting revisions below are complete in the 10-page report, 12-slide presentation, 822-word narration and Pages. The original experiment results, execution video and 26-page supplement are unchanged. No model, dataset or experiment was added. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
 
-## Prioritised edits
+## Completed editorial changes
 
-1. **Final narrated video.** Record the author's explanation of signal processing and actual execution, then update the report/site video links and submit via Canvas. The current 40.8-second clip is genuine execution with audio examples but no narration.
-2. **Error destinations in Results 4.1.** Add the compact capture-rate table below, retaining the denominator as errors. Include a numerical high-overlap CNN contrast, its target set and multiplicity qualification.
-3. **Introduction.** Add relevant citations and state the specific gap in the introduction. Avoid the universal claim that no earlier work has compared these phenomena; limit the statement to the reviewed methods and the controlled comparison undertaken here.
-4. **Literature and numerical context.** Verify published ESC-50 benchmarks against primary sources and distinguish accuracy from macro-F1, data/training differences and human evaluation conditions. Add Tokozume et al.'s between-class learning and explain how its mixture-label training objective differs from this project's designated-target augmentation.
-5. **CLAP comparison.** Identify the exact published checkpoint, prompt and protocol before comparing a reported score to 81.75%. Checkpoint/prompt differences are possible explanations, not demonstrated causes. The fixed prompt ensemble's measured clean accuracy is 92.90%.
-6. **Method/result balance.** Give brief results or explicit supplement pointers for the score margin and representation displacement already defined in Methods.
-7. **Format and declaration.** Correct the manuscript's course title to “Acoustics, Speech and Signal Processing”; separate conclusion from implementation/demo/attribution; remove production-process sentences. Replace the generic AI note with a truthful statement identifying tools, versions, publishers, URLs and actual scope. Do not invent an unknown Claude version or claim personal verification that the author has not performed.
+- Added introduction citations and a specific research gap limited to the reviewed methods.
+- Added pooled capture rates and counts to Results 4.1, slide 6 and the website, with errors as the explicit denominator. Kept all-trial listening-example percentages separate.
+- Added the original-seed high-overlap CNN contrasts, target counts and Holm qualification; retained the distinction from acoustically close subsets.
+- Added published numerical context from the official ESC-50 record and the revised CLAP paper. Different pipelines, evaluation exclusions and checkpoint/prompt choices prevent controlled superiority claims.
+- Added BC learning and distinguished its proportional-label objective from designated-target augmentation.
+- Added CLAP margin and representation-displacement results, with supplement pointers and descriptive interpretation.
+- Corrected the course title, separated conclusion from implementation/attribution and removed the production-process sentence.
+- Added a first-person AI acknowledgement: OpenAI Codex, GPT-6 Astra (confirmed by the author); Anthropic Claude contributions, model version not recorded. The declaration explicitly includes substantial code, analyses and document preparation, beyond language editing.
+
+Primary references: [ESC-50 record](https://github.com/karolpiczak/ESC-50), [CLAP revised v4, Table 4 / Section 4.3 / Appendix H](https://arxiv.org/html/2211.06687v4), and [BC learning](https://arxiv.org/abs/1711.10282). CLAP reports 88.0–91.0% across selected models after overlap exclusions; the paper does not identify those rows as this project's exact checkpoint/protocol. The project's 81.75% and 92.90% use all 2,000 clips.
+
+## Remaining author actions
+
+Review the final acknowledgement and contribution statements, rehearse and record the narrated video with an explanation of real code execution, update the report/site to link the complete video, and upload to Canvas with a receipt. The existing 40.8-second execution clip has no author narration and is not a complete video report.
 
 ## Verified capture-rate inputs
 
@@ -28,8 +35,8 @@ For the core CNN seed 5305, own/+5 dB/high-overlap: semantic-minus-DEMAND accura
 
 ## AI acknowledgement requirements
 
-The University's [Current Students guidance](https://www.sydney.edu.au/students/responsible-ai-use.html) asks for the tools and versions, publishers, URLs, and a brief explanation of use, alongside any course-specific requirements. Here AI assistance included substantial code implementation/revision, analysis orchestration and checking, figure/report/slide generation and text drafting. It should not be described merely as spelling correction. The author must confirm the exact tools/versions used and the final statement. Keep drafts, prompts/outputs and research materials; do not publish private conversation logs indiscriminately.
+The University's [Current Students guidance](https://www.sydney.edu.au/students/responsible-ai-use.html) asks for the tools and versions, publishers, URLs, and a brief explanation of use, alongside any course-specific requirements. Here AI assistance included substantial code implementation/revision, analysis orchestration and checking, figure/report/slide generation and text drafting. It should not be described merely as spelling correction. The author confirmed Codex GPT-6 Astra; the Claude model version was not recorded. The author should check the final statement for completeness. Keep drafts, prompts/outputs and research materials; do not publish private conversation logs indiscriminately.
 
-## Scope of this integration
+## Verification and preservation
 
-The default repository branch now carries the working implementation and existing reviewed deliverables. Previous feature-branch links, reports, figures and audit files are retained. Dated audits refer to the files/commits they checked; this checklist records subsequent open editorial items. Canvas submission and final personal narration are separate actions.
+The [current editorial audit](../results/final_submission_20261110/editorial_delivery_audit.json) checks report values, native slide charts/tables, exact narration, website selector states and preserved experiment/example files against repository commit `8cec874`. Earlier dated audits remain records of their respective versions. The source builders regenerate the delivery from unchanged evidence; the newly added capture/margin/displacement data are shared across the report, deck and page.

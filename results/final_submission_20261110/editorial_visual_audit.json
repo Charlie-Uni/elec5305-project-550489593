@@ -1,0 +1,58 @@
+{
+  "verified": true,
+  "report_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "word_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "report_page_count": 10,
+  "slide_count": 12,
+  "word_rendered_page_count": 10,
+  "findings": [],
+  "methods": [
+    "Tectonic PDF rendered with PDFium",
+    "PPTX converted with bundled LibreOffice and rendered with PDFium",
+    "DOCX rendered with bundled render_docx.py",
+    "Artifact Tool import and native chart/table package validation",
+    "Browser screenshots at widths 1280, 390 and 320"
+  ],
+  "sha256": {
+    "final_report.pdf": "9d7dfe1a52bf010dd81ab4eec5356408ef99e89d873ee065a74ce765f2e75cd8",
+    "final_report.docx": "d08e42b6c7d42d993187345696176ac6600ba4611879c2d12a87f44c8fe6171a",
+    "presentation.pptx": "49c7cd27d7bb5e90dd63c5d4773a533998d40b2dce1c361c162072260c696584",
+    "presentation.pdf": "ff10d019ef58fd90f875cc5e1d74a3b02faccdab871800b76900ab43183ee2eb"
+  }
+}
