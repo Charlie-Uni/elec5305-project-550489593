@@ -8,7 +8,7 @@ The video is an actual screen recording of this process. The two exported audio 
 
 ## Inputs and setup
 
-Use the `feature/interference` checkout and the environments/data described in the [repository instructions](../README.md). The layout below is relative to a runtime directory; `repo/` is the checkout. Data and weights are external to GitHub because of their size. The demo validates source, metadata and model provenance and uses the evaluated checkpoints; arbitrary replacement models need not reproduce these outputs.
+Use the default `main` checkout (the retained `feature/interference` branch also works) and the environments/data described in the [repository instructions](../README.md). The layout below is relative to a runtime directory; `repo/` is the checkout. Data and weights are external to GitHub because of their size. The demo validates source, metadata and model provenance and uses the evaluated checkpoints; arbitrary replacement models need not reproduce these outputs.
 
 ```text
 runtime/

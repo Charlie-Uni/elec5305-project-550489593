@@ -2,36 +2,43 @@
 
 **Environmental Sound Classification under Semantic Interference**
 
-ELEC5305 project · Qihan Zhu · SID 550489593
+ELEC5305 — Acoustics, Speech and Signal Processing
 
-[Revised project proposal (PDF)](./ELEC5305_Project_proposal_550489593.pdf)
+Qihan Zhu · SID 550489593
 
-[10-page final report](results/final_submission_20261110/final_report.pdf)
-· [Unchanged 26-page technical supplement](results/research_report_20261109_draft/research_report.pdf)
-· [Rubric-by-rubric review](docs/rubric_review_20261110.md)
-· [All 80 instructor recommendations](docs/teacher_review_20261110.md)
-· [Interactive project page](https://charlie-uni.github.io/elec5305-project-550489593/)
-· [12-slide presentation](results/final_submission_20261110/presentation.pptx)
-· [Video recording script](docs/video_narration_final.txt)
-· [Real execution video](results/final_submission_20261110/code_demo.mp4)
+[Project website](https://charlie-uni.github.io/elec5305-project-550489593/)
 · [Run the code demonstration](docs/code_demo.md)
-· [Final submission checklist](docs/final_submission_checklist_20261110.md)
-· [Attributed listening examples](examples/listening_own_20261109/README.md)
-· [Exact evaluated mixture manifests](results/mixture_manifests_20261109/README.md)
+· [Results index](results/README.md)
+· [Documentation index](docs/README.md)
+
+## Reports and presentation
+
+| Material | Current version | Status |
+| --- | --- | --- |
+| Main report | [10-page PDF](results/final_submission_20261110/final_report.pdf) · [LaTeX source](docs/final_report.tex) | Concise manuscript; [remaining editorial revisions](docs/report_followup_20261110.md) are tracked explicitly |
+| Technical supplement | [26-page PDF](results/research_report_20261109_draft/research_report.pdf) | Preserved unchanged; complete diagnostics and both power conventions |
+| Presentation | [12-slide PowerPoint](results/final_submission_20261110/presentation.pptx) · [PDF](results/final_submission_20261110/presentation.pdf) | Editable charts, exact speaker notes and embedded audio |
+| Narration | [Recording script](docs/video_narration_final.txt) | 728 words; estimated 5.4–6.1 minutes with demonstration pauses |
+| Real code execution | [40.8-second video](results/final_submission_20261110/code_demo.mp4) · [run guide](docs/code_demo.md) | Source reconstruction and fresh three-model inference; sound examples, no author narration |
+| Submission review | [Checklist](docs/final_submission_checklist_20261110.md) · [rubric review](docs/rubric_review_20261110.md) · [80 instructor recommendations](docs/teacher_review_20261110.md) | Author review, narrated video and Canvas submission still required |
+
+The full implementation and these materials are available on the default `main`
+branch. The `feature/interference` branch is retained so existing report and audio
+links continue to resolve. [PR #1](https://github.com/Charlie-Uni/elec5305-project-550489593/pull/1)
+records the integration; GitHub Pages publishes the same project materials.
 
 The core study and declared extensions are complete and independently checked:
-14 variants, both power protocols, all three CNN seeds, 336 condition cells and
-156 paired intervention contrasts. The two closing analyses cover exact ranked
-readout and spectral–temporal comparisons. No additional model or dataset is planned.
+14 variants, both power protocols, three CNN seeds, 336 condition cells and
+156 paired intervention contrasts. The closing analyses cover exact ranked
+readout and spectral–temporal comparisons. Original numerical results, the
+26-page supplement and previous presentation versions are preserved. No additional
+model or dataset is planned.
 
-The final delivery has a 10-page main report, the unchanged 26-page supplement,
-a 12-slide editable deck and synchronized 728-word narration (approximately
-5.4–6.1 minutes with demonstration pauses). The execution video shows fresh
-source-audio reconstruction and all three models, with checked predictions and
-two sound examples. It has no author narration; the author's final explanation,
-course-policy review and Canvas submission remain separate steps. The supplied
-brief specifies approximately 10 report pages and a brief video, not a fixed
-video duration. [Delivery audit](results/final_submission_20261110/delivery_audit.json).
+Repository publication is not a Canvas submission. The execution clip does not
+replace the author's explanation. The latest report review identifies specific
+presentation and literature gaps; see the [revision checklist](docs/report_followup_20261110.md).
+[Numerical delivery audit](results/final_submission_20261110/delivery_audit.json)
+and [attributed listening examples](examples/listening_own_20261109/README.md) remain available.
 
 ## Research question
 
