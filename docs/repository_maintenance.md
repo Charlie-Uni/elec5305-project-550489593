@@ -4,7 +4,7 @@
 
 ## Where to start
 
-- The root README is the short assessment entry point: main report, website, code, presentation, execution video and supplement.
+- The root README is the short assessment entry point: formal report, website, code, presentation and execution video.
 - `docs/guides/` holds detailed setup, experimental design and reproduction instructions previously embedded in the long root README. Commands still run from the repository root.
 - [The source-code map](../src/esc_robustness/README.md) follows the signal-processing and evaluation pipeline.
 - [The script index](../scripts/README.md) groups supporting tools by task, separating current delivery builders from historical ones.
@@ -17,15 +17,17 @@ Keep one canonical file for each deliverable and link to it from the indexes:
 
 | Deliverable | Stable location |
 |---|---|
-| Main report | [10-page PDF](../results/final_submission_20261110/final_report.pdf) |
-| Detailed supplement | [Original 26-page PDF](../results/research_report_20261109_draft/research_report.pdf) |
+| Sole formal report | [11-page PDF](../results/final_submission_20261110/final_report.pdf) · [editable Word](../results/final_submission_20261110/final_report.docx) |
 | Presentation | [PDF](../results/final_submission_20261110/presentation.pdf) · [editable deck](../results/final_submission_20261110/presentation.pptx) |
 | Actual execution clip | [Video](../results/final_submission_20261110/code_demo.mp4) |
 | Recording script | [Final narration](video_narration_final.txt) |
 
-The word `draft` in the supplement's historical directory is retained to preserve
-existing report links and audit references. Its role is the technical supplement;
-it is not the primary manuscript. No duplicate submission folder is needed.
+On 11 November the author requested removal of the retired 26-page report. Its
+PDF, dedicated LaTeX inputs, build records, builders and obsolete delivery checker
+were removed. Navigation and the current preservation audit now reflect that
+decision; the 11-page report and its Word companion are the sole current manuscript.
+Original numerical results, figures, model evidence, audio and presentation remain.
+Earlier report versions are recoverable through Git history, which was not rewritten.
 
 ## What was cleaned on 10 November 2026
 
@@ -39,7 +41,7 @@ recoverable archive under the local runtime's
 `runs/repository_cleanup_20261110/removed_local_files/`. They comprised old Python
 build copies, test/lint/bytecode caches, temporary report build files, an OS metadata
 file and a generated report log. The temporary PDF was verified byte-identical to
-the retained technical supplement before removal from the working tree.
+the then-retained detailed report before that temporary duplicate was removed.
 Local model artifacts, environments and experiment caches were kept in place.
 This local housekeeping does not remove files from repository history.
 
@@ -53,11 +55,12 @@ Identical bytes are not sufficient grounds for deletion. These copies are retain
 - `executed_features/` records the source used for an analysis, even when it matches the current implementation.
 - Earlier presentation data and dated audits describe the deliverables they verified.
 
-Every pre-existing result file other than the navigation `results/README.md`, all
-example files, model/source code and the report/presentation/video artifacts are
-preserved byte for byte in this cleanup. Historical hash records continue to refer
-to their recorded versions; they are not rewritten to make old audits describe a
-new README or deployment.
+The 10 November cleanup preserved pre-existing results and examples byte for byte.
+The later report retirement is a separate, explicit exception: four obsolete report
+outputs were removed and navigation was updated. Historical hash records continue
+to refer to their recorded versions; they are not rewritten to describe a new
+README or deployment. The current audit lists the authorised removals and preserves
+all other protected experiment and example files.
 
 ## Future maintenance
 

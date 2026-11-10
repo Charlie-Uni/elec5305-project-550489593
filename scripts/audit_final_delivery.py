@@ -429,14 +429,18 @@ def audit(browser, output=None):
     base = "https://charlie-uni.github.io/elec5305-project-550489593/"
     assert base in uris and base + "results/final_submission_20261110/code_demo.mp4" in uris
     assert base + "docs/code_demo.md" in uris
-    supplement = ROOT / "results/research_report_20261109_draft/research_report.pdf"
-    assert sha(supplement) == "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35"
+    retired_report_files = {
+        "results/research_report_20261109_draft/" + name
+        for name in ("research_report.pdf", "build_output.txt", "visual_audit.json", "build_audit.json")
+    }
+    assert all(not (ROOT / relative).exists() for relative in retired_report_files)
     assert "supplement" not in report_text.lower()
     from audit_single_report import audit as audit_single_report
 
     added_figures = audit_single_report()
     # Revisions may update the current delivery only. Preserve experiment evidence,
-    # the earlier deck/report, example audio and original execution recording.
+    # the earlier deck, example audio and original execution recording. The user
+    # explicitly retired the detailed report; only its four files may be absent.
     baseline = "c08a3f241eecd802fdfa77ce1c59cab15c7e3c98"
     mutable = {
         "README.md",
@@ -469,9 +473,16 @@ def audit(browser, output=None):
         text=True,
     )
     original_count = 0
+    navigation_updates = {
+        "results/README.md",
+        "results/closing_20261110/README.md",
+        "results/delivery_sync_20261110/README.md",
+    }
     for line in tree.splitlines():
         metadata, relative = line.split("\t", 1)
-        if relative == "results/README.md":
+        if relative in navigation_updates:
+            continue
+        if relative in retired_report_files:
             continue
         if (
             relative.startswith("results/final_submission_20261110/")
@@ -513,12 +524,14 @@ def audit(browser, output=None):
         capture_table_cells=6,
         preservation_baseline=baseline,
         current_delivery_revision_allowlist=sorted(mutable),
+        result_navigation_revision_allowlist=sorted(navigation_updates),
         editorial_claims_checked=True,
         interval_lines_checked=6,
         exact_narration_segments=12,
         browser_selector_states=4,
         embedded_audio_unchanged=True,
-        supplement_26pages_unchanged=True,
+        retired_report_removed=True,
+        authorised_report_removals=sorted(retired_report_files),
         original_result_and_example_files_unchanged=original_count,
         real_inference_models=3,
         checked_score_max_abs_error={s: r["score_max_abs_error"] for s, r in actual_demo.items()},
@@ -530,7 +543,6 @@ def audit(browser, output=None):
             for p in [
                 report,
                 destination / "final_report.docx",
-                supplement,
                 destination / "presentation.pptx",
                 destination / "presentation.pdf",
                 destination / "code_demo.mp4",

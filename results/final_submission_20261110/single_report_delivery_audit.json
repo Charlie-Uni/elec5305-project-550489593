@@ -55,13 +55,24 @@
     "presentation_data.json",
     "speaker_notes.txt"
   ],
+  "result_navigation_revision_allowlist": [
+    "results/README.md",
+    "results/closing_20261110/README.md",
+    "results/delivery_sync_20261110/README.md"
+  ],
   "editorial_claims_checked": true,
   "interval_lines_checked": 6,
   "exact_narration_segments": 12,
   "browser_selector_states": 4,
   "embedded_audio_unchanged": true,
-  "supplement_26pages_unchanged": true,
-  "original_result_and_example_files_unchanged": 758,
+  "retired_report_removed": true,
+  "authorised_report_removals": [
+    "results/research_report_20261109_draft/build_audit.json",
+    "results/research_report_20261109_draft/build_output.txt",
+    "results/research_report_20261109_draft/research_report.pdf",
+    "results/research_report_20261109_draft/visual_audit.json"
+  ],
+  "original_result_and_example_files_unchanged": 752,
   "real_inference_models": 3,
   "checked_score_max_abs_error": {
     "svm": 0.0,
@@ -74,13 +85,12 @@
   "files": {
     "results/final_submission_20261110/final_report.pdf": "26fd2040ce50dcf81697beb6e0ee825e71f60c0ef534fa9bf3967c27c3c9f62e",
     "results/final_submission_20261110/final_report.docx": "100696646a7e0f8ff5b0c231e4ec256b3fa0b9854c02eb7d73253c3c8f87600f",
-    "results/research_report_20261109_draft/research_report.pdf": "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35",
     "results/final_submission_20261110/presentation.pptx": "34a01b5cfe52945211b4bea60206f4af60f4218772c75eadc6b0e0c0034d3a43",
     "results/final_submission_20261110/presentation.pdf": "92b63f47fad3d54da06d6a4698b28c714e6f142b97e0cc91e93fd6e7b9f5d5f8",
     "results/final_submission_20261110/code_demo.mp4": "f53d682e9962ba0abe533360182046561d9fdf89faa30f3bf20bfa7b93e02271",
     "results/final_submission_20261110/presentation_data.json": "97e04e8d513c76f6fea530f1d186322acdcc570639da87c10ad5f8219484c580",
     "docs/video_narration_final.txt": "171fd74a34f9ac90db982f7a3fa51c3ec5d350f8bb791c31876b2f8c5702134f",
-    "docs/rubric_review_20261111.md": "eed1efbdeb2c51798e7b1262218c6c830dcdd81808592f3c6a605e8c9932b55c",
+    "docs/rubric_review_20261111.md": "163072a04e7d24cfbebfb09990b8493fe00f6693695479786b019aae5c332c61",
     "index.html": "816fc5003bd73e21e759942ad8908f16efbc937b5cf88b23fa22fae0189dc9ca",
     "site-data.json": "f77375a8167e53f19fb91972a8b5ad7c4213ec412647a29453b0e629ee470b1e"
   },

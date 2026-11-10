@@ -45,7 +45,6 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 | [audit_prompt_ensemble.py](audit_prompt_ensemble.py) | Independently recompute the prompt ablation from saved vectors and predictions. |
 | [audit_local_alignment.py](audit_local_alignment.py) | Recompute all alignment conditions, calibration exclusions, old reference identities and four primary paired tests. |
 | [audit_cost_panel.py](audit_cost_panel.py) | Verify the balanced CPU benchmark and export comparable total-query costs. |
-| [audit_delivery_sync.py](audit_delivery_sync.py) | Check the report, slide charts, narration and website against saved evidence. |
 | [inspect_report_pdf.py](inspect_report_pdf.py) | Render every report page and check text bounds before visual inspection. |
 
 ## Extensions, diagnostics and figures
@@ -67,17 +66,15 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 | [plot_diagnostics.py](plot_diagnostics.py) | Four supplementary research figures from verified diagnostic tables. |
 | [plot_extensions.py](plot_extensions.py) | Intervention figures from complete, audited runs; no best-seed selection. |
 
-## Historical report builds and shared inputs
+## Proposal, earlier presentation and shared inputs
 
 | Script | Purpose |
 |---|---|
 | [build_proposal.py](build_proposal.py) | Compile the editable LaTeX proposal in the original document's typography. |
-| [build_research_report.py](build_research_report.py) | Build the editable research-report draft using verified result tables. |
-| [build_closing_report.py](build_closing_report.py) | Build the closing report insert from independently audited numerical tables. |
 | [render_report_figures.py](render_report_figures.py) | Re-render core plots without baked-in figure numbers for report captions. |
 | [build_presentation_data.py](build_presentation_data.py) | Collect verified result values for the editable research presentation. |
 | [build_presentation.cjs](build_presentation.cjs) | Build the earlier detailed editable presentation. |
 | [build_video_narration.py](build_video_narration.py) | Synchronise the recording script with the deck's exact speaker notes. |
 | [delivery_claims.py](delivery_claims.py) | One audited numerical source for slides, narration and the public project page. |
 
-Historical builders and audit scripts are retained because saved outputs record their source hashes. The current manuscript is the 11-page report; rebuilding the earlier detailed report does not replace it.
+The retired detailed report's source, builders and delivery checker were removed at the author's request. Dated audit records remain historical evidence tied to their original commits; use `audit_final_delivery.py` for current deliverables. The sole current manuscript is the 11-page report and its editable Word companion.

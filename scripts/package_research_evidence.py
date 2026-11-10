@@ -101,7 +101,7 @@ def package(repo, runtime, run, destination):
             ["git", "rev-parse", "HEAD"], cwd=repo, text=True
         ).strip(),
         files={name: sha256_file(path) for name, path in files.items()},
-        scope="Verified core, extensions and closing analyses; 10-page main report, unchanged 26-page supplement, 12-slide presentation, exact narration, actual code execution video and Pages",
+        scope="Verified core, extensions and closing analyses; 11-page formal report and editable Word companion, 12-slide presentation, exact narration, actual code execution video and Pages",
         excluded=[
             "Model checkpoints",
             "Full ESC-50 and DEMAND data",
@@ -118,7 +118,7 @@ def package(repo, runtime, run, destination):
         archive.writestr("BUNDLE_MANIFEST.json", json.dumps(metadata, indent=2))
         archive.writestr(
             "READ_THIS_FIRST.txt",
-            "Verified final research evidence bundle\n\nStart with results/final_submission_20261110/final_report.pdf (10 pages) and results/final_submission_20261110/presentation.pptx (12 slides). The original 26-page report remains unchanged at results/research_report_20261109_draft/research_report.pdf.\n\nThe new deck contains editable charts, exact notes and two embedded audio clips. The 728-word script is docs/video_narration_final.txt, approximately 5.4–6.1 minutes with pauses. code_demo.mp4 records actual source reconstruction and all three model inferences; sound examples are included, but there is no author narration. No final Canvas submission is implied. See docs/rubric_review_20261110.md and docs/code_demo.md.\n\ntrial_evidence/ retains per-trial clean and interference predictions for 14 variants and both power protocols. Model weights, full datasets and large embedding arrays are external; hashes and commands identify them. Source attribution and licences remain in examples/listening_own_20261109/README.md. For offline website preview, serve this folder over localhost. The live demo additionally requires its documented local inference environments and assets.\n\nBUNDLE_MANIFEST.json provides SHA-256 for every source file.\n",
+            "Verified final research evidence bundle\n\nStart with results/final_submission_20261110/final_report.pdf (11 pages) and results/final_submission_20261110/presentation.pptx (12 slides). This is the sole current report; the retired detailed version has been removed.\n\nThe new deck contains editable charts, exact notes and two embedded audio clips. The current recording script is docs/video_narration_final.txt; narration_timing.json records its delivery estimate. code_demo.mp4 records actual source reconstruction and all three model inferences; sound examples are included, but there is no author narration. No final Canvas submission is implied. See docs/rubric_review_20261111.md and docs/code_demo.md.\n\ntrial_evidence/ retains per-trial clean and interference predictions for 14 variants and both power protocols. Model weights, full datasets and large embedding arrays are external; hashes and commands identify them. Source attribution and licences remain in examples/listening_own_20261109/README.md. For offline website preview, serve this folder over localhost. The live demo additionally requires its documented local inference environments and assets.\n\nBUNDLE_MANIFEST.json provides SHA-256 for every source file.\n",
         )
         for name, path in files.items():
             archive.write(path, name)

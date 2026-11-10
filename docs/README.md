@@ -42,5 +42,5 @@ original runs and cohorts.
 
 - [Original proposal PDF](../ELEC5305_Project_proposal_550489593.pdf) · [source](proposal.tex) · [rebuild instructions and references](guides/proposal_and_references.md)
 - [Earlier narration](video_narration_draft.txt) and [earlier presentation](../results/presentation_20261109_draft/research_presentation.pptx)
-- `report_*.tex` files are build inputs for the detailed report; they are retained with its source.
+- The retired detailed report and its dedicated source/build files were removed on 11 November at the author's request; earlier versions remain in Git history.
 - Earlier drafts and audit files record their own versions. Their dates and hashes are not a statement of the current deployment or submission status.

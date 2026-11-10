@@ -90,15 +90,15 @@ docs/                     Report sources, protocols and submission documentation
 results/                  Original results, published deliverables and dated audits
   README.md               Canonical results versus historical evidence
   final_submission_20261110/      Main report, presentation and execution video
-  research_report_20261109_draft/ Earlier detailed report, kept for provenance; not part of the submission
 examples/                 Four attributed target examples and matched controls
 demo/                     Local interface for actual model execution
 index.html + site-data.json       Public project website
 .github/workflows/        Verified GitHub Pages publication
 ```
 
-Existing result and audio paths are stable so that report links and historical
-hash records continue to resolve. Repeated CSVs, provenance files and audio inside
+Experiment result and audio paths remain stable. The retired 26-page report and
+its dedicated build pipeline were removed at the author's request; the current
+11-page PDF and its Word companion are the only final report. Repeated CSVs, provenance files and audio inside
 self-contained result packages are intentional. [Repository maintenance](docs/repository_maintenance.md)
 explains the preservation and temporary-file policy.
 

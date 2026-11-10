@@ -56,10 +56,10 @@ The discussion now distinguishes the different populations selected by temporal 
 
 The PAT comparison was checked against [the primary paper](https://aclanthology.org/2025.naacl-long.616.pdf), Table 1 (PDF page 6): LAION-CLAP ESC-50 accuracy is 89.00% without PAT and 93.00% with PAT. These provide unmatched literature context. Our ensemble's 92.90% clean accuracy is **not** evidence of little remaining headroom under interference. Clean calibration has no constructed-mixture target-retention objective; clean ESC-50 clips are not asserted to contain only one audible event. Top-two inclusion is not described as calibrated event detection.
 
-The AI acknowledgement retains substantial implementation, analysis and writing assistance and limits the author's stated actions to confirmed scope approval, analysis requests and representative listening. The video remains labelled as lacking author narration. No experiments, original audio, historical detailed report or model/data scope were changed.
+The AI acknowledgement retains substantial implementation, analysis and writing assistance and limits the author's stated actions to confirmed scope approval, analysis requests and representative listening. The video remains labelled as lacking author narration. This readability revision changed no experiments, original audio or model/data scope. The obsolete detailed report was subsequently removed at the author's request.
 
 ## Submission still requires the author
 
 Review the final attribution and recorded-version details, rehearse the signal-processing explanation, record the full brief narrated video with actual execution or clearly identified execution playback, update the final video links and description in report/site, upload to Canvas and retain the receipt. The existing 40.8-second clip contains genuine execution and audio but no author narration. It remains accurately labelled.
 
-The earlier detailed PDF is preserved as historical evidence, with no formal submission role. The separately approved same-checkpoint alignment extension is complete. No further model, dataset or experimental expansion is planned.
+The earlier detailed PDF and its dedicated source/build pipeline were removed at the author's request. The 11-page report and its Word companion are the sole current manuscript; earlier versions are recoverable from Git history. The separately approved same-checkpoint alignment extension is complete. No further model, dataset or experimental expansion is planned.

@@ -15,7 +15,7 @@ def main():
     low, high = words / 150 + 10 / 60, words / 130 + 10 / 60
     text = f"""ELEC5305 VIDEO RECORDING SCRIPT — AUTHOR REVIEW
 Qihan Zhu | When Background Noise Has Meaning
-Synchronized with the {len(segments)}-slide presentation and the 26-page report, 10 November 2026.
+Synchronized with the historical {len(segments)}-slide presentation, 10 November 2026.
 
 This is a script, not a completed recording. The narration has {words} words.
 Estimated speech plus two five-second audio examples: {low:.1f}–{high:.1f} minutes

@@ -43,7 +43,6 @@ versions of the main submission to choose between.
 | `figures_svm_cnn_own_20261109/` | Earlier two-system figure exports and visual checks |
 | `report_figure_assets_20261109/` | Figure inputs/exports used to build the detailed report |
 | `presentation_20261109_draft/` | Earlier presentation, source data, narration and audit trail |
-| `research_report_20261109_draft/` | Earlier 26-page detailed report and build records, kept for provenance; not part of the submission |
 | [Report review](report_review_20261110/audit.json) | Recomputed figure claims, gain controls and other-class competition |
 | [Delivery synchronisation](delivery_sync_20261110/README.md) | Checks of the earlier report, presentation, narration and public files |
 | [Listening-page checks](listening_site_20261110/README.md) | Four-target reconstruction, predictions, rates and audio checks |

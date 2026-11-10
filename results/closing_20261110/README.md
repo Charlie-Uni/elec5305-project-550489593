@@ -107,7 +107,7 @@ export OMP_NUM_THREADS=1
 ../baseline-venv/bin/python scripts/complete_closing_analyses.py --repo . --runtime .. --run ../runs/closing_20261110 --output results/closing_20261110 --part all
 ../baseline-venv/bin/python scripts/audit_closing_analyses.py --repo . --runtime .. --run ../runs/closing_20261110 --output results/closing_20261110
 ../baseline-venv/bin/python scripts/plot_closing_analyses.py --data results/closing_20261110 --run ../runs/closing_20261110 --output results/closing_20261110/figures --export
-../baseline-venv/bin/python scripts/build_research_report.py --extension-run ../runs/extensions_20261109 --only-cached
+../baseline-venv/bin/python scripts/build_final_report.py
 ```
 
 The feature commands locate DEMAND through the manifest's recorded cache path;

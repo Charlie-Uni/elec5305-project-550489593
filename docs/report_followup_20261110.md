@@ -1,6 +1,6 @@
 # Report revision record and remaining author tasks
 
-The reporting revisions below are complete in the 11-page report, 12-slide presentation, 823-word narration and Pages. The original experiment results, execution video are unchanged; the older detailed report is an unlinked historical archive. The separately approved local-feedback evaluation adds no model weights or dataset; original experiments are preserved. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
+The reporting revisions below are complete in the 11-page report, 12-slide presentation, 823-word narration and Pages. The original experiment results, execution video are unchanged; the older detailed report has been removed at the author's request. The separately approved local-feedback evaluation adds no model weights or dataset; original experiments are preserved. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
 
 ## Completed editorial changes
 

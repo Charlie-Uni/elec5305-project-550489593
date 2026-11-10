@@ -1,5 +1,11 @@
 # Delivery synchronization — 10 November 2026
 
+This is a dated verification record of earlier deliverables. Its detailed report
+and dedicated checker have since been retired at the author's request. Use the
+[sole current report](../final_submission_20261110/final_report.pdf) and
+[current delivery audit](../final_submission_20261110/single_report_delivery_audit.json).
+Historical audit hashes below describe their original Git versions.
+
 The existing 26-page report, 16-slide editable presentation, exact speaker notes,
 recording script and project site now share the completed closing analyses.
 Original numerical experiment outputs and the report PDF remain unchanged.
@@ -26,11 +32,9 @@ Original numerical experiment outputs and the report PDF remain unchanged.
 - The slide PDF was rendered and all 16 pages were visually reviewed; the record
   is `../presentation_20261109_draft/visual_audit.json`.
 
-Reproduce the numerical delivery check from the repository root:
-
-```sh
-python scripts/audit_delivery_sync.py --browser-audit results/delivery_sync_20261110/local_browser_audit.json
-```
+The retired checker can be recovered from its historical Git version; current
+deliverables are checked with `scripts/audit_final_delivery.py` and a current
+browser audit.
 
 `delivery_claims.py` verifies the independently audited closing-data hashes before
 building either presentation or website data. The baseline presentation in Git

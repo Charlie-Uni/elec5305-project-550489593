@@ -25,7 +25,7 @@ See the [current rubric review](rubric_review_20261111.md) and
 | Fixed prompt ensemble, feature groups, all-class scores, cost and source sensitivity | Completed and verified |
 | Top-k and spectral–temporal diagnostics, including all DEMAND rows | Completed; ranking and observational matching limits disclosed |
 | PAT-style local audio–text feedback on the same LAION checkpoint | Complete: 24,000 own and 23,991 target rows; all four primary tests inconclusive; not official/full PAT |
-| Formal report and presentation | One 11-page report; 12-slide editable deck; originals and historical 26-page report preserved |
+| Formal report and presentation | One 11-page report and its editable Word companion; 12-slide editable deck; original experiments preserved |
 | Human listening | Author confirmed representative website controls/mixtures on 11 November; not an exhaustive listening study |
 | Repository and Pages | Integrated into main; published through the verified GitHub Actions workflow |
 | Narrated video and Canvas | Pending; the 40.8-second real execution clip has no author narration |
@@ -135,7 +135,7 @@ See the [current rubric review](rubric_review_20261111.md) and
 
 - [Cross-deliverable numerical checks and public deployment record](../results/delivery_sync_20261110/README.md)
 - [Final submission checklist](final_submission_checklist_20261110.md)
-- [11-page formal report](../results/final_submission_20261110/final_report.pdf); [26-page supplement](../results/research_report_20261109_draft/research_report.pdf)
+- [11-page formal report](../results/final_submission_20261110/final_report.pdf) and [editable Word companion](../results/final_submission_20261110/final_report.docx)
 - [Figure recomputation audit for this review](../results/report_review_20261110/audit.json)
 - [Machine-readable record of all 80 items](../results/report_review_20261110/teacher_80_review.json)
 - [Gain-control values](../results/report_review_20261110/gain_control_effects.csv)

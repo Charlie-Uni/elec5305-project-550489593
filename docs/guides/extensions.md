@@ -115,7 +115,7 @@ is closed: no new models, datasets or training runs are required for this delive
 The [fixed exploratory protocol](../../docs/closing_protocol_20261110.md),
 [verified results and reproduction commands](../../results/closing_20261110/README.md),
 [seven new figures](../../results/closing_20261110/figures) and updated
-[research report](../../results/research_report_20261109_draft/research_report.pdf) are available.
+[formal report](../../results/final_submission_20261110/final_report.pdf) are available.
 
 - **Exact top-k readout** (`analyse-readout`): complete mixture and gain-matched-control
   scores give four exhaustive states—target only, both, distractor only, neither.
