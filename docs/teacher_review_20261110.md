@@ -1,152 +1,152 @@
-# 老师 80 条建议复核
+# Review of the instructor's 80 suggestions
 
-复核日期：2026 年 11 月 10 日，悉尼时间。
+Review date: 2026-11-10 (Sydney time).
 
-主实验和本轮已声明的拓展实验已完成。80 条中有研究动机、解释性建议、明确可选的方法和交付要求，不能把它们当成 80 个等权任务算完成率。完整 PAT 未复现；人工试听、作者录制视频、报告最后修订和课程提交仍需完成；公开 Pages 已发布并核验。现已核对用户提供的最终要求：通常约 10 页报告、简短运行视频、GitHub Site 与 Canvas 提交，详见[评分标准逐项核对](rubric_review_20261110.md)。具体截止时刻、格式和 AI 规则仍需核对 Canvas。
+The main experiments and the extensions declared in this revision are complete. The 80 suggestions include research motivation, interpretive advice, explicitly optional methods and delivery requirements; they should not be treated as 80 equally weighted tasks when calculating completion. Full PAT was not reproduced. Human listening checks, the author-recorded video, final report revisions and course submission still need to be completed; public Pages has been published and verified. The user's final requirements have now been checked: a report typically around 10 pages, a brief execution video, a GitHub Site and Canvas submission. See the [item-by-item rubric review](rubric_review_20261110.md). The exact deadline, formats and AI rules still need to be checked in Canvas.
 
-项目研究的是：同样强度的背景声，为什么会让不同分类器以不同方式失败，以及普通噪声训练能否保护它们免受另一个有意义事件的竞争。三系统是手工特征 SVM、紧凑 log Mel CNN、冻结 CLAP。当前结论是受控干扰下的失效差异，不是已经证明“语义”独立于频谱、时间结构、显著性的因果效应。
+The project studies why background sounds at the same intensity cause different classifiers to fail in different ways, and whether ordinary noise training protects them against competition from another meaningful event. The three systems are a handcrafted-feature SVM, a compact log-Mel CNN and frozen CLAP. Current conclusions concern differences in failure under controlled interference; they do not establish a causal effect of “semantics” independent of spectrum, temporal structure and salience.
 
-## 本轮修改与核验
+## Revisions and verification in this review
 
-- 从对应原始预测、分数和表示重新核算 own/target 核心图 1–6、8 的 348 条图表记录，容差 1e-10。图 7 保留历史单片段微基准定义，完整成本分析另用两轮平衡样本测量。
-- 再次独立复算 14 变体、336 条件结果和 156 配对比较；核心结论不变。
-- 修正“12 项比较”的范围：两类语义条件 × 两种功率口径 × 三个 CNN seed，不包含白噪声和 DEMAND。
-- 明确三个统计检验族分别校正，点置信区间未作多重校正；共享源、干扰和训练集依赖仍是限制。
-- 新增增益对照表。核心实验所有条件下 control−clean 宏 F1 变化约 −1.74 至 +0.49 个百分点，不能称为完全无影响。
-- 新增 CLAP 的目标/干扰/其他类预测计数，以及最强其他类的余弦分数变化，补强第 48 条。
-- 补齐图注的 SD、置信区间、样本数与捕获分母，明确 confusion 图包含原有干净对照混淆。
-- 主图调整为靠近对应章节；保留原始图表数据和实验预测，不重新挑选最好看的结果。
+- Recomputed 348 figure records for core own/target Figures 1–6 and 8 from the corresponding original predictions, scores and representations, with a tolerance of 1e-10. Figure 7 retains the historical single-clip microbenchmark definition; the complete cost analysis uses two separate rounds of measurements on balanced samples.
+- Independently recomputed 14 variants, 336 condition results and 156 paired comparisons again; the core conclusions are unchanged.
+- Corrected the scope of the “12 comparisons”: two semantic conditions × two power definitions × three CNN seeds, excluding white noise and DEMAND.
+- Clarified that the three statistical test families are corrected separately, while pointwise confidence intervals are not adjusted for multiple comparisons. Dependence from shared sources, distractors and training sets remains a limitation.
+- Added a gain-control table. Across all core conditions, control−clean macro-F1 changes range from about −1.74 to +0.49 percentage points; they cannot be described as having no effect.
+- Added CLAP prediction counts for target/distractor/other classes and changes in the strongest other-class cosine score, strengthening item 48.
+- Completed captions with SD, confidence intervals, sample sizes and capture denominators; clarified that confusion figures include pre-existing clean-control confusion.
+- Moved the main figures closer to their corresponding sections; retained original figure data and experimental predictions rather than selecting more favourable results.
 
-## 实验和交付状态
+## Experiment and delivery status
 
-| 内容 | 状态 |
+| Item | Status |
 |---|---|
-| 核心三系统、五折、own/target 全量 | 完成并核验 |
-| CNN 三 seed，SVM/CNN 两类增强 | 完成并核验 |
-| CLAP 固定提示集合、分特征组、全类竞争、源聚类敏感性、成本复测 | 完成并核验 |
-| 完整 PAT 的局部音频与文本互反馈 | 未做，老师明确可选；固定提示集合不是完整 PAT |
-| 报告、两套三系统图、扩展图、演示稿、讲稿、交互网页 | 已同步两项收尾分析；正式稿 10 页、原 26 页详版不变、12 页演示稿与 728 词讲稿一致；真实代码片段已录制 |
-| 人工试听、最终作者录制视频 | 仍需作者完成 |
-| GitHub feature 分支和草稿 PR | 已提供，审查修订继续提交至同一分支 |
-| 公开 Pages 部署 | 已从 gh-pages 发布，四种切换状态和六份公开交付文件哈希均核验 |
-| main 合并、课程提交 | PR #1 已整合至 main；Canvas 尚未提交 |
+| Core three systems, five folds, complete own/target evaluations | Completed and verified |
+| Three CNN seeds and both augmentation types for SVM/CNN | Completed and verified |
+| CLAP fixed prompt ensemble, feature groups, all-class competition, source-clustering sensitivity and repeated cost measurements | Completed and verified |
+| Full PAT local audio–text mutual feedback | Not implemented; explicitly optional in the instructor's advice. The fixed prompt ensemble is not full PAT |
+| Report, both three-system figure sets, extension figures, presentation, narration and interactive website | Both closing analyses are synchronised; the formal report has 10 pages, the original 26-page version is unchanged, and the 12-slide presentation agrees with the 728-word narration; an actual code execution clip has been recorded |
+| Human listening check and final author-recorded video | Still require the author |
+| GitHub feature branch and draft PR | Provided; review revisions continue on the same branch |
+| Public Pages deployment | Published from gh-pages; all four selector states and hashes of six public deliverables verified |
+| main merge and course submission | PR #1 is integrated into main; Canvas submission is still pending |
 
-## 两项收尾分析（本轮新增，已完成）
+## Two closing analyses (added in this revision; complete)
 
-- own 24,000、target 23,991 条声学记录全部完成，包含各 6,000 条 DEMAND。原始模型、预测和原图数据不变。
-- 精确 top-k 覆盖 SVM、CNN、CLAP 和已有提示集合，共 95,964 条语义读出；top-2 为主，1/3/5 为敏感性检查，含完整增益匹配对照。
-- +5 dB、own 口径，CLAP 捕获中约 33–37% 仍把目标排第二；不能据此声称“听见了两个”，也不能把所有捕获改判正确。
-- 同一目标的声学接近子集中，CLAP 相对 DEMAND 仍低约 16–26 个百分点，CNN 区间包含零。子集仅保留约 9–10.5% 目标，不能当作全量结果的因果分解。
-- 修正原包中的两处过强解释：Mel 带宽影响白噪声相关系数；逻辑回归系数缩小不是“机制解释百分比”。
-- 更新报告第 6 节、结论和补充图，新增 7 张可追溯图表。协议与完整核验见 [收尾分析结果](../results/closing_20261110/README.md)。
+- All 24,000 own and 23,991 target acoustic records are complete, including 6,000 DEMAND records each. Original models, predictions and figure data are unchanged.
+- Exact top-k covers SVM, CNN, CLAP and the existing prompt ensemble, totalling 95,964 semantic readouts. Top-2 is primary, with 1/3/5 as sensitivity checks and complete gain-matched controls.
+- At +5 dB under the own definition, about 33–37% of CLAP captures still rank the target second. This does not establish that the model “heard both”, nor does it justify reclassifying every capture as correct.
+- In acoustically matched subsets of the same targets, CLAP remains about 16–26 percentage points below DEMAND, while the CNN intervals include zero. The subsets retain only about 9–10.5% of targets and cannot be treated as a causal decomposition of the full results.
+- Corrected two overly strong interpretations in the original package: Mel bandwidth affects white-noise correlation, and shrinkage of logistic regression coefficients is not a “percentage explained by a mechanism”.
+- Updated report Section 6, the conclusion and supplementary figures, adding 7 traceable figures. See the [closing analysis results](../results/closing_20261110/README.md) for the protocol and complete verification.
 
-当前实验范围已经收尾。可选完整 PAT、Mix-CLAP、新模型和新数据不再展开；最终人工试听、作者录制、main 合并与课程提交仍属于交付事项，不能声称已经完成。演示稿、讲稿和公开 Pages 已同步收尾分析。
+The current experimental scope is closed. Optional full PAT, Mix-CLAP, new models and new data will not be pursued. Final human listening, author recording, the main merge and course submission remain delivery matters and must not be described as complete prematurely. The presentation, narration and public Pages have been synchronised with the closing analyses.
 
-## 逐项对照
+## Item-by-item comparison
 
-| 条号 | 状态 | 建议 | 核对结论 |
+| Item | Status | Recommendation | Assessment |
 |---:|---|---|---|
-| 1 | 已落实 | 保留原提案的方法学优点 | 官方折、配对混合、训练隔离、宏 F1、成本均保留。 |
-| 2 | 已落实 | 修改核心研究问题 | 比较非特定噪声与已标注竞争事件下的失效，并检验增强迁移。 |
-| 3 | 已落实 | 修改标题 | 采用 When Background Noise Has Meaning 及语义干扰副标题。 |
-| 4 | 已说明 | 真实环境含多个有意义声音 | 作为研究动机；实验仍是受控双源混合。 |
-| 5 | 已说明 | RSA Bench 研究背景 | 报告引用，并注明其主要是语音感知和推理任务，不当作 ESC 分类基线。 |
-| 6 | 已说明 | 噪声感知音频语言模型 | 文献讨论 Mix CLAP；未声称复现。 |
-| 7 | 已落实 | 加入现代参考模型 | 冻结 LAION CLAP 已完成干净和两套全量干扰评估。 |
-| 8 | 已落实 | 不训练 CLAP | 固定权重，不微调。 |
-| 9 | 已落实 | 保留手工 DSP 与 SVM | 92 维特征含 RMS、ZCR、质心、展宽、roll off、通量、MFCC 和 delta。 |
-| 10 | 已落实 | 保留紧凑 log Mel CNN | 36,258 参数，保留监督学习基线。 |
-| 11 | 已落实 | 比较三代表示 | SVM、任务训练 CNN、预训练音频语言表示均保留。 |
-| 12 | 已落实 | 避免谁最好或训练公平竞赛 | 研究失效机制与部署行为，说明 CLAP 的外部预训练优势。 |
-| 13 | 已落实 | 区分三类干扰 | 白噪声、DEMAND 背景、已标注 ESC 事件；后者拆同大类与异大类。 |
-| 14 | 已说明 | 说明语义干扰的区别 | 两个声音均可能对应标签；DEMAND 也可能含有可识别事件。 |
-| 15 | 已落实 | 检查功率是否足以解释失败 | 固定标称相对功率下比较失效差异；不把它当作语义因果隔离。 补齐 47,991 条频谱/时间描述量及相同目标声学接近子集；剩余差异仍非语义因果证据。 |
-| 16 | 已落实 | 区分 SNR 和 SIR | 噪声用 SNR，竞争事件用 SIR。 |
-| 17 | 已落实 | 系统构造不同细类混合 | 同留出折、不同细类与源录音，+10、+5、0 dB。 |
-| 18 | 已落实 | 谨慎解释 0 dB | 明确为单标签有歧义的等功率压力测试。 新增 top-2 四种结局和 top-1/3/5 敏感性，保留原始单标签压力测试。 |
-| 19 | 已落实 | 突出 +5 和 +10 dB | 主要配对分析使用 +5 dB，完整曲线保留三个等级。 |
-| 20 | 已落实 | 同大类和异大类干扰 | 两类配对均完成，粗分类不等于可量化感知距离。 |
-| 21 | 已落实 | 固定配对而不穷举 | 每目标每种语义类型一个固定配对；未来可复验配对随机性。 |
-| 22 | 已落实 | 干扰录音不进监督训练折 | 测试干扰来自目标留出折；还排除跨折源录音作为干扰。 |
-| 23 | 已落实 | 完整 mixture manifest | 身份、类别、类别组、功率、偏移、增益、seed、哈希、重叠均记录。 |
-| 24 | 已落实 | 分析错误目的地 | 区分目标、干扰类和其他类；补充增益对照到混合的变化。 新增精确 top-k 读出及干净增益对照，区分首位捕获与目标排名保留。 |
-| 25 | 已落实 | 条件 capture rate | 分母为错误数，另报全试验捕获比例与原始计数。 另报捕获中目标仍入前二的比例，明确分母不等于全部试次。 |
-| 26 | 已落实 | CLAP 目标和干扰文本分数 | 保存 50 类余弦分数，检查目标和干扰竞争。 |
-| 27 | 已落实 | 定义目标减干扰 margin | SVM 决策分数、CNN logits、CLAP cosines；不跨模型比较绝对尺度。 |
-| 28 | 已落实 | 画 margin 随 SIR 变化 | 三个等级的箱线图与数值表齐全。 |
-| 29 | 已作诊断 | 心理测量式过渡趋势 | 已显示 margin 分布趋势；三个 SIR 点不足以精确拟合决策翻转阈值。 |
-| 30 | 已落实 | 保留普通噪声对照 | WGN 和三个 DEMAND 环境均完成。 |
-| 31 | 已落实 | 谨慎匹配干扰功率 | own 与原提案 target 两套全量结果均保留，不把标称功率当作全部声学匹配。 新增频谱、时频遮蔽、时间重叠的联合筛选；披露保留目标约 9–10.5%。 |
-| 32 | 已落实 | 活动区功率 | 40 dB 活动帧定义，并记录活动区重叠；不把 own 改动归为老师明确指令。 时间重叠与目标活动帧频谱均纳入；未改变对齐或做新的时移实验。 |
-| 33 | 已落实 | 验证实际达到的比值 | 生成后重算并写 manifest；零能量无定义配对明确排除。 |
-| 34 | 已落实 | 官方五折 | 全 2,000 条、50 类、五折保留。 |
-| 35 | 已说明 | ESC 50 数据 caveat | 部分原始预处理与类别有关；另披露源 ID 跨折和外部预训练不确定性。 |
-| 36 | 已落实 | 控制 CNN 训练负担 | 核心一个 seed，扩展完成 5305、5306、5307 三个 seed。 |
-| 37 | 已落实 | 重视失效分析而非架构调榜 | 保留小 CNN，扩展集中在干扰、增强迁移与诊断。 |
-| 38 | 已落实 | 普通增强作为扩展 | 先完成干净训练鲁棒性，再完成独立 WGN 增强训练。 |
-| 39 | 已落实 | 测试普通增强向语义干扰迁移 | SVM/CNN 在两种功率口径下评估。 |
-| 40 | 已落实 | 把增强迁移作为待测假设 | 实际结果显示迁移有限；保留不确定性与负面结果。 |
-| 41 | 已落实 | 可选语义混合增强 | SVM 两种增强、CNN 三 seed 两种增强均完成。 |
-| 42 | 已落实 | 控制扩展范围 | 核心结果保留，扩展单独命名与报告。 |
-| 43 | 已落实 | 分特征组位移 | 8 组特征分别分析，使用相应训练折标准差。 |
-| 44 | 已落实 | 位移大小是否足够解释失效 | 比较匹配目标位移与分类；保留方向、类边界等未控制解释。 |
-| 45 | 已落实 | CNN 表示位移 | 保存倒数层 256 维向量，使用余弦距离。 |
-| 46 | 已落实 | CLAP 表示位移 | 保存 512 维向量，包含位移与错误关联 AUC。 |
-| 47 | 已落实 | 不跨架构比较绝对距离 | 分面并明确不同表示几何。 |
-| 48 | 已落实 | 检查其他竞争类文本分数 | 保存 top 3 其他类；本轮增加最强其他类分数变化和三类预测去向表。 补齐 50 类分数的精确 top-1/2/3/5，含已有固定提示集合。 |
-| 49 | 已落实 | 控制提示语 | 核心固定模板；独立固定提示集合不按测试标签挑选。 |
-| 50 | 可选未完整复现 | PAT 可选现代扩展 | 仅复用其发布的模板列表做固定平均；未实现完整互反馈和局部音频对齐。 |
-| 51 | 已查阅 | PAT 公共代码 | 固定源码 commit 和模板来源，报告与完整 PAT 的差异。 |
-| 52 | 部分回答 | 更好的音频文本对齐是否帮助 | 固定文本读出改变已评估；完整 PAT 的对齐机制尚未评估。 |
-| 53 | 已遵守 | 不训练 PAT | 未训练 PAT，也未把提示集合消融称为完整 PAT。 |
-| 54 | 已说明 | Mix CLAP 作为方向背景 | 已引用，未复现；老师明确不要求复现。 |
-| 55 | 已落实 | 宏 F1 随干扰等级图 | 四类干扰分面，三系统；own/target 两套图均在仓库。 |
-| 56 | 已落实 | capture rate 图 | 条件与分母明确；1/49 仅是均匀错类参考。 |
-| 57 | 已落实 | margin 图 | 保留各模型自己的分数尺度。 |
-| 58 | 已落实 | 同类和异类比较图 | 相同保留目标的相对 F1 损失；区分均值之比与各折比值。 |
-| 59 | 已落实 | 表示位移图 | 增益匹配对照与混合，分正确/错误；不声称因果。 |
-| 60 | 已落实 | confusion flow 图 | 按观察计数选例；图注区分原有混淆和新诱发捕获。 |
-| 61 | 已落实 | 鲁棒性与成本图 | 原微基准保留并标明定义，另有平衡样本的两轮成本测量。 |
-| 62 | 已落实 | 公平部署成本边界 | 同机器单线程 batch 1，预处理与推理边界说明，单次文本准备另列。 |
-| 63 | 已落实 | 不把 CLAP 预训练计入本机推理 | 说明外部训练优势；不声称全生命周期成本公平。 |
-| 64 | 已落实 | 官方 ESC 50 数据 | 固定官方快照和元数据。 |
-| 65 | 已对照方法 | 历史 Piczak CNN 参考 | 报告引用 log Mel CNN 思路；未逐层复现历史架构，老师不要求。 |
-| 66 | 已落实 | 官方 LAION CLAP 实现 | 固定 checkpoint、官方 tensor 路径和冻结推理，哈希及环境记录齐全。 |
-| 67 | 可选未完整复现 | PAT 官方实现 | 已查阅并做明确命名的提示集合消融；完整算法尚未复现。 |
-| 68 | 已完成 | 里程碑 1 手工 SVM | 干净五折及自定义 STFT、课程 MATLAB 对照均完成。 |
-| 69 | 已完成 | 里程碑 2 小 CNN | 干净五折及三 seed 扩展完成。 |
-| 70 | 已完成 | 里程碑 3 普通干扰 | WGN/DEMAND 混合与相同输入评估完成。 |
-| 71 | 待作者试听 | 里程碑 4 语义混合与试听 | 工程验证及 24 条示例已完成；没有把音频成功加载冒充人工听感确认。 |
-| 72 | 已完成 | 里程碑 5 冻结 CLAP | 干净与 own/target 全量完成，分数和向量缓存。 |
-| 73 | 已完成 | 里程碑 6 全部诊断 | F1、准确率、退化、capture、margin、表示位移均完成。 |
-| 74 | 已完成 | 里程碑 7 选一扩展 | 已完成普通增强，并额外完成语义增强与固定提示集合。 |
-| 75 | 已落实 | 扩展现代文献综述 | 独立综述已进入 10 页正式稿，结合课程特征/STFT/听觉材料与方法优缺点。 |
-| 76 | 已落实 | 2026 文献背景 | Mix CLAP 和 RSA Bench 已查原始来源，任务边界已注明。 |
-| 77 | 已完成 | 老师给出的项目核心范围 | 三系统、五折、全部干扰和指标已覆盖。 |
-| 78 | 已遵守 | 避免不必要的巨型训练 | 没有训练/微调 CLAP、复现 Mix CLAP 或穷举全部配对。 |
-| 79 | 分支与 Pages 已具备 | GitHub 内容要求 | 代码、结果、图和示例在 feature/interference 与 PR；Pages 已从 gh-pages 发布并核验，现已通过 PR #1 整合至 main；功能分支保留。 |
-| 80 | 已回应 | 整体研究目标 | 研究声学破坏与标签竞争的不同失效模式；现有实验不等于语义因果隔离。 两项收尾分析已完成；保留读出、声学、未测显著性之间的解释界限，不再增加模型或数据集。 |
+| 1 | Implemented | Preserve the methodological strengths of the original proposal | Official folds, paired mixtures, training isolation, macro-F1 and cost measurements are all retained. |
+| 2 | Implemented | Revise the main research question | Compare failures under nonspecific noise and labelled competing events, and test augmentation transfer. |
+| 3 | Implemented | Revise the title | Use When Background Noise Has Meaning with a subtitle on semantic interference. |
+| 4 | Discussed | Real environments contain multiple meaningful sounds | Used as the research motivation; the experiments remain controlled two-source mixtures. |
+| 5 | Discussed | RSA-Bench research context | Cited in the report, with its focus on speech perception and reasoning tasks noted; it is not treated as an ESC classification baseline. |
+| 6 | Discussed | Noise-aware audio-language models | Mix-CLAP is discussed in the literature review; no reproduction is claimed. |
+| 7 | Implemented | Add a modern reference model | Frozen LAION-CLAP has completed clean evaluation and both full interference evaluations. |
+| 8 | Implemented | Do not train CLAP | Weights are fixed, with no fine-tuning. |
+| 9 | Implemented | Retain handcrafted DSP and SVM | The 92-dimensional features include RMS, ZCR, centroid, spread, roll-off, flux, MFCCs and deltas. |
+| 10 | Implemented | Retain a compact log-Mel CNN | The supervised baseline is retained, with 36,258 parameters. |
+| 11 | Implemented | Compare three generations of representations | SVM, a task-trained CNN and a pretrained audio-language representation are all retained. |
+| 12 | Implemented | Avoid framing the study as a best-model contest or a fair training comparison | Study failure mechanisms and deployment behaviour, and explain CLAP's external pretraining advantage. |
+| 13 | Implemented | Distinguish three types of interference | White noise, DEMAND backgrounds and labelled ESC events; the last group is split into same- and different-category distractors. |
+| 14 | Discussed | Explain what distinguishes semantic interference | Both sounds may correspond to labels; DEMAND may also contain recognisable events. |
+| 15 | Implemented | Check whether power alone explains failure | Compare failures at fixed nominal relative power without treating this as causal isolation of semantics. All 47,991 spectral/temporal descriptor records and acoustically matched subsets of the same targets are complete; residual differences still do not establish a causal semantic effect. |
+| 16 | Implemented | Distinguish SNR and SIR | Use SNR for noise and SIR for competing events. |
+| 17 | Implemented | Systematically mix different fine classes | Use the same held-out fold, different fine classes and source recordings, at +10, +5 and 0 dB. |
+| 18 | Implemented | Interpret 0 dB cautiously | Explicitly treat equal-power mixtures as a stress test with single-label ambiguity. Add the four top-2 outcomes and top-1/3/5 sensitivity checks while retaining the original single-label stress test. |
+| 19 | Implemented | Emphasise +5 and +10 dB | The main paired analysis uses +5 dB; complete curves retain all three levels. |
+| 20 | Implemented | Same- and different-category interference | Both pairing types are complete; coarse categories are not a quantified perceptual distance. |
+| 21 | Implemented | Use fixed pairing rather than exhaustive combinations | Each target has one fixed pair per semantic condition; pairing randomness can be examined in future replication. |
+| 22 | Implemented | Keep distractor recordings out of supervised training folds | Test distractors come from the target's held-out fold; source recordings spanning folds are also excluded as distractors. |
+| 23 | Implemented | Complete mixture manifest | Identity, class, category group, power, offset, gain, seed, hashes and overlap are all recorded. |
+| 24 | Implemented | Analyse error destinations | Distinguish target, distractor and other classes, and add changes from gain-matched control to mixture. Exact top-k readout and clean gain-matched controls distinguish first-place capture from target rank retention. |
+| 25 | Implemented | Conditional capture rate | The denominator is the number of errors; also report the capture fraction across all trials and raw counts. Separately report the fraction of captures retaining the target in the top two, with its denominator distinguished from all trials. |
+| 26 | Implemented | CLAP target and distractor text scores | Save cosine scores for all 50 classes and examine target–distractor competition. |
+| 27 | Implemented | Define the target-minus-distractor margin | Use SVM decision scores, CNN logits and CLAP cosines; do not compare absolute scales across models. |
+| 28 | Implemented | Plot margin against SIR | Boxplots and numerical tables are complete for all three levels. |
+| 29 | Diagnostic completed | Psychometric-style transition trend | Margin distribution trends are shown; three SIR points are insufficient to fit a precise decision-flip threshold. |
+| 30 | Implemented | Retain ordinary-noise controls | WGN and all three DEMAND environments are complete. |
+| 31 | Implemented | Match interference power carefully | Retain both own and the original proposal's target definitions in full; nominal power is not complete acoustic matching. Add joint selection using spectral overlap, time-frequency masking and temporal overlap; disclose that about 9–10.5% of targets are retained. |
+| 32 | Implemented | Active-region power | Use a 40 dB active-frame definition and record active-region overlap; do not attribute the own-region change to an explicit instructor instruction. Include temporal overlap and spectra within target-active frames; no alignment changes or new time-shift experiments were performed. |
+| 33 | Implemented | Verify the achieved ratios | Recompute after generation and store in the manifest; explicitly exclude zero-energy pairs with undefined ratios. |
+| 34 | Implemented | Official five folds | Retain all 2,000 clips, 50 classes and five folds. |
+| 35 | Discussed | ESC-50 dataset caveats | Some original preprocessing is class-dependent; also disclose source IDs spanning folds and uncertainty about external pretraining. |
+| 36 | Implemented | Control the CNN training workload | One seed in the core experiment; the extension completes seeds 5305, 5306 and 5307. |
+| 37 | Implemented | Prioritise failure analysis over architecture tuning for leaderboard performance | Retain the small CNN and focus extensions on interference, augmentation transfer and diagnostics. |
+| 38 | Implemented | Treat ordinary augmentation as an extension | Complete clean-trained robustness first, followed by separate WGN-augmented training. |
+| 39 | Implemented | Test transfer from ordinary augmentation to semantic interference | Evaluate SVM/CNN under both power definitions. |
+| 40 | Implemented | Treat augmentation transfer as a hypothesis to test | Observed transfer is limited; retain uncertainty and negative findings. |
+| 41 | Implemented | Optional semantic-mixture augmentation | Both augmentation types are complete for SVM and for all three CNN seeds. |
+| 42 | Implemented | Control the extension scope | Retain core results and name/report extensions separately. |
+| 43 | Implemented | Displacement by feature group | Analyse 8 feature groups separately, using the corresponding training-fold standard deviations. |
+| 44 | Implemented | Is displacement magnitude sufficient to explain failure? | Compare displacement and classification for matched targets; retain uncontrolled explanations such as direction and class boundaries. |
+| 45 | Implemented | CNN representation displacement | Save 256-dimensional penultimate-layer vectors and use cosine distance. |
+| 46 | Implemented | CLAP representation displacement | Save 512-dimensional vectors, including AUC for the association between displacement and errors. |
+| 47 | Implemented | Do not compare absolute distances across architectures | Use separate panels and explain the different representation geometries. |
+| 48 | Implemented | Inspect text scores for other competing classes | Save the top 3 other classes; this revision adds changes in the strongest other-class score and a table of the three prediction destinations. Exact top-1/2/3/5 from all 50 class scores is complete, including the existing fixed prompt ensemble. |
+| 49 | Implemented | Control prompt wording | Use a fixed template in the core experiment; the separate fixed prompt ensemble is not selected using test labels. |
+| 50 | Optional; not fully reproduced | PAT as an optional modern extension | Only reuse the released template list for fixed averaging; full mutual feedback and local audio alignment are not implemented. |
+| 51 | Reviewed | Public PAT code | Pin the source commit and template provenance, and report differences from full PAT. |
+| 52 | Partly answered | Does better audio–text alignment help? | Changes from fixed text readout have been evaluated; full PAT's alignment mechanism has not. |
+| 53 | Followed | Do not train PAT | PAT was not trained, and the prompt-ensemble ablation is not described as full PAT. |
+| 54 | Discussed | Mix-CLAP as research context | Cited but not reproduced; the instructor explicitly did not require reproduction. |
+| 55 | Implemented | Macro-F1 against interference level | Four interference panels and three systems; both own/target figure sets are in the repository. |
+| 56 | Implemented | Capture-rate figure | Conditions and denominators are explicit; 1/49 is only a reference for uniformly distributed incorrect labels. |
+| 57 | Implemented | Margin figure | Retain each model's own score scale. |
+| 58 | Implemented | Same- versus different-category comparison | Relative F1 loss uses the same retained targets; distinguish the ratio of means from foldwise ratios. |
+| 59 | Implemented | Representation-displacement figure | Compare gain-matched controls and mixtures, split by correct/incorrect predictions; make no causal claim. |
+| 60 | Implemented | Confusion-flow figure | Select examples by observed counts; captions distinguish existing confusion from newly induced capture. |
+| 61 | Implemented | Robustness versus cost figure | Retain the original microbenchmark and state its definition; add two rounds of cost measurements on balanced samples. |
+| 62 | Implemented | Fair deployment-cost boundaries | Use the same machine, one thread and batch 1; explain preprocessing/inference boundaries and list one-off text preparation separately. |
+| 63 | Implemented | Do not include CLAP pretraining in local inference cost | Explain the external training advantage; do not claim a fair comparison of lifetime costs. |
+| 64 | Implemented | Official ESC-50 data | Pin the official snapshot and metadata. |
+| 65 | Method compared | Historical Piczak CNN reference | Cite the log-Mel CNN approach; do not reproduce the historical architecture layer by layer, which the instructor did not require. |
+| 66 | Implemented | Official LAION-CLAP implementation | Pin the checkpoint, use the official tensor path and frozen inference, and record hashes and environments. |
+| 67 | Optional; not fully reproduced | Official PAT implementation | Reviewed and used for an explicitly named prompt-ensemble ablation; the full algorithm has not been reproduced. |
+| 68 | Completed | Milestone 1: handcrafted SVM | Clean five-fold evaluation, custom STFT and the course MATLAB comparison are complete. |
+| 69 | Completed | Milestone 2: small CNN | Clean five-fold evaluation and the three-seed extension are complete. |
+| 70 | Completed | Milestone 3: ordinary interference | WGN/DEMAND mixing and evaluation on identical inputs are complete. |
+| 71 | Awaiting author listening check | Milestone 4: semantic mixing and listening | Engineering verification and 24 examples are complete; successful audio loading is not presented as a human listening assessment. |
+| 72 | Completed | Milestone 5: frozen CLAP | Clean and full own/target evaluations are complete, with scores and vectors cached. |
+| 73 | Completed | Milestone 6: all diagnostics | F1, accuracy, degradation, capture, margin and representation displacement are complete. |
+| 74 | Completed | Milestone 7: choose one extension | Ordinary augmentation is complete, with semantic augmentation and a fixed prompt ensemble added. |
+| 75 | Implemented | Expand the modern literature review | A separate review is included in the 10-page formal report, connecting course material on features/STFT/hearing with the strengths and weaknesses of the methods. |
+| 76 | Implemented | 2026 literature context | Primary sources for Mix-CLAP and RSA-Bench have been checked, and task boundaries are noted. |
+| 77 | Completed | The instructor's core project scope | Three systems, five folds, all interference conditions and all metrics are covered. |
+| 78 | Followed | Avoid unnecessary large-scale training | No CLAP training/fine-tuning, Mix-CLAP reproduction or exhaustive pairing was performed. |
+| 79 | Branch and Pages available | GitHub content requirements | Code, results, figures and examples are in feature/interference and the PR; Pages was published from gh-pages and verified. PR #1 has now integrated the work into main; the feature branch is retained. |
+| 80 | Addressed | Overall research objective | Study different failure modes under acoustic corruption and label competition; the experiments do not causally isolate semantics. Both closing analyses are complete; retain the interpretive boundaries between readout, acoustics and unmeasured salience, with no further models or datasets. |
 
-## 证据位置
+## Evidence locations
 
-- [跨交付物数值核对与公开部署记录](../results/delivery_sync_20261110/README.md)
-- [最终提交清单](final_submission_checklist_20261110.md)
-- [10 页正式报告](../results/final_submission_20261110/final_report.pdf)；[26 页补充](../results/research_report_20261109_draft/research_report.pdf)
-- [本轮图表重算核验](../results/report_review_20261110/audit.json)
-- [全部 80 条机器可读记录](../results/report_review_20261110/teacher_80_review.json)
-- [增益对照数值](../results/report_review_20261110/gain_control_effects.csv)
-- [其他竞争类数值](../results/report_review_20261110/clap_other_competitors.csv)
-- [干扰与增强比较独立复算](../results/extensions_20261109/interventions/independent_audit.json)
-- [完整干扰结果与数据口径](../results/clap_full_20261109/README.md)
-- [拓展协议与事后修订说明](extension_protocol_20261109.md)
-- [代码与交付草稿 PR](https://github.com/Charlie-Uni/elec5305-project-550489593/pull/1)
+- [Cross-deliverable numerical checks and public deployment record](../results/delivery_sync_20261110/README.md)
+- [Final submission checklist](final_submission_checklist_20261110.md)
+- [10-page formal report](../results/final_submission_20261110/final_report.pdf); [26-page supplement](../results/research_report_20261109_draft/research_report.pdf)
+- [Figure recomputation audit for this review](../results/report_review_20261110/audit.json)
+- [Machine-readable record of all 80 items](../results/report_review_20261110/teacher_80_review.json)
+- [Gain-control values](../results/report_review_20261110/gain_control_effects.csv)
+- [Other competing-class values](../results/report_review_20261110/clap_other_competitors.csv)
+- [Independent recomputation of interference and augmentation comparisons](../results/extensions_20261109/interventions/independent_audit.json)
+- [Complete interference results and data definitions](../results/clap_full_20261109/README.md)
+- [Extension protocol and post hoc revision notes](extension_protocol_20261109.md)
+- [Draft PR for code and deliverables](https://github.com/Charlie-Uni/elec5305-project-550489593/pull/1)
 
-## 仅保留为未来工作的方向（本次不再执行）
+## Directions retained only as future work (not pursued in this study)
 
-1. **多次配对复验。** 冻结现有模型，用多个预先固定的配对 seed 给同一目标换不同留出干扰，背景片段也采用配对设计。当前一个配对的结果不能说明任意竞争场景。先声明主要对比和汇总方式，再运行，不以显著性决定保留哪些 seed。
-2. **更接近语义隔离的声学对照。** 对同一干扰设计频谱、包络和活动重叠尽量匹配、可识别性不同的版本，并验证可识别性。相位随机化不自动等于“没有语义”，它也可能改变时间结构。这一项最能推进核心科学问题。
-3. **固定声音对的时间与 SIR 扫描。** 控制相同声音对，只改变相对开始时间和更密的 SIR 网格，重算实际功率并检查裁切。这样才能估计翻转阈值，并把组间重叠差异推进为组内控制实验。
-4. **更多独立背景或外部数据验证。** 当前只有三个 DEMAND 录音和一个基准数据集，不能等同于真实多声源泛化。应先定义共享标签、评估划分和主要指标。
-5. **完整 PAT。** 仅在能按原方法取得局部音频表示并控制所有选择规则时实施；不能使用测试标签搜索融合系数。其优先级低于前述对当前关键结论的稳健性与机制检验。
+1. **Repeated pairing replication.** Freeze existing models and use multiple prespecified pairing seeds to give each target different held-out distractors, with a paired design for background segments as well. Results from one pairing do not establish behaviour under arbitrary competing scenes. Declare primary contrasts and aggregation rules before running; do not select retained seeds based on significance.
+2. **Acoustic controls that better isolate semantics.** Create versions of the same distractor with different recognisability while matching spectrum, envelope and activity overlap as closely as possible, and verify recognisability. Phase randomisation does not automatically mean “no semantics”; it may also change temporal structure. This would most directly advance the core scientific question.
+3. **Time and SIR sweeps for fixed sound pairs.** Keep the sound pair fixed and vary only relative onset and a denser SIR grid, recomputing achieved power and checking clipping. This would support estimating flip thresholds and move from between-group overlap differences to controlled within-pair experiments.
+4. **More independent backgrounds or external-data validation.** There are currently only three DEMAND recordings and one benchmark dataset, which does not establish real-world multisource generalisation. Define shared labels, evaluation splits and primary metrics first.
+5. **Full PAT.** Implement only when local audio representations can be obtained according to the original method and all selection rules can be controlled; test labels must not be used to search for fusion coefficients. This has lower priority than the robustness and mechanism checks for the current key conclusions above.
 
-[PAT 原论文](https://aclanthology.org/2025.naacl-long.616/)包含文本提示与局部音频的互反馈，超出本项目当前固定模板平均的范围。[RSA Bench 原论文](https://aclanthology.org/2026.findings-acl.913/)提供复杂背景下语音任务的相关动机，并非本项目已复现的 ESC 分类实验。
+The [original PAT paper](https://aclanthology.org/2025.naacl-long.616/) includes mutual feedback between text prompts and local audio, beyond this project's fixed template averaging. The [original RSA-Bench paper](https://aclanthology.org/2026.findings-acl.913/) provides related motivation from speech tasks in complex backgrounds; it is not an ESC classification experiment reproduced in this project.

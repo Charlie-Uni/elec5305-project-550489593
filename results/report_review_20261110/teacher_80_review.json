@@ -12,483 +12,483 @@
   "items": [
     {
       "number": 1,
-      "status": "已落实",
-      "recommendation": "保留原提案的方法学优点",
-      "assessment": "官方折、配对混合、训练隔离、宏 F1、成本均保留。"
+      "status": "Implemented",
+      "recommendation": "Preserve the methodological strengths of the original proposal",
+      "assessment": "Official folds, paired mixtures, training isolation, macro-F1 and cost measurements are all retained."
     },
     {
       "number": 2,
-      "status": "已落实",
-      "recommendation": "修改核心研究问题",
-      "assessment": "比较非特定噪声与已标注竞争事件下的失效，并检验增强迁移。"
+      "status": "Implemented",
+      "recommendation": "Revise the main research question",
+      "assessment": "Compare failures under nonspecific noise and labelled competing events, and test augmentation transfer."
     },
     {
       "number": 3,
-      "status": "已落实",
-      "recommendation": "修改标题",
-      "assessment": "采用 When Background Noise Has Meaning 及语义干扰副标题。"
+      "status": "Implemented",
+      "recommendation": "Revise the title",
+      "assessment": "Use When Background Noise Has Meaning with a subtitle on semantic interference."
     },
     {
       "number": 4,
-      "status": "已说明",
-      "recommendation": "真实环境含多个有意义声音",
-      "assessment": "作为研究动机；实验仍是受控双源混合。"
+      "status": "Discussed",
+      "recommendation": "Real environments contain multiple meaningful sounds",
+      "assessment": "Used as the research motivation; the experiments remain controlled two-source mixtures."
     },
     {
       "number": 5,
-      "status": "已说明",
-      "recommendation": "RSA Bench 研究背景",
-      "assessment": "报告引用，并注明其主要是语音感知和推理任务，不当作 ESC 分类基线。"
+      "status": "Discussed",
+      "recommendation": "RSA-Bench research context",
+      "assessment": "Cited in the report, with its focus on speech perception and reasoning tasks noted; it is not treated as an ESC classification baseline."
     },
     {
       "number": 6,
-      "status": "已说明",
-      "recommendation": "噪声感知音频语言模型",
-      "assessment": "文献讨论 Mix CLAP；未声称复现。"
+      "status": "Discussed",
+      "recommendation": "Noise-aware audio-language models",
+      "assessment": "Mix-CLAP is discussed in the literature review; no reproduction is claimed."
     },
     {
       "number": 7,
-      "status": "已落实",
-      "recommendation": "加入现代参考模型",
-      "assessment": "冻结 LAION CLAP 已完成干净和两套全量干扰评估。"
+      "status": "Implemented",
+      "recommendation": "Add a modern reference model",
+      "assessment": "Frozen LAION-CLAP has completed clean evaluation and both full interference evaluations."
     },
     {
       "number": 8,
-      "status": "已落实",
-      "recommendation": "不训练 CLAP",
-      "assessment": "固定权重，不微调。"
+      "status": "Implemented",
+      "recommendation": "Do not train CLAP",
+      "assessment": "Weights are fixed, with no fine-tuning."
     },
     {
       "number": 9,
-      "status": "已落实",
-      "recommendation": "保留手工 DSP 与 SVM",
-      "assessment": "92 维特征含 RMS、ZCR、质心、展宽、roll off、通量、MFCC 和 delta。"
+      "status": "Implemented",
+      "recommendation": "Retain handcrafted DSP and SVM",
+      "assessment": "The 92-dimensional features include RMS, ZCR, centroid, spread, roll-off, flux, MFCCs and deltas."
     },
     {
       "number": 10,
-      "status": "已落实",
-      "recommendation": "保留紧凑 log Mel CNN",
-      "assessment": "36,258 参数，保留监督学习基线。"
+      "status": "Implemented",
+      "recommendation": "Retain a compact log-Mel CNN",
+      "assessment": "The supervised baseline is retained, with 36,258 parameters."
     },
     {
       "number": 11,
-      "status": "已落实",
-      "recommendation": "比较三代表示",
-      "assessment": "SVM、任务训练 CNN、预训练音频语言表示均保留。"
+      "status": "Implemented",
+      "recommendation": "Compare three generations of representations",
+      "assessment": "SVM, a task-trained CNN and a pretrained audio-language representation are all retained."
     },
     {
       "number": 12,
-      "status": "已落实",
-      "recommendation": "避免谁最好或训练公平竞赛",
-      "assessment": "研究失效机制与部署行为，说明 CLAP 的外部预训练优势。"
+      "status": "Implemented",
+      "recommendation": "Avoid framing the study as a best-model contest or a fair training comparison",
+      "assessment": "Study failure mechanisms and deployment behaviour, and explain CLAP's external pretraining advantage."
     },
     {
       "number": 13,
-      "status": "已落实",
-      "recommendation": "区分三类干扰",
-      "assessment": "白噪声、DEMAND 背景、已标注 ESC 事件；后者拆同大类与异大类。"
+      "status": "Implemented",
+      "recommendation": "Distinguish three types of interference",
+      "assessment": "White noise, DEMAND backgrounds and labelled ESC events; the last group is split into same- and different-category distractors."
     },
     {
       "number": 14,
-      "status": "已说明",
-      "recommendation": "说明语义干扰的区别",
-      "assessment": "两个声音均可能对应标签；DEMAND 也可能含有可识别事件。"
+      "status": "Discussed",
+      "recommendation": "Explain what distinguishes semantic interference",
+      "assessment": "Both sounds may correspond to labels; DEMAND may also contain recognisable events."
     },
     {
       "number": 15,
-      "status": "已落实",
-      "recommendation": "检查功率是否足以解释失败",
-      "assessment": "固定标称相对功率下比较失效差异；不把它当作语义因果隔离。 补齐 47,991 条频谱/时间描述量及相同目标声学接近子集；剩余差异仍非语义因果证据。"
+      "status": "Implemented",
+      "recommendation": "Check whether power alone explains failure",
+      "assessment": "Compare failures at fixed nominal relative power without treating this as causal isolation of semantics. All 47,991 spectral/temporal descriptor records and acoustically matched subsets of the same targets are complete; residual differences still do not establish a causal semantic effect."
     },
     {
       "number": 16,
-      "status": "已落实",
-      "recommendation": "区分 SNR 和 SIR",
-      "assessment": "噪声用 SNR，竞争事件用 SIR。"
+      "status": "Implemented",
+      "recommendation": "Distinguish SNR and SIR",
+      "assessment": "Use SNR for noise and SIR for competing events."
     },
     {
       "number": 17,
-      "status": "已落实",
-      "recommendation": "系统构造不同细类混合",
-      "assessment": "同留出折、不同细类与源录音，+10、+5、0 dB。"
+      "status": "Implemented",
+      "recommendation": "Systematically mix different fine classes",
+      "assessment": "Use the same held-out fold, different fine classes and source recordings, at +10, +5 and 0 dB."
     },
     {
       "number": 18,
-      "status": "已落实",
-      "recommendation": "谨慎解释 0 dB",
-      "assessment": "明确为单标签有歧义的等功率压力测试。 新增 top-2 四种结局和 top-1/3/5 敏感性，保留原始单标签压力测试。"
+      "status": "Implemented",
+      "recommendation": "Interpret 0 dB cautiously",
+      "assessment": "Explicitly treat equal-power mixtures as a stress test with single-label ambiguity. Add the four top-2 outcomes and top-1/3/5 sensitivity checks while retaining the original single-label stress test."
     },
     {
       "number": 19,
-      "status": "已落实",
-      "recommendation": "突出 +5 和 +10 dB",
-      "assessment": "主要配对分析使用 +5 dB，完整曲线保留三个等级。"
+      "status": "Implemented",
+      "recommendation": "Emphasise +5 and +10 dB",
+      "assessment": "The main paired analysis uses +5 dB; complete curves retain all three levels."
     },
     {
       "number": 20,
-      "status": "已落实",
-      "recommendation": "同大类和异大类干扰",
-      "assessment": "两类配对均完成，粗分类不等于可量化感知距离。"
+      "status": "Implemented",
+      "recommendation": "Same- and different-category interference",
+      "assessment": "Both pairing types are complete; coarse categories are not a quantified perceptual distance."
     },
     {
       "number": 21,
-      "status": "已落实",
-      "recommendation": "固定配对而不穷举",
-      "assessment": "每目标每种语义类型一个固定配对；未来可复验配对随机性。"
+      "status": "Implemented",
+      "recommendation": "Use fixed pairing rather than exhaustive combinations",
+      "assessment": "Each target has one fixed pair per semantic condition; pairing randomness can be examined in future replication."
     },
     {
       "number": 22,
-      "status": "已落实",
-      "recommendation": "干扰录音不进监督训练折",
-      "assessment": "测试干扰来自目标留出折；还排除跨折源录音作为干扰。"
+      "status": "Implemented",
+      "recommendation": "Keep distractor recordings out of supervised training folds",
+      "assessment": "Test distractors come from the target's held-out fold; source recordings spanning folds are also excluded as distractors."
     },
     {
       "number": 23,
-      "status": "已落实",
-      "recommendation": "完整 mixture manifest",
-      "assessment": "身份、类别、类别组、功率、偏移、增益、seed、哈希、重叠均记录。"
+      "status": "Implemented",
+      "recommendation": "Complete mixture manifest",
+      "assessment": "Identity, class, category group, power, offset, gain, seed, hashes and overlap are all recorded."
     },
     {
       "number": 24,
-      "status": "已落实",
-      "recommendation": "分析错误目的地",
-      "assessment": "区分目标、干扰类和其他类；补充增益对照到混合的变化。 新增精确 top-k 读出及干净增益对照，区分首位捕获与目标排名保留。"
+      "status": "Implemented",
+      "recommendation": "Analyse error destinations",
+      "assessment": "Distinguish target, distractor and other classes, and add changes from gain-matched control to mixture. Exact top-k readout and clean gain-matched controls distinguish first-place capture from target rank retention."
     },
     {
       "number": 25,
-      "status": "已落实",
-      "recommendation": "条件 capture rate",
-      "assessment": "分母为错误数，另报全试验捕获比例与原始计数。 另报捕获中目标仍入前二的比例，明确分母不等于全部试次。"
+      "status": "Implemented",
+      "recommendation": "Conditional capture rate",
+      "assessment": "The denominator is the number of errors; also report the capture fraction across all trials and raw counts. Separately report the fraction of captures retaining the target in the top two, with its denominator distinguished from all trials."
     },
     {
       "number": 26,
-      "status": "已落实",
-      "recommendation": "CLAP 目标和干扰文本分数",
-      "assessment": "保存 50 类余弦分数，检查目标和干扰竞争。"
+      "status": "Implemented",
+      "recommendation": "CLAP target and distractor text scores",
+      "assessment": "Save cosine scores for all 50 classes and examine target–distractor competition."
     },
     {
       "number": 27,
-      "status": "已落实",
-      "recommendation": "定义目标减干扰 margin",
-      "assessment": "SVM 决策分数、CNN logits、CLAP cosines；不跨模型比较绝对尺度。"
+      "status": "Implemented",
+      "recommendation": "Define the target-minus-distractor margin",
+      "assessment": "Use SVM decision scores, CNN logits and CLAP cosines; do not compare absolute scales across models."
     },
     {
       "number": 28,
-      "status": "已落实",
-      "recommendation": "画 margin 随 SIR 变化",
-      "assessment": "三个等级的箱线图与数值表齐全。"
+      "status": "Implemented",
+      "recommendation": "Plot margin against SIR",
+      "assessment": "Boxplots and numerical tables are complete for all three levels."
     },
     {
       "number": 29,
-      "status": "已作诊断",
-      "recommendation": "心理测量式过渡趋势",
-      "assessment": "已显示 margin 分布趋势；三个 SIR 点不足以精确拟合决策翻转阈值。"
+      "status": "Diagnostic completed",
+      "recommendation": "Psychometric-style transition trend",
+      "assessment": "Margin distribution trends are shown; three SIR points are insufficient to fit a precise decision-flip threshold."
     },
     {
       "number": 30,
-      "status": "已落实",
-      "recommendation": "保留普通噪声对照",
-      "assessment": "WGN 和三个 DEMAND 环境均完成。"
+      "status": "Implemented",
+      "recommendation": "Retain ordinary-noise controls",
+      "assessment": "WGN and all three DEMAND environments are complete."
     },
     {
       "number": 31,
-      "status": "已落实",
-      "recommendation": "谨慎匹配干扰功率",
-      "assessment": "own 与原提案 target 两套全量结果均保留，不把标称功率当作全部声学匹配。 新增频谱、时频遮蔽、时间重叠的联合筛选；披露保留目标约 9–10.5%。"
+      "status": "Implemented",
+      "recommendation": "Match interference power carefully",
+      "assessment": "Retain both own and the original proposal's target definitions in full; nominal power is not complete acoustic matching. Add joint selection using spectral overlap, time-frequency masking and temporal overlap; disclose that about 9–10.5% of targets are retained."
     },
     {
       "number": 32,
-      "status": "已落实",
-      "recommendation": "活动区功率",
-      "assessment": "40 dB 活动帧定义，并记录活动区重叠；不把 own 改动归为老师明确指令。 时间重叠与目标活动帧频谱均纳入；未改变对齐或做新的时移实验。"
+      "status": "Implemented",
+      "recommendation": "Active-region power",
+      "assessment": "Use a 40 dB active-frame definition and record active-region overlap; do not attribute the own-region change to an explicit instructor instruction. Include temporal overlap and spectra within target-active frames; no alignment changes or new time-shift experiments were performed."
     },
     {
       "number": 33,
-      "status": "已落实",
-      "recommendation": "验证实际达到的比值",
-      "assessment": "生成后重算并写 manifest；零能量无定义配对明确排除。"
+      "status": "Implemented",
+      "recommendation": "Verify the achieved ratios",
+      "assessment": "Recompute after generation and store in the manifest; explicitly exclude zero-energy pairs with undefined ratios."
     },
     {
       "number": 34,
-      "status": "已落实",
-      "recommendation": "官方五折",
-      "assessment": "全 2,000 条、50 类、五折保留。"
+      "status": "Implemented",
+      "recommendation": "Official five folds",
+      "assessment": "Retain all 2,000 clips, 50 classes and five folds."
     },
     {
       "number": 35,
-      "status": "已说明",
-      "recommendation": "ESC 50 数据 caveat",
-      "assessment": "部分原始预处理与类别有关；另披露源 ID 跨折和外部预训练不确定性。"
+      "status": "Discussed",
+      "recommendation": "ESC-50 dataset caveats",
+      "assessment": "Some original preprocessing is class-dependent; also disclose source IDs spanning folds and uncertainty about external pretraining."
     },
     {
       "number": 36,
-      "status": "已落实",
-      "recommendation": "控制 CNN 训练负担",
-      "assessment": "核心一个 seed，扩展完成 5305、5306、5307 三个 seed。"
+      "status": "Implemented",
+      "recommendation": "Control the CNN training workload",
+      "assessment": "One seed in the core experiment; the extension completes seeds 5305, 5306 and 5307."
     },
     {
       "number": 37,
-      "status": "已落实",
-      "recommendation": "重视失效分析而非架构调榜",
-      "assessment": "保留小 CNN，扩展集中在干扰、增强迁移与诊断。"
+      "status": "Implemented",
+      "recommendation": "Prioritise failure analysis over architecture tuning for leaderboard performance",
+      "assessment": "Retain the small CNN and focus extensions on interference, augmentation transfer and diagnostics."
     },
     {
       "number": 38,
-      "status": "已落实",
-      "recommendation": "普通增强作为扩展",
-      "assessment": "先完成干净训练鲁棒性，再完成独立 WGN 增强训练。"
+      "status": "Implemented",
+      "recommendation": "Treat ordinary augmentation as an extension",
+      "assessment": "Complete clean-trained robustness first, followed by separate WGN-augmented training."
     },
     {
       "number": 39,
-      "status": "已落实",
-      "recommendation": "测试普通增强向语义干扰迁移",
-      "assessment": "SVM/CNN 在两种功率口径下评估。"
+      "status": "Implemented",
+      "recommendation": "Test transfer from ordinary augmentation to semantic interference",
+      "assessment": "Evaluate SVM/CNN under both power definitions."
     },
     {
       "number": 40,
-      "status": "已落实",
-      "recommendation": "把增强迁移作为待测假设",
-      "assessment": "实际结果显示迁移有限；保留不确定性与负面结果。"
+      "status": "Implemented",
+      "recommendation": "Treat augmentation transfer as a hypothesis to test",
+      "assessment": "Observed transfer is limited; retain uncertainty and negative findings."
     },
     {
       "number": 41,
-      "status": "已落实",
-      "recommendation": "可选语义混合增强",
-      "assessment": "SVM 两种增强、CNN 三 seed 两种增强均完成。"
+      "status": "Implemented",
+      "recommendation": "Optional semantic-mixture augmentation",
+      "assessment": "Both augmentation types are complete for SVM and for all three CNN seeds."
     },
     {
       "number": 42,
-      "status": "已落实",
-      "recommendation": "控制扩展范围",
-      "assessment": "核心结果保留，扩展单独命名与报告。"
+      "status": "Implemented",
+      "recommendation": "Control the extension scope",
+      "assessment": "Retain core results and name/report extensions separately."
     },
     {
       "number": 43,
-      "status": "已落实",
-      "recommendation": "分特征组位移",
-      "assessment": "8 组特征分别分析，使用相应训练折标准差。"
+      "status": "Implemented",
+      "recommendation": "Displacement by feature group",
+      "assessment": "Analyse 8 feature groups separately, using the corresponding training-fold standard deviations."
     },
     {
       "number": 44,
-      "status": "已落实",
-      "recommendation": "位移大小是否足够解释失效",
-      "assessment": "比较匹配目标位移与分类；保留方向、类边界等未控制解释。"
+      "status": "Implemented",
+      "recommendation": "Is displacement magnitude sufficient to explain failure?",
+      "assessment": "Compare displacement and classification for matched targets; retain uncontrolled explanations such as direction and class boundaries."
     },
     {
       "number": 45,
-      "status": "已落实",
-      "recommendation": "CNN 表示位移",
-      "assessment": "保存倒数层 256 维向量，使用余弦距离。"
+      "status": "Implemented",
+      "recommendation": "CNN representation displacement",
+      "assessment": "Save 256-dimensional penultimate-layer vectors and use cosine distance."
     },
     {
       "number": 46,
-      "status": "已落实",
-      "recommendation": "CLAP 表示位移",
-      "assessment": "保存 512 维向量，包含位移与错误关联 AUC。"
+      "status": "Implemented",
+      "recommendation": "CLAP representation displacement",
+      "assessment": "Save 512-dimensional vectors, including AUC for the association between displacement and errors."
     },
     {
       "number": 47,
-      "status": "已落实",
-      "recommendation": "不跨架构比较绝对距离",
-      "assessment": "分面并明确不同表示几何。"
+      "status": "Implemented",
+      "recommendation": "Do not compare absolute distances across architectures",
+      "assessment": "Use separate panels and explain the different representation geometries."
     },
     {
       "number": 48,
-      "status": "已落实",
-      "recommendation": "检查其他竞争类文本分数",
-      "assessment": "保存 top 3 其他类；本轮增加最强其他类分数变化和三类预测去向表。 补齐 50 类分数的精确 top-1/2/3/5，含已有固定提示集合。"
+      "status": "Implemented",
+      "recommendation": "Inspect text scores for other competing classes",
+      "assessment": "Save the top 3 other classes; this revision adds changes in the strongest other-class score and a table of the three prediction destinations. Exact top-1/2/3/5 from all 50 class scores is complete, including the existing fixed prompt ensemble."
     },
     {
       "number": 49,
-      "status": "已落实",
-      "recommendation": "控制提示语",
-      "assessment": "核心固定模板；独立固定提示集合不按测试标签挑选。"
+      "status": "Implemented",
+      "recommendation": "Control prompt wording",
+      "assessment": "Use a fixed template in the core experiment; the separate fixed prompt ensemble is not selected using test labels."
     },
     {
       "number": 50,
-      "status": "可选未完整复现",
-      "recommendation": "PAT 可选现代扩展",
-      "assessment": "仅复用其发布的模板列表做固定平均；未实现完整互反馈和局部音频对齐。"
+      "status": "Optional; not fully reproduced",
+      "recommendation": "PAT as an optional modern extension",
+      "assessment": "Only reuse the released template list for fixed averaging; full mutual feedback and local audio alignment are not implemented."
     },
     {
       "number": 51,
-      "status": "已查阅",
-      "recommendation": "PAT 公共代码",
-      "assessment": "固定源码 commit 和模板来源，报告与完整 PAT 的差异。"
+      "status": "Reviewed",
+      "recommendation": "Public PAT code",
+      "assessment": "Pin the source commit and template provenance, and report differences from full PAT."
     },
     {
       "number": 52,
-      "status": "部分回答",
-      "recommendation": "更好的音频文本对齐是否帮助",
-      "assessment": "固定文本读出改变已评估；完整 PAT 的对齐机制尚未评估。"
+      "status": "Partly answered",
+      "recommendation": "Does better audio–text alignment help?",
+      "assessment": "Changes from fixed text readout have been evaluated; full PAT's alignment mechanism has not."
     },
     {
       "number": 53,
-      "status": "已遵守",
-      "recommendation": "不训练 PAT",
-      "assessment": "未训练 PAT，也未把提示集合消融称为完整 PAT。"
+      "status": "Followed",
+      "recommendation": "Do not train PAT",
+      "assessment": "PAT was not trained, and the prompt-ensemble ablation is not described as full PAT."
     },
     {
       "number": 54,
-      "status": "已说明",
-      "recommendation": "Mix CLAP 作为方向背景",
-      "assessment": "已引用，未复现；老师明确不要求复现。"
+      "status": "Discussed",
+      "recommendation": "Mix-CLAP as research context",
+      "assessment": "Cited but not reproduced; the instructor explicitly did not require reproduction."
     },
     {
       "number": 55,
-      "status": "已落实",
-      "recommendation": "宏 F1 随干扰等级图",
-      "assessment": "四类干扰分面，三系统；own/target 两套图均在仓库。"
+      "status": "Implemented",
+      "recommendation": "Macro-F1 against interference level",
+      "assessment": "Four interference panels and three systems; both own/target figure sets are in the repository."
     },
     {
       "number": 56,
-      "status": "已落实",
-      "recommendation": "capture rate 图",
-      "assessment": "条件与分母明确；1/49 仅是均匀错类参考。"
+      "status": "Implemented",
+      "recommendation": "Capture-rate figure",
+      "assessment": "Conditions and denominators are explicit; 1/49 is only a reference for uniformly distributed incorrect labels."
     },
     {
       "number": 57,
-      "status": "已落实",
-      "recommendation": "margin 图",
-      "assessment": "保留各模型自己的分数尺度。"
+      "status": "Implemented",
+      "recommendation": "Margin figure",
+      "assessment": "Retain each model's own score scale."
     },
     {
       "number": 58,
-      "status": "已落实",
-      "recommendation": "同类和异类比较图",
-      "assessment": "相同保留目标的相对 F1 损失；区分均值之比与各折比值。"
+      "status": "Implemented",
+      "recommendation": "Same- versus different-category comparison",
+      "assessment": "Relative F1 loss uses the same retained targets; distinguish the ratio of means from foldwise ratios."
     },
     {
       "number": 59,
-      "status": "已落实",
-      "recommendation": "表示位移图",
-      "assessment": "增益匹配对照与混合，分正确/错误；不声称因果。"
+      "status": "Implemented",
+      "recommendation": "Representation-displacement figure",
+      "assessment": "Compare gain-matched controls and mixtures, split by correct/incorrect predictions; make no causal claim."
     },
     {
       "number": 60,
-      "status": "已落实",
-      "recommendation": "confusion flow 图",
-      "assessment": "按观察计数选例；图注区分原有混淆和新诱发捕获。"
+      "status": "Implemented",
+      "recommendation": "Confusion-flow figure",
+      "assessment": "Select examples by observed counts; captions distinguish existing confusion from newly induced capture."
     },
     {
       "number": 61,
-      "status": "已落实",
-      "recommendation": "鲁棒性与成本图",
-      "assessment": "原微基准保留并标明定义，另有平衡样本的两轮成本测量。"
+      "status": "Implemented",
+      "recommendation": "Robustness versus cost figure",
+      "assessment": "Retain the original microbenchmark and state its definition; add two rounds of cost measurements on balanced samples."
     },
     {
       "number": 62,
-      "status": "已落实",
-      "recommendation": "公平部署成本边界",
-      "assessment": "同机器单线程 batch 1，预处理与推理边界说明，单次文本准备另列。"
+      "status": "Implemented",
+      "recommendation": "Fair deployment-cost boundaries",
+      "assessment": "Use the same machine, one thread and batch 1; explain preprocessing/inference boundaries and list one-off text preparation separately."
     },
     {
       "number": 63,
-      "status": "已落实",
-      "recommendation": "不把 CLAP 预训练计入本机推理",
-      "assessment": "说明外部训练优势；不声称全生命周期成本公平。"
+      "status": "Implemented",
+      "recommendation": "Do not include CLAP pretraining in local inference cost",
+      "assessment": "Explain the external training advantage; do not claim a fair comparison of lifetime costs."
     },
     {
       "number": 64,
-      "status": "已落实",
-      "recommendation": "官方 ESC 50 数据",
-      "assessment": "固定官方快照和元数据。"
+      "status": "Implemented",
+      "recommendation": "Official ESC-50 data",
+      "assessment": "Pin the official snapshot and metadata."
     },
     {
       "number": 65,
-      "status": "已对照方法",
-      "recommendation": "历史 Piczak CNN 参考",
-      "assessment": "报告引用 log Mel CNN 思路；未逐层复现历史架构，老师不要求。"
+      "status": "Method compared",
+      "recommendation": "Historical Piczak CNN reference",
+      "assessment": "Cite the log-Mel CNN approach; do not reproduce the historical architecture layer by layer, which the instructor did not require."
     },
     {
       "number": 66,
-      "status": "已落实",
-      "recommendation": "官方 LAION CLAP 实现",
-      "assessment": "固定 checkpoint、官方 tensor 路径和冻结推理，哈希及环境记录齐全。"
+      "status": "Implemented",
+      "recommendation": "Official LAION-CLAP implementation",
+      "assessment": "Pin the checkpoint, use the official tensor path and frozen inference, and record hashes and environments."
     },
     {
       "number": 67,
-      "status": "可选未完整复现",
-      "recommendation": "PAT 官方实现",
-      "assessment": "已查阅并做明确命名的提示集合消融；完整算法尚未复现。"
+      "status": "Optional; not fully reproduced",
+      "recommendation": "Official PAT implementation",
+      "assessment": "Reviewed and used for an explicitly named prompt-ensemble ablation; the full algorithm has not been reproduced."
     },
     {
       "number": 68,
-      "status": "已完成",
-      "recommendation": "里程碑 1 手工 SVM",
-      "assessment": "干净五折及自定义 STFT、课程 MATLAB 对照均完成。"
+      "status": "Completed",
+      "recommendation": "Milestone 1: handcrafted SVM",
+      "assessment": "Clean five-fold evaluation, custom STFT and the course MATLAB comparison are complete."
     },
     {
       "number": 69,
-      "status": "已完成",
-      "recommendation": "里程碑 2 小 CNN",
-      "assessment": "干净五折及三 seed 扩展完成。"
+      "status": "Completed",
+      "recommendation": "Milestone 2: small CNN",
+      "assessment": "Clean five-fold evaluation and the three-seed extension are complete."
     },
     {
       "number": 70,
-      "status": "已完成",
-      "recommendation": "里程碑 3 普通干扰",
-      "assessment": "WGN/DEMAND 混合与相同输入评估完成。"
+      "status": "Completed",
+      "recommendation": "Milestone 3: ordinary interference",
+      "assessment": "WGN/DEMAND mixing and evaluation on identical inputs are complete."
     },
     {
       "number": 71,
-      "status": "待作者试听",
-      "recommendation": "里程碑 4 语义混合与试听",
-      "assessment": "工程验证及 24 条示例已完成；没有把音频成功加载冒充人工听感确认。"
+      "status": "Awaiting author listening check",
+      "recommendation": "Milestone 4: semantic mixing and listening",
+      "assessment": "Engineering verification and 24 examples are complete; successful audio loading is not presented as a human listening assessment."
     },
     {
       "number": 72,
-      "status": "已完成",
-      "recommendation": "里程碑 5 冻结 CLAP",
-      "assessment": "干净与 own/target 全量完成，分数和向量缓存。"
+      "status": "Completed",
+      "recommendation": "Milestone 5: frozen CLAP",
+      "assessment": "Clean and full own/target evaluations are complete, with scores and vectors cached."
     },
     {
       "number": 73,
-      "status": "已完成",
-      "recommendation": "里程碑 6 全部诊断",
-      "assessment": "F1、准确率、退化、capture、margin、表示位移均完成。"
+      "status": "Completed",
+      "recommendation": "Milestone 6: all diagnostics",
+      "assessment": "F1, accuracy, degradation, capture, margin and representation displacement are complete."
     },
     {
       "number": 74,
-      "status": "已完成",
-      "recommendation": "里程碑 7 选一扩展",
-      "assessment": "已完成普通增强，并额外完成语义增强与固定提示集合。"
+      "status": "Completed",
+      "recommendation": "Milestone 7: choose one extension",
+      "assessment": "Ordinary augmentation is complete, with semantic augmentation and a fixed prompt ensemble added."
     },
     {
       "number": 75,
-      "status": "已落实",
-      "recommendation": "扩展现代文献综述",
-      "assessment": "原经典参考与 CLAP、PAT 均进入正式报告草稿。"
+      "status": "Implemented",
+      "recommendation": "Expand the modern literature review",
+      "assessment": "The original classical references, CLAP and PAT are included in the formal report draft."
     },
     {
       "number": 76,
-      "status": "已落实",
-      "recommendation": "2026 文献背景",
-      "assessment": "Mix CLAP 和 RSA Bench 已查原始来源，任务边界已注明。"
+      "status": "Implemented",
+      "recommendation": "2026 literature context",
+      "assessment": "Primary sources for Mix-CLAP and RSA-Bench have been checked, and task boundaries are noted."
     },
     {
       "number": 77,
-      "status": "已完成",
-      "recommendation": "老师给出的项目核心范围",
-      "assessment": "三系统、五折、全部干扰和指标已覆盖。"
+      "status": "Completed",
+      "recommendation": "The instructor's core project scope",
+      "assessment": "Three systems, five folds, all interference conditions and all metrics are covered."
     },
     {
       "number": 78,
-      "status": "已遵守",
-      "recommendation": "避免不必要的巨型训练",
-      "assessment": "没有训练/微调 CLAP、复现 Mix CLAP 或穷举全部配对。"
+      "status": "Followed",
+      "recommendation": "Avoid unnecessary large-scale training",
+      "assessment": "No CLAP training/fine-tuning, Mix-CLAP reproduction or exhaustive pairing was performed."
     },
     {
       "number": 79,
-      "status": "分支与 Pages 已具备",
-      "recommendation": "GitHub 内容要求",
-      "assessment": "代码、结果、图和示例在 feature/interference 与 PR；公开 Pages 已从 gh-pages 发布并核对下载文件哈希。main 尚未合并。"
+      "status": "Branch and Pages available",
+      "recommendation": "GitHub content requirements",
+      "assessment": "Code, results, figures and examples are in feature/interference and the PR; public Pages was published from gh-pages and download hashes were checked. main has not yet been merged."
     },
     {
       "number": 80,
-      "status": "已回应",
-      "recommendation": "整体研究目标",
-      "assessment": "研究声学破坏与标签竞争的不同失效模式；现有实验不等于语义因果隔离。 两项收尾分析已完成；保留读出、声学、未测显著性之间的解释界限，不再增加模型或数据集。"
+      "status": "Addressed",
+      "recommendation": "Overall research objective",
+      "assessment": "Study different failure modes under acoustic corruption and label competition; the experiments do not causally isolate semantics. Both closing analyses are complete; retain the interpretive boundaries between readout, acoustics and unmeasured salience, with no further models or datasets."
     }
   ],
   "closing_analyses_complete": true,

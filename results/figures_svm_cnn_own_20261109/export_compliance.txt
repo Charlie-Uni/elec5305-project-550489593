@@ -2,152 +2,152 @@
 --- results/figures_svm_cnn_own_20261109/fig1_macro_f1_vs_level.png ---
   category: raster  ext: png  size: 496231 B
   pixels: 4296x3480  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig1_macro_f1_vs_level_grayscale.png ---
   category: raster  ext: png  size: 231554 B
   pixels: 4296x3480  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig2_capture_rate_vs_sir.png ---
   category: raster  ext: png  size: 317745 B
   pixels: 4296x2160  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig2_capture_rate_vs_sir_grayscale.png ---
   category: raster  ext: png  size: 149724 B
   pixels: 4296x2160  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig3_margin_vs_sir.png ---
   category: raster  ext: png  size: 260218 B
   pixels: 4296x2100  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig3_margin_vs_sir_grayscale.png ---
   category: raster  ext: png  size: 127586 B
   pixels: 4296x2100  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig4_same_vs_different.png ---
   category: raster  ext: png  size: 323175 B
   pixels: 4296x2160  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig4_same_vs_different_grayscale.png ---
   category: raster  ext: png  size: 152310 B
   pixels: 4296x2160  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig5_representation_displacement.png ---
   category: raster  ext: png  size: 328639 B
   pixels: 4296x2280  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig5_representation_displacement_grayscale.png ---
   category: raster  ext: png  size: 163205 B
   pixels: 4296x2280  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig6_confusion_flow.png ---
   category: raster  ext: png  size: 531057 B
   pixels: 4296x3480  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig6_confusion_flow_grayscale.png ---
   category: raster  ext: png  size: 254470 B
   pixels: 4296x3480  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig7_robustness_vs_cost.png ---
   category: raster  ext: png  size: 195444 B
   pixels: 4296x2280  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig7_robustness_vs_cost_grayscale.png ---
   category: raster  ext: png  size: 94112 B
   pixels: 4296x2280  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig8_overlap_strata.png ---
   category: raster  ext: png  size: 643876 B
   pixels: 4296x3360  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig8_overlap_strata_grayscale.png ---
   category: raster  ext: png  size: 301248 B
   pixels: 4296x3360  dpi: (599.9988, 599.9988)
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig1_macro_f1_vs_level.svg ---
   category: vector  ext: svg  size: 59344 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig2_capture_rate_vs_sir.svg ---
   category: vector  ext: svg  size: 16670 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig3_margin_vs_sir.svg ---
   category: vector  ext: svg  size: 34523 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig4_same_vs_different.svg ---
   category: vector  ext: svg  size: 32512 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig5_representation_displacement.svg ---
   category: vector  ext: svg  size: 43399 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig6_confusion_flow.svg ---
   category: vector  ext: svg  size: 39945 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig7_robustness_vs_cost.svg ---
   category: vector  ext: svg  size: 14228 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig8_overlap_strata.svg ---
   category: vector  ext: svg  size: 75695 B
-  [PASS] 无问题。
+  [PASS] No issues found.
 
 --- results/figures_svm_cnn_own_20261109/fig1_macro_f1_vs_level.pdf ---
   category: vector  ext: pdf  size: 25445 B
-  [WARN] PDF 中以下字体可能未嵌入: /EEZAWI+DejaVuSans, /ECVIMF+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /EEZAWI+DejaVuSans, /ECVIMF+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig2_capture_rate_vs_sir.pdf ---
   category: vector  ext: pdf  size: 19632 B
-  [WARN] PDF 中以下字体可能未嵌入: /EEZAWI+DejaVuSans, /QDJHPT+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /EEZAWI+DejaVuSans, /QDJHPT+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig3_margin_vs_sir.pdf ---
   category: vector  ext: pdf  size: 22677 B
-  [WARN] PDF 中以下字体可能未嵌入: /HIVDST+DejaVuSans, /GUCHGM+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /HIVDST+DejaVuSans, /GUCHGM+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig4_same_vs_different.pdf ---
   category: vector  ext: pdf  size: 24756 B
-  [WARN] PDF 中以下字体可能未嵌入: /EEZAWI+DejaVuSans, /DPIPLE+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /EEZAWI+DejaVuSans, /DPIPLE+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig5_representation_displacement.pdf ---
   category: vector  ext: pdf  size: 24070 B
-  [WARN] PDF 中以下字体可能未嵌入: /DQIFZV+DejaVuSans, /CHHUVP+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /DQIFZV+DejaVuSans, /CHHUVP+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig6_confusion_flow.pdf ---
   category: vector  ext: pdf  size: 21928 B
-  [WARN] PDF 中以下字体可能未嵌入: /DLFEFJ+DejaVuSans, /CXZDGD+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /DLFEFJ+DejaVuSans, /CXZDGD+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig7_robustness_vs_cost.pdf ---
   category: vector  ext: pdf  size: 19698 B
-  [WARN] PDF 中以下字体可能未嵌入: /DQIFZV+DejaVuSans, /BFLESA+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /DQIFZV+DejaVuSans, /BFLESA+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 
 --- results/figures_svm_cnn_own_20261109/fig8_overlap_strata.pdf ---
   category: vector  ext: pdf  size: 43794 B
-  [WARN] PDF 中以下字体可能未嵌入: /HDIIKF+DejaVuSans, /GKUAQH+DejaVuSans. 导致他人电脑打开变成替代字体。
+  [WARN] The following PDF fonts may not be embedded: /HDIIKF+DejaVuSans, /GKUAQH+DejaVuSans. This may cause font substitution on other computers.
   >>> verdict: WARN
 

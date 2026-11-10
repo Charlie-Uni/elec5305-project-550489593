@@ -1,50 +1,50 @@
-# 课程评分标准逐项核对
+# Item-by-item course rubric review
 
-依据：用户提供的最终项目说明和评分表，复核日期 2026-11-10。以下是证据与缺口核对，不是预估成绩。后续审查确认仍有引言引用、捕获率摘要、文献数值比较和正式 AI 声明等编辑缺口，详见[当前修订清单](report_followup_20261110.md)；下表记录已有证据，不代表所有高档标准已经充分满足。正式稿为 [10 页报告](../results/final_submission_20261110/final_report.pdf)，原 [26 页详版](../results/research_report_20261109_draft/research_report.pdf) 原样保留作补充。研究数据、原预测和旧交付物没有覆盖。
+Basis: the final project instructions and rubric supplied by the user; reviewed on 2026-11-10. This is a review of evidence and gaps, not a predicted grade. A subsequent review identified remaining editorial gaps, including introduction citations, a capture-rate summary, numerical comparisons with the literature and a formal AI declaration. See the [current revision checklist](report_followup_20261110.md). The table below records available evidence and does not imply that every higher-band criterion has been fully met. The formal version is the [10-page report](../results/final_submission_20261110/final_report.pdf); the original [26-page detailed version](../results/research_report_20261109_draft/research_report.pdf) is retained unchanged as a supplement. Research data, original predictions and earlier deliverables have not been overwritten.
 
-## 八项评分（合计 100%）
+## Eight criteria (100% in total)
 
-| 评分项 | 权重 | 高档要求的重点 | 本轮落实与证据 | 还需做什么 |
+| Criterion | Weight | Focus of the higher-band requirements | Implementation and evidence in this revision | Remaining action |
 |---|---:|---|---|---|
-| 原创性与个人贡献 | 10% | 真实署名、引用他人成果，在可信研究背景下做出贡献 | 第 2、9 页明确贡献是受控干扰、可复现 DSP 和失效分析；区分项目实现与外部 CLAP/PAT、数据和库；列 AI 协助和音频许可 | 作者核实贡献及 AI 披露符合课程规定，能亲自解释实现；不能由自动检查替代 |
-| 学科掌握 | 10% | 将理论用于研究，比较不同表示的优缺点 | 第 2–4、8–9 页联系 Lecture 3 的特征、Lecture 4 的 STFT、Lecture 6 的听觉加权；比较手工、监督学习、预训练表示；实际运行课程 MATLAB STFT 验证 | 录制时清楚解释窗长/FFT、SIR 掩码、训练划分与分数读出 |
-| 引言 | 5% | 识别文献缺口，明确范围与理由 | 第 2 页只设一个主研究问题，增强迁移与错误去向作为子问题；指出先验训练不相等 | 内容已补齐，作者最后通读 |
-| 文献综述 | 15% | 有主题、有分析，并导出方法选择 | 第 2–3 页独立综述：课程 DSP → Piczak CNN → augmentation → CLAP → PAT/现代结构化干扰；逐项写优势、限制、为何选择；解释新概念 | 内容已补齐；作者核对阅读理解，不能把固定提示集合称为完整 PAT |
-| 方法 | 15% | 从既有研究优缺点推导方案，足够复现 | 第 3–5 页含划分、特征/模型、混合公式、own/target 偏离、对照、排除、统计单位和扩展；完整配置/命令在补充和仓库 | 无需补实验；演示环境已实跑，换机器仍需准备外部数据/权重 |
-| 结果 | 10% | 数据可靠，分析适当，图表与误差来源解释清楚 | 第 5–7 页精选三图三表：核心曲线、增强、top-2、声学接近子集、成本；写清 SD/CI、分母、样本数；其余完整结果在补充 | 内容已补齐；不把小子集结论泛化为全体 |
-| 讨论与结论 | 25% | 联系理论解释结果，预判批评，提出限制的解决方式 | 第 8–9 页回应主问题，联系特征、Piczak、Salamon/Bello、CLAP/PAT；保留不显著结果；讨论共享源、有限背景、预训练、未测声学，提出对应未来验证 | 内容已补齐，不再扩大本次研究；作者准备回答这些限制 |
-| 写作格式与引用 | 10% | 有目录、连贯结构、准确引用、清楚表达 | 正式稿恰好 10 页（含目录、图表、12 条参考文献），报告含可点击站点、代码、视频与补充链接；演示稿 12 页、讲稿 728 词 | 最后检查 Canvas 文件要求；个人讲解视频完成后更新其链接 |
+| Originality and personal contribution | 10% | Accurate attribution, acknowledgement of others' work, and a contribution grounded in credible research | Pages 2 and 9 identify controlled interference, reproducible DSP and failure analysis as the contribution; distinguish project implementation from external CLAP/PAT, data and libraries; list AI assistance and audio licences | The author must confirm contributions and AI disclosure against course rules and explain the implementation personally; automated checks cannot replace this |
+| Discipline knowledge | 10% | Apply theory to research and compare the strengths and weaknesses of representations | Pages 2–4 and 8–9 connect Lecture 3 features, Lecture 4 STFT and Lecture 6 auditory weighting; compare handcrafted, supervised and pretrained representations; the course MATLAB STFT validation was actually run | Clearly explain window/FFT lengths, SIR masks, training splits and score readout in the recording |
+| Introduction | 5% | Identify the literature gap and justify a clear scope | Page 2 sets one main research question, with augmentation transfer and error destinations as subquestions; acknowledges unequal prior training | Content added; final author read-through required |
+| Literature review | 15% | Organise and analyse the literature to motivate method choices | Pages 2–3 provide a separate review: course DSP → Piczak CNN → augmentation → CLAP → PAT/modern structured interference; discuss strengths, limitations and selection rationale, and explain new concepts | Content added; the author must check understanding of the literature and avoid calling the fixed prompt ensemble full PAT |
+| Methods | 15% | Derive the approach from prior work's strengths and weaknesses and provide enough detail to reproduce it | Pages 3–5 cover splits, features/models, mixing equations, the own/target deviation, controls, exclusions, statistical units and extensions; complete configurations/commands are in the supplement and repository | No additional experiments required; the demonstration environment has been run, but another machine still needs the external data/weights |
+| Results | 10% | Reliable data, appropriate analysis, and clear figures and explanations of error sources | Pages 5–7 select three figures and three tables: core curves, augmentation, top-2, the acoustically matched subset and cost; specify SD/CI, denominators and sample sizes; complete remaining results are in the supplement | Content added; do not generalise the small-subset findings to the full population |
+| Discussion and conclusion | 25% | Interpret findings through theory, anticipate criticism and propose ways to address limitations | Pages 8–9 answer the main question and connect features, Piczak, Salamon/Bello and CLAP/PAT; retain non-significant findings; discuss shared sources, limited backgrounds, pretraining and unmeasured acoustics, with corresponding future checks | Content added; do not expand this study further; the author should prepare to explain these limitations |
+| Writing, formatting and references | 10% | Contents, coherent structure, accurate citations and clear expression | The formal report is exactly 10 pages, including contents, figures/tables and 12 references; it contains clickable site, code, video and supplement links; the presentation has 12 slides and the narration has 728 words | Check Canvas file requirements and update the video link after the personal narrated video is complete |
 
-原表分档为 **Fail <50、Pass 50–74、Credit 75–84、Distinction ≥85**，这里按原文保留，不替换成其他学校/课程的常用分档。八项权重相加为 100%，是项目内部评分；项目占整门课比例另见下方。
+The original rubric bands are **Fail <50, Pass 50–74, Credit 75–84, Distinction ≥85**. They are retained as written rather than replaced with the conventions of another university/course. The eight weights sum to 100% within the project; the project's contribution to the overall course is discussed below.
 
-## 硬性交付与形式要求
+## Mandatory deliverables and format requirements
 
-| 原文要求 | 当前状态 | 说明 |
+| Original requirement | Current status | Notes |
 |---|---|---|
-| 可从 GitHub 下载的 working code、足够运行说明与示例结果 | 已提供并实际执行 | 默认 `main`（保留 `feature/interference` 兼容旧链接），README 与 [运行演示指南](code_demo.md)；模型和数据按文档外部准备 |
-| 研究报告，通常约 10 页含图 | 已提供 | 新正式稿恰好 10 页；“typically” 是通常篇幅，原文没有明确硬性上限 |
-| 简短视频解释信号处理代码并演示运行 | 部分完成 | 已录制真实运行片段及两段声音；最终作者讲解版本尚未录制。没有把无旁白片段称为完整个人视频报告 |
-| GitHub Site 放报告并链接 working code | 已更新 | Pages 保留交互结果、完整图表和可下载材料；不把单纯本地文件当成上线 |
-| 报告含可点击 GitHub Site 链接 | 已提供 | 第 1、9 页 |
-| 报告和网站都链接视频 | 已提供真实执行片段链接 | 作者最终视频导出后，应在两处更新/补充对应完整视频链接 |
-| 报告与视频上传 Canvas | 未提交 | 发布 GitHub/Pages 不等于 Canvas 提交；需要最终上传及回执 |
-| 截止与文件类型 | 当前账户 Canvas 作业页已核对 | 按个人页面实际截止/关闭日期为准；允许 PDF、MP4、ZIP |
+| Working code downloadable from GitHub, with sufficient run instructions and example results | Provided and actually executed | Default `main` branch (`feature/interference` retained for older links), README and [code demonstration guide](code_demo.md); prepare external models and data as documented |
+| Research report, typically about 10 pages including figures | Provided | The new formal report is exactly 10 pages; “typically” describes the usual length, and the original wording gives no explicit hard limit |
+| Brief video explaining the signal-processing code and demonstrating its execution | Partly complete | Actual execution and two sound examples have been recorded; the final author-narrated version has not. The clip without narration is not presented as a complete personal video report |
+| GitHub Site hosting the report and linking working code | Updated | Pages retains interactive results, complete figures and downloadable materials; local files alone are not treated as a live deployment |
+| Clickable GitHub Site link in the report | Provided | Pages 1 and 9 |
+| Video linked from both the report and website | Links to the actual execution clip are provided | Update/add the complete video link in both places once the author exports the final video |
+| Report and video uploaded to Canvas | Not submitted | GitHub/Pages publication is not Canvas submission; final upload and a receipt are required |
+| Deadline and file types | Checked against the current account's Canvas assignment page | Follow the actual deadline/closing date on the personal page; PDF, MP4 and ZIP are allowed |
 
-原说明写项目占全课 **30%**，与此前对话提及的 35% 不一致；本次以附件记载为准，最终仍需核对当前 Canvas 任务/课程大纲。说明只写视频 “brief”，没有指定分钟数、文件格式/大小、露脸或字幕要求；当前 5.4–6.1 分钟是讲稿估算，不是课程规定。原文未要求单独上传 PPTX，但已按用户要求准备。AI 使用与披露的具体政策还需作者查阅课程规定，报告中的声明本身不能保证合规。
+The supplied instructions state that the project contributes **30%** of the course, which differs from the 35% mentioned earlier in the conversation. This review follows the attachment; the current Canvas assignment/course outline still needs to be checked. The instructions describe the video only as “brief”, without specifying duration, file format/size, a face-camera requirement or subtitles. The current 5.4–6.1 minute duration is an estimate from the narration, not a course rule. A separate PPTX upload was not required in the original text, but one was prepared at the user's request. The author must still consult the course's specific AI use and disclosure policy; a declaration in the report does not itself establish compliance.
 
-## 文献与课堂内容如何进入报告
+## How the literature and course material inform the report
 
-- Lecture 3：帧与片段特征，能量/ZCR、频谱形状、MFCC；支持“可解释但时间聚合会损失事件结构”的方法取舍。
-- Lecture 4：窗长、hop 和 FFT 长度分工，时间/频率折中，零填充不增加真实分辨能力；支持自定义前端与 MyStft 对照。
-- Lecture 6：频率相关的听觉敏感度；支持“不把 RMS 相对功率直接当感知主导性”。
-- Piczak、Salamon/Bello、CLAP、PAT、Mix-CLAP、RSA-Bench：按问题和方法组织，不作论文清单；明确真实复现范围与任务差异。
+- Lecture 3: frame and clip features, energy/ZCR, spectral shape and MFCCs; supports the trade-off that features are interpretable but temporal aggregation loses event structure.
+- Lecture 4: the roles of window length, hop and FFT length, the time/frequency trade-off, and why zero padding does not increase true resolution; supports the custom frontend and MyStft comparison.
+- Lecture 6: frequency-dependent auditory sensitivity; supports avoiding a direct equivalence between relative RMS power and perceptual dominance.
+- Piczak, Salamon/Bello, CLAP, PAT, Mix-CLAP and RSA-Bench: organised by research question and method rather than as a list of papers; the actual reproduction scope and task differences are explicit.
 
-课堂资料仅在参考文献中注明讲次和页码，没有将课程 PDF 公开上传。没有捏造个人课堂讨论或阅读经历；作者应把掌握的概念用自己的语言讲出来。
+Course materials are cited by lecture and page only; course PDFs have not been publicly uploaded. No personal classroom discussions or reading experiences have been invented. The author should explain the concepts they understand in their own words.
 
-## 最终尚缺
+## Remaining submission gaps
 
-1. 作者复核贡献、试听与排练，然后录制带本人讲解的最终简短视频；可直接使用已验证的运行片段。
-2. 核对 Canvas 的实际截止时间、允许的格式/大小、项目权重和 AI 规则；当前附件不足以确定这些细项。
-3. 将最终视频链接同步到报告和网站，上传正式报告与视频至 Canvas，保存回执。PR #1 已整合至默认 `main`，公开 feature 分支保留。
+1. The author must review contributions, listen to the examples and rehearse, then record the final brief video with their own narration; the verified execution clip can be used directly.
+2. Check the actual Canvas deadline, permitted formats/sizes, project weighting and AI rules; the current attachment alone does not establish all these details.
+3. Synchronise the final video link in the report and website, upload the formal report and video to Canvas, and retain the receipt. PR #1 has been integrated into default `main`; the public feature branch is retained.
 
-主实验与已声明拓展不再有必须补跑项。老师 80 条中的完整 PAT、Mix-CLAP 等并非全部强制；[80 条建议核对](teacher_review_20261110.md)与本表分别对应研究建议和正式评分要求。
+The main experiments and declared extensions have no remaining mandatory runs. Full PAT, Mix-CLAP and other items among the instructor's 80 suggestions are not all mandatory. The [80-suggestion review](teacher_review_20261110.md) and this document address research advice and formal assessment requirements, respectively.

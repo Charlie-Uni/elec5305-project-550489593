@@ -1,28 +1,28 @@
-# 最终提交清单
+# Final submission checklist
 
-2026-11-10。依据用户提供的最终项目说明与评分表，已压缩和同步交付物。实验范围已关闭，不再增加模型、数据集或训练。仓库已整合到 `main`；本轮新增的[报告修订清单](report_followup_20261110.md)仍需完成，不把实验核验通过等同于报告全部定稿。逐条依据见[评分标准核对](rubric_review_20261110.md)。
+2026-11-10. The deliverables have been shortened and synchronised against the final project instructions and rubric supplied by the user. The experimental scope is closed: no further models, datasets or training will be added. The repository has been integrated into `main`; the new [report revision checklist](report_followup_20261110.md) still needs to be completed. Passing experimental verification does not mean that the report is fully finalised. See the [rubric review](rubric_review_20261110.md) for item-by-item evidence.
 
-## 可直接审阅的材料
+## Materials ready for review
 
-- [正式报告](../results/final_submission_20261110/final_report.pdf)：10 页，含目录、文献综述、方法、精选结果、讨论和 12 条参考文献。
-- [技术补充](../results/research_report_20261109_draft/research_report.pdf)：原 26 页详版，逐字节保持不变。
-- [可编辑演示稿](../results/final_submission_20261110/presentation.pptx)与 [PDF](../results/final_submission_20261110/presentation.pdf)：12 页，保留可编辑图表、备注和两段真实音频。
-- [最终视频讲稿](video_narration_final.txt)：728 个英文词，预计 5.4–6.1 分钟含预留演示停顿；实际语速与加载可能增加时间。课程原文没有具体分钟限制。
-- [真实代码执行视频](../results/final_submission_20261110/code_demo.mp4)与[运行指南](code_demo.md)：重新读取源音频、混合、验证 SIR、执行 SVM/CNN/CLAP，并核对历史结果。视频有实际音频示例，没有作者旁白。
-- [Pages](https://charlie-uni.github.io/elec5305-project-550489593/)：主报告、补充、演示稿、讲稿、真实执行片段、交互结果和代码入口。
-- [新交付核验记录](../results/final_submission_20261110/delivery_audit.json)；[原两项收尾分析](../results/closing_20261110/README.md)和原始实验结果保留。
+- [Formal report](../results/final_submission_20261110/final_report.pdf): 10 pages, including the contents, literature review, methods, selected results, discussion and 12 references.
+- [Technical supplement](../results/research_report_20261109_draft/research_report.pdf): the original 26-page detailed report, preserved byte for byte.
+- [Editable presentation](../results/final_submission_20261110/presentation.pptx) and [PDF](../results/final_submission_20261110/presentation.pdf): 12 slides, with editable charts, notes and two real audio clips.
+- [Final video narration](video_narration_final.txt): 728 English words, estimated at 5.4–6.1 minutes including planned demonstration pauses; actual speaking speed and loading may increase this. The course instructions give no specific duration limit.
+- [Actual code execution video](../results/final_submission_20261110/code_demo.mp4) and [run guide](code_demo.md): reload source audio, mix it, verify SIR, run SVM/CNN/CLAP and check against historical results. The video includes actual audio examples but no author narration.
+- [Pages](https://charlie-uni.github.io/elec5305-project-550489593/): the main report, supplement, presentation, narration, actual execution clip, interactive results and code links.
+- [New delivery verification record](../results/final_submission_20261110/delivery_audit.json); the [two original closing analyses](../results/closing_20261110/README.md) and original experimental results are retained.
 
-## 作者最后要做的事
+## Remaining author tasks
 
-1. **复核与排练**：确认理解和贡献署名，试听示例，能说明 own/target、capture 分母、top-2 限制和声学匹配子集；按照课程 AI 规则核实披露。
-2. **录制完整简短视频**：用同步讲稿和 12 页演示稿讲解，切换至真实代码运行或明确播放已录执行片段；保留演示与声音，不用结果截图代替代码运行。检查完整导出的视频。
-3. **按实际 Canvas 页面提交**：已在当前账户核对截止/关闭日期及允许的 PDF、MP4、ZIP 格式，个人页面记录保留在本机，不公开个人延期信息。仍需确认文件大小限制、适用 AI 规则及大纲和作业说明之间的权重/篇幅差异。
-4. **完成正式提交**：把最终讲解视频链接同步进报告与 Pages，上传报告和视频至 Canvas，保存回执。GitHub/Pages 发布不能代替 Canvas 上传。完整代码与现有交付物已通过 PR #1 整合至 `main`；功能分支保留，旧链接继续可用。
+1. **Review and rehearse**: confirm understanding and contribution attribution, listen to the examples, and be able to explain own/target, capture denominators, top-2 limitations and the acoustically matched subset. Check the disclosure against the course AI rules.
+2. **Record the complete brief video**: explain the project using the synchronised narration and 12-slide presentation, then switch to actual code execution or clearly identify playback of the recorded execution clip. Retain the demonstration and audio; do not substitute result screenshots for running code. Check the complete exported video.
+3. **Follow the actual Canvas assignment page**: the deadline, closing date and permitted PDF, MP4 and ZIP formats have been checked in the current account. Personal page records remain local, and personal extension information is not published. File size limits, applicable AI rules and differences in weight/page guidance between the outline and assignment instructions still need confirmation.
+4. **Complete formal submission**: update the report and Pages with the final narrated video link, upload the report and video to Canvas, and retain the receipt. GitHub/Pages publication does not replace Canvas upload. The complete code and existing deliverables have been integrated into `main` through PR #1; the feature branch is retained so that older links remain valid.
 
-## 不应改变的统计解释
+## Statistical interpretations to preserve
 
-- own、+5 dB、单模板 CLAP：捕获中目标仍排第二为 236/632 = 37.34% 和 203/612 = 33.17%；分母是捕获数。
-- 全语义试次两者均入前二为 26.05% / 21.00%；只含干扰为 23.35% / 24.05%。排名不等于校准的事件检测，更不是主观“听见”的直接测量。
-- 两种功率口径声学接近子集内，CLAP 相对 DEMAND 约低 16–26 个准确率百分点；CNN 区间含零。仅保留约 9–10.5% 目标，不能推广为因果分解。
-- 白噪声原始 Mel 相关中位数约 −0.728，带宽归一化后约 −0.008；回归系数变化不能解释成“机制百分比”。
-- 高时间重叠和声学接近子集是不同目标群体；全部结果保留。固定提示集合不是完整 PAT，Mix-CLAP 未复现。
+- Own, +5 dB, single-template CLAP: the target remains second in 236/632 = 37.34% and 203/612 = 33.17% of captures; the denominator is the number of captures.
+- Across all semantic trials, both labels appear in the top two in 26.05% / 21.00%; only the distractor appears in 23.35% / 24.05%. Ranking is not calibrated event detection or a direct measurement of subjectively “hearing” an event.
+- Within the acoustically matched subsets under both power definitions, CLAP is about 16–26 accuracy percentage points below DEMAND; the CNN intervals include zero. Only about 9–10.5% of targets are retained, so this cannot be generalised as a causal decomposition.
+- The median raw Mel correlation for white noise is about −0.728, and about −0.008 after bandwidth normalisation. Regression coefficient changes cannot be interpreted as a “percentage explained by a mechanism”.
+- The high temporal overlap and acoustically matched subsets contain different target cohorts; all results are retained. The fixed prompt ensemble is not full PAT, and Mix-CLAP was not reproduced.

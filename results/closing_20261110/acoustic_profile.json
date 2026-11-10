@@ -928,18 +928,18 @@
     ]
   },
   "warnings": [
-    "列 'interferer_class' 缺失率 50% — 画图前考虑是否填补、剔除、或在图注中交代。",
-    "列 'interferer_coarse' 缺失率 50% — 画图前考虑是否填补、剔除、或在图注中交代。"
+    "Column 'interferer_class' has a missing rate of 50%; before plotting, consider imputation, exclusion or disclosure in the caption.",
+    "Column 'interferer_coarse' has a missing rate of 50%; before plotting, consider imputation, exclusion or disclosure in the caption."
   ],
   "suggestions": [
-    "分类 vs 连续，样本量充足 → 箱线图 / 小提琴图，或带误差棒的柱状图（误差棒说明 SD/SEM/CI）",
-    "≥3 个连续变量 → 相关性热力图（['row', 'target_class', 'interferer_class', 'common_gain', 'activity_overlap']）或 pairplot 散点矩阵",
-    "分类维度组合数 = 15（level_db, fold 全交叉），**一张图塞不下**——建议按某一维拆成多面板，或选择子集。",
-    "common_gain 高度偏态（skew=-2.15）→ 考虑对数变换或小提琴图代替均值柱图",
-    "activity_overlap 高度偏态（skew=-2.61）→ 考虑对数变换或小提琴图代替均值柱图",
-    "spectral_cosine 跨数个量级（9.39e-06 ~ 0.999）→ 用对数 y 轴",
-    "masked_energy_fraction 跨数个量级（1.5e-08 ~ 0.373）→ 用对数 y 轴",
-    "interferer_energy_share 跨数个量级（0.00435 ~ 0.958）→ 用对数 y 轴",
-    "target_activity_spectral_cosine 跨数个量级（9.39e-06 ~ 1）→ 用对数 y 轴"
+    "Categorical vs continuous, with sufficient samples → boxplots / violin plots, or bar charts with error bars (specify SD/SEM/CI).",
+    "≥3 continuous variables → a correlation heatmap (['row', 'target_class', 'interferer_class', 'common_gain', 'activity_overlap']) or a pairplot scatter matrix.",
+    "Categorical combinations = 15 (full crossing of level_db and fold), **too many for one plot**; split into panels by one dimension or select a subset.",
+    "common_gain is highly skewed (skew=-2.15) → consider a log transform or a violin plot instead of a bar chart of means.",
+    "activity_overlap is highly skewed (skew=-2.61) → consider a log transform or a violin plot instead of a bar chart of means.",
+    "spectral_cosine spans several orders of magnitude (9.39e-06 ~ 0.999) → use a logarithmic y-axis.",
+    "masked_energy_fraction spans several orders of magnitude (1.5e-08 ~ 0.373) → use a logarithmic y-axis.",
+    "interferer_energy_share spans several orders of magnitude (0.00435 ~ 0.958) → use a logarithmic y-axis.",
+    "target_activity_spectral_cosine spans several orders of magnitude (9.39e-06 ~ 1) → use a logarithmic y-axis."
   ]
 }

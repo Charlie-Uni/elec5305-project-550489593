@@ -3138,15 +3138,15 @@
   },
   "warnings": [],
   "suggestions": [
-    "分类 vs 连续，样本量充足 → 箱线图 / 小提琴图，或带误差棒的柱状图（误差棒说明 SD/SEM/CI）",
-    "≥3 个连续变量 → 相关性热力图（['argmax_accuracy', 'argmax_capture_fraction', 'argmax_captured_target_rank_le_k', 'argmax_captured_target_rank_median', 'target_in_topk']）或 pairplot 散点矩阵",
-    "分类维度组合数 = 108（level_db, k, n, control_known 全交叉），**一张图塞不下**——建议按某一维拆成多面板，或选择子集。",
-    "control_both_count 高度偏态（skew=1.33）→ 考虑对数变换或小提琴图代替均值柱图",
-    "control_both 高度偏态（skew=1.33）→ 考虑对数变换或小提琴图代替均值柱图",
-    "mixture_neither_count 跨数个量级（6 ~ 1.32e+03）→ 用对数 y 轴",
-    "control_neither_count 跨数个量级（5 ~ 1.04e+03）→ 用对数 y 轴",
-    "mixture_neither 跨数个量级（0.003 ~ 0.662）→ 用对数 y 轴",
-    "control_neither 跨数个量级（0.0025 ~ 0.52）→ 用对数 y 轴",
-    "control_distractor_in_topk 跨数个量级（0.0015 ~ 0.204）→ 用对数 y 轴"
+    "Categorical vs continuous, with sufficient samples → boxplots / violin plots, or bar charts with error bars (specify SD/SEM/CI).",
+    "≥3 continuous variables → a correlation heatmap (['argmax_accuracy', 'argmax_capture_fraction', 'argmax_captured_target_rank_le_k', 'argmax_captured_target_rank_median', 'target_in_topk']) or a pairplot scatter matrix.",
+    "Categorical combinations = 108 (full crossing of level_db, k, n and control_known), **too many for one plot**; split into panels by one dimension or select a subset.",
+    "control_both_count is highly skewed (skew=1.33) → consider a log transform or a violin plot instead of a bar chart of means.",
+    "control_both is highly skewed (skew=1.33) → consider a log transform or a violin plot instead of a bar chart of means.",
+    "mixture_neither_count spans several orders of magnitude (6 ~ 1.32e+03) → use a logarithmic y-axis.",
+    "control_neither_count spans several orders of magnitude (5 ~ 1.04e+03) → use a logarithmic y-axis.",
+    "mixture_neither spans several orders of magnitude (0.003 ~ 0.662) → use a logarithmic y-axis.",
+    "control_neither spans several orders of magnitude (0.0025 ~ 0.52) → use a logarithmic y-axis.",
+    "control_distractor_in_topk spans several orders of magnitude (0.0015 ~ 0.204) → use a logarithmic y-axis."
   ]
 }
