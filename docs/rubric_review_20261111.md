@@ -38,6 +38,26 @@ The augmentation table tests an actual intervention; the cost table answers the 
 - Removed unsupported Claude version names and retained the confirmed/unrecorded information. The author-role sentence refers to approving scope and requesting analyses rather than claiming sole methodological authorship.
 - Connected the new figure builder to the report build and corrected stale page-count assumptions in the delivery checks.
 
+## Readability review against the supplied comments
+
+The seven compressed passages were revised without changing experimental outputs:
+
+| Location | Revision |
+|---|---|
+| Introduction opening | Motivation now precedes the dataset list; ESC-50/Freesound, DEMAND and generated noise remain explicitly sourced. |
+| Introduction scope | Connected prose explains identical mixtures, gain-matched controls, scope and power sensitivity. Controls distinguish new errors from errors already present; they do not make every error interference-caused. |
+| Section 3.4 uncertainty | Explains shared source recordings and identifies which analyses use source-cluster resampling. Earlier overlap intervals remain clip-based; the 156-test family amendment is disclosed. |
+| Section 3.4 local feedback | Explains 32 frames, the model projection, both attention directions, score fusion, preset coefficients, fold-local calibration and the four-test family. Labelled calibration is not called zero-shot. |
+| Section 4.2 overlap | States the whole-set CNN macro-F1 ordering, defines the 80% temporal-overlap filter, and separates subset accuracy from whole-set macro-F1 and three-seed evidence. |
+| Section 4.2 readouts | Replaces slash-packed values with explicit comparisons, denominators and corrected inference. Ensembling reduces other-class errors while capture counts do not fall; rank-two retention is scoped to the original single prompt. |
+| Section 4.4 cost | Summarises approximately 2.6–2.7 ms extra per query; both orders and raw timings remain in repository evidence. |
+
+The discussion now distinguishes the different populations selected by temporal overlap and acoustic matching, explains clean-calibration objective mismatch as a hypothesis, and separates aligned recording starts from audio–text alignment. The conclusion restores key results, a deployment implication and the unresolved causal question. Repeated implementation and delivery detail was shortened; the formal PDF and Word remain 11 pages at the existing body sizes.
+
+The PAT comparison was checked against [the primary paper](https://aclanthology.org/2025.naacl-long.616.pdf), Table 1 (PDF page 6): LAION-CLAP ESC-50 accuracy is 89.00% without PAT and 93.00% with PAT. These provide unmatched literature context. Our ensemble's 92.90% clean accuracy is **not** evidence of little remaining headroom under interference. Clean calibration has no constructed-mixture target-retention objective; clean ESC-50 clips are not asserted to contain only one audible event. Top-two inclusion is not described as calibrated event detection.
+
+The AI acknowledgement retains substantial implementation, analysis and writing assistance and limits the author's stated actions to confirmed scope approval, analysis requests and representative listening. The video remains labelled as lacking author narration. No experiments, original audio, historical detailed report or model/data scope were changed.
+
 ## Submission still requires the author
 
 Review the final attribution and recorded-version details, rehearse the signal-processing explanation, record the full brief narrated video with actual execution or clearly identified execution playback, update the final video links and description in report/site, upload to Canvas and retain the receipt. The existing 40.8-second clip contains genuine execution and audio but no author narration. It remains accurately labelled.

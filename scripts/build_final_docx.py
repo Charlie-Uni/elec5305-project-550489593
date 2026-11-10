@@ -59,6 +59,7 @@ def prepare_tex():
     source = source.replace(r"\repo", "https://github.com/Charlie-Uni/elec5305-project-550489593")
     source = re.sub(r"\\vspace\{[^}]+\}", "", source)
     source = source.replace(r"\phantomsection", "")
+    source = source.replace(r"\begin{samepage}", "").replace(r"\end{samepage}", "")
     source = re.sub(r"\\addcontentsline\{toc\}\{section\}\{References\}", "", source)
     source = source.replace(
         r"\begin{thebibliography}{13}\raggedright", r"\section*{References}"
@@ -179,7 +180,13 @@ def format_document(doc, toc_pdf=None):
         destinations["References"] = references[0] if references else len(reader.pages)
         toc = [(title, destinations.get(re.sub(r"^\d+\s+", "", title), page))
                for title, page in toc]
+    conclusion_next = False
     for p in list(doc.paragraphs):
+        if p.text == "6 Conclusion":
+            conclusion_next = True
+        elif conclusion_next and p.text.strip():
+            p.paragraph_format.keep_together = True
+            conclusion_next = False
         if p.text == "TITLEBLOCKMARKER":
             for text, style in titles:
                 added = p.insert_paragraph_before(text, style)

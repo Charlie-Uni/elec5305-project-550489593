@@ -245,6 +245,10 @@ def audit(browser, output=None):
     web = json.loads(browser.read_text())
     assert not web["errors"] and not web["bad"]
     for state in web["states"]:
+        white = next(row for row in closing["acoustic_medians"]
+                     if row["region"] == state["region"] and row["condition"] == "white")
+        for field in ("spectral_correlation_db", "density_spectral_correlation_db"):
+            assert f"{float(white[field]):.3f}" in state["descriptor"]
         selected = [
             r
             for r in closing["readout"]
@@ -311,6 +315,12 @@ def audit(browser, output=None):
         textpage.close()
         page.close()
     pdf.close()
+    visual = json.loads((destination / "single_report_visual_audit.json").read_text())
+    assert visual["verified"] and visual["report_pages"] == len(pages)
+    assert visual["word_pages"] == word_audit["rendered_pages"]
+    assert visual["native_word_math_objects"] == word_audit["native_math_objects"]
+    for name, digest in visual["files"].items():
+        assert digest == sha(destination / name), f"Stale visual review: {name}"
     report_text = "\n".join(pages)
     assert "Contents" in pages[0] and "References" in pages[-1]
     assert "??" not in report_text and "\ufffd" not in report_text
@@ -325,7 +335,7 @@ def audit(browser, output=None):
         assert value in report_text, value
     assert "Acoustics, Speech and Signal Processing" in pages[0]
     assert "Between-class Examples" in pages[-1]
-    assert "version not recorded" in report_text
+    assert "version not recorded" in " ".join(report_text.split())
     for value in (
         "37.34",
         "33.17",
@@ -337,13 +347,14 @@ def audit(browser, output=None):
         "203/612",
         "5.40",
         "1.70",
-        "−0.728",
-        "−0.008",
     ):
         assert value in report_text, value
     for system, condition in [
         ("svm", "white"),
         ("svm", "semantic_same"),
+        ("cnn", "demand"),
+        ("cnn", "semantic_same"),
+        ("clap", "white"),
         ("clap", "demand"),
         ("clap", "semantic_same"),
     ]:

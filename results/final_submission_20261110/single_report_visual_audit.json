@@ -30,7 +30,7 @@
   "word_pages": 11,
   "figures": 5,
   "native_word_tables": 5,
-  "native_word_math_objects": 49,
+  "native_word_math_objects": 46,
   "word_pm_symbols_checked": true,
   "word_table_rows_kept_together": true,
   "word_toc_uses_own_rendered_pagination": true,
@@ -58,9 +58,10 @@
   "browser_audio_loads": 96,
   "scope": "All report and Word pages visually inspected; changed slides inspected in both first-party render and bundled LibreOffice PDF. No claim of review in desktop PowerPoint.",
   "files": {
-    "final_report.pdf": "2e3334949cf7d9929410d321185646039f863d290faa70d91e568bbf0c9f9d58",
-    "final_report.docx": "d92d4584664c3f2a1e7bf7ef57081264d7b28ef2e4a28f5d409e27b8d958a7fe",
+    "final_report.pdf": "26fd2040ce50dcf81697beb6e0ee825e71f60c0ef534fa9bf3967c27c3c9f62e",
+    "final_report.docx": "100696646a7e0f8ff5b0c231e4ec256b3fa0b9854c02eb7d73253c3c8f87600f",
     "presentation.pptx": "34a01b5cfe52945211b4bea60206f4af60f4218772c75eadc6b0e0c0034d3a43",
     "presentation.pdf": "92b63f47fad3d54da06d6a4698b28c714e6f142b97e0cc91e93fd6e7b9f5d5f8"
-  }
+  },
+  "current_review_scope": "All 11 PDF and 11 Word pages inspected after readability revision; directory page numbers, equations, plus/minus symbols, figures and native tables checked. Slides, narration and website data are unchanged from the preceding verified review."
 }
