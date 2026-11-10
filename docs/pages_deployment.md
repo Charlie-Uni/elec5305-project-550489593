@@ -5,17 +5,23 @@ existing GitHub Pages address. Pushes to `main` and manual workflow dispatches u
 the same process. The old `gh-pages` branch is retained as a historical snapshot;
 it is no longer the publishing source once the repository uses GitHub Actions.
 
-`scripts/prepare_pages.py` copies only tracked, non-hidden public files, plus
-`.nojekyll`, into `_site`. It preserves the existing public document/result paths,
+`scripts/prepare_pages.py` copies the page's tracked resources into `_site`:
+the HTML and JSON, both listening collections, report and presentation deliveries,
+documentation, and the displayed figure collections. It preserves these resource paths,
 checks all four targets and 48 conditions, verifies the SHA-256 and WAV format of
 all 96 playback files, and checks the source hashes of the explanatory context.
 Generated `deployment.json` identifies the exact deployed commit and audio hashes.
-Models, local datasets and environments are untracked and are not packaged.
+Large intermediate trial tables and unrelated historical outputs stay in GitHub;
+the page's research-documentation links open the repository, where their relative
+links remain valid. Context source hashes refer to those repository files, and
+are checked there before packaging. Models, local datasets and environments are
+untracked and are not packaged.
 
 The earlier branch-based publication reached `syncing_files` but was cancelled by
-the deploy action's default ten-minute timeout. The custom workflow gives the
-deployment thirty minutes, serialises releases and validates the artifact before
-uploading. A completed build alone does not prove publication: check the public
+the deploy action's ten-minute timeout. A larger configured timeout was tried, but
+the official action caps it at ten minutes; increasing that input does not extend
+the limit. The workflow instead reduces the publication payload, serialises releases
+and validates the artifact before uploading. A completed build alone does not prove publication: check the public
 `deployment.json`, page contents and actual audio playback after deployment.
 
 Local packaging check, from the repository root:

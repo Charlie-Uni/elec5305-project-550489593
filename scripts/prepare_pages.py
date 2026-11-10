@@ -6,10 +6,49 @@ import json
 import shutil
 import subprocess
 import wave
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAMPLE_DIRS = ("examples/listening_own_20261109", "examples/listening_own_20261110")
+FIGURE_DIRS = (
+    "results/figures_three_systems_own_20261109/",
+    "results/figures_three_systems_target_20261109/",
+    "results/closing_20261110/figures/",
+    "results/extensions_20261109/replication_figures/",
+    "results/extensions_20261109/intervention_figures/",
+    "results/extensions_20261109/cost_figures/",
+)
+
+
+class PageResources(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.paths = set()
+
+    def handle_starttag(self, tag, attrs):
+        for key, value in attrs:
+            if (
+                key in ("href", "src", "poster")
+                and value
+                and not value.startswith(("#", "http", "data:"))
+            ):
+                self.paths.add(value.split("#")[0].split("?")[0])
+
+
+def is_site_resource(name, linked):
+    if name in linked or name in (".nojekyll", "index.html", "site-data.json"):
+        return True
+    if name.startswith(
+        (
+            *EXAMPLE_DIRS,
+            "docs/",
+            "results/final_submission_20261110/",
+            "results/listening_site_20261110/",
+        )
+    ):
+        return True
+    return name.startswith(FIGURE_DIRS) and Path(name).suffix in (".png", ".pdf", ".svg")
 
 
 def sha(path):
@@ -21,11 +60,12 @@ def prepare(output):
     if output == ROOT or (output.exists() and any(output.iterdir())):
         raise ValueError("Choose an empty directory for the Pages package")
     tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode().split("\0")
-    public = [
-        Path(name)
-        for name in tracked
-        if name and (name == ".nojekyll" or not any(p.startswith(".") for p in Path(name).parts))
-    ]
+    linked = PageResources()
+    linked.feed((ROOT / "index.html").read_text())
+    missing = linked.paths - set(tracked)
+    if missing:
+        raise ValueError(f"Untracked or missing page resources: {sorted(missing)}")
+    public = [Path(name) for name in tracked if name and is_site_resource(name, linked.paths)]
     output.mkdir(parents=True, exist_ok=True)
     for relative in public:
         source = ROOT / relative
@@ -56,7 +96,7 @@ def prepare(output):
     if set(context["targets"]) != targets:
         raise ValueError("Target selector context differs from the audio examples")
     for relative, expected in context["sources"].items():
-        if sha(output / relative) != expected:
+        if sha(ROOT / relative) != expected:
             raise ValueError(f"Context evidence checksum changed: {relative}")
     audio = []
     for directory, row in rows:
@@ -67,23 +107,40 @@ def prepare(output):
             if sha(path) != item["sha256"]:
                 raise ValueError(f"Audio checksum changed: {relative}")
             with wave.open(str(path), "rb") as wav:
-                shape = (wav.getnchannels(), wav.getsampwidth(), wav.getframerate(), wav.getnframes())
+                shape = (
+                    wav.getnchannels(),
+                    wav.getsampwidth(),
+                    wav.getframerate(),
+                    wav.getnframes(),
+                )
                 if shape != (1, 2, 44100, 220500):
                     raise ValueError(f"Unexpected WAV format: {relative}")
             audio.append({"path": relative.as_posix(), "sha256": item["sha256"], "seconds": 5})
     if len({a["path"] for a in audio}) != 96:
         raise ValueError("Expected 96 distinct audio files")
     metadata = {
-        "commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+        "commit": subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
+        ).strip(),
         "index_sha256": sha(output / "index.html"),
         "site_data_sha256": sha(output / "site-data.json"),
         "tracked_public_files": len(public),
+        "package_bytes": sum((output / p).stat().st_size for p in public),
         "targets": sorted(targets),
         "choices": len(rows),
         "audio_files": audio,
     }
     (output / "deployment.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    print(json.dumps({"public_files": len(public), "targets": len(targets), "choices": len(rows), "audio_files": len(audio)}))
+    print(
+        json.dumps(
+            {
+                "public_files": len(public),
+                "targets": len(targets),
+                "choices": len(rows),
+                "audio_files": len(audio),
+            }
+        )
+    )
 
 
 if __name__ == "__main__":
