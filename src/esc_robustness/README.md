@@ -24,6 +24,7 @@ arguments. Run commands from the repository root after installing the package.
 |---|---|
 | [augmentation.py](augmentation.py), [extension_eval.py](extension_eval.py), [extension_summary.py](extension_summary.py) | Training-only augmentation, repeated-seed evaluation and paired comparisons |
 | [prompt_ensemble.py](prompt_ensemble.py) | Fixed released prompt-list ablation; not the full PAT algorithm |
+| [local_alignment.py](local_alignment.py) | PAT-style local alignment ported to frozen LAION-CLAP: preset and clean-data calibrated fusion from cached branch scores; not the official PAT release |
 | [diagnostics.py](diagnostics.py) | Representation, feature-group and ranking diagnostics |
 | [readout_analysis.py](readout_analysis.py) | Exact top-k outcomes from stored scores, including matched clean controls |
 | [overlap_analysis.py](overlap_analysis.py) | Spectral and temporal descriptors and descriptive conditional analyses |

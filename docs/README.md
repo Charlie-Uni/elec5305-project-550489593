@@ -33,6 +33,7 @@ original runs and cohorts.
 ## Protocols and maintenance
 
 - [Augmentation, seeds and prompt protocol](extension_protocol_20261109.md)
+- [PAT-style local alignment protocol](local_alignment_protocol_20261111.md)
 - [Ranked-readout and acoustic-overlap protocol](closing_protocol_20261110.md)
 - [Verified Pages publication](pages_deployment.md)
 - [Repository organisation, duplicate policy and cleanup record](repository_maintenance.md)
