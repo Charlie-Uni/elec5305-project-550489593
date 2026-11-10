@@ -8,6 +8,16 @@
   "browser_selector_states": 4,
   "embedded_audio_unchanged": true,
   "report_unchanged": true,
+  "prior_result_files_unchanged": 526,
+  "intentional_delivery_updates": [
+    "results/presentation_20261109_draft/build_status.json",
+    "results/presentation_20261109_draft/presentation_data.json",
+    "results/presentation_20261109_draft/research_presentation.pdf",
+    "results/presentation_20261109_draft/research_presentation.pptx",
+    "results/presentation_20261109_draft/speaker_notes.txt",
+    "results/presentation_20261109_draft/visual_audit.json",
+    "results/site_review_20261109.json"
+  ],
   "claim_boundary": "Numerical consistency and stated interpretation checked; not a course-format approval or completed video.",
   "files": {
     "results/research_report_20261109_draft/research_report.pdf": "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35",

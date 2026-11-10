@@ -120,4 +120,7 @@ under `runs/closing_20261110/incoming/closing_analyses/`.
 
 The [protocol](../../docs/closing_protocol_20261110.md) documents the exploratory
 status and stopping rule. These two analyses close experimental work. Author
-review, final recording, publication and course submission remain delivery actions.
+review, final recording and course submission remain delivery actions. The
+[delivery synchronization](../delivery_sync_20261110/README.md) subsequently updated
+the 16-slide presentation, exact narration and publicly deployed Pages; the
+report and original numerical experiment results are unchanged.

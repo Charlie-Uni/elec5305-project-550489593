@@ -8,7 +8,7 @@
 - [可编辑演示稿](../results/presentation_20261109_draft/research_presentation.pptx)：16 页，含三页新分析、讲者备注、原有可编辑图表和两段实际音频。
 - [演示稿 PDF](../results/presentation_20261109_draft/research_presentation.pdf)：用于快速浏览；嵌入音频需在 PPTX 或网页播放。
 - [视频讲稿](video_narration_draft.txt)：与 16 页幻灯片逐页对应，1,389 个英文词；按每分钟 130–150 词并加两段音频，预计 9.4–10.9 分钟，额外停顿另计。
-- [Pages 页面](https://charlie-uni.github.io/elec5305-project-550489593/)：保留听音示例，新增精确 top-2、频谱及时间重叠结果。实际部署状态以核验记录为准。
+- [Pages 页面](https://charlie-uni.github.io/elec5305-project-550489593/)：保留听音示例，新增精确 top-2、频谱及时间重叠结果。已从 `gh-pages` 发布，网页、报告、演示稿和讲稿的线上文件哈希与本地一致，详见[部署核验](../results/delivery_sync_20261110/public_deployment_audit.json)。
 - [收尾分析与数据](../results/closing_20261110/README.md)：完整 own/target、DEMAND、排名记录和图表。
 
 ## 仍需完成

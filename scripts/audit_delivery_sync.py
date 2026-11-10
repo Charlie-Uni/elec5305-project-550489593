@@ -310,12 +310,26 @@ def audit(browser):
                 )
                 assert formatted in state["acoustics"]
     report = ROOT / "results/research_report_20261109_draft/research_report.pdf"
-    assert (
-        sha(report)
-        == json.loads((ROOT / "results/closing_20261110/completion_audit.json").read_text())[
-            "report_sha256"
-        ]
-    )
+    previous = json.loads((ROOT / "results/closing_20261110/completion_audit.json").read_text())
+    assert sha(report) == previous["report_sha256"]
+    allowed_delivery_updates = {
+        "results/presentation_20261109_draft/" + name
+        for name in (
+            "build_status.json",
+            "presentation_data.json",
+            "research_presentation.pdf",
+            "research_presentation.pptx",
+            "speaker_notes.txt",
+            "visual_audit.json",
+        )
+    } | {"results/site_review_20261109.json"}
+    delivery_updates = []
+    for relative, digest in previous["original_git_blobs"].items():
+        content = (ROOT / relative).read_bytes()
+        blob = b"blob " + str(len(content)).encode() + b"\x00" + content
+        if hashlib.sha1(blob).hexdigest() != digest:
+            assert relative in allowed_delivery_updates, relative
+            delivery_updates.append(relative)
     for number in ("37.34", "33.17", "26.05", "21.00", "23.35", "24.05"):
         assert (
             number in script and number in (ROOT / "docs/report_closing_analyses.tex").read_text()
@@ -330,6 +344,8 @@ def audit(browser):
         browser_selector_states=4,
         embedded_audio_unchanged=True,
         report_unchanged=True,
+        prior_result_files_unchanged=len(previous["original_git_blobs"]) - len(delivery_updates),
+        intentional_delivery_updates=delivery_updates,
         claim_boundary="Numerical consistency and stated interpretation checked; not a course-format approval or completed video.",
         files={
             str(p.relative_to(ROOT)): sha(p)

@@ -17,7 +17,7 @@
   "video_recorded": false,
   "course_submission_performed": false,
   "main_merged": false,
-  "public_pages_deployed": false,
+  "public_pages_deployed": true,
   "review_materials": [
     "results/research_report_20261109_draft/research_report.pdf",
     "results/presentation_20261109_draft/research_presentation.pptx",
@@ -43,5 +43,8 @@
     10.9
   ],
   "course_duration_verified": false,
-  "delivery_consistency_audit": "results/delivery_sync_20261110/consistency_audit.json"
+  "delivery_consistency_audit": "results/delivery_sync_20261110/consistency_audit.json",
+  "pages_url": "https://charlie-uni.github.io/elec5305-project-550489593/",
+  "pages_source_branch": "gh-pages",
+  "pages_deployment_evidence": "results/delivery_sync_20261110/public_deployment_audit.json"
 }

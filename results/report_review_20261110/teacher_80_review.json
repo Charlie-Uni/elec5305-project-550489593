@@ -7,7 +7,7 @@
   "full_PAT_reproduced": false,
   "author_listening_verified": false,
   "video_recorded": false,
-  "public_pages_deployed": false,
+  "public_pages_deployed": true,
   "main_merged": false,
   "items": [
     {
@@ -480,9 +480,9 @@
     },
     {
       "number": 79,
-      "status": "分支已具备",
+      "status": "分支与 Pages 已具备",
       "recommendation": "GitHub 内容要求",
-      "assessment": "代码、结果、图和示例在 feature/interference 与 PR；main 和公开 Pages 尚未更新。"
+      "assessment": "代码、结果、图和示例在 feature/interference 与 PR；公开 Pages 已从 gh-pages 发布并核对下载文件哈希。main 尚未合并。"
     },
     {
       "number": 80,
@@ -493,5 +493,8 @@
   ],
   "closing_analyses_complete": true,
   "closing_evidence": "results/closing_20261110/independent_audit.json",
-  "experimental_scope_closed": true
+  "experimental_scope_closed": true,
+  "pages_url": "https://charlie-uni.github.io/elec5305-project-550489593/",
+  "pages_source_branch": "gh-pages",
+  "pages_deployment_evidence": "results/delivery_sync_20261110/public_deployment_audit.json"
 }
