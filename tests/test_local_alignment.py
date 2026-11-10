@@ -243,8 +243,8 @@ def test_identical_input_cache_preserves_scores_and_skips_reencoding():
         FakeCLAP(), names, text, frame_source=counted, cache_encodings=True
     )
     plain = LocalAlignmentSystem(FakeCLAP(), names, text, frame_source=fake_frames)
-    first = np.linspace(-0.05, 0.05, 128)
-    second = np.linspace(0.02, 0.03, 128)
+    first = np.linspace(-0.05, 0.05, 2048)
+    second = np.linspace(0.02, 0.03, 2048)
     cached.evaluate_batch([1, 1], [first, first])
     actual = cached.evaluate_batch([1, 1, 1], [second, first, second])
     expected = plain.evaluate_batch([1, 1, 1], [second, first, second])
