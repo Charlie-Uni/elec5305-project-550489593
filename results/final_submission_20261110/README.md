@@ -8,6 +8,7 @@ The main report selects three figures and three tables. PNG/PDF/SVG, grayscale p
 
 Validation includes 96 passed tests (one CUDA skip), three real model executions, 20 native chart values, 30 table cells, six editable interval lines, 12 exact narration segments and four website selector states. All 676 pre-existing result/example files match their baseline Git blobs; the original 26-page PDF has SHA-256 `e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35`.
 
+- [Public deployment hash verification](public_deployment_audit.json)
 - [Numerical and preservation audit](delivery_audit.json)
 - [Rendering/visual audit](visual_audit.json)
 - [Execution-video metadata](code_demo_audit.json)
