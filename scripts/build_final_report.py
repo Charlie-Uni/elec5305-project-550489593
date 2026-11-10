@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-from delivery_claims import closing_claims, editorial_claims
+from delivery_claims import closing_claims, editorial_claims, local_alignment_claims
 from PIL import Image
 from pypdf import PdfReader
 
@@ -43,6 +43,9 @@ def build_assets():
         (ROOT / "results/presentation_20261109_draft/presentation_data.json").read_text()
     )
     data["editorial"] = editorial_claims()
+    alignment = local_alignment_claims()
+    if alignment is not None:
+        data["local_alignment"] = alignment
     clean = {
         s: json.loads((ROOT / p).read_text())
         for s, p in {

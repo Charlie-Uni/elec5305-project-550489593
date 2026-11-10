@@ -6,7 +6,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from delivery_claims import closing_claims, editorial_claims
+from delivery_claims import closing_claims, editorial_claims, local_alignment_claims
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -110,6 +110,9 @@ def build(run):
                     if k.startswith("total_")
                 }
             )
+    alignment = local_alignment_claims()
+    if alignment is not None:
+        state["local_alignment"] = alignment
     (ROOT / "site-data.json").write_text(json.dumps(state, indent=2) + "\n")
 
 

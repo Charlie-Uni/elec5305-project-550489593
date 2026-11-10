@@ -61,14 +61,14 @@
   },
   {
     "slide": 11,
-    "title": "Discussion and conclusion",
-    "narration": "Representation, training and readout answer different questions. For CLAP under same-category interference at plus five decibels, the median target-minus-distractor margin is 0.0873; 38.05 percent of margins are negative. Median representation displacement is 0.1905 on correct trials and 0.4087 on errors. These associations do not establish a mechanism. About one-third of captured targets remain second. Acoustic restriction retains a CLAP gap, while CNN intervals include zero in those smaller subsets. Limited backgrounds, shared sources and unknown pretraining overlap constrain generalisation.",
-    "evidence": "Research report conclusions and limitations."
+    "title": "PAT-style local audio–text alignment",
+    "narration": "I test PAT-style local feedback with the same frozen LAION-CLAP. This adaptation is not official or full PAT. At own power and plus five decibels, preset alignment changes same-category accuracy by -0.05 percentage points relative to the fixed ensemble. Captures change from 645 to 644. Preset macro-F1 is 55.46 percent, compared with 55.50 for the ensemble. Calibrated accuracy changes by -0.10 points. Calibration uses non-test clean labels and is not zero-shot. All five folds select nonzero feedback weights. None of four corrected tests establishes an accuracy change. An accuracy change is not automatically reduced capture. CPU timing excludes setup and cache hits.",
+    "evidence": "results/extensions_20261111/clap_local_alignment/conditions.csv; primary_comparisons.csv; independent_audit.json. PAT: https://aclanthology.org/2025.naacl-long.616/"
   },
   {
     "slide": 12,
     "title": "Report and reproducible code",
-    "narration": "The eleven-page report contains the main argument, numerical literature comparison and five core figures. Complete diagnostics remain in the code repository. The website links the code, attributed audio and execution clip. I used OpenAI Codex with GPT-6 Astra and incorporated Anthropic Claude code and review material, whose model version was not recorded. Assistance included implementation, analyses and writing, beyond language editing. I remain responsible for the work. The execution clip is a component of the video; the final submission also needs my own explanation.",
+    "narration": "The final report contains the main argument, numerical literature comparison and five core figures. Complete diagnostics remain in the code repository. The website links the code, attributed audio and execution clip. I used OpenAI Codex with GPT-6 Astra and incorporated Anthropic Claude code and review material, whose model version was not recorded. Assistance included implementation, analyses and writing, beyond language editing. I remain responsible for the work. The execution clip is a component of the video; the final submission also needs my own explanation.",
     "evidence": "https://github.com/karolpiczak/ESC-50 ; https://arxiv.org/abs/2211.06687v4 ; https://arxiv.org/abs/1711.10282 ; https://aclanthology.org/2025.naacl-long.616/ ; https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206 ; https://aclanthology.org/2026.findings-acl.913/ ; DEMAND https://doi.org/10.5281/zenodo.1227121"
   }
 ]

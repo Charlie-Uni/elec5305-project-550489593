@@ -1,0 +1,400 @@
+{
+  "name": "PAT-style local alignment on LAION-CLAP",
+  "readouts": {
+    "single": "cosine similarity, one fixed template",
+    "ensemble": "cosine similarity, uniform mean of the released templates",
+    "aligned_fixed": "fused score, weights fixed in advance (no labels)",
+    "aligned_calibrated": "fused score, weights calibrated on labelled clean non-test folds"
+  },
+  "primary_contrast": "aligned_fixed and aligned_calibrated against ensemble at own/+5 dB, semantic_same and semantic_different",
+  "paired_against_ensemble": {
+    "clean": {
+      "aligned_fixed": {
+        "lost": 6,
+        "gained": 6,
+        "accuracy_difference_pp": 0.0,
+        "exact_mcnemar_p": 1.0
+      },
+      "aligned_calibrated": {
+        "lost": 12,
+        "gained": 11,
+        "accuracy_difference_pp": -0.05,
+        "exact_mcnemar_p": 1.0
+      }
+    },
+    "own/demand@+0": {
+      "aligned_fixed": {
+        "lost": 46,
+        "gained": 10,
+        "accuracy_difference_pp": -1.8,
+        "exact_mcnemar_p": 1.2454514146109652e-06
+      },
+      "aligned_calibrated": {
+        "lost": 74,
+        "gained": 24,
+        "accuracy_difference_pp": -2.5,
+        "exact_mcnemar_p": 4.2159207369916054e-07
+      }
+    },
+    "own/demand@+10": {
+      "aligned_fixed": {
+        "lost": 13,
+        "gained": 7,
+        "accuracy_difference_pp": -0.3,
+        "exact_mcnemar_p": 0.26317596435546875
+      },
+      "aligned_calibrated": {
+        "lost": 26,
+        "gained": 21,
+        "accuracy_difference_pp": -0.25,
+        "exact_mcnemar_p": 0.5600646295802106
+      }
+    },
+    "own/demand@+5": {
+      "aligned_fixed": {
+        "lost": 25,
+        "gained": 10,
+        "accuracy_difference_pp": -0.75,
+        "exact_mcnemar_p": 0.016673847800120715
+      },
+      "aligned_calibrated": {
+        "lost": 37,
+        "gained": 25,
+        "accuracy_difference_pp": -0.6,
+        "exact_mcnemar_p": 0.16188140552559763
+      }
+    },
+    "own/semantic_different@+0": {
+      "aligned_fixed": {
+        "lost": 23,
+        "gained": 22,
+        "accuracy_difference_pp": -0.05,
+        "exact_mcnemar_p": 1.0,
+        "capture_difference": 1
+      },
+      "aligned_calibrated": {
+        "lost": 50,
+        "gained": 54,
+        "accuracy_difference_pp": 0.2,
+        "exact_mcnemar_p": 0.7687918101386723,
+        "capture_difference": -4
+      }
+    },
+    "own/semantic_different@+10": {
+      "aligned_fixed": {
+        "lost": 15,
+        "gained": 17,
+        "accuracy_difference_pp": 0.1,
+        "exact_mcnemar_p": 0.860050065908581,
+        "capture_difference": -5
+      },
+      "aligned_calibrated": {
+        "lost": 47,
+        "gained": 42,
+        "accuracy_difference_pp": -0.25,
+        "exact_mcnemar_p": 0.6718086491746105,
+        "capture_difference": 12
+      }
+    },
+    "own/semantic_different@+5": {
+      "aligned_fixed": {
+        "lost": 23,
+        "gained": 27,
+        "accuracy_difference_pp": 0.2,
+        "exact_mcnemar_p": 0.6718110337653656,
+        "capture_difference": 3,
+        "primary_holm_p": 1.0
+      },
+      "aligned_calibrated": {
+        "lost": 48,
+        "gained": 63,
+        "accuracy_difference_pp": 0.75,
+        "exact_mcnemar_p": 0.18365717190177477,
+        "capture_difference": -8,
+        "primary_holm_p": 0.7346286876070991
+      }
+    },
+    "own/semantic_same@+0": {
+      "aligned_fixed": {
+        "lost": 28,
+        "gained": 16,
+        "accuracy_difference_pp": -0.6,
+        "exact_mcnemar_p": 0.09614175442061423,
+        "capture_difference": 3
+      },
+      "aligned_calibrated": {
+        "lost": 52,
+        "gained": 40,
+        "accuracy_difference_pp": -0.6,
+        "exact_mcnemar_p": 0.2513221034748543,
+        "capture_difference": 1
+      }
+    },
+    "own/semantic_same@+10": {
+      "aligned_fixed": {
+        "lost": 25,
+        "gained": 19,
+        "accuracy_difference_pp": -0.3,
+        "exact_mcnemar_p": 0.4513808323961257,
+        "capture_difference": -2
+      },
+      "aligned_calibrated": {
+        "lost": 48,
+        "gained": 38,
+        "accuracy_difference_pp": -0.5,
+        "exact_mcnemar_p": 0.3318343545999156,
+        "capture_difference": 2
+      }
+    },
+    "own/semantic_same@+5": {
+      "aligned_fixed": {
+        "lost": 23,
+        "gained": 22,
+        "accuracy_difference_pp": -0.05,
+        "exact_mcnemar_p": 1.0,
+        "capture_difference": -1,
+        "primary_holm_p": 1.0
+      },
+      "aligned_calibrated": {
+        "lost": 45,
+        "gained": 43,
+        "accuracy_difference_pp": -0.1,
+        "exact_mcnemar_p": 0.915186504842877,
+        "capture_difference": 0,
+        "primary_holm_p": 1.0
+      }
+    },
+    "own/white@+0": {
+      "aligned_fixed": {
+        "lost": 52,
+        "gained": 10,
+        "accuracy_difference_pp": -2.1,
+        "exact_mcnemar_p": 5.713613733093065e-08
+      },
+      "aligned_calibrated": {
+        "lost": 70,
+        "gained": 46,
+        "accuracy_difference_pp": -1.2,
+        "exact_mcnemar_p": 0.03227202073309309
+      }
+    },
+    "own/white@+10": {
+      "aligned_fixed": {
+        "lost": 20,
+        "gained": 12,
+        "accuracy_difference_pp": -0.4,
+        "exact_mcnemar_p": 0.21532714972272515
+      },
+      "aligned_calibrated": {
+        "lost": 27,
+        "gained": 39,
+        "accuracy_difference_pp": 0.6,
+        "exact_mcnemar_p": 0.17528579444303533
+      }
+    },
+    "own/white@+5": {
+      "aligned_fixed": {
+        "lost": 62,
+        "gained": 7,
+        "accuracy_difference_pp": -2.75,
+        "exact_mcnemar_p": 4.102799046681871e-12
+      },
+      "aligned_calibrated": {
+        "lost": 79,
+        "gained": 46,
+        "accuracy_difference_pp": -1.65,
+        "exact_mcnemar_p": 0.004024733785229442
+      }
+    },
+    "target/demand@+0": {
+      "aligned_fixed": {
+        "lost": 43,
+        "gained": 13,
+        "accuracy_difference_pp": -1.5,
+        "exact_mcnemar_p": 7.333218396948782e-05
+      },
+      "aligned_calibrated": {
+        "lost": 70,
+        "gained": 29,
+        "accuracy_difference_pp": -2.05,
+        "exact_mcnemar_p": 4.606242964374745e-05
+      }
+    },
+    "target/demand@+10": {
+      "aligned_fixed": {
+        "lost": 12,
+        "gained": 4,
+        "accuracy_difference_pp": -0.4,
+        "exact_mcnemar_p": 0.076812744140625
+      },
+      "aligned_calibrated": {
+        "lost": 29,
+        "gained": 19,
+        "accuracy_difference_pp": -0.5,
+        "exact_mcnemar_p": 0.19341265286193737
+      }
+    },
+    "target/demand@+5": {
+      "aligned_fixed": {
+        "lost": 26,
+        "gained": 12,
+        "accuracy_difference_pp": -0.7,
+        "exact_mcnemar_p": 0.03355243967962451
+      },
+      "aligned_calibrated": {
+        "lost": 40,
+        "gained": 26,
+        "accuracy_difference_pp": -0.7,
+        "exact_mcnemar_p": 0.10885696440971612
+      }
+    },
+    "target/semantic_different@+0": {
+      "aligned_fixed": {
+        "lost": 27,
+        "gained": 12,
+        "accuracy_difference_pp": -0.7503751875937968,
+        "exact_mcnemar_p": 0.023702702470473014,
+        "capture_difference": 0
+      },
+      "aligned_calibrated": {
+        "lost": 53,
+        "gained": 48,
+        "accuracy_difference_pp": -0.25012506253126565,
+        "exact_mcnemar_p": 0.6908264239959597,
+        "capture_difference": 0
+      }
+    },
+    "target/semantic_different@+10": {
+      "aligned_fixed": {
+        "lost": 20,
+        "gained": 21,
+        "accuracy_difference_pp": 0.05002501250625312,
+        "exact_mcnemar_p": 1.0,
+        "capture_difference": -4
+      },
+      "aligned_calibrated": {
+        "lost": 48,
+        "gained": 50,
+        "accuracy_difference_pp": 0.10005002501250625,
+        "exact_mcnemar_p": 0.9196068309220421,
+        "capture_difference": -5
+      }
+    },
+    "target/semantic_different@+5": {
+      "aligned_fixed": {
+        "lost": 23,
+        "gained": 28,
+        "accuracy_difference_pp": 0.25012506253126565,
+        "exact_mcnemar_p": 0.5758493477318467,
+        "capture_difference": -1
+      },
+      "aligned_calibrated": {
+        "lost": 53,
+        "gained": 70,
+        "accuracy_difference_pp": 0.8504252126063031,
+        "exact_mcnemar_p": 0.14881624623838527,
+        "capture_difference": -14
+      }
+    },
+    "target/semantic_same@+0": {
+      "aligned_fixed": {
+        "lost": 28,
+        "gained": 20,
+        "accuracy_difference_pp": -0.4004004004004004,
+        "exact_mcnemar_p": 0.31232680747326935,
+        "capture_difference": 3
+      },
+      "aligned_calibrated": {
+        "lost": 47,
+        "gained": 45,
+        "accuracy_difference_pp": -0.1001001001001001,
+        "exact_mcnemar_p": 0.9170405196524724,
+        "capture_difference": -8
+      }
+    },
+    "target/semantic_same@+10": {
+      "aligned_fixed": {
+        "lost": 28,
+        "gained": 21,
+        "accuracy_difference_pp": -0.35035035035035034,
+        "exact_mcnemar_p": 0.3916029105474905,
+        "capture_difference": 0
+      },
+      "aligned_calibrated": {
+        "lost": 50,
+        "gained": 38,
+        "accuracy_difference_pp": -0.6006006006006006,
+        "exact_mcnemar_p": 0.2407931245390016,
+        "capture_difference": -1
+      }
+    },
+    "target/semantic_same@+5": {
+      "aligned_fixed": {
+        "lost": 30,
+        "gained": 27,
+        "accuracy_difference_pp": -0.15015015015015015,
+        "exact_mcnemar_p": 0.7913664277791806,
+        "capture_difference": -3
+      },
+      "aligned_calibrated": {
+        "lost": 49,
+        "gained": 44,
+        "accuracy_difference_pp": -0.2502502502502503,
+        "exact_mcnemar_p": 0.6785320136533244,
+        "capture_difference": -1
+      }
+    },
+    "target/white@+0": {
+      "aligned_fixed": {
+        "lost": 50,
+        "gained": 10,
+        "accuracy_difference_pp": -2.0,
+        "exact_mcnemar_p": 1.6163814566157175e-07
+      },
+      "aligned_calibrated": {
+        "lost": 67,
+        "gained": 47,
+        "accuracy_difference_pp": -1.0,
+        "exact_mcnemar_p": 0.07469253007976612
+      }
+    },
+    "target/white@+10": {
+      "aligned_fixed": {
+        "lost": 21,
+        "gained": 12,
+        "accuracy_difference_pp": -0.45,
+        "exact_mcnemar_p": 0.16275565745308995
+      },
+      "aligned_calibrated": {
+        "lost": 27,
+        "gained": 39,
+        "accuracy_difference_pp": 0.6,
+        "exact_mcnemar_p": 0.17528579444303533
+      }
+    },
+    "target/white@+5": {
+      "aligned_fixed": {
+        "lost": 63,
+        "gained": 7,
+        "accuracy_difference_pp": -2.8,
+        "exact_mcnemar_p": 2.2750760151658833e-12
+      },
+      "aligned_calibrated": {
+        "lost": 79,
+        "gained": 46,
+        "accuracy_difference_pp": -1.65,
+        "exact_mcnemar_p": 0.004024733785229442
+      }
+    }
+  },
+  "primary_test_family": {
+    "tests": 4,
+    "observed_tests": 4,
+    "correction": "Holm across two readouts and two semantic conditions at own/+5 dB",
+    "dependence_caveat": "McNemar assumes independent target trials; shared source recordings and clean calibration introduce dependence. Report source-cluster intervals separately and condition interpretations on the fitted rules."
+  },
+  "label_selected_reference": "label_selected_reference.csv is the best point of the searched grid on the evaluated labels; it is not a method and is excluded from conditions.csv",
+  "cells": 100,
+  "analysis_seconds": 5.100642208009958,
+  "source_sha256": "7537c6f99d0f759b727e6d8c80af60f202b480eb23206d018bd14c04e95812b0"
+}

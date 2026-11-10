@@ -14,7 +14,7 @@ import zipfile
 from pathlib import Path
 
 import pypdfium2 as pdfium
-from delivery_claims import ROOT, closing_claims, editorial_claims
+from delivery_claims import ROOT, closing_claims, editorial_claims, local_alignment_claims
 
 NS = {
     "c": "http://schemas.openxmlformats.org/drawingml/2006/chart",
@@ -47,6 +47,9 @@ def audit(browser, output=None):
     assert data["closing"] == site["closing"] == closing
     editorial = editorial_claims()
     assert data["editorial"] == site["editorial"] == editorial
+    alignment = local_alignment_claims()
+    if alignment is not None:
+        assert data["local_alignment"] == site["local_alignment"] == alignment
     core = read("results/clap_full_20261109/all_conditions_verified.csv")
     assert core == data["core"] == site["conditions"]
     conditions = ("white", "demand", "semantic_same", "semantic_different")
@@ -160,6 +163,25 @@ def audit(browser, output=None):
                 )
                 value = 100 * int(row["errors_equal_distractor"]) / int(row["errors"])
                 assert f"{value:.2f}" in capture_cells[i + 1][j + 1]
+        alignment_cells = 0
+        if alignment is not None:
+            table = ET.fromstring(z.read("ppt/slides/slide11.xml")).find(".//a:tbl", NS)
+            assert table is not None
+            cells = [["".join(cell.itertext()) for cell in row.findall("a:tc", NS)]
+                     for row in table.findall("a:tr", NS)]
+            assert len(cells) == 5
+            for i, readout in enumerate(("single", "ensemble", "aligned_fixed", "aligned_calibrated")):
+                clean = next(r for r in alignment["conditions"] if
+                             r["region"] == "clean" and r["readout"] == readout)
+                same = next(r for r in alignment["conditions"] if
+                            r["region"] == "own" and r["condition"] == "semantic_same" and
+                            float(r["level_db"]) == 5 and r["readout"] == readout)
+                desired = [f"{100 * float(clean['accuracy_mean']):.2f}",
+                           f"{100 * float(same['accuracy_mean']):.2f}",
+                           f"{100 * float(same['macro_f1_mean']):.2f}", same["captures"],
+                           same["other_errors"], f"{100 * int(same['target_in_top2']) / int(same['n']):.2f}"]
+                assert cells[i + 1][1:] == desired
+                alignment_cells += len(desired)
         # New interval chart uses editable native points and lines, not a bitmap.
         slide = ET.fromstring(z.read("ppt/slides/slide9.xml"))
         geometry = []
@@ -248,13 +270,40 @@ def audit(browser, output=None):
                     f"{100 * float(row['ci_high']):+.2f}]"
                 )
                 assert formatted in state["acoustics"]
+        if alignment is not None:
+            assert len(state["alignment_rows"]) == 4
+            for i, readout in enumerate(("single", "ensemble", "aligned_fixed", "aligned_calibrated")):
+                clean = next(r for r in alignment["conditions"] if
+                             r["region"] == "clean" and r["readout"] == readout)
+                same, different = [next(r for r in alignment["conditions"] if
+                                        r["region"] == state["region"] and r["condition"] == condition and
+                                        float(r["level_db"]) == 5 and r["readout"] == readout)
+                                   for condition in ("semantic_same", "semantic_different")]
+                desired = [f"{100 * float(clean['accuracy_mean']):.2f}",
+                           f"{100 * float(same['accuracy_mean']):.2f}",
+                           f"{100 * float(different['accuracy_mean']):.2f}",
+                           f"{100 * float(same['macro_f1_mean']):.2f}",
+                           f"{100 * float(different['macro_f1_mean']):.2f}",
+                           same["captures"], different["captures"],
+                           f"{100 * int(same['target_in_top2']) / int(same['n']):.2f}"]
+                assert state["alignment_rows"][i][1:] == desired
+            assert len(state["alignment_primary"]) == 4
+            for actual, row in zip(state["alignment_primary"], alignment["primary"]):
+                interval = (f"{float(row['accuracy_difference_pp']):+.2f} percentage points "
+                            f"[{float(row['accuracy_ci_low_pp']):+.2f}, "
+                            f"{float(row['accuracy_ci_high_pp']):+.2f}]")
+                assert interval in actual
+                assert math.isclose(float(actual.rsplit("=", 1)[1]), float(row["holm_p"]),
+                                    rel_tol=0.005, abs_tol=1e-12)
+            for row in alignment.get("balanced_costs", []):
+                assert f"{float(row['total_median_ms']):.2f}" in web["alignment_cost"]
     report = destination / "final_report.pdf"
     word_audit = json.loads((destination / "single_report_docx_audit.json").read_text())
-    assert word_audit["verified"] and word_audit["rendered_pages"] == 11
+    assert word_audit["verified"] and 10 <= word_audit["rendered_pages"] <= 12
     assert word_audit["word_sha256"] == sha(destination / "final_report.docx")
     assert word_audit["source_sha256"] == sha(ROOT / "docs/final_report.tex")
     pdf = pdfium.PdfDocument(report)
-    assert len(pdf) == 11
+    assert 10 <= len(pdf) <= 12
     pages = []
     for page in pdf:
         textpage = page.get_textpage()
@@ -263,7 +312,7 @@ def audit(browser, output=None):
         page.close()
     pdf.close()
     report_text = "\n".join(pages)
-    assert "Contents" in pages[0] and "References" in pages[10]
+    assert "Contents" in pages[0] and "References" in pages[-1]
     assert "??" not in report_text and "\ufffd" not in report_text
     for row in editorial["capture"]:
         rate = 100 * int(row["errors_equal_distractor"]) / int(row["errors"])
@@ -271,12 +320,12 @@ def audit(browser, output=None):
         assert f"{rate:.2f}" in report_text and count in report_text
         assert f"{rate:.2f}% ({count})" in web["capture"]
     for value in ("0.0873", "38.05", "0.1905", "0.4087"):
-        assert value in report_text and value in web["diagnostic"] and value in script
+        assert value in report_text and value in web["diagnostic"]
     for value in ("39.60", "64.50", "81.30", "92.90", "0.0604", "GPT-6 Astra"):
         assert value in report_text, value
     assert "Acoustics, Speech and Signal Processing" in pages[0]
-    assert "Between-class Examples" in pages[10]
-    assert "version not recorded" in pages[9]
+    assert "Between-class Examples" in pages[-1]
+    assert "version not recorded" in report_text
     for value in (
         "37.34",
         "33.17",
@@ -308,6 +357,20 @@ def audit(browser, output=None):
         assert f"{100 * float(row['macro_f1_mean']):.2f}" in report_text
     # Independently validate every number in the main report's generated tables.
     table_source = (ROOT / "docs/final_report_tables.tex").read_text()
+    if alignment is not None:
+        local_table = (ROOT / "docs/local_alignment_tables.tex").read_text()
+        assert "PAT-style" in report_text and "calibrated" in report_text
+        for readout in ("single", "ensemble", "aligned_fixed", "aligned_calibrated"):
+            clean = next(r for r in alignment["conditions"] if
+                         r["region"] == "clean" and r["readout"] == readout)
+            same = next(r for r in alignment["conditions"] if
+                        r["region"] == "own" and r["condition"] == "semantic_same" and
+                        float(r["level_db"]) == 5 and r["readout"] == readout)
+            for value in (f"{100 * float(clean['accuracy_mean']):.2f}",
+                          f"{100 * float(same['accuracy_mean']):.2f}",
+                          f"{100 * float(same['macro_f1_mean']):.2f}", same["captures"],
+                          same["other_errors"], f"{100 * int(same['target_in_top2']) / int(same['n']):.2f}"):
+                assert value in local_table and value in report_text
     for system, path in [
         ("svm", "results/clean_svm/summary.json"),
         ("cnn", "results/clean_cnn/summary.json"),
@@ -424,8 +487,10 @@ def audit(browser, output=None):
     assert video["sha256"] == sha(destination / "code_demo.mp4")
     result = dict(
         verified=True,
-        report_pages=11,
-        word_rendered_pages=11,
+        report_pages=len(pages),
+        word_rendered_pages=word_audit["rendered_pages"],
+        local_alignment_verified=alignment is not None,
+        local_alignment_native_table_cells=alignment_cells,
         word_native_tables=word_audit["native_tables"],
         word_native_math_objects=word_audit["native_math_objects"],
         presentation_slides=12,

@@ -14,6 +14,80 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 
+def local_alignment_claims():
+    """Return the additional alignment arm only after independent full-run verification."""
+    base = ROOT / "results/extensions_20261111/clap_local_alignment"
+    audit_file = base / "independent_audit.json"
+    if not audit_file.exists():
+        return None
+    audit = json.loads(audit_file.read_text())
+    if not audit["verified"] or audit["condition_rows_checked"] != 100:
+        raise ValueError("Local alignment requires a verified full run")
+    for name, field in (
+        ("conditions.csv", "conditions_sha256"),
+        ("primary_comparisons.csv", "primary_comparisons_sha256"),
+        ("trial_evidence.csv.gz", "trial_evidence_sha256"),
+        ("setup_cost.json", "setup_cost_sha256"),
+    ):
+        if hashlib.sha256((base / name).read_bytes()).hexdigest() != audit[field]:
+            raise ValueError(f"Audited local alignment input changed: {name}")
+    selection = json.loads((base / "selection.json").read_text())
+    result = {
+        "name": "PAT-style local alignment on LAION-CLAP",
+        "readout_names": {
+            "single": "Single prompt",
+            "ensemble": "Fixed prompt ensemble",
+            "aligned_fixed": "Local alignment / preset",
+            "aligned_calibrated": "Local alignment / calibrated",
+        },
+        "labels_used": {
+            "single": "none", "ensemble": "none", "aligned_fixed": "none",
+            "aligned_calibrated": "clean labels from non-test folds, shared sources excluded",
+        },
+        "conditions": read_csv(base / "conditions.csv"),
+        "primary": read_csv(base / "primary_comparisons.csv"),
+        "selection": selection,
+        "cost": json.loads((base / "cost.json").read_text()),
+        "encoding_cache": json.loads((base / "encoding_cache.json").read_text()),
+        "setup_cost": json.loads((base / "setup_cost.json").read_text()),
+        "author_listening": json.loads((base / "author_listening_confirmation.json").read_text()),
+        "source_sha256": {
+            name: hashlib.sha256((base / name).read_bytes()).hexdigest()
+            for name in ("conditions.csv", "primary_comparisons.csv", "selection.json", "cost.json")
+        },
+        "interpretation": (
+            "A project adaptation of released feedback arithmetic, not official or full PAT. "
+            "Preset weights use no labels; calibrated weights use non-test clean labels. "
+            "Four primary paired tests share Holm correction; cluster intervals are pointwise "
+            "and condition on the fitted calibration rules and observed source pairs."
+        ),
+    }
+    balanced = base / "cost_balanced"
+    if (balanced / "audit.json").exists():
+        cost_audit = json.loads((balanced / "audit.json").read_text())
+        assert cost_audit["verified"] and cost_audit["queries"] == 4500
+        for name, digest in cost_audit["output_sha256"].items():
+            if hashlib.sha256((balanced / name).read_bytes()).hexdigest() != digest:
+                raise ValueError(f"Balanced alignment cost changed: {name}")
+        trials = read_csv(balanced / "trials.csv")
+        summaries = read_csv(balanced / "summary.csv")
+        assert len(trials) == 4500 and len(summaries) == 6
+        for row in summaries:
+            group = [r for r in trials if r["readout"] == row["readout"] and r["order"] == row["order"]]
+            assert len(group) == 750 and len({r["filename"] for r in group}) == 250
+            for stage in ("preprocessing", "inference_scoring", "total"):
+                value = statistics.median(float(r[stage + "_ms"]) for r in group)
+                assert abs(value - float(row[stage + "_median_ms"])) < 1e-9
+            p95 = statistics.quantiles([float(r["total_ms"]) for r in group], n=100, method="inclusive")[94]
+            assert abs(p95 - float(row["total_p95_ms"])) < 1e-9
+        assert sum(r["prediction"] != r["reference_prediction"] for r in trials) == cost_audit["prediction_disagreements"]
+        assert max(float(r["max_abs_score_difference"]) for r in trials) <= 1e-4
+        result["balanced_costs"] = summaries
+        result["balanced_cost_audit"] = cost_audit
+        result["balanced_costs_verified_from_trials"] = True
+    return result
+
+
 def editorial_claims():
     """Core diagnostics added to the concise report, with explicit denominators."""
     base = ROOT / "results/figures_three_systems_own_20261109"

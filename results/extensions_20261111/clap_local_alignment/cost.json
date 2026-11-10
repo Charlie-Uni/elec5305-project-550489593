@@ -1,0 +1,16 @@
+{
+  "scope": "single_clip_microbenchmark, batch one, one numerical thread",
+  "runs": 50,
+  "warmup": 5,
+  "frontend_median_ms": 2.8647919825743884,
+  "pooled_ensemble_readout_median_ms": 48.18812449229881,
+  "aligned_readout_median_ms": 50.62479150365107,
+  "aligned_includes": "audio tower, frame capture and projection, alignment at one temperature, fusion",
+  "excludes": [
+    "disk I/O",
+    "model loading",
+    "one-off text preparation and calibration"
+  ],
+  "device": "cpu",
+  "platform": "macOS-26.5.2-arm64-arm-64bit"
+}

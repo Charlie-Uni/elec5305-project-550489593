@@ -6,6 +6,10 @@ This demonstration executes the existing signal-processing and inference pipelin
 
 The video is an actual screen recording of this process. The two exported audio examples are included at their logged playback times. It has no author narration; the author should explain the code and results during the final presentation.
 
+The demo keeps the core single-template CLAP readout and original CNN seed 5305.
+The fixed prompt ensemble and local-alignment readouts are separate evaluated
+extensions; they do not replace the recorded example's reference predictions.
+
 ## Inputs and setup
 
 Use the default `main` checkout (the retained `feature/interference` branch also works) and the environments/data described in the [baseline guide](guides/baselines.md) and [CLAP guide](guides/interference_and_clap.md#frozen-clap-zero-shot-reference). The layout below is relative to a runtime directory; `repo/` is the checkout. Data and weights are external to GitHub because of their size. The demo validates source, metadata and model provenance and uses the evaluated checkpoints; arbitrary replacement models need not reproduce these outputs.

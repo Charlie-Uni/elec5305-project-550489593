@@ -37,14 +37,17 @@ Both `own` and `target` active-region power definitions are retained. The analys
 measure macro-F1, accuracy, distractor capture, score margins, representation
 changes and computational cost. Extensions cover three CNN seeds, noise/semantic
 augmentation, a fixed CLAP prompt ensemble, ranked readout and spectral–temporal
-overlap. See the [design](docs/guides/experiment_design.md),
+overlap. A further [PAT-style local-alignment protocol](docs/local_alignment_protocol_20261111.md)
+uses the same frozen LAION checkpoint, separating label-free presets from calibration
+on non-test clean labels. See the [design](docs/guides/experiment_design.md),
 [core results](results/clap_full_20261109/README.md) and
-[closing analyses](results/closing_20261110/README.md).
+[closing analyses](results/closing_20261110/README.md) and [verified local-feedback results](results/extensions_20261111/clap_local_alignment/README.md).
 
 Equal power does not isolate semantics from acoustic structure, and 0 dB has
 single-label ambiguity. Top-2 retention is a ranking diagnostic, not proof that a
 model “heard both” events. CLAP benefits from external pretraining; the fixed
-prompt ensemble is not full PAT.
+prompt ensemble and the separately named local-feedback adaptation are not official
+or full PAT reproductions. Frozen weights do not make the calibrated readout zero-shot.
 
 ## Run and reproduce
 

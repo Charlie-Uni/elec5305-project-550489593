@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "key": "SHA256 of identical resampled and quantised float32 input bytes",
+  "unique_inputs": 54972,
+  "cache_hits": 43010,
+  "scope": "in-memory for this frozen model, text ensemble and temperature grid",
+  "source_sha256": "7537c6f99d0f759b727e6d8c80af60f202b480eb23206d018bd14c04e95812b0"
+}

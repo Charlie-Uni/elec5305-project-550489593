@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-11-10T14:37:05.966909+00:00",
+  "code_commit": "e0cb9f91234a91e260b17cef36e56b4f4659c5e9",
+  "fixed_rule": {
+    "temperature": 64.0,
+    "beta_text": 0.2,
+    "beta_audio": 0.05
+  },
+  "temperatures": [
+    16,
+    32,
+    64,
+    100
+  ],
+  "betas": [
+    0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1,
+    2
+  ],
+  "primary_family": 4,
+  "source_sha256": {
+    "src/esc_robustness/local_alignment.py": "c824583c2d44eaad840c4f3c2d8e54f87c663695a19a027404b7592f9d883ba0",
+    "docs/local_alignment_protocol_20261111.md": "5c4905b3a49b7afd106514436467c7ee2fea4d4715d2c10e1f6f1a181e44e099"
+  },
+  "stage": "real-checkpoint preflight running; no alignment outcome inspected",
+  "execution_code_commit": "c8981ec87a6291baf3dc08b12fb3b60825a6fed6",
+  "execution_source_sha256": "330bde1f3e9e4586ded15c6f1449ad21da76b076743fbe5b6452e397707ff7b6",
+  "cache_options": {
+    "verified_text_cache": true,
+    "identical_prepared_input_cache": true
+  },
+  "real_checkpoint_preflight": {
+    "clips": 50,
+    "passed": true,
+    "pooled_embedding_max_abs_difference": 0.0,
+    "single_score_max_abs_difference": 0.0,
+    "ensemble_score_max_abs_difference": 2.220446049250313e-16
+  },
+  "note": "Preset and grid unchanged. Cache engineering changes were tested before inspecting any aligned readout result.",
+  "full_run_commit": "2394dd721ed0ad52bd2447a93393982b546d267e",
+  "full_run_source_sha256": "7537c6f99d0f759b727e6d8c80af60f202b480eb23206d018bd14c04e95812b0",
+  "independent_auditor_sha256": "5d289ea8e2e0f581a189c2b92b708c036b14598872595c54bba516b41b8f681b"
+}

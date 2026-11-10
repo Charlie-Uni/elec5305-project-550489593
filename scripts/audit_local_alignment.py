@@ -101,6 +101,9 @@ def audit(run, single, ensemble, data, output):
     assert json.loads((run / "complete.json").read_text()) == {"complete": True, "limit": None}
     assert all(json.loads((run / name).read_text())["passed"] for name in
                ("preflight.json", "reference_check.json"))
+    cache = json.loads((run / "encoding_cache.json").read_text())
+    if cache["enabled"]:
+        assert cache["unique_inputs"] + cache["cache_hits"] == 2000 + 2 * (24000 + 23991)
     texts = loaded(run / "text_embeddings.npz")
     assert tuple(texts["temperatures"]) == TEMPERATURES
     selection = json.loads((run / "selection.json").read_text())
@@ -231,6 +234,22 @@ def audit(run, single, ensemble, data, output):
             "single": rows(single.parent / f"eval_{region}/clap_predictions.csv"),
             "ensemble": rows(ensemble / f"eval_{region}/clap_predictions.csv"),
         }
+        reference_arrays = {}
+        for name, path in (
+            ("single", single.parent / f"eval_{region}/clap_scores.npz"),
+            ("ensemble", ensemble / f"eval_{region}/clap_scores.npz"),
+        ):
+            with np.load(path) as original:
+                assert np.array_equal(original["row"], ids)
+                assert np.array_equal(original["class_ids"], np.arange(50))
+                reference_arrays[name] = {key: original[key] for key in ("scores", "control_scores")}
+        control_single = unpack(arrays["control_representation"])[0] @ texts["single"].T
+        for name, controls in (("single", control_single), ("ensemble", arrays["control_scores"])):
+            expected = reference_arrays[name]["control_scores"]
+            maximum = float(np.max(np.abs(controls - expected)))
+            maxima[f"{name}_reference_score"] = max(maxima[f"{name}_reference_score"], maximum)
+            assert maximum <= 1e-4
+            assert np.array_equal(controls.argmax(1), expected.argmax(1))
         for reference in references.values():
             assert [int(row["row"]) for row in reference] == ids.tolist()
         condition_keys = [(row["condition"], int(float(row["level_db"]))) for row in records]
@@ -250,8 +269,7 @@ def audit(run, single, ensemble, data, output):
             for name, reference in references.items():
                 expected = [row for row, included in zip(reference, mask) if included]
                 assert np.array_equal(predicted[name], [int(row["prediction"]) for row in expected])
-                column = np.array([float(row["target_score"]) for row in expected])
-                difference = float(np.max(np.abs(values[name][np.arange(len(y)), y] - column)))
+                difference = float(np.max(np.abs(values[name] - reference_arrays[name]["scores"][mask])))
                 maxima[f"{name}_reference_score"] = max(maxima[f"{name}_reference_score"], difference)
                 assert difference <= 1e-4
             comparisons.append({"region": region, "condition": condition, "level_db": level, "trials": len(y)})
@@ -274,17 +292,37 @@ def audit(run, single, ensemble, data, output):
                 writer = csv.DictWriter(text, fieldnames=list(evidence[0]))
                 writer.writeheader()
                 writer.writerows(evidence)
+    clean_summary = json.loads((run / "clean/summary.json").read_text())
+    provenance = json.loads((run / "provenance.json").read_text())
+    assert clean_summary["clips"] == 2000 and clean_summary["seconds"] > 0
+    setup = {
+        "clean_clips": clean_summary["clips"],
+        "clean_batch_size": clean_summary["batch_size"],
+        "clean_encoding_seconds": clean_summary["seconds"],
+        "calibration_on_cached_scores_seconds": selection["selection_seconds"],
+        "text_preparation_seconds": provenance["one_off_text_preparation_seconds"],
+        "text_preparation_kind": provenance["text_preparation_kind"],
+        "historical_prompt_encoding_measured_here": False,
+        "scope": "One-off setup, separate from per-query deployment latency; clean encoding includes all four temperature branches",
+        "input_sha256": {name: sha(run / name) for name in
+                         ("clean/summary.json", "provenance.json", "selection.json")},
+    }
+    (output / "setup_cost.json").write_text(json.dumps(setup, indent=2) + "\n")
     result = {
         "verified": True, "clean_targets": 2000, "own_rows": 24000, "target_rows": 23991,
         "readouts": list(READOUTS), "condition_rows_checked": len(conditions),
         "trial_readout_records": len(evidence), "primary_tests": len(primary),
+        "query_slots_including_controls": 2000 + 2 * (24000 + 23991),
+        "encoding_cache": cache,
         "source_exclusions_and_clean_selection_recomputed": True,
         "all_original_single_and_ensemble_predictions_identical": True,
         "max_abs_differences": maxima,
         "source_sha256": sha(Path(__file__)),
         "run_provenance_sha256": sha(run / "provenance.json"),
         "conditions_sha256": sha(run / "conditions.csv"),
+        "primary_comparisons_sha256": sha(output / "primary_comparisons.csv"),
         "trial_evidence_sha256": sha(output / "trial_evidence.csv.gz"),
+        "setup_cost_sha256": sha(output / "setup_cost.json"),
         "scope": "Local-alignment adaptation, not official or full PAT; calibrated results use clean labels",
     }
     (output / "independent_audit.json").write_text(json.dumps(result, indent=2) + "\n")

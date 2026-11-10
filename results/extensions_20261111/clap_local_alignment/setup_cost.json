@@ -1,0 +1,15 @@
+{
+  "clean_clips": 2000,
+  "clean_batch_size": 4,
+  "clean_encoding_seconds": 125.88882049999665,
+  "calibration_on_cached_scores_seconds": 0.27739079104503617,
+  "text_preparation_seconds": 1.0956392500083894,
+  "text_preparation_kind": "verified_cache_load",
+  "historical_prompt_encoding_measured_here": false,
+  "scope": "One-off setup, separate from per-query deployment latency; clean encoding includes all four temperature branches",
+  "input_sha256": {
+    "clean/summary.json": "4e8a31bb170f01312dff4efe6dd99ee88bdfb30bafbf22ce1fdbdfd7869af7bd",
+    "provenance.json": "4a200f8e22369a3f789199b2fe8e7d9bf402f6bf6aac02db5c19f2d43aa59cf1",
+    "selection.json": "845dcb255d09fe97cf745e6da5523fad4d8f214aeeb6c8a63b0676d163eab9c8"
+  }
+}

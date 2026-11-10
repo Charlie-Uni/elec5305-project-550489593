@@ -1,0 +1,85 @@
+{
+  "fixed_rule": {
+    "temperature": 64.0,
+    "beta_text": 0.2,
+    "beta_audio": 0.05
+  },
+  "calibration_criterion": "top-1 correct count on clean clips outside the test fold, excluding sources shared with it; first maximum in simplest-first order",
+  "one_rule_per_fold_for_all_conditions_levels_and_power_conventions": true,
+  "temperatures": [
+    16.0,
+    32.0,
+    64.0,
+    100.0
+  ],
+  "betas": [
+    0.0,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "candidates": 321,
+  "selection_seconds": 0.27739079104503617,
+  "folds": {
+    "1": {
+      "choice": {
+        "temperature": 16.0,
+        "beta_text": 1.0,
+        "beta_audio": 2.0
+      },
+      "calibration_clips": 1600,
+      "excluded_shared_source_clips": 0,
+      "calibration_accuracy": 0.931875,
+      "ensemble_calibration_accuracy": 0.92625
+    },
+    "2": {
+      "choice": {
+        "temperature": 16.0,
+        "beta_text": 2.0,
+        "beta_audio": 1.0
+      },
+      "calibration_clips": 1598,
+      "excluded_shared_source_clips": 2,
+      "calibration_accuracy": 0.9367959949937422,
+      "ensemble_calibration_accuracy": 0.9311639549436797
+    },
+    "3": {
+      "choice": {
+        "temperature": 16.0,
+        "beta_text": 0.5,
+        "beta_audio": 0.01
+      },
+      "calibration_clips": 1598,
+      "excluded_shared_source_clips": 2,
+      "calibration_accuracy": 0.9317897371714643,
+      "ensemble_calibration_accuracy": 0.9292866082603254
+    },
+    "4": {
+      "choice": {
+        "temperature": 16.0,
+        "beta_text": 1.0,
+        "beta_audio": 0.5
+      },
+      "calibration_clips": 1597,
+      "excluded_shared_source_clips": 3,
+      "calibration_accuracy": 0.9329993738259236,
+      "ensemble_calibration_accuracy": 0.9298685034439574
+    },
+    "5": {
+      "choice": {
+        "temperature": 16.0,
+        "beta_text": 1.0,
+        "beta_audio": 2.0
+      },
+      "calibration_clips": 1598,
+      "excluded_shared_source_clips": 2,
+      "calibration_accuracy": 0.934918648310388,
+      "ensemble_calibration_accuracy": 0.9292866082603254
+    }
+  }
+}

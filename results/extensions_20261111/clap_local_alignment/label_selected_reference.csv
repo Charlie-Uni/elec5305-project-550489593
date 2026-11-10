@@ -1,0 +1,26 @@
+region,condition,level_db,label,n,correct,ensemble_correct,temperature,beta_text,beta_audio
+clean,clean,,optimistic reference: best grid point on the evaluated labels,2000,1866,1858,16.0,1.0,2.0
+own,demand,0,optimistic reference: best grid point on the evaluated labels,2000,1567,1567,16.0,0.0,0.0
+own,demand,10,optimistic reference: best grid point on the evaluated labels,2000,1783,1774,16.0,0.0,0.1
+own,demand,5,optimistic reference: best grid point on the evaluated labels,2000,1708,1701,16.0,0.0,0.2
+own,semantic_different,0,optimistic reference: best grid point on the evaluated labels,2000,912,890,16.0,0.0,1.0
+own,semantic_different,10,optimistic reference: best grid point on the evaluated labels,2000,1362,1357,64.0,0.2,0.0
+own,semantic_different,5,optimistic reference: best grid point on the evaluated labels,2000,1144,1124,16.0,2.0,1.0
+own,semantic_same,0,optimistic reference: best grid point on the evaluated labels,2000,922,917,16.0,0.0,0.05
+own,semantic_same,10,optimistic reference: best grid point on the evaluated labels,2000,1378,1373,32.0,0.0,0.05
+own,semantic_same,5,optimistic reference: best grid point on the evaluated labels,2000,1173,1166,100.0,0.01,0.1
+own,white,0,optimistic reference: best grid point on the evaluated labels,2000,1304,1247,16.0,0.1,2.0
+own,white,10,optimistic reference: best grid point on the evaluated labels,2000,1726,1689,16.0,0.2,2.0
+own,white,5,optimistic reference: best grid point on the evaluated labels,2000,1565,1523,16.0,0.0,2.0
+target,demand,0,optimistic reference: best grid point on the evaluated labels,2000,1558,1558,16.0,0.0,0.0
+target,demand,10,optimistic reference: best grid point on the evaluated labels,2000,1782,1775,16.0,0.0,0.5
+target,demand,5,optimistic reference: best grid point on the evaluated labels,2000,1703,1698,16.0,0.0,0.05
+target,semantic_different,0,optimistic reference: best grid point on the evaluated labels,1999,871,858,16.0,0.0,1.0
+target,semantic_different,10,optimistic reference: best grid point on the evaluated labels,1999,1337,1326,16.0,0.2,2.0
+target,semantic_different,5,optimistic reference: best grid point on the evaluated labels,1999,1103,1082,16.0,2.0,1.0
+target,semantic_same,0,optimistic reference: best grid point on the evaluated labels,1998,881,875,32.0,0.01,0.05
+target,semantic_same,10,optimistic reference: best grid point on the evaluated labels,1998,1349,1347,16.0,0.0,0.02
+target,semantic_same,5,optimistic reference: best grid point on the evaluated labels,1998,1148,1138,64.0,0.0,0.1
+target,white,0,optimistic reference: best grid point on the evaluated labels,2000,1304,1245,16.0,0.1,2.0
+target,white,10,optimistic reference: best grid point on the evaluated labels,2000,1725,1689,16.0,0.0,2.0
+target,white,5,optimistic reference: best grid point on the evaluated labels,2000,1565,1523,16.0,0.0,2.0

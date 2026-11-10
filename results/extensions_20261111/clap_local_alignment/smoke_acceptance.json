@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "clean_clips": 2000,
+  "clean_single_accuracy": 0.8175,
+  "clean_ensemble_accuracy": 0.929,
+  "mixtures": 120,
+  "all_ensemble_and_control_predictions_match": true,
+  "max_ensemble_target_score_difference": 3.885780586188048e-16,
+  "reference_checks": {
+    "preflight.json": {
+      "clips_checked": 50,
+      "tolerance": 0.0001,
+      "single_text_max_abs_difference": 0.0,
+      "pooled_embedding_max_abs_difference": 0.0,
+      "single_score_max_abs_difference": 0.0,
+      "single_predictions_identical": true,
+      "ensemble_score_max_abs_difference": 2.220446049250313e-16,
+      "ensemble_predictions_identical": true,
+      "passed": true
+    },
+    "reference_check.json": {
+      "clips_checked": 2000,
+      "tolerance": 0.0001,
+      "pooled_embedding_max_abs_difference": 7.448334810034041e-09,
+      "single_predictions_identical": true,
+      "ensemble_score_max_abs_difference": 3.3306690738754696e-16,
+      "ensemble_predictions_identical": true,
+      "passed": true
+    }
+  },
+  "aligned_outcomes_not_used_to_change_rules": true
+}

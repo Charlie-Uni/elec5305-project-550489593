@@ -29,7 +29,7 @@ from the effect of calibration; both come from the same cached branch scores.
 | Aspect | Paper (NAACL 2025) | Released `inference_zs.py` @ `8910ebb` | This project |
 |---|---|---|---|
 | Base model | six ALMs incl. LAION-CLAP | MS-CLAP 2023 only | LAION-CLAP `630k-audioset-best.pt` (same checkpoint as every other CLAP result) |
-| Frame features | frame-level features before pooling; extraction per encoder not specified | from a modified `msclap` wrapper that is not public | HTSAT fine-grained latents captured by a forward hook during the official embedding call; exact frame repetition removed (32 frames per 10 s input); the model's own `audio_projection` applied per frame; unit norm |
+| Frame features | frame-level features before pooling; extraction per encoder not specified | requires a modified `msclap` interface not supplied in the release | HTSAT fine-grained latents captured by a forward hook during the official embedding call; exact frame repetition removed (32 frames per 10 s input); the model's own `audio_projection` applied per frame; unit norm |
 | Prompts | score-weighted ensemble over the dataset's audio | uniform mean of the prompt list | uniform mean of the released list (the existing fixed ensemble) |
 | Affinity | frames x text, no scale stated | frames x text, multiplied by 2, on un-normalised MS-CLAP features | unit-norm features with an explicit temperature in {16, 32, 64, 100} |
 | Pooling of text-guided frames | mean | mean + max | mean + max (as released) |
@@ -82,6 +82,11 @@ each bootstrap. Target ranks break score ties in ascending class-ID order, consi
 with the argmax decision. These reporting and tie-handling clarifications precede any
 real-checkpoint alignment results and do not alter the declared parameter grid or preset.
 
+The source-cluster interval addresses repeated target recordings, not all dependence:
+some trials share a distractor and calibration sets overlap across folds. It conditions
+on these observed partners and chosen rules rather than estimating variability from
+new pairing seeds, new calibration sets or repeated training.
+
 The Mac runner additionally supports `--text-cache` pointing to the existing fixed
 ensemble run. It checks the checkpoint, template bytes and order, class order and cache
 file SHA256, and recomputes the uniform mean from the saved per-prompt vectors. Its
@@ -95,6 +100,8 @@ preset, calibration population or mixture construction.
 ## Run (Mac, CLAP environment)
 
 ```bash
+# Run from the current repository root, including when the venv holds an older package.
+export PYTHONPATH="$PWD/src"
 CKPT=<630k-audioset-best.pt>                 # sha256 8053c977...
 TEMPLATES=<promt_list.txt from cs20s030/PAT@8910ebb>   # sha256 2decfa74...
 DATA=<ESC-50 root>
@@ -123,11 +130,23 @@ python -m esc_robustness.local_alignment run --checkpoint $CKPT --templates $TEM
 python -m esc_robustness.local_alignment analyse --run-dir $OUT
 ```
 
+On the Mac the existing text cache can be passed with
+`--text-cache /Users/leaf/Projects/elec5305-local/runs/extensions_20261109/clap_prompt_ensemble`;
+use `--cache-encodings` for the verified identical-input cache. The frozen inference
+module at the full-run commit is retained unchanged while the model is running.
+The independent verification command is `scripts/audit_local_alignment.py --help`.
+`scripts/benchmark_local_alignment.py` additionally reuses the original 250-clip
+class/fold-balanced panel, three repetitions and both readout orders. Its query costs
+exclude input-cache hits and setup; calibration-grid timing is conditional on cached
+clean branch scores, and clean encoding time is separately recorded by the clean run.
+
 `run` repeats the preflight and stops before encoding if it fails; after the clean pass
 it compares all 2,000 pooled embeddings and baseline scores with the cache
-(`reference_check.json`) and stops before the manifests if they differ. Mixtures and
-gain-matched controls are both encoded for every row, as in the original CLAP run; they
-are not de-duplicated by input hash, which costs time only.
+(`reference_check.json`) and stops before the manifests if they differ. Every row
+receives mixture and gain-matched control scores. Without `--cache-encodings` both
+inputs are encoded again; with it, only byte-identical prepared inputs reuse an
+earlier frozen-model encoding. Logical trial counts and evaluation denominators do
+not change.
 
 ## Acceptance checks before any number is used
 

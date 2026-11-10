@@ -1,0 +1,38 @@
+{
+  "verified": true,
+  "clean_targets": 2000,
+  "own_rows": 24000,
+  "target_rows": 23991,
+  "readouts": [
+    "single",
+    "ensemble",
+    "aligned_fixed",
+    "aligned_calibrated"
+  ],
+  "condition_rows_checked": 100,
+  "trial_readout_records": 199964,
+  "primary_tests": 4,
+  "query_slots_including_controls": 97982,
+  "encoding_cache": {
+    "enabled": true,
+    "key": "SHA256 of identical resampled and quantised float32 input bytes",
+    "unique_inputs": 54972,
+    "cache_hits": 43010,
+    "scope": "in-memory for this frozen model, text ensemble and temperature grid",
+    "source_sha256": "7537c6f99d0f759b727e6d8c80af60f202b480eb23206d018bd14c04e95812b0"
+  },
+  "source_exclusions_and_clean_selection_recomputed": true,
+  "all_original_single_and_ensemble_predictions_identical": true,
+  "max_abs_differences": {
+    "single_reference_score": 2.2459136093597176e-07,
+    "ensemble_reference_score": 2.3648851163460272e-07,
+    "saved_fused_score": 0.0
+  },
+  "source_sha256": "b3567997e2f96e6bea3c7701104893b959e93d15651c601e189b655ef4ab8bd3",
+  "run_provenance_sha256": "4a200f8e22369a3f789199b2fe8e7d9bf402f6bf6aac02db5c19f2d43aa59cf1",
+  "conditions_sha256": "4ae60698b32622b4c67533e1b9d1c78afc81a8e340bc6e50610ada40a2679ea4",
+  "primary_comparisons_sha256": "ec40a71dec6fba0012b8e94a6c3fccbd18ff5693f629b388e38db587f52128a2",
+  "trial_evidence_sha256": "11536ad897870e6407e0bc5c0d8e739cd5b3fd96b6381b66f1aef833e9c14a2b",
+  "setup_cost_sha256": "4e97b5c895b706b484a9c22bb841230c04159bdb202f9352b347cc3e81d57683",
+  "scope": "Local-alignment adaptation, not official or full PAT; calibrated results use clean labels"
+}

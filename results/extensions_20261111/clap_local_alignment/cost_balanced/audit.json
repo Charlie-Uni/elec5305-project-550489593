@@ -1,0 +1,28 @@
+{
+  "verified": true,
+  "clips": 250,
+  "repetitions": 3,
+  "orders": 2,
+  "queries": 4500,
+  "numerical_threads": 1,
+  "batch_size": 1,
+  "input_cache_bypassed": true,
+  "panel_sha256": "d3d4b8654a0f9740f74e4378cda49165fbc2d883a9c95e582d6a7838c35aed2d",
+  "prediction_disagreements": 0,
+  "max_abs_score_difference": 2.4403029996733494e-07,
+  "source_sha256": "441de6355f0ba98334828549befbaa7304d57cf8f3e21300c1fe529b7c12687e",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "checkpoint_sha256": "8053c9775516af2f4902e1e8281e356cc1bf7a85e8b761908170767b77c3f037",
+  "text_preparation": {
+    "templates_sha256": "2decfa74ebd8aebcc51dee998afc942e5c640af315e44eea4417e0410b33d72e",
+    "templates_per_class": 300,
+    "one_off_text_preparation_seconds": 1.127661333011929,
+    "text_preparation_kind": "verified_cache_load",
+    "text_cache": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/clap_prompt_ensemble"
+  },
+  "scope": "same original 250-clip class/fold-balanced panel; paired readout orders; disk/model/text setup excluded",
+  "output_sha256": {
+    "trials.csv": "6e3ed62c2da42feca1f727c8a68ab7cc319aade95e89499625309099c8365e6e",
+    "summary.csv": "b08d9f6d979f6313efb5eae484844925ebc1a3c21d72e816cde398237f4120f9"
+  }
+}

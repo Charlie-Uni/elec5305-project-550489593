@@ -28,6 +28,7 @@ editorial and author tasks. GitHub publication is not a Canvas submission.
 | Core figures | [Own power](figures_three_systems_own_20261109/README.md) · [target power](figures_three_systems_target_20261109/README.md) | Eight figures per protocol, with numerical inputs |
 | Training and other extensions | [Extension evidence](extensions_20261109/README.md) | Three CNN seeds, augmentation, prompt ensemble, diagnostics and cost |
 | Closing explanatory analyses | [Rank and acoustic results](closing_20261110/README.md) | Exact rank readout, spectral/temporal overlap and matched comparisons |
+| Same-checkpoint local feedback | [Alignment results](extensions_20261111/clap_local_alignment/README.md) | Preset and clean-calibrated readouts, 100 checked conditions; no confirmed primary gain |
 | Representative sounds | [All four targets](../examples/README.md) | Source-derived audio, matched controls, predictions and licences |
 
 ## Historical and verification records

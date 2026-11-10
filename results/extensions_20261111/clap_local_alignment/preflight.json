@@ -1,0 +1,11 @@
+{
+  "clips_checked": 50,
+  "tolerance": 0.0001,
+  "single_text_max_abs_difference": 0.0,
+  "pooled_embedding_max_abs_difference": 0.0,
+  "single_score_max_abs_difference": 0.0,
+  "single_predictions_identical": true,
+  "ensemble_score_max_abs_difference": 2.220446049250313e-16,
+  "ensemble_predictions_identical": true,
+  "passed": true
+}

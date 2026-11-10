@@ -24,6 +24,8 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 | [build_final_report.py](build_final_report.py) | Build the concise submission report from unchanged, audited experiment tables. |
 | [build_final_presentation.cjs](build_final_presentation.cjs) | Build the 12-slide editable final presentation. |
 | [build_final_narration.py](build_final_narration.py) | Keep the concise recording guide identical to the deck's speaker notes. |
+| [build_local_alignment_delivery.py](build_local_alignment_delivery.py) | Add independently verified alignment values to report tables, presentation data and website data. |
+| [update_local_alignment_deck.mjs](update_local_alignment_deck.mjs) | Author the native alignment table with Artifact Tool, preserve original charts/audio and update exact narration. Run after generating the base deck, not before. |
 | [build_site_data.py](build_site_data.py) | Generate the project site's numbers from saved research outputs. |
 | [build_listening_examples.py](build_listening_examples.py) | Export final-manifest examples and matched controls with source attribution. |
 | [build_listening_context.py](build_listening_context.py) | Write the context shown beside the website's listening examples. |
@@ -41,6 +43,7 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 | [audit_extension_results.py](audit_extension_results.py) | Recalculate intervention tables directly from per-trial CSVs with sklearn. |
 | [audit_augmentation_banks.py](audit_augmentation_banks.py) | Check every training view against official metadata and held-out partitions. |
 | [audit_prompt_ensemble.py](audit_prompt_ensemble.py) | Independently recompute the prompt ablation from saved vectors and predictions. |
+| [audit_local_alignment.py](audit_local_alignment.py) | Recompute all alignment conditions, calibration exclusions, old reference identities and four primary paired tests. |
 | [audit_cost_panel.py](audit_cost_panel.py) | Verify the balanced CPU benchmark and export comparable total-query costs. |
 | [audit_delivery_sync.py](audit_delivery_sync.py) | Check the report, slide charts, narration and website against saved evidence. |
 | [inspect_report_pdf.py](inspect_report_pdf.py) | Render every report page and check text bounds before visual inspection. |
@@ -56,6 +59,7 @@ For a live demonstration, start with [the run guide](../docs/code_demo.md). For 
 | [check_prompt_multiplicity.py](check_prompt_multiplicity.py) | Descriptive post-hoc sensitivity to duplicate released prompt templates. |
 | [check_source_cluster_uncertainty.py](check_source_cluster_uncertainty.py) | Post-hoc sensitivity of matched accuracy CIs to target-source clustering. |
 | [benchmark_panel.py](benchmark_panel.py) | Balanced 250-clip CPU latency panel, run after training/evaluation is idle. |
+| [benchmark_local_alignment.py](benchmark_local_alignment.py) | Compare ensemble, preset and calibrated readouts on the same 250 clips in both orders, bypassing input caches. |
 | [repeat_cost_panel.py](repeat_cost_panel.py) | Post-hoc latency sensitivity: repeat the identical panel in reverse model order. |
 | [compare_cost_passes.py](compare_cost_passes.py) | Verify identical benchmark inputs across the primary and reversed-order pass. |
 | [plot_closing_analyses.py](plot_closing_analyses.py) | Render final readout/overlap diagnostics without changing earlier figures. |

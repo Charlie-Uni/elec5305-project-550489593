@@ -29,11 +29,13 @@
   "report_pages": 11,
   "word_pages": 11,
   "figures": 5,
-  "grayscale_diagnostics_checked": true,
-  "native_word_math_objects": 44,
+  "native_word_tables": 5,
+  "native_word_math_objects": 49,
   "word_pm_symbols_checked": true,
-  "slide_12_revised_and_inspected": true,
-  "other_slides_pixel_identical_to_prior_review": [
+  "word_table_rows_kept_together": true,
+  "word_toc_uses_own_rendered_pagination": true,
+  "slide_11_12_inspected_in_artifact_tool_and_pdf": true,
+  "unchanged_slide_xml": [
     1,
     2,
     3,
@@ -43,45 +45,22 @@
     7,
     8,
     9,
-    10,
-    11
+    10
   ],
-  "findings": [],
-  "sha256": {
-    "final_report.pdf": "13d04816ca519eaacea47f345befedf14704e08a1d54665d28b7f364b968bdbd",
-    "final_report.docx": "f1f46b2615a8f75b8a8437fd055aae7e4ce74d335904a735c009c6c5128a0c2c",
-    "presentation.pptx": "e8a63088fd065cce4934f89ed7b9be966a9068a8b3201369d1b7ddcadb618e0c",
-    "presentation.pdf": "8cec709d376e95fc60d9af11a459d7c2bccf1955b993b55b45ef42e580545862"
-  },
-  "report_pages_inspected_current_revision": [
-    1,
-    2,
-    3,
-    4
+  "unchanged_embedded_audio_clips": 2,
+  "native_charts_preserved": 2,
+  "browser_viewports": [
+    1280,
+    390,
+    320
   ],
-  "word_pages_inspected_current_revision": [
-    1,
-    2,
-    3,
-    4
-  ],
-  "report_pages_pixel_identical_to_prior_review": [
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11
-  ],
-  "word_pages_pixel_identical_to_prior_review": [
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11
-  ],
-  "revision_note": "Dataset provenance inserted before the opening example; revised PDF and Word pages 1\u20134 inspected. Pages 5\u201311 unchanged."
+  "browser_audio_choices": 48,
+  "browser_audio_loads": 96,
+  "scope": "All report and Word pages visually inspected; changed slides inspected in both first-party render and bundled LibreOffice PDF. No claim of review in desktop PowerPoint.",
+  "files": {
+    "final_report.pdf": "2e3334949cf7d9929410d321185646039f863d290faa70d91e568bbf0c9f9d58",
+    "final_report.docx": "d92d4584664c3f2a1e7bf7ef57081264d7b28ef2e4a28f5d409e27b8d958a7fe",
+    "presentation.pptx": "34a01b5cfe52945211b4bea60206f4af60f4218772c75eadc6b0e0c0034d3a43",
+    "presentation.pdf": "92b63f47fad3d54da06d6a4698b28c714e6f142b97e0cc91e93fd6e7b9f5d5f8"
+  }
 }

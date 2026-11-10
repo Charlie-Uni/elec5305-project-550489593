@@ -58,6 +58,7 @@ def prepare_tex():
     source = source.replace(r"\site", "https://charlie-uni.github.io/elec5305-project-550489593/")
     source = source.replace(r"\repo", "https://github.com/Charlie-Uni/elec5305-project-550489593")
     source = re.sub(r"\\vspace\{[^}]+\}", "", source)
+    source = source.replace(r"\phantomsection", "")
     source = re.sub(r"\\addcontentsline\{toc\}\{section\}\{References\}", "", source)
     source = source.replace(
         r"\begin{thebibliography}{13}\raggedright", r"\section*{References}"
@@ -68,11 +69,17 @@ def prepare_tex():
         lambda m: "[" + ", ".join(references[k] for k in m[1].split(",")) + "]",
         source,
     )
-    tables = (ROOT / "docs/final_report_tables.tex").read_text()
-    for name in ("CleanRows", "AugRows", "CostRows"):
-        start = tables.index("\\newcommand{\\" + name + "}") + len("\\newcommand{\\" + name + "}")
-        content, _ = brace(tables, start)
-        source = source.replace("\\" + name, content)
+    for filename, names in (
+        ("final_report_tables.tex", ("CleanRows", "AugRows", "CostRows")),
+        ("local_alignment_tables.tex", ("LocalAlignmentRows",)),
+    ):
+        if not any("\\" + name in source for name in names):
+            continue
+        tables = (ROOT / "docs" / filename).read_text()
+        for name in names:
+            start = tables.index("\\newcommand{\\" + name + "}") + len("\\newcommand{\\" + name + "}")
+            content, _ = brace(tables, start)
+            source = source.replace("\\" + name, content)
     figure_number, table_number = 0, 0
 
     def figure(name, caption):
@@ -116,7 +123,7 @@ def element(name, **attrs):
     return obj
 
 
-def format_document(doc):
+def format_document(doc, toc_pdf=None):
     section = doc.sections[0]
     section.page_width, section.page_height = Mm(210), Mm(297)
     section.top_margin = section.bottom_margin = Mm(20)
@@ -158,6 +165,20 @@ def format_document(doc):
         ("7 Implementation, reproduction and attribution", 9),
         ("References", 11),
     ]
+    if toc_pdf is not None:
+        from pypdf import PdfReader
+
+        reader = PdfReader(toc_pdf)
+        destinations = {
+            re.sub(r"^\d+\s+", "", item.title): reader.get_destination_page_number(item) + 1
+            for item in reader.outline if isinstance(item, dict)
+        }
+        # Some older LaTeX bookmarks inherit the preceding section's anchor.
+        references = [i + 1 for i, page in enumerate(reader.pages)
+                      if re.match(r"\s*References(?:\s|$)", page.extract_text() or "")]
+        destinations["References"] = references[0] if references else len(reader.pages)
+        toc = [(title, destinations.get(re.sub(r"^\d+\s+", "", title), page))
+               for title, page in toc]
     for p in list(doc.paragraphs):
         if p.text == "TITLEBLOCKMARKER":
             for text, style in titles:
@@ -194,8 +215,10 @@ def format_document(doc):
             p.paragraph_format.space_after = Pt(5)
         if p.text.startswith("[") and re.match(r"\[\d+\]", p.text):
             p.paragraph_format.space_after = Pt(7)
-    widths = ([23, 73, 74], [18, 32, 32, 44, 44], [25, 29, 29, 29, 29, 29], [50, 50, 50])
-    assert len(doc.tables) == 4
+    widths = [[23, 73, 74], [18, 32, 32, 44, 44], [25, 29, 29, 29, 29, 29], [50, 50, 50]]
+    if len(doc.tables) == 5:
+        widths.insert(3, [30, 23, 23, 23, 23, 23, 25])
+    assert len(doc.tables) == len(widths)
     for table_index, (table, columns) in enumerate(zip(doc.tables, widths)):
         table.autofit = False
         for column, width in zip(table.columns, columns):
@@ -230,6 +253,7 @@ def format_document(doc):
                 for p in cell.paragraphs:
                     p.paragraph_format.space_after = Pt(0)
                     p.paragraph_format.line_spacing = Pt(10.7)
+                    p.paragraph_format.keep_with_next = i < len(table.rows) - 1
                     p.alignment = (
                         WD_ALIGN_PARAGRAPH.LEFT
                         if j == 0 or table_index == 0
@@ -248,6 +272,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pandoc", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, required=True)
+    parser.add_argument("--toc-pdf", type=Path, default=ROOT / "results/final_submission_20261110/final_report.pdf")
     args = parser.parse_args()
     args.work_dir.mkdir(parents=True, exist_ok=True)
     tex = args.work_dir / "report_word_source.tex"
@@ -258,7 +283,7 @@ def main():
         check=True,
     )
     doc = Document(candidate)
-    format_document(doc)
+    format_document(doc, args.toc_pdf)
     doc.save(OUT)
     print(OUT)
 

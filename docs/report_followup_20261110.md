@@ -1,6 +1,6 @@
 # Report revision record and remaining author tasks
 
-The reporting revisions below are complete in the 11-page report, 12-slide presentation, 825-word narration and Pages. The original experiment results, execution video are unchanged; the older detailed report is an unlinked historical archive. No model, dataset or experiment was added. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
+The reporting revisions below are complete in the 11-page report, 12-slide presentation, 823-word narration and Pages. The original experiment results, execution video are unchanged; the older detailed report is an unlinked historical archive. The separately approved local-feedback evaluation adds no model weights or dataset; original experiments are preserved. This is evidence of completed edits, not a predicted grade or a claim that personal submission is complete.
 
 ## Completed editorial changes
 
@@ -44,3 +44,9 @@ The [current editorial audit](../results/final_submission_20261110/single_report
 ## Single-document revision — 11 November 2026
 
 The formal report is now 11 pages with five figures. Capture/margin and representation-displacement diagnostics are in the main report. The new [rubric review](rubric_review_20261111.md) checks all eight criteria. Two submitted patches were applied, then wording was corrected for limited augmentation transfer, outcome-conditioned medians, power-protocol sensitivity and unconfirmed model-version details.
+
+## Same-checkpoint local feedback — 11 November 2026
+
+The full own/target runs and independent 100-condition audit are complete. The report now adds a compact four-readout table; slide 11, exact narration and Pages use the same audited values. Preset/calibrated own/+5-dB accuracy changes versus the ensemble are −0.05/−0.10 pp for same-category and +0.20/+0.75 pp for different-category interference. No primary test passes Holm correction (minimum adjusted p = 0.7346). This is an inconclusive result for a LAION adaptation, not official/full PAT or evidence of equivalence. Both same-category target-top-two percentages decline descriptively.
+
+A separate 4,500-query balanced panel preserves both orders and bypasses input caching. New reference/preset/calibrated medians are 59.16/61.74/61.85 ms forward and 60.34/63.01/63.03 ms reversed. Setup and external pretraining are excluded. The author also confirmed representative listening. Author narration and Canvas submission remain.
