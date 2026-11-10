@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "manifests": {
+    "own": {
+      "rows": 24000,
+      "targets": 2000,
+      "dropped_rows": 0,
+      "fixed_realization_across_levels": true,
+      "achieved_ratio_and_peak_verified": true,
+      "sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756"
+    },
+    "target": {
+      "rows": 23991,
+      "targets": 2000,
+      "dropped_rows": 9,
+      "fixed_realization_across_levels": true,
+      "achieved_ratio_and_peak_verified": true,
+      "sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5"
+    }
+  },
+  "common_protocol_rows": 23991,
+  "same_pairs_seeds_offsets_across_power_definitions": true,
+  "evaluations": {
+    "own/svm": {
+      "passed": true,
+      "rows": 24000,
+      "scores_and_embeddings_verified": true,
+      "serial_reference_exact_parity_rows": 60,
+      "five_fold_metrics_independently_recomputed": true
+    },
+    "own/cnn": {
+      "passed": true,
+      "rows": 24000,
+      "scores_and_embeddings_verified": true,
+      "serial_reference_exact_parity_rows": 60,
+      "five_fold_metrics_independently_recomputed": true
+    },
+    "target/svm": {
+      "passed": true,
+      "rows": 23991,
+      "scores_and_embeddings_verified": true,
+      "serial_reference_exact_parity_rows": 60,
+      "five_fold_metrics_independently_recomputed": true
+    },
+    "target/cnn": {
+      "passed": true,
+      "rows": 23991,
+      "scores_and_embeddings_verified": true,
+      "serial_reference_exact_parity_rows": 60,
+      "five_fold_metrics_independently_recomputed": true
+    }
+  },
+  "earlier_run_checks": {
+    "own_semantic_mixtures_unchanged": 12000,
+    "own_cnn_semantic_predictions_and_scores_identical": 12000,
+    "own_svm_semantic_accuracy_and_capture_match_cloud": true,
+    "own_svm_semantic_max_macro_f1_difference_pp": 0.003104941035977915,
+    "own_svm_semantic_max_margin_median_difference": 4.3625801993130153e-07,
+    "cloud_comparison_note": "Cloud attachment contains aggregates only. Clean prediction equality does not guarantee identical corrupted-input scores; local rerun values are retained without modification.",
+    "noise_comparison": "White-noise draws and DEMAND offsets changed; earlier noise results are retained as a separate protocol version."
+  },
+  "aggregation": "Accuracy and macro-F1 computed in each official fold, then averaged; macro-F1 uses all 50 labels and zero_division=0. Capture is pooled errors predicted as distractor / pooled errors.",
+  "strata_rule": "The same target clips are used for semantic, DEMAND and clean within each stratum, model and level, and across both power definitions. Bins use the unchanged own-manifest overlap.",
+  "accuracy_decomposition_rule": "Additive contributions to pooled accuracy differences over matched targets; distinct from the main table's equal-weight fold-mean accuracy.",
+  "limitations": [
+    "Overlap strata have different class and difficulty distributions; F1 is nonlinear, so full-set F1 is not a weighted average of stratum F1.",
+    "Stratum macro-F1 retains all 50 labels, including classes absent from individual folds. Do not infer relative baseline difficulty from cross-stratum macro-F1; inspect class coverage and clean accuracy.",
+    "Neither stratification nor power normalization isolates semantic meaning from temporal/spectral acoustics.",
+    "Target-region scaling can amplify non-overlapping events and attenuate the target; use gain-matched controls.",
+    "One fixed CNN training seed; no significance claim or bootstrap interval in this comparison.",
+    "0 dB is a diagnostic stress test, not an unambiguous single-label mixture."
+  ]
+}

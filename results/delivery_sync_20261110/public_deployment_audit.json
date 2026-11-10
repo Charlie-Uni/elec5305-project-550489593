@@ -1,0 +1,43 @@
+{
+  "verified": true,
+  "url": "https://charlie-uni.github.io/elec5305-project-550489593/",
+  "source": {
+    "branch": "gh-pages",
+    "path": "/"
+  },
+  "content_commit": "d3411c464894ccd5ee030e6c5501054c89e7608f",
+  "build_status": "built",
+  "build_updated_at": "2026-11-10T04:56:01Z",
+  "public_files": {
+    "index.html": {
+      "status": 200,
+      "bytes": 41251,
+      "sha256": "57c754a1c7e9c4c9e1d52ddfdc1f0f21a0c8e2c6bf1888238402163ad671e14b"
+    },
+    "site-data.json": {
+      "status": 200,
+      "bytes": 606049,
+      "sha256": "77b824ddece198caed0dd8203042b3eee11cbbb615c45b374affcd7b9413098e"
+    },
+    "docs/video_narration_draft.txt": {
+      "status": 200,
+      "bytes": 16013,
+      "sha256": "4e44272978f4d30b73134f4fbf1aa55bb567ae6fecc5084214b9846d4774d197"
+    },
+    "results/research_report_20261109_draft/research_report.pdf": {
+      "status": 200,
+      "bytes": 651798,
+      "sha256": "e5ebcef99033065fdaea048b1a2debfdb3ad90c58710ad45b80adc98cd693e35"
+    },
+    "results/presentation_20261109_draft/research_presentation.pptx": {
+      "status": 200,
+      "bytes": 840734,
+      "sha256": "d9f04e0d0fa467455da3bfd7f49ea4bfcd7d69848858cf819bac2f6efb71bc92"
+    },
+    "results/presentation_20261109_draft/research_presentation.pdf": {
+      "status": 200,
+      "bytes": 398864,
+      "sha256": "d08cdce7194c6a4cffda2b8e14ed8b7adbaf46e58da5d617d6c451d3db24e272"
+    }
+  }
+}

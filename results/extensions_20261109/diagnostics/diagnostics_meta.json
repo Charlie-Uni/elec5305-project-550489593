@@ -1,0 +1,52 @@
+{
+  "input_provenance": {
+    "own/svm": {
+      "directory": "artifacts/interference/v3_20261109/eval_own",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+      "scores_sha256": "f836551604f034edee2618bca6b78af1f2e9a8ba902f148172036513b9c61fbd"
+    },
+    "own/cnn": {
+      "directory": "artifacts/interference/v3_20261109/eval_own",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "2530061f2bb5c0016a1ff986d70571aed36d9d46becb7c0743ab5e51a684121e",
+      "scores_sha256": "d456439311a11b9be4ae38cbdb99cbd46b974c5b6c7bb344868a8140688db651"
+    },
+    "own/clap": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_own",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+      "scores_sha256": "90c904f46947279301b6cbb7a6441e396bf298427e7ef0b41e91abe9c8025b01"
+    },
+    "target/svm": {
+      "directory": "artifacts/interference/v3_20261109/eval_target",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "9bf2100917e525e7e5a306cea25b4ec0c30997dd34741f5d144c83b1ee48b3ba",
+      "scores_sha256": "1007c6d7c42b1ad9ea6248ab19fb5b931ae24f7b13189f9d482409176c9bc3d0"
+    },
+    "target/cnn": {
+      "directory": "artifacts/interference/v3_20261109/eval_target",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "5a402d3bcd20bee14b702df0d902c7dd2bfc9ca1f33174e6e95c0ecf4a3246b8",
+      "scores_sha256": "cd8baacd7e7404ba88da3cccaf63c157449cc6909f26bd4f9960b5286c884c4d"
+    },
+    "target/clap": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_target",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "7ac200ccc603ce3b9eaa8ecba3e4bd28e1fc4ce931b26e31786d77d12201f239",
+      "scores_sha256": "bf8da580fe7c3b609c702ed84912456cfdcfaaa93665cc05807b14171802d4c6"
+    }
+  },
+  "bootstrap_replicates": 2000,
+  "seed": 530509,
+  "bootstrap": "paired target clips, stratified by test fold; percentile 95% CI; fixed fitted models",
+  "multiplicity": "Holm adjustment across +5 dB high-overlap exact McNemar tests only",
+  "primary_tests": 12,
+  "ranking_ties": "competition rank; strictly larger scores",
+  "caveats": [
+    "CLAP ranks use all 50 fixed class prompts; no prompt tuning",
+    "AUC describes association of displacement with errors, not causation",
+    "Clip bootstrap does not capture model refitting or source-recording dependence",
+    "All new analyses are extensions motivated by previously observed baseline results"
+  ]
+}

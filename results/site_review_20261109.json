@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "index_sha256": "57c754a1c7e9c4c9e1d52ddfdc1f0f21a0c8e2c6bf1888238402163ad671e14b",
+  "data_sha256": "77b824ddece198caed0dd8203042b3eee11cbbb615c45b374affcd7b9413098e",
+  "local_assets_checked": 26,
+  "missing_assets": [],
+  "browser_console_errors": [],
+  "viewports_reviewed": [
+    320,
+    390,
+    1280
+  ],
+  "checks": [
+    "Both power conventions and both CLAP readouts match independent CSV verification",
+    "No page overflow; tables scroll inside mobile containers",
+    "Two 5-second audio controls load without media errors"
+  ],
+  "public_pages_deployed": true,
+  "browser_audit": "results/delivery_sync_20261110/local_browser_audit.json",
+  "pages_url": "https://charlie-uni.github.io/elec5305-project-550489593/",
+  "pages_source_branch": "gh-pages",
+  "pages_deployment_evidence": "results/delivery_sync_20261110/public_deployment_audit.json",
+  "public_browser_audit": "results/delivery_sync_20261110/public_browser_audit.json"
+}

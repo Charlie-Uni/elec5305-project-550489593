@@ -1,0 +1,27 @@
+{
+  "base_commit": "1ba8f4f371576e20b2f385f0f0816ddbcbc48b22",
+  "v3_tree": "b88e26d7e9f00e3f591b209103a8beb5f7b159d3",
+  "v4_tree": "3be1769d9e7d191f677427ff5d56fd9870eba23f",
+  "patches": [
+    {
+      "patch": "clap_increment_v4_local_reviewed.patch",
+      "base": "b88e26d7e9f00e3f591b209103a8beb5f7b159d3",
+      "check_apply": true,
+      "apply_and_all_source_files_match": true,
+      "source_files": 14,
+      "sha256": "a5db696d32037389279cb4222aaf526c039cb67d1c99e680dcb8b90095ae5408",
+      "scope": "source/configuration/documentation; result files are in the review archive"
+    },
+    {
+      "patch": "interference_pipeline_v4_local_reviewed.patch",
+      "base": "1ba8f4f371576e20b2f385f0f0816ddbcbc48b22",
+      "check_apply": true,
+      "apply_and_all_source_files_match": true,
+      "source_files": 14,
+      "sha256": "65dcb3d6d6ddb604b9e90e8185f5d2391709a898aa13c6ee4642a1be11cc89bf",
+      "scope": "source/configuration/documentation; result files are in the review archive"
+    }
+  ],
+  "working_branch": "feature/interference",
+  "published": false
+}

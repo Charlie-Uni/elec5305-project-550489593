@@ -1,0 +1,125 @@
+{
+  "slides": 16,
+  "words": 1389,
+  "estimated_minutes_at_130_to_150_wpm": [
+    9.426666666666666,
+    10.85128205128205
+  ],
+  "timeline_seconds": 592,
+  "final_course_duration_verified": false,
+  "recorded_video": false,
+  "segments": [
+    {
+      "slide": 1,
+      "start_seconds": 0,
+      "seconds": 27,
+      "words": 63,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 2,
+      "start_seconds": 27,
+      "seconds": 32,
+      "words": 76,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 3,
+      "start_seconds": 59,
+      "seconds": 29,
+      "words": 70,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 4,
+      "start_seconds": 88,
+      "seconds": 33,
+      "words": 78,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 5,
+      "start_seconds": 121,
+      "seconds": 32,
+      "words": 75,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 6,
+      "start_seconds": 153,
+      "seconds": 42,
+      "words": 101,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 7,
+      "start_seconds": 195,
+      "seconds": 37,
+      "words": 89,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 8,
+      "start_seconds": 232,
+      "seconds": 44,
+      "words": 106,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 9,
+      "start_seconds": 276,
+      "seconds": 35,
+      "words": 83,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 10,
+      "start_seconds": 311,
+      "seconds": 44,
+      "words": 105,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 11,
+      "start_seconds": 355,
+      "seconds": 42,
+      "words": 100,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 12,
+      "start_seconds": 397,
+      "seconds": 51,
+      "words": 121,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 13,
+      "start_seconds": 448,
+      "seconds": 42,
+      "words": 77,
+      "audio_seconds": 10
+    },
+    {
+      "slide": 14,
+      "start_seconds": 490,
+      "seconds": 37,
+      "words": 88,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 15,
+      "start_seconds": 527,
+      "seconds": 41,
+      "words": 99,
+      "audio_seconds": 0
+    },
+    {
+      "slide": 16,
+      "start_seconds": 568,
+      "seconds": 24,
+      "words": 58,
+      "audio_seconds": 0
+    }
+  ]
+}

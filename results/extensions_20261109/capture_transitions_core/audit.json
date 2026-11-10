@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "variants": 4,
+  "rows": 96,
+  "scope": "Core references and fixed prompt ensemble",
+  "interpretation": "Descriptive paired outcomes; conditioning on a correct control changes the population across classifiers",
+  "source_hashes": {
+    "own/svm_clean": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+    "target/svm_clean": "9bf2100917e525e7e5a306cea25b4ec0c30997dd34741f5d144c83b1ee48b3ba",
+    "own/cnn_clean_seed_5305": "5cd3e7a19d7b258860b7a9e3abea5c29a9f657a9d9c8436d6ea8cf81dddfc814",
+    "target/cnn_clean_seed_5305": "2ee9cf8fce2b677ff338de2825864d4fc5b77e59189c2eeaf02e9ac93bf6bac0",
+    "own/clap_baseline": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+    "target/clap_baseline": "7ac200ccc603ce3b9eaa8ecba3e4bd28e1fc4ce931b26e31786d77d12201f239",
+    "own/clap_prompt_ensemble": "57c1bfcca85bc51d0723cd06c4a5403cbd11c74df461f4fb4551f81be1038669",
+    "target/clap_prompt_ensemble": "ee02a55d04f3ec8c36bb28a71ac82b1428d1d73476e55398b165f6aa96a21bda"
+  },
+  "table_sha256": "e413296482de8b46da92a18db1f870fd2a7b83b18fc28d36ae10a3979decd703"
+}

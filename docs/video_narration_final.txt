@@ -1,0 +1,127 @@
+ELEC5305 FINAL PRESENTATION — RECORDING SCRIPT
+Qihan Zhu | When Background Noise Has Meaning | 10 November 2026
+
+Matches the 12-slide concise deck and the 10-page report.
+Narration: 728 words. Speech at 130–150 words/minute plus 30 seconds
+of demonstration pauses: approximately 5.3–6.1 minutes.
+Loading speed and personal delivery may add time. The course says “brief”; it
+specifies no minute limit in the supplied requirements. This is a production
+estimate, not a course rule. The exact 26-page report remains a supplement.
+
+SETUP
+Use presentation.pptx or presentation.pdf in results/final_submission_20261110.
+Start the local demonstration using docs/code_demo.md, then keep its browser
+window ready. On slide 10 switch to that window, press Run, explain the live
+processing, and play the two five-second examples without speaking over them.
+The verified code_demo.mp4 is a fallback execution clip with audio examples;
+it has no author narration. Do not imply that a playback is a new live run.
+Review these notes and explain them naturally in your own words.
+
+00:00–00:23 | SLIDE 1 | When Background Noise Has Meaning
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+An environmental recording can contain a target and another recognisable event. My main question is how three different audio representations fail under that competition, compared with generic noise at controlled power. I use the same mixtures and explicit evaluation rules. The report distinguishes measured behaviour from a claim that semantic meaning alone causes failure.
+
+Evidence (not spoken): Project report, research question and scope.
+
+00:23–00:45 | SLIDE 2 | Same target. Same relative level. Different interference.
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+The experiment retains all two thousand ESC-50 clips and the five official folds. Each target receives white noise, a DEMAND background and two kinds of competing event. The exact partner or noise segment remains fixed across the three levels. Zero decibels is an equal-power stress test with an ambiguous designated single label.
+
+Evidence (not spoken): Final manifest audits; report methods.
+
+00:45–01:08 | SLIDE 3 | Literature and course foundations
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+The course feature and STFT material explains the signal representation. Piczak motivates learned spectro-temporal features, and Salamon and Bello motivate augmentation as an intervention. CLAP supplies a frozen audio-language reference. PAT shows that readout and alignment can matter. This project examines their implications under controlled competing events; it does not reproduce every referenced method.
+
+Evidence (not spoken): Course Lectures 3/4/6; Piczak 2015; Salamon and Bello 2017 https://arxiv.org/abs/1608.04363; CLAP https://arxiv.org/abs/2211.06687; PAT https://aclanthology.org/2025.naacl-long.616/
+
+01:08–01:30 | SLIDE 4 | Three representations, one controlled experiment
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+The SVM uses ninety-two interpretable features, the compact CNN learns from sixty-four log-Mel bands, and CLAP compares audio with fifty fixed text descriptions. I keep training, validation and testing separate. The custom STFT agrees with SciPy and with corresponding frames from the actual course MATLAB code. CLAP has a large external pretraining advantage.
+
+Evidence (not spoken): Course STFT audit; clean model definitions; CLAP provenance.
+
+01:30–01:52 | SLIDE 5 | Power matching depends on where power is measured
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+The proposal measured both component powers on the target activity mask. Sparse distractors can have almost no energy there, causing extreme gains. The implementation uses each source’s own activity as the default and also evaluates the original target-mask convention in full. Common attenuation avoids hard clipping; a gain-matched clean control measures its effect.
+
+Evidence (not spoken): Report equations and documented proposal deviation.
+
+01:52–02:15 | SLIDE 6 | Interference power alone does not predict failure
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+At plus five decibels, the SVM has about two percent macro-F1 under white noise. CLAP reaches about seventy-one percent under DEMAND but about forty-nine percent under same-category competition. Equal nominal power does not create equal difficulty. The main report shows all three levels with fold variation, and the supplement preserves the complete target-power counterpart.
+
+Evidence (not spoken): all_conditions_verified.csv, own +5 dB.
+
+02:15–02:39 | SLIDE 7 | Does robustness training transfer to competing events?
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+Across three CNN seeds, white-noise training raises white-noise macro-F1 from 7.48 to 43.95 percent, but same-category performance changes little. Semantic training reaches 36.05 percent while clean performance falls to 61.70. Direct semantic-over-white augmentation accuracy gains remain inconclusive after the declared correction. These results extend the literature’s augmentation question with measured transfer limits.
+
+Evidence (not spoken): Extension protocol and independently audited intervention tables.
+
+02:39–03:06 | SLIDE 8 | A captured decision can retain the target at rank two
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+Argmax forces one label. At own power and plus five decibels, 236 of 632 same-category captures retain the target second, or 37.34 percent. Different-category retention is 203 of 612, or 33.17 percent. The chart instead uses all trials as its denominator. Top-two ranking partially recovers the target; it is not a calibrated event detector. Fixed prompt ensembling also changes readout without retraining CLAP.
+
+Evidence (not spoken): closing_20261110/readout_outcomes.csv; 26-page supplement Section 6.2, Table 5. Complete mixture and control ranks; source-cluster intervals in readout_uncertainty.csv.
+
+03:06–03:33 | SLIDE 9 | CLAP retains a gap in acoustically close subsets
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+Raw white-noise Mel correlation changes from minus 0.728 to minus 0.008 after bandwidth normalisation. Acoustic descriptors therefore need care. On subsets close in spectral similarity, masking fraction and temporal overlap, CLAP remains sixteen to twenty-six accuracy points below DEMAND across both power conventions. CNN intervals include zero. Only about nine to ten percent of targets remain; this is conditional association, not semantic causation.
+
+Evidence (not spoken): closing_20261110/acoustic_matched_comparisons.csv; 26-page supplement Section 6.4, Table 6. Calipers: 0.10 target-active spectral cosine, 0.05 masked-cell fraction, 0.10 temporal overlap. Core CNN seed 5305, single-template CLAP.
+
+03:33–04:38 | SLIDE 10 | Real code execution and sound examples
+Visual: switch to the real local execution interface; show source processing and outputs.
+
+Narration:
+I now switch to the local code demonstration and select Run. The program reads the source recordings, rebuilds the plus-five-decibel mixture, checks SIR and peak level, and runs all three saved models. It then compares fresh outputs with the original evaluation. The clean controls identify can opening. In the mixture, CNN and CLAP choose clock alarm; CLAP ranks the target third in this example. I play the control and mixture at the same volume. This is an illustrative failure case, not an aggregate result.
+
+Evidence (not spoken): examples/listening_own_20261109/examples.json, row 91. Can Open.WAV by LG, CC BY: https://freesound.org/people/LG/sounds/101404/ . alarm clock.aif by hookhead, CC0: https://freesound.org/people/hookhead/sounds/13613/ . ESC-50 compilation by Karol J. Piczak, CC BY-NC 3.0: https://creativecommons.org/licenses/by-nc/3.0/ . Changes: ESC-50 cropping, controlled mixing, common attenuation and PCM16 export.
+
+04:38–05:07 | SLIDE 11 | Discussion and conclusion
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+The results answer different parts of the research question. Interpretable features help diagnose white-noise sensitivity. Augmentation improves its matched corruption but transfers unevenly, extending the question in Salamon and Bello. CLAP readout can retain a target that loses first place. Acoustic restriction narrows the claim and does not reproduce the larger high-overlap CNN contrast on the same population. Shared sources, limited backgrounds and unknown pretraining overlap constrain generalisation.
+
+Evidence (not spoken): Research report conclusions and limitations.
+
+05:07–05:36 | SLIDE 12 | Report, supplement and reproducible code
+Visual: corresponding slide in the concise presentation.
+
+Narration:
+The ten-page report contains the main argument, literature review and discussion. The unchanged twenty-six-page supplement retains complete diagnostics and costs: the compact CNN remains the fastest of the three systems in both measured model orders. The website provides code instructions, the execution video and attributed audio. AI assistance and external code are disclosed. The contribution is a reproducible comparison with clear evidence for its claims and explicit limits on generalisation.
+
+Evidence (not spoken): https://github.com/karolpiczak/ESC-50 ; https://arxiv.org/abs/2211.06687 ; https://aclanthology.org/2025.naacl-long.616/ ; https://www.cmsworkshops.com/ICASSP2026/view_paper.php?PaperNum=4206 ; https://aclanthology.org/2026.findings-acl.913/ ; DEMAND https://doi.org/10.5281/zenodo.1227121
+
+FINAL RECORDING CHECKS
+- Check that the author can explain the processing and distinguish personal work,
+  external libraries/checkpoints, and AI assistance under the course's policy.
+- Show actual execution, not only result slides. Pause speech during sound playback.
+- Use identical playback volume for control and mixture. The selected case is not
+  a representative estimate; CLAP ranks its target third, not second.
+- Check the entire exported video for legible code/results and audible narration.
+- Upload the report and final video to Canvas and retain the submission receipt.
+- Put the final video URL on the site and in the report. The existing execution
+  clip URL is already provided, but does not include the author's full explanation.
+- Confirm the exact Week-13 deadline, accepted file format/size and AI rules in
+  Canvas. The supplied brief does not specify these details.

@@ -1,0 +1,58 @@
+{
+  "20_readout_top2_single": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      4.9
+    ],
+    "qa": []
+  },
+  "20_readout_top2_ensemble": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      4.9
+    ],
+    "qa": []
+  },
+  "21_capture_rank_retention": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      4.9
+    ],
+    "qa": []
+  },
+  "22_acoustic_distributions_own": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      3.0
+    ],
+    "qa": []
+  },
+  "22_acoustic_distributions_target": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      3.0
+    ],
+    "qa": []
+  },
+  "23_acoustic_matched_contrasts": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      4.8
+    ],
+    "qa": []
+  },
+  "24_accuracy_by_masking": {
+    "text_outside_canvas": [],
+    "size_inches": [
+      7.16,
+      5.0
+    ],
+    "qa": []
+  }
+}

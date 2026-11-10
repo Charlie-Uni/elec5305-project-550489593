@@ -1,0 +1,402 @@
+{
+  "features": "/Users/leaf/Projects/elec5305-local/runs/closing_20261110/overlap_target",
+  "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+  "power_region": "target",
+  "level_db": 5.0,
+  "demand_available": true,
+  "measure_summary": [
+    {
+      "condition": "white",
+      "level_db": 10.0,
+      "n": 2000,
+      "masked_cell_fraction_median": 0.1489682477246543,
+      "masked_cell_fraction_q1": 0.0708209896572314,
+      "masked_cell_fraction_q3": 0.22711605848994793,
+      "spectral_correlation_db_median": -0.7283880197274164,
+      "spectral_correlation_db_q1": -0.8682176644668204,
+      "spectral_correlation_db_q3": -0.4999584855444945,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 1.0,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.0052642016689083805,
+      "masked_energy_fraction_q1": 0.0032501095419386885,
+      "masked_energy_fraction_q3": 0.008333052622241153,
+      "spectral_cosine_median": 0.0944379427167374,
+      "spectral_cosine_q1": 0.055542472073654994,
+      "spectral_cosine_q3": 0.17011119081907475,
+      "interferer_energy_share_median": 0.09278466696391832,
+      "interferer_energy_share_q1": 0.08888977189407077,
+      "interferer_energy_share_q3": 0.14012022742913924
+    },
+    {
+      "condition": "white",
+      "level_db": 5.0,
+      "n": 2000,
+      "masked_cell_fraction_median": 0.31881694626261403,
+      "masked_cell_fraction_q1": 0.22289540597770083,
+      "masked_cell_fraction_q3": 0.4051495060146387,
+      "spectral_correlation_db_median": -0.7283880197274164,
+      "spectral_correlation_db_q1": -0.8682176644668204,
+      "spectral_correlation_db_q3": -0.4999584855444944,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 1.0,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.013296887719730931,
+      "masked_energy_fraction_q1": 0.00802038382990726,
+      "masked_energy_fraction_q3": 0.022117508315056305,
+      "spectral_cosine_median": 0.09443794271673742,
+      "spectral_cosine_q1": 0.05554247207365499,
+      "spectral_cosine_q3": 0.17011119081907478,
+      "interferer_energy_share_median": 0.24438153726572154,
+      "interferer_energy_share_q1": 0.23577680758688838,
+      "interferer_energy_share_q3": 0.3400661808175641
+    },
+    {
+      "condition": "white",
+      "level_db": 0.0,
+      "n": 2000,
+      "masked_cell_fraction_median": 0.5060786176676826,
+      "masked_cell_fraction_q1": 0.4160775788538618,
+      "masked_cell_fraction_q3": 0.5879173623947473,
+      "spectral_correlation_db_median": -0.7283880197274164,
+      "spectral_correlation_db_q1": -0.8682176644668204,
+      "spectral_correlation_db_q3": -0.4999584855444946,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 1.0,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.03237866217598103,
+      "masked_energy_fraction_q1": 0.019108224595113465,
+      "masked_energy_fraction_q3": 0.05285420226726795,
+      "spectral_cosine_median": 0.09443794271673744,
+      "spectral_cosine_q1": 0.055542472073655,
+      "spectral_cosine_q3": 0.1701111908190748,
+      "interferer_energy_share_median": 0.5056214275572781,
+      "interferer_energy_share_q1": 0.49382988579466175,
+      "interferer_energy_share_q3": 0.6197042491080219
+    },
+    {
+      "condition": "demand",
+      "level_db": 10.0,
+      "n": 2000,
+      "masked_cell_fraction_median": 0.07189300796363088,
+      "masked_cell_fraction_q1": 0.037525547525141055,
+      "masked_cell_fraction_q3": 0.1176594929846463,
+      "spectral_correlation_db_median": 0.6529109847865692,
+      "spectral_correlation_db_q1": 0.41223684060210264,
+      "spectral_correlation_db_q3": 0.8030042222752243,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 1.0,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.006998809265922539,
+      "masked_energy_fraction_q1": 0.0033467643327853864,
+      "masked_energy_fraction_q3": 0.011089420251891314,
+      "spectral_cosine_median": 0.14559899305015853,
+      "spectral_cosine_q1": 0.039361472179285345,
+      "spectral_cosine_q3": 0.44314981047628776,
+      "interferer_energy_share_median": 0.07815054529810248,
+      "interferer_energy_share_q1": 0.07194383384537721,
+      "interferer_energy_share_q3": 0.11146190855450344
+    },
+    {
+      "condition": "demand",
+      "level_db": 5.0,
+      "n": 2000,
+      "masked_cell_fraction_median": 0.14746908895015814,
+      "masked_cell_fraction_q1": 0.08530436221210709,
+      "masked_cell_fraction_q3": 0.23207282476368488,
+      "spectral_correlation_db_median": 0.6529109847865691,
+      "spectral_correlation_db_q1": 0.4122368406021026,
+      "spectral_correlation_db_q3": 0.8030042222752243,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 1.0,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.01770040701046045,
+      "masked_energy_fraction_q1": 0.0075462753175093685,
+      "masked_energy_fraction_q3": 0.033285478547108005,
+      "spectral_cosine_median": 0.1455989930501585,
+      "spectral_cosine_q1": 0.039361472179285345,
+      "spectral_cosine_q3": 0.4431498104762879,
+      "interferer_energy_share_median": 0.21140913583242738,
+      "interferer_energy_share_q1": 0.19687932911667233,
+      "interferer_energy_share_q3": 0.28402111953007503
+    },
+    {
+      "condition": "demand",
+      "level_db": 0.0,
+      "n": 2000,
+      "masked_cell_fraction_median": 0.2750667714757952,
+      "masked_cell_fraction_q1": 0.17719433919769273,
+      "masked_cell_fraction_q3": 0.39966942911878134,
+      "spectral_correlation_db_median": 0.6529109847865691,
+      "spectral_correlation_db_q1": 0.41223684060210253,
+      "spectral_correlation_db_q3": 0.8030042222752244,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 1.0,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.03996139308322149,
+      "masked_energy_fraction_q1": 0.01588202312966007,
+      "masked_energy_fraction_q3": 0.08445923383908105,
+      "spectral_cosine_median": 0.1455989930501585,
+      "spectral_cosine_q1": 0.039361472179285366,
+      "spectral_cosine_q3": 0.4431498104762878,
+      "interferer_energy_share_median": 0.45880365234940523,
+      "interferer_energy_share_q1": 0.4366863357869947,
+      "interferer_energy_share_q3": 0.5564311647424275
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 10.0,
+      "n": 1998,
+      "masked_cell_fraction_median": 0.06961754455660088,
+      "masked_cell_fraction_q1": 0.03795571942866727,
+      "masked_cell_fraction_q3": 0.12000875021106235,
+      "spectral_correlation_db_median": 0.6908176691919294,
+      "spectral_correlation_db_q1": 0.4551374772761677,
+      "spectral_correlation_db_q3": 0.8278613835355412,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 0.7439442133594324,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.007640037020035059,
+      "masked_energy_fraction_q1": 0.003897237061158897,
+      "masked_energy_fraction_q3": 0.012598012724015136,
+      "spectral_cosine_median": 0.23802773103286118,
+      "spectral_cosine_q1": 0.09460142155795334,
+      "spectral_cosine_q3": 0.4699215635633876,
+      "interferer_energy_share_median": 0.09280388745131857,
+      "interferer_energy_share_q1": 0.09032360999651691,
+      "interferer_energy_share_q3": 0.12233604887635524
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 5.0,
+      "n": 1998,
+      "masked_cell_fraction_median": 0.12974632615895393,
+      "masked_cell_fraction_q1": 0.0684293014890946,
+      "masked_cell_fraction_q3": 0.23126839568314636,
+      "spectral_correlation_db_median": 0.6908176691919294,
+      "spectral_correlation_db_q1": 0.4551374772761678,
+      "spectral_correlation_db_q3": 0.8278613835355413,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 0.7439442133594324,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.01756981238904251,
+      "masked_energy_fraction_q1": 0.008307791849862835,
+      "masked_energy_fraction_q3": 0.03152311554830958,
+      "spectral_cosine_median": 0.23802773103286112,
+      "spectral_cosine_q1": 0.09460142155795329,
+      "spectral_cosine_q3": 0.46992156356338743,
+      "interferer_energy_share_median": 0.2444237002013582,
+      "interferer_energy_share_q1": 0.23895859216688675,
+      "interferer_energy_share_q3": 0.30593361396701646
+    },
+    {
+      "condition": "semantic_same",
+      "level_db": 0.0,
+      "n": 1998,
+      "masked_cell_fraction_median": 0.21364450217399156,
+      "masked_cell_fraction_q1": 0.10992407543718952,
+      "masked_cell_fraction_q3": 0.3696377450779518,
+      "spectral_correlation_db_median": 0.6908176691919294,
+      "spectral_correlation_db_q1": 0.4551374772761678,
+      "spectral_correlation_db_q3": 0.8278613835355411,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 0.7439442133594324,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.03509182463466329,
+      "masked_energy_fraction_q1": 0.016206471027398306,
+      "masked_energy_fraction_q3": 0.06964080386406149,
+      "spectral_cosine_median": 0.23802773103286115,
+      "spectral_cosine_q1": 0.09460142155795338,
+      "spectral_cosine_q3": 0.46992156356338766,
+      "interferer_energy_share_median": 0.5056784983796571,
+      "interferer_energy_share_q1": 0.49822377249760486,
+      "interferer_energy_share_q3": 0.5822685608755644
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 10.0,
+      "n": 1999,
+      "masked_cell_fraction_median": 0.07132743362831859,
+      "masked_cell_fraction_q1": 0.03720629520813068,
+      "masked_cell_fraction_q3": 0.1241143793227162,
+      "spectral_correlation_db_median": 0.671342834900748,
+      "spectral_correlation_db_q1": 0.4043961427301113,
+      "spectral_correlation_db_q3": 0.810601265267487,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 0.7402467524804222,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.007235845158435165,
+      "masked_energy_fraction_q1": 0.0035426514741274803,
+      "masked_energy_fraction_q3": 0.012078878038033359,
+      "spectral_cosine_median": 0.2287358518700167,
+      "spectral_cosine_q1": 0.07338540121249902,
+      "spectral_cosine_q3": 0.4550483596454762,
+      "interferer_energy_share_median": 0.09308472022584997,
+      "interferer_energy_share_q1": 0.09039718337556552,
+      "interferer_energy_share_q3": 0.12549308030991352
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 5.0,
+      "n": 1999,
+      "masked_cell_fraction_median": 0.12880284472540499,
+      "masked_cell_fraction_q1": 0.06658916034553064,
+      "masked_cell_fraction_q3": 0.22583727083213012,
+      "spectral_correlation_db_median": 0.6713428349007479,
+      "spectral_correlation_db_q1": 0.40439614273011143,
+      "spectral_correlation_db_q3": 0.8106012652674872,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 0.7402467524804222,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.016446032576608736,
+      "masked_energy_fraction_q1": 0.007466103176249324,
+      "masked_energy_fraction_q3": 0.03037500688865117,
+      "spectral_cosine_median": 0.22873585187001663,
+      "spectral_cosine_q1": 0.07338540121249902,
+      "spectral_cosine_q3": 0.4550483596454763,
+      "interferer_energy_share_median": 0.2450394194220188,
+      "interferer_energy_share_q1": 0.23912141136325155,
+      "interferer_energy_share_q3": 0.3121434909452605
+    },
+    {
+      "condition": "semantic_different",
+      "level_db": 0.0,
+      "n": 1999,
+      "masked_cell_fraction_median": 0.20877468735050914,
+      "masked_cell_fraction_q1": 0.1066808381885296,
+      "masked_cell_fraction_q3": 0.3675169973581702,
+      "spectral_correlation_db_median": 0.6713428349007479,
+      "spectral_correlation_db_q1": 0.4043961427301115,
+      "spectral_correlation_db_q3": 0.810601265267487,
+      "activity_overlap_median": 1.0,
+      "activity_overlap_q1": 0.7402467524804222,
+      "activity_overlap_q3": 1.0,
+      "masked_energy_fraction_median": 0.03423000587715159,
+      "masked_energy_fraction_q1": 0.014843944039615527,
+      "masked_energy_fraction_q3": 0.0654337577235205,
+      "spectral_cosine_median": 0.22873585187001658,
+      "spectral_cosine_q1": 0.07338540121249904,
+      "spectral_cosine_q3": 0.4550483596454763,
+      "interferer_energy_share_median": 0.5065111576491321,
+      "interferer_energy_share_q1": 0.49844754584185863,
+      "interferer_energy_share_q3": 0.5893248262307216
+    }
+  ],
+  "systems": {
+    "svm": {
+      "level_db": 5.0,
+      "baseline_condition": "demand",
+      "n": 7997,
+      "models": {
+        "condition_only": {
+          "intercept": -1.5269258764900788,
+          "coefficients": {
+            "white": -1.339277988334682,
+            "semantic_same": 0.29027398880884364,
+            "semantic_different": 0.26989757678323917
+          },
+          "mcfadden_pseudo_r2": 0.04438780880068194
+        },
+        "acoustic_only": {
+          "intercept": -1.736347521820756,
+          "coefficients": {
+            "masked_cell_fraction": -0.2691281132832476,
+            "spectral_correlation_db": 0.5049260063070993,
+            "activity_overlap": -0.1797861729866868
+          },
+          "mcfadden_pseudo_r2": 0.057720745833400366
+        },
+        "condition_plus_acoustic": {
+          "intercept": -1.698678403225147,
+          "coefficients": {
+            "white": -0.42479852468514084,
+            "semantic_same": 0.11460836386973251,
+            "semantic_different": 0.10608556693095415,
+            "masked_cell_fraction": -0.2234092709640068,
+            "spectral_correlation_db": 0.3625758855397096,
+            "activity_overlap": -0.16364727667526044
+          },
+          "mcfadden_pseudo_r2": 0.05918184533567916
+        }
+      }
+    },
+    "cnn": {
+      "level_db": 5.0,
+      "baseline_condition": "demand",
+      "n": 7997,
+      "models": {
+        "condition_only": {
+          "intercept": -0.7745162639452735,
+          "coefficients": {
+            "white": -1.19509276976606,
+            "semantic_same": 0.14555439184425217,
+            "semantic_different": 0.07652888432154566
+          },
+          "mcfadden_pseudo_r2": 0.03917626358588333
+        },
+        "acoustic_only": {
+          "intercept": -1.0334271227309446,
+          "coefficients": {
+            "masked_cell_fraction": -0.33957413913255524,
+            "spectral_correlation_db": 0.3325521148035381,
+            "activity_overlap": -0.23084920847250728
+          },
+          "mcfadden_pseudo_r2": 0.06102649622607714
+        },
+        "condition_plus_acoustic": {
+          "intercept": -0.829794441260259,
+          "coefficients": {
+            "white": -0.5899995131396969,
+            "semantic_same": -0.09015711071876227,
+            "semantic_different": -0.16442451298577654,
+            "masked_cell_fraction": -0.27733258597874505,
+            "spectral_correlation_db": 0.17607492053247484,
+            "activity_overlap": -0.247330139728915
+          },
+          "mcfadden_pseudo_r2": 0.06317395860990338
+        }
+      }
+    },
+    "clap": {
+      "level_db": 5.0,
+      "baseline_condition": "demand",
+      "n": 7997,
+      "models": {
+        "condition_only": {
+          "intercept": 1.0495644029428461,
+          "coefficients": {
+            "white": -0.4357156554903794,
+            "semantic_same": -0.9834445157719373,
+            "semantic_different": -1.161496600663474
+          },
+          "mcfadden_pseudo_r2": 0.03569791733446026
+        },
+        "acoustic_only": {
+          "intercept": 0.3857414024542097,
+          "coefficients": {
+            "masked_cell_fraction": -0.1550109809453087,
+            "spectral_correlation_db": -0.12398658448544193,
+            "activity_overlap": 0.06905643097711456
+          },
+          "mcfadden_pseudo_r2": 0.005270723039722869
+        },
+        "condition_plus_acoustic": {
+          "intercept": 0.9537602300365287,
+          "coefficients": {
+            "white": 0.17314962229502195,
+            "semantic_same": -1.090874353036148,
+            "semantic_different": -1.265094408658697,
+            "masked_cell_fraction": -0.23231476398691298,
+            "spectral_correlation_db": 0.19474028836438942,
+            "activity_overlap": -0.09453971003943301
+          },
+          "mcfadden_pseudo_r2": 0.045581075644889224
+        }
+      }
+    }
+  },
+  "figures": {
+    "accuracy_vs_masking": "overlap_accuracy_vs_masking",
+    "matched_by_masking_difference": "overlap_matched_by_masking_difference"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "base_commit": "1ba8f4f371576e20b2f385f0f0816ddbcbc48b22",
+  "branch": "feature/interference",
+  "source_state": "uncommitted local integration",
+  "incoming_patch_sha256": "6210049ac029818203a711e513da0040de2db04da0578ef32fc9803e45f4f66a",
+  "analysis_correction": "Condition-specific matched clean reference after silent-pair exclusion.",
+  "results": "four complete and independently verified local evaluations",
+  "full_artifact_root": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109",
+  "runner_sha256": "a1be929255a0c27d2e46eb1823917ff64635da952f1f91a3eb5e56edbabd2b3d",
+  "audit_sha256": "482d24cee1940cb9c21f4ee2c03ce36a86395c7ef7289027cf971779027cd8bb"
+}

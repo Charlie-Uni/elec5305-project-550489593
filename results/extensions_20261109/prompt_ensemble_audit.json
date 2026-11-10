@@ -1,0 +1,239 @@
+{
+  "verified": true,
+  "templates_per_class": 300,
+  "unique_templates": 275,
+  "conditions": [
+    {
+      "region": "own",
+      "condition": "white",
+      "level_db": 10.0,
+      "n": 2000,
+      "accuracy": 0.8445,
+      "capture_rate": null
+    },
+    {
+      "region": "own",
+      "condition": "white",
+      "level_db": 5.0,
+      "n": 2000,
+      "accuracy": 0.7615,
+      "capture_rate": null
+    },
+    {
+      "region": "own",
+      "condition": "white",
+      "level_db": 0.0,
+      "n": 2000,
+      "accuracy": 0.6235,
+      "capture_rate": null
+    },
+    {
+      "region": "own",
+      "condition": "demand",
+      "level_db": 10.0,
+      "n": 2000,
+      "accuracy": 0.887,
+      "capture_rate": null
+    },
+    {
+      "region": "own",
+      "condition": "demand",
+      "level_db": 5.0,
+      "n": 2000,
+      "accuracy": 0.8505,
+      "capture_rate": null
+    },
+    {
+      "region": "own",
+      "condition": "demand",
+      "level_db": 0.0,
+      "n": 2000,
+      "accuracy": 0.7835,
+      "capture_rate": null
+    },
+    {
+      "region": "own",
+      "condition": "semantic_same",
+      "level_db": 10.0,
+      "n": 2000,
+      "accuracy": 0.6865,
+      "capture_rate": 0.7177033492822966
+    },
+    {
+      "region": "own",
+      "condition": "semantic_same",
+      "level_db": 5.0,
+      "n": 2000,
+      "accuracy": 0.583,
+      "capture_rate": 0.7733812949640287
+    },
+    {
+      "region": "own",
+      "condition": "semantic_same",
+      "level_db": 0.0,
+      "n": 2000,
+      "accuracy": 0.4585,
+      "capture_rate": 0.8347183748845799
+    },
+    {
+      "region": "own",
+      "condition": "semantic_different",
+      "level_db": 10.0,
+      "n": 2000,
+      "accuracy": 0.6785,
+      "capture_rate": 0.6656298600311042
+    },
+    {
+      "region": "own",
+      "condition": "semantic_different",
+      "level_db": 5.0,
+      "n": 2000,
+      "accuracy": 0.562,
+      "capture_rate": 0.7363013698630136
+    },
+    {
+      "region": "own",
+      "condition": "semantic_different",
+      "level_db": 0.0,
+      "n": 2000,
+      "accuracy": 0.445,
+      "capture_rate": 0.7792792792792793
+    },
+    {
+      "region": "target",
+      "condition": "white",
+      "level_db": 10.0,
+      "n": 2000,
+      "accuracy": 0.8445,
+      "capture_rate": null
+    },
+    {
+      "region": "target",
+      "condition": "white",
+      "level_db": 5.0,
+      "n": 2000,
+      "accuracy": 0.7615,
+      "capture_rate": null
+    },
+    {
+      "region": "target",
+      "condition": "white",
+      "level_db": 0.0,
+      "n": 2000,
+      "accuracy": 0.6225,
+      "capture_rate": null
+    },
+    {
+      "region": "target",
+      "condition": "demand",
+      "level_db": 10.0,
+      "n": 2000,
+      "accuracy": 0.8875,
+      "capture_rate": null
+    },
+    {
+      "region": "target",
+      "condition": "demand",
+      "level_db": 5.0,
+      "n": 2000,
+      "accuracy": 0.849,
+      "capture_rate": null
+    },
+    {
+      "region": "target",
+      "condition": "demand",
+      "level_db": 0.0,
+      "n": 2000,
+      "accuracy": 0.779,
+      "capture_rate": null
+    },
+    {
+      "region": "target",
+      "condition": "semantic_same",
+      "level_db": 10.0,
+      "n": 1998,
+      "accuracy": 0.6741741741741741,
+      "capture_rate": 0.728110599078341
+    },
+    {
+      "region": "target",
+      "condition": "semantic_same",
+      "level_db": 5.0,
+      "n": 1998,
+      "accuracy": 0.5695695695695696,
+      "capture_rate": 0.7825581395348837
+    },
+    {
+      "region": "target",
+      "condition": "semantic_same",
+      "level_db": 0.0,
+      "n": 1998,
+      "accuracy": 0.43793793793793795,
+      "capture_rate": 0.8370436331255565
+    },
+    {
+      "region": "target",
+      "condition": "semantic_different",
+      "level_db": 10.0,
+      "n": 1999,
+      "accuracy": 0.6633316658329165,
+      "capture_rate": 0.6894502228826151
+    },
+    {
+      "region": "target",
+      "condition": "semantic_different",
+      "level_db": 5.0,
+      "n": 1999,
+      "accuracy": 0.5412706353176588,
+      "capture_rate": 0.7448200654307524
+    },
+    {
+      "region": "target",
+      "condition": "semantic_different",
+      "level_db": 0.0,
+      "n": 1999,
+      "accuracy": 0.42921460730365185,
+      "capture_rate": 0.7949167397020158
+    }
+  ],
+  "clean_accuracy": {
+    "folds": [
+      0.94,
+      0.9225,
+      0.9275,
+      0.9275,
+      0.9275
+    ],
+    "mean": 0.929,
+    "fold_sd": 0.006519202405202631
+  },
+  "clean_macro_f1": {
+    "folds": [
+      0.9339604924173507,
+      0.9176323179744231,
+      0.9234665850145726,
+      0.9253451319921908,
+      0.926174890469008
+    ],
+    "mean": 0.9253158835735091,
+    "fold_sd": 0.005872075779804709
+  },
+  "clean": {
+    "rows": 2000,
+    "audio_embeddings_unchanged": true,
+    "score_max_abs_difference": 1.3322676295501878e-15,
+    "scores_sha256": "a463b7220cdf9f96087eea0b7c0c00f29063a583c7cd038b5e3fae556c28a866"
+  },
+  "eval_own": {
+    "rows": 24000,
+    "audio_embeddings_unchanged": true,
+    "score_max_abs_difference": 1.7763568394002505e-15,
+    "scores_sha256": "e991fa2d01798c178b824b8643e5e577d2c0da5fd2b8047d10a5be02a471bf27"
+  },
+  "eval_target": {
+    "rows": 23991,
+    "audio_embeddings_unchanged": true,
+    "score_max_abs_difference": 1.5543122344752192e-15,
+    "scores_sha256": "c97df091dfd30db4e11b2fb4ba00ec9684aec867a0f066e66b687a05e3ab0378"
+  }
+}

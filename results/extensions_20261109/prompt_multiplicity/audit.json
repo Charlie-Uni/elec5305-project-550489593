@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "scope": "Exploratory descriptive duplicate-weighting sensitivity; original 300-entry intervention retained",
+  "templates": 300,
+  "unique_templates": 275,
+  "condition_cells": 25,
+  "largest_absolute_macro_f1_change_pp": 0.4670757769766054,
+  "text_centroid_cosine_min": 0.9988534626517008,
+  "source_text_sha256": "cf56d2ca736b22e4c3325a3274779418d5725c0d5c71fccae6e656be50827f8e",
+  "predictions_sha256": "ecdbc65028fc15341a718c717eafac26dd880262b7bbf329448802e5662c6f93",
+  "table_sha256": "78b1a26d31aebf2dc6b690db58704f0c378e6519737ef2b21918662e777a452d"
+}

@@ -1,0 +1,8 @@
+{
+  "passed": 84,
+  "skipped": 1,
+  "skip": "CUDA device unavailable",
+  "command": "PYTHONPATH=src python -m pytest -q",
+  "date": "2026-11-09",
+  "seconds": 89.98
+}

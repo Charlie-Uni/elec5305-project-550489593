@@ -1,0 +1,187 @@
+{
+  "complete": true,
+  "variants": 14,
+  "condition_rows": 336,
+  "paired_comparisons": 156,
+  "comparison_family": "108 clean-reference contrasts plus 48 direct semantic-versus-WGN contrasts; one Holm family of 156",
+  "analysis_amendment": "2026-11-09 22:45 AEDT: direct contrasts added to answer the stated second question, after some WGN results but before any completed semantic-intervention result; training settings unchanged",
+  "cnn_overlap_replications": 12,
+  "bootstrap_replicates": 2000,
+  "provenance": {
+    "own/svm_clean": {
+      "directory": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+      "clean_sha256": "18bc32f9f1639d530279cb03449cf1632b152040a998c22067f3e10182e38cbc"
+    },
+    "target/svm_clean": {
+      "directory": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_target",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "9bf2100917e525e7e5a306cea25b4ec0c30997dd34741f5d144c83b1ee48b3ba",
+      "clean_sha256": "18bc32f9f1639d530279cb03449cf1632b152040a998c22067f3e10182e38cbc"
+    },
+    "own/cnn_clean_seed_5305": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_clean_seed_5305",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "5cd3e7a19d7b258860b7a9e3abea5c29a9f657a9d9c8436d6ea8cf81dddfc814",
+      "clean_sha256": "2114da32ab9944eeb28279d87ebb89037a2dccb1f8116fed0838aa6df1de5d35"
+    },
+    "target/cnn_clean_seed_5305": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_clean_seed_5305",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "2ee9cf8fce2b677ff338de2825864d4fc5b77e59189c2eeaf02e9ac93bf6bac0",
+      "clean_sha256": "2114da32ab9944eeb28279d87ebb89037a2dccb1f8116fed0838aa6df1de5d35"
+    },
+    "own/cnn_clean_seed_5306": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_clean_seed_5306",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "c805211297fd97941e4e3dfe368d20c740db759e304130ad50cf375b84fdae84",
+      "clean_sha256": "7fb7c570b98bf90083125d85baca5261933b2f65c74bd297dea4e37ae84055dd"
+    },
+    "target/cnn_clean_seed_5306": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_clean_seed_5306",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "d51279c6478cd07daff19b967a6f22565af0dcddbbc961172cbc055efccef978",
+      "clean_sha256": "7fb7c570b98bf90083125d85baca5261933b2f65c74bd297dea4e37ae84055dd"
+    },
+    "own/cnn_clean_seed_5307": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_clean_seed_5307",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "4793363d18eeab2ad1c425931519de38fd613a857003d4cb3859c19faa1d9403",
+      "clean_sha256": "2e7ebfdd19096bcfbd1caeceb855620027469aae6f16c495680b21266cf6fa9d"
+    },
+    "target/cnn_clean_seed_5307": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_clean_seed_5307",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "c6e79c1e235463cc40876222e62f110425045570d366282a73eaa2490603abb7",
+      "clean_sha256": "2e7ebfdd19096bcfbd1caeceb855620027469aae6f16c495680b21266cf6fa9d"
+    },
+    "own/svm_wgn": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/svm_wgn",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "b789bdd86f372191bd9255683bdcaf1c1cbb82783f5a093ee6b4cfa4c76d3632",
+      "clean_sha256": "883db8c1fff5c3e8d6e4ca7715ee57232588181296fbca2999571a0818410a2b"
+    },
+    "target/svm_wgn": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/svm_wgn",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "ed98b21c4aa7d48c257b55c789a0c03e99186c91339729e66264f2f65bd6400b",
+      "clean_sha256": "883db8c1fff5c3e8d6e4ca7715ee57232588181296fbca2999571a0818410a2b"
+    },
+    "own/cnn_wgn_seed_5305": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_wgn_seed_5305",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "76da353175eae83748a5908e06183cf8d0fa0a5d3583ba9286f6c79b8fa61c32",
+      "clean_sha256": "dc66cbf1855f9f982ca1f8abcf2fa99bf4847b029e5370cf4cefc766250c2708"
+    },
+    "target/cnn_wgn_seed_5305": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_wgn_seed_5305",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "c92be01a314c2e3534a2f2da04317dd5b0825f5eda6f58f34625be22cbfdfa23",
+      "clean_sha256": "dc66cbf1855f9f982ca1f8abcf2fa99bf4847b029e5370cf4cefc766250c2708"
+    },
+    "own/cnn_wgn_seed_5306": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_wgn_seed_5306",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "e55be71f4a30911f191f9087494f1bb99e6cec78f260648133e5756896d43370",
+      "clean_sha256": "f05865c31d6a0a98bdadaebd18236728faad91ef09d36987f26efaebca91dc08"
+    },
+    "target/cnn_wgn_seed_5306": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_wgn_seed_5306",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "941bcfa83f9ee062b9bd5b4b1039401244872604e9dea68c4b5cfc48c6c45972",
+      "clean_sha256": "f05865c31d6a0a98bdadaebd18236728faad91ef09d36987f26efaebca91dc08"
+    },
+    "own/cnn_wgn_seed_5307": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_wgn_seed_5307",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "3c043f36d30585352e8c1319c09fd5e1b577de3fb0fdc0b7c0c493c2fb9d11d7",
+      "clean_sha256": "68b7c9157392ad67c35a8a3d3eda0f0f0b533fe0ca88288808bccd3527e82dfb"
+    },
+    "target/cnn_wgn_seed_5307": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_wgn_seed_5307",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "84690df0f40e96de7eccafa4c68d87b8020453dab8b49f8d1191ebe5976dedf3",
+      "clean_sha256": "68b7c9157392ad67c35a8a3d3eda0f0f0b533fe0ca88288808bccd3527e82dfb"
+    },
+    "own/svm_semantic": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/svm_semantic",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "a039d5f309a3e23d14d2dc785f4d7397d1f12a3a7ff37ed0ea094302284b6681",
+      "clean_sha256": "cd3ecb4bee568d1fc0deea88a70b1b8e90b04e92cf72f734be10668d89c412d0"
+    },
+    "target/svm_semantic": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/svm_semantic",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "c43ac09593d5cd6c4f6ccd0e4cec4a9a70b6918bc6d193eaea574b68e6a53f31",
+      "clean_sha256": "cd3ecb4bee568d1fc0deea88a70b1b8e90b04e92cf72f734be10668d89c412d0"
+    },
+    "own/cnn_semantic_seed_5305": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_semantic_seed_5305",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "bfb9fd88496a3d29dac645f0a76f5575b5394cc5149f85d1ea613914c3edcc99",
+      "clean_sha256": "be797524381982da2ebeeb5e52bbb9fee458f306f1410a3d6c1c00b8531045c7"
+    },
+    "target/cnn_semantic_seed_5305": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_semantic_seed_5305",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "426aa307390e72371a2014b740178a29321ff72a0f1aac4f9435a738d7e775df",
+      "clean_sha256": "be797524381982da2ebeeb5e52bbb9fee458f306f1410a3d6c1c00b8531045c7"
+    },
+    "own/cnn_semantic_seed_5306": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_semantic_seed_5306",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "8118394337171a2b8345c30b2cd27a9434d57ec71a9f8c7dc0c8c133506547f8",
+      "clean_sha256": "c7c62a7e14172d436b3448162ac1f20432105c3f0f22442232254015ea1eaa19"
+    },
+    "target/cnn_semantic_seed_5306": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_semantic_seed_5306",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "6ba3d28d0a4229f17ebba9d5ca422a363265925bd918c9976babaced64f26c87",
+      "clean_sha256": "c7c62a7e14172d436b3448162ac1f20432105c3f0f22442232254015ea1eaa19"
+    },
+    "own/cnn_semantic_seed_5307": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/own/cnn_semantic_seed_5307",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "342b335205f3ba1dbc1931db8bfac8303321a2d260ece52bcb78a54bd0c317c6",
+      "clean_sha256": "5a7505a96b5e547381c32561f830b54b0b369c29698a1d580cb4d26bec567250"
+    },
+    "target/cnn_semantic_seed_5307": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/evaluations/target/cnn_semantic_seed_5307",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "9c4e22b9161abd451cbc430a93dacd2017e495470fbfe70e25b8d8f9cbdaa6a5",
+      "clean_sha256": "5a7505a96b5e547381c32561f830b54b0b369c29698a1d580cb4d26bec567250"
+    },
+    "own/clap_baseline": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_own",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+      "clean_sha256": "ca32fcc6b86e76e1961cc6d578257854e2d95259b5690f8bfe2164e6d01cfe5e"
+    },
+    "target/clap_baseline": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_target",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "7ac200ccc603ce3b9eaa8ecba3e4bd28e1fc4ce931b26e31786d77d12201f239",
+      "clean_sha256": "ca32fcc6b86e76e1961cc6d578257854e2d95259b5690f8bfe2164e6d01cfe5e"
+    },
+    "own/clap_prompt_ensemble": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/clap_prompt_ensemble/eval_own",
+      "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+      "predictions_sha256": "57c1bfcca85bc51d0723cd06c4a5403cbd11c74df461f4fb4551f81be1038669",
+      "clean_sha256": "95157a73c9f57196fc47b25cb1a53fca90f5b985238d38c3ada268ddd9e1c967"
+    },
+    "target/clap_prompt_ensemble": {
+      "directory": "/Users/leaf/Projects/elec5305-local/runs/extensions_20261109/clap_prompt_ensemble/eval_target",
+      "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+      "predictions_sha256": "ee02a55d04f3ec8c36bb28a71ac82b1428d1d73476e55398b165f6aa96a21bda",
+      "clean_sha256": "95157a73c9f57196fc47b25cb1a53fca90f5b985238d38c3ada268ddd9e1c967"
+    }
+  },
+  "caveats": [
+    "No best-seed selection; all three CNN seeds are retained",
+    "Seed SD and five-fold SD describe different sources of variation",
+    "Paired CIs are per-seed and conditional on fitted models; do not pool repeated target predictions as independent samples",
+    "All extension +5 dB exact McNemar tests share a single Holm correction family",
+    "Prompt ensemble is not full PAT; no local-feature alignment or label-based beta tuning"
+  ]
+}

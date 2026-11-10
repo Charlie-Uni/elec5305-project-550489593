@@ -1,0 +1,56 @@
+[
+  {
+    "threads": 1,
+    "batch": 4,
+    "median_seconds": 0.4454011250054464,
+    "seconds_per_audio": 0.1113502812513616
+  },
+  {
+    "threads": 1,
+    "batch": 8,
+    "median_seconds": 0.8822814580053091,
+    "seconds_per_audio": 0.11028518225066364
+  },
+  {
+    "threads": 1,
+    "batch": 16,
+    "median_seconds": 2.2859278329997323,
+    "seconds_per_audio": 0.14287048956248327
+  },
+  {
+    "threads": 2,
+    "batch": 4,
+    "median_seconds": 0.3570089170243591,
+    "seconds_per_audio": 0.08925222925608978
+  },
+  {
+    "threads": 2,
+    "batch": 8,
+    "median_seconds": 0.6863322500139475,
+    "seconds_per_audio": 0.08579153125174344
+  },
+  {
+    "threads": 2,
+    "batch": 16,
+    "median_seconds": 1.9525212089938577,
+    "seconds_per_audio": 0.12203257556211611
+  },
+  {
+    "threads": 4,
+    "batch": 4,
+    "median_seconds": 0.29980933299520984,
+    "seconds_per_audio": 0.07495233324880246
+  },
+  {
+    "threads": 4,
+    "batch": 8,
+    "median_seconds": 0.640852124983212,
+    "seconds_per_audio": 0.0801065156229015
+  },
+  {
+    "threads": 4,
+    "batch": 16,
+    "median_seconds": 1.7414172499848064,
+    "seconds_per_audio": 0.1088385781240504
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "raw_prediction_rows": {
+    "svm": 24000,
+    "cnn": 24000
+  },
+  "figure_records_independently_checked": {
+    "fig1": 32,
+    "fig2": 12,
+    "fig3": 12,
+    "fig4": 12,
+    "fig5": 16,
+    "fig6": 20,
+    "fig7": 2,
+    "fig8": 12
+  },
+  "original_preview_csv_reproduction": {
+    "fig8_overlap_strata.csv": {
+      "records": 12,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig2_capture_rate_vs_sir.csv": {
+      "records": 12,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig4_same_vs_different.csv": {
+      "records": 12,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig7_robustness_vs_cost.csv": {
+      "records": 2,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig6_confusion_flow.csv": {
+      "records": 20,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig1_macro_f1_vs_level.csv": {
+      "records": 32,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig5_representation_displacement.csv": {
+      "records": 16,
+      "match_at_absolute_tolerance": 1e-10
+    },
+    "fig3_margin_vs_sir.csv": {
+      "records": 12,
+      "match_at_absolute_tolerance": 1e-10
+    }
+  },
+  "checks": [
+    "F1 from confusion counts; per-fold means and SD",
+    "capture counts from predictions",
+    "margins from full class-score arrays",
+    "training-scaled handcrafted distances and CNN cosine distances",
+    "capture flows and correctly classified control transitions",
+    "latency from original cost files",
+    "overlap-matched target sets, accuracy, F1 and coverage"
+  ],
+  "scope": "real v3 own-region SVM and CNN; CLAP interference is still running"
+}

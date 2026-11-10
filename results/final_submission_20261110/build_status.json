@@ -1,0 +1,16 @@
+{
+  "slides": 12,
+  "concise_report_pages": 10,
+  "real_code_demo": true,
+  "closing_analyses_complete": true,
+  "editable_charts": true,
+  "embedded_audio_clips": 2,
+  "augmentation_complete": true,
+  "cost_panel_complete": true,
+  "draft": false,
+  "pptxgenjs": "4.0.1",
+  "node": "v24.22.1",
+  "source_sha256": "3bdf8a27972ef69a5b623361b0be20a86b2ab23755560482de872217a6e0d365",
+  "data_sha256": "6a4958851205cd8dbf7dd1b017dc7ba018f2cf52e1e4b9561ea9d5b5f13fea76",
+  "pptx_sha256": "bd405fe80b06d2d9db3b6e5ff51d9047cf36a893aea0d1451e988afa06a1f8b4"
+}

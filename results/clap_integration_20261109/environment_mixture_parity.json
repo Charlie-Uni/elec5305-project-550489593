@@ -1,0 +1,12 @@
+{
+  "sampled_rows": 240,
+  "sampling": "two examples from each fold/condition/level, in each of own and target manifests",
+  "baseline_original_vs_recorded_gain_matches": 240,
+  "baseline_original_vs_clap_recorded_gain_matches": 240,
+  "mismatched_rows": [],
+  "compared_arrays": [
+    "mixture float64",
+    "gain-matched clean float64"
+  ],
+  "fix": "validate recomputed gain, then render with exact manifest gains; previous preliminary NumPy 1/2 parity result superseded"
+}

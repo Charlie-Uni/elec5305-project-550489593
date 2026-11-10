@@ -1,0 +1,36 @@
+{
+  "features": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "interference": {
+    "levels_db": [
+      10.0,
+      5.0,
+      0.0
+    ],
+    "conditions": [
+      "white",
+      "demand",
+      "semantic_same",
+      "semantic_different"
+    ],
+    "active_threshold_db": 40.0,
+    "power_region": "target",
+    "peak_limit": 0.99,
+    "seed": 5305,
+    "demand_environments": [
+      "STRAFFIC",
+      "PSTATION",
+      "TMETRO"
+    ],
+    "demand_channel": "ch01"
+  }
+}

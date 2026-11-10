@@ -1,0 +1,194 @@
+{
+  "evaluation": "clean_ESC-50_official_five_fold",
+  "clips": 2000,
+  "labels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "cnn_config": {
+    "seed": 5307,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "dropout": 0.3,
+    "channels": [
+      16,
+      32,
+      64
+    ],
+    "num_threads": 4
+  },
+  "feature_config": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "spectrogram_cache_sha256": "ff853659e98780fc82094ebd063091fe03972923bed329ac64913716952136a6",
+  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
+  "source_sha256": {
+    "cnn.py": "e779986e90799b876fc6f6059f6e05ab3cc25e0e27aa0092b5f0279669a27189",
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "spectrograms.py": "aad150e2c0643a72c0de3c3aa45bacc1c2edab88a4e7684aff87b4bae2de755e",
+    "data.py": "a43f834cb80a04fc0089f266d19f4a9a04d6e3f4fbb9132d7b19ccf98b5121fc",
+    "svm.py": "ff0c0b96d3c411b086f8346e5ecc5cfeed9261e288931472f8aeb3e14caffb0f",
+    "augmentation.py": "cc1f40868f039e6bc0af932e07fdd57ae6b142e42410b0fad1e951e7134d4448"
+  },
+  "feature_source_sha256": {
+    "data.py": "a43f834cb80a04fc0089f266d19f4a9a04d6e3f4fbb9132d7b19ccf98b5121fc",
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "spectrograms.py": "aad150e2c0643a72c0de3c3aa45bacc1c2edab88a4e7684aff87b4bae2de755e"
+  },
+  "metadata_source_overlaps": [
+    {
+      "class_ids": [
+        37,
+        38
+      ],
+      "filenames": [
+        "2-131943-A-38.wav",
+        "3-131943-A-37.wav"
+      ],
+      "folds": [
+        2,
+        3
+      ],
+      "source_id": "131943"
+    },
+    {
+      "class_ids": [
+        1,
+        6
+      ],
+      "filenames": [
+        "2-134049-A-6.wav",
+        "3-134049-A-1.wav"
+      ],
+      "folds": [
+        2,
+        3
+      ],
+      "source_id": "134049"
+    },
+    {
+      "class_ids": [
+        37,
+        38
+      ],
+      "filenames": [
+        "4-209698-A-37.wav",
+        "5-209698-A-38.wav"
+      ],
+      "folds": [
+        4,
+        5
+      ],
+      "source_id": "209698"
+    },
+    {
+      "class_ids": [
+        1,
+        6
+      ],
+      "filenames": [
+        "4-234879-A-6.wav",
+        "5-234879-A-1.wav",
+        "5-234879-B-1.wav"
+      ],
+      "folds": [
+        4,
+        5
+      ],
+      "source_id": "234879"
+    }
+  ],
+  "environment": {
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.16",
+    "device": "mps",
+    "numerical_threads": 4,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": true,
+    "packages": {
+      "torch": "2.14.1",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1"
+    }
+  },
+  "selection_rule": "highest validation macro-F1; ties keep earliest epoch; fresh refit",
+  "augmentation": {
+    "mode": "wgn",
+    "probability": 0.5,
+    "levels_db": [
+      5.0,
+      10.0,
+      15.0
+    ],
+    "bank_seed": 5305,
+    "optimisation_seed": 5307,
+    "power_region": "own",
+    "active_threshold_db": 40.0,
+    "peak_limit": 0.99,
+    "views_per_training_clip": 3,
+    "validation": "clean only",
+    "mel_normalisation": "clean training clips only",
+    "distractors": "current training partition only; exclude cross-fold source IDs",
+    "bank_reuse": "same deterministic banks for all optimisation seeds"
+  }
+}

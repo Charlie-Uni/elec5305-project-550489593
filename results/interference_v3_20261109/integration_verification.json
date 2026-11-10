@@ -1,0 +1,31 @@
+{
+  "pytest": {
+    "passed": 63,
+    "skipped": 1,
+    "skip_reason": "CUDA unavailable"
+  },
+  "ruff": "passed",
+  "git_diff_check": "passed",
+  "installed_source_matches_working_copy": true,
+  "incoming_patch_sha256": "6210049ac029818203a711e513da0040de2db04da0578ef32fc9803e45f4f66a",
+  "source_sha256": {
+    "src/esc_robustness/__init__.py": "4b02016c1d7b3a23976df9ec550d02b0e8d6b4e15e6035d268499badd75a3cf9",
+    "src/esc_robustness/analysis.py": "78188c81c4058c7f772bb7c663c68df93751589d80d3bf039f96d451f8beca26",
+    "src/esc_robustness/artifacts.py": "b637d9fda7524089d14d9b7f2f9c0560ee170710366aa580c573144e9f1d2537",
+    "src/esc_robustness/cli.py": "9e04b19c82f4c1a003385938f1e28314d0825012954d48cfa739f96b81502b77",
+    "src/esc_robustness/cnn.py": "85045ba7c59c69abb70a7002d38898c366fa613cd4faec5e1891ef1386fca952",
+    "src/esc_robustness/data.py": "a43f834cb80a04fc0089f266d19f4a9a04d6e3f4fbb9132d7b19ccf98b5121fc",
+    "src/esc_robustness/dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "src/esc_robustness/features.py": "6db31128977dfbdd70695013f937ab481c88989a25dbda25d41f5a383e0a0db3",
+    "src/esc_robustness/interference_eval.py": "fa4c675138a783ccc082b455ed4f03fba4758df3c77f903b1bff539e8af9fb27",
+    "src/esc_robustness/mixing.py": "0de2a216087d21d6a95c7f6d0abf059685edbfff3e73377acb7f5e9d1ab697c6",
+    "src/esc_robustness/spectrograms.py": "aad150e2c0643a72c0de3c3aa45bacc1c2edab88a4e7684aff87b4bae2de755e",
+    "src/esc_robustness/svm.py": "2995f4e03c6b188d282de707f4d0ec33100a7459c7349ef952e3c9ad5b9e3f79",
+    "src/esc_robustness/validation.py": "27839dcdbdf0d40750072e2a2f9a4ee5b15b2b81109922bc10b09b4759f44b4a"
+  },
+  "config_sha256": {
+    "own": "b704fd0e1af0cfe232806cc4d570f32d08e1fb28fd78d365b4996e0fb6339ec7",
+    "target": "c546de3021ec2a4b62fab44e2f3bfe0e095381abbd36fc164774bcac0f4a772b"
+  },
+  "additional_fix": "Condition-specific clean reference after target-region silent-pair exclusions; one regression test."
+}

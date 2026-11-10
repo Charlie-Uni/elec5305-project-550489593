@@ -1,0 +1,14 @@
+condition,n,accuracy_mean,accuracy_sd,macro_f1_mean,macro_f1_sd,matched_clean_n,matched_clean_macro_f1_mean,relative_macro_f1_loss,relative_control_macro_f1_loss,control_macro_f1_minus_clean,control_macro_f1_mean,rows_with_common_gain,errors,errors_equal_distractor,capture_rate,capture_fraction,margin_median,margin_fraction_negative
+clean,2,0.5,,0.02,,2,0.02,,,,,,,,,,,
+demand@+10dB,2,0.5,,0.02,,2,0.02,0.0,0.0,0.0,0.02,1,,,,,,
+demand@+5dB,2,0.5,,0.02,,2,0.02,0.0,0.0,0.0,0.02,1,,,,,,
+demand@+0dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,,,,,,
+semantic_different@+10dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,0,2,1,0.5,0.5,-0.12309826883762193,1.0
+semantic_different@+5dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,0,2,2,1.0,1.0,-0.1611847285870302,1.0
+semantic_different@+0dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,2,2,1.0,1.0,-0.19452295929301222,1.0
+semantic_same@+10dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,2,1,0.5,0.5,-0.11549018948048168,0.5
+semantic_same@+5dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,2,1,0.5,0.5,-0.15861468410437324,0.5
+semantic_same@+0dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,2,1,0.5,0.5,-0.2084336456638684,0.5
+white@+10dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,,,,,,
+white@+5dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,,,,,,
+white@+0dB,2,0.0,,0.0,,2,0.02,1.0,1.0,0.0,0.02,1,,,,,,

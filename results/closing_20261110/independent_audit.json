@@ -1,0 +1,45 @@
+{
+  "verified": true,
+  "independent_score_trials": 95964,
+  "outcome_cells": 192,
+  "cloud_feature_rows": {
+    "own": {
+      "n": 18000,
+      "max_absolute_difference": 3.0531133177191805e-15
+    },
+    "target": {
+      "n": 17991,
+      "max_absolute_difference": 5.551115123125783e-15
+    }
+  },
+  "scipy_feature_checks": {
+    "own": {
+      "n": 60,
+      "max_absolute_difference": 1.1379786002407855e-15,
+      "features_sha256": "04243d6c17ce94cb97eb281eabee7d4a15df1e1cd88b5879cfce371dce4a545e"
+    },
+    "target": {
+      "n": 60,
+      "max_absolute_difference": 1.1796119636642288e-15,
+      "features_sha256": "c4a8ece5d24acaaa941d4dd6fd42108c0d8f188ed4f11f226706a9b761a6605e"
+    }
+  },
+  "paired_cells": 90,
+  "independent_interval_check": {
+    "cells": 26,
+    "resamples": 2000,
+    "seed": 530511,
+    "max_endpoint_difference": 0.011692176870748305,
+    "tolerance": 0.03,
+    "method": "independent integer cluster draws; expected Monte Carlo differences"
+  },
+  "bootstrap_scope": "Point estimates and counts independently recomputed; 26 primary intervals additionally checked with independent integer cluster draws and a different fixed seed; remaining interval draws not independently regenerated.",
+  "output_hashes": {
+    "acoustic_stratified.csv": "0ab049a68cb0f65fd2ca8bde668cb9a3aa1b982c0666e118beec69958c2685b4",
+    "acoustic_matched_trials.csv": "1877739443b18aa025ed88feea418ff1c1d255a3fcc444965d24310b43fd51dd",
+    "readout_trials.csv": "05dd65c36e28c018e2565bf06793ecd378d3ff852e5b47caf46c5ebf17d918dc",
+    "readout_uncertainty.csv": "aacc463a1a15cbe3453cacaf2a2d5ce1ca6c6200e1153d89241c0d4e4ef5f2d2",
+    "readout_outcomes.csv": "bd001d69b6216a388e80f5142a7728af12be6a982ea629bd0ee16e03df989cb0",
+    "acoustic_matched_comparisons.csv": "ae7f60973672583ef012b09399de4208bda272fc084311501cf6f0253dff6d9e"
+  }
+}

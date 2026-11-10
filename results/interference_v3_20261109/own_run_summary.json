@@ -1,0 +1,505 @@
+{
+  "manifest": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/manifest_own",
+  "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+  "rows_evaluated": 24000,
+  "subset_limit": null,
+  "data_root": "data/ESC-50",
+  "interference_config": {
+    "levels_db": [
+      10.0,
+      5.0,
+      0.0
+    ],
+    "conditions": [
+      "white",
+      "demand",
+      "semantic_same",
+      "semantic_different"
+    ],
+    "active_threshold_db": 40.0,
+    "power_region": "own",
+    "peak_limit": 0.99,
+    "seed": 5305,
+    "demand_environments": [
+      "STRAFFIC",
+      "PSTATION",
+      "TMETRO"
+    ],
+    "demand_channel": "ch01"
+  },
+  "power_definition": "target: mean square over its own active region (unwindowed frames within 40.0 dB of its peak frame); interferer: mean square over its own active region; both interferer readings are recorded in every row",
+  "feature_config": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "control": "target scaled by the row's common gain, classified by the same model",
+  "seconds": 1044.022787416994,
+  "environment": {
+    "python": "3.11.16",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "numerical_threads": 1,
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "soundfile": "0.14.0",
+      "torch": "2.14.1"
+    }
+  },
+  "source_sha256": {
+    "interference_eval.py": "fa4c675138a783ccc082b455ed4f03fba4758df3c77f903b1bff539e8af9fb27",
+    "mixing.py": "0de2a216087d21d6a95c7f6d0abf059685edbfff3e73377acb7f5e9d1ab697c6",
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "features.py": "6db31128977dfbdd70695013f937ab481c88989a25dbda25d41f5a383e0a0db3"
+  },
+  "systems": {
+    "svm": {
+      "score_type": "ovr_decision_function",
+      "conditions": {
+        "white@+10dB": {
+          "n": 2000,
+          "correct": 151,
+          "control_correct": 975,
+          "errors": 1849,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.0755,
+          "control_accuracy": 0.4875,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "white@+5dB": {
+          "n": 2000,
+          "correct": 108,
+          "control_correct": 974,
+          "errors": 1892,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.054,
+          "control_accuracy": 0.487,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "white@+0dB": {
+          "n": 2000,
+          "correct": 87,
+          "control_correct": 960,
+          "errors": 1913,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.0435,
+          "control_accuracy": 0.48,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+10dB": {
+          "n": 2000,
+          "correct": 489,
+          "control_correct": 976,
+          "errors": 1511,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.2445,
+          "control_accuracy": 0.488,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+5dB": {
+          "n": 2000,
+          "correct": 357,
+          "control_correct": 975,
+          "errors": 1643,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.1785,
+          "control_accuracy": 0.4875,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+0dB": {
+          "n": 2000,
+          "correct": 226,
+          "control_correct": 966,
+          "errors": 1774,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.113,
+          "control_accuracy": 0.483,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "semantic_same@+10dB": {
+          "n": 2000,
+          "correct": 585,
+          "control_correct": 967,
+          "errors": 1415,
+          "errors_equal_interferer": 216,
+          "predicted_interferer": 216,
+          "semantic": true,
+          "accuracy": 0.2925,
+          "control_accuracy": 0.4835,
+          "capture_rate": 0.15265017667844524,
+          "capture_fraction": 0.108
+        },
+        "semantic_same@+5dB": {
+          "n": 2000,
+          "correct": 473,
+          "control_correct": 966,
+          "errors": 1527,
+          "errors_equal_interferer": 283,
+          "predicted_interferer": 283,
+          "semantic": true,
+          "accuracy": 0.2365,
+          "control_accuracy": 0.483,
+          "capture_rate": 0.1853307138179437,
+          "capture_fraction": 0.1415
+        },
+        "semantic_same@+0dB": {
+          "n": 2000,
+          "correct": 374,
+          "control_correct": 968,
+          "errors": 1626,
+          "errors_equal_interferer": 365,
+          "predicted_interferer": 365,
+          "semantic": true,
+          "accuracy": 0.187,
+          "control_accuracy": 0.484,
+          "capture_rate": 0.22447724477244774,
+          "capture_fraction": 0.1825
+        },
+        "semantic_different@+10dB": {
+          "n": 2000,
+          "correct": 559,
+          "control_correct": 969,
+          "errors": 1441,
+          "errors_equal_interferer": 182,
+          "predicted_interferer": 182,
+          "semantic": true,
+          "accuracy": 0.2795,
+          "control_accuracy": 0.4845,
+          "capture_rate": 0.12630117973629423,
+          "capture_fraction": 0.091
+        },
+        "semantic_different@+5dB": {
+          "n": 2000,
+          "correct": 452,
+          "control_correct": 962,
+          "errors": 1548,
+          "errors_equal_interferer": 246,
+          "predicted_interferer": 246,
+          "semantic": true,
+          "accuracy": 0.226,
+          "control_accuracy": 0.481,
+          "capture_rate": 0.15891472868217055,
+          "capture_fraction": 0.123
+        },
+        "semantic_different@+0dB": {
+          "n": 2000,
+          "correct": 345,
+          "control_correct": 945,
+          "errors": 1655,
+          "errors_equal_interferer": 332,
+          "predicted_interferer": 332,
+          "semantic": true,
+          "accuracy": 0.1725,
+          "control_accuracy": 0.4725,
+          "capture_rate": 0.20060422960725074,
+          "capture_fraction": 0.166
+        }
+      },
+      "model_dir": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed",
+      "checkpoint_sha256": {
+        "1": "6c615d717e03f6b9c692141da287b0c3f03f19b2d3d3574bd0277f520e3b571a",
+        "2": "20ad29a19af73012518e66538be1ad5eb98017f55482c0966fe92c1afaa2fe7c",
+        "3": "2dc72edc8dfc98b69796cbb12f246331a15ba21a37982cfa6a5f4b4fe02204e3",
+        "4": "ca7e30a2766ed88303fc5c0c6282400795c19e94c72c9c96528ae3c0c880e0e3",
+        "5": "d37d62b85873f4f7fa675be356a268a3434af1aecdc9449aceb62769f953bf86"
+      }
+    },
+    "cnn": {
+      "score_type": "logits",
+      "conditions": {
+        "white@+10dB": {
+          "n": 2000,
+          "correct": 371,
+          "control_correct": 1364,
+          "errors": 1629,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.1855,
+          "control_accuracy": 0.682,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "white@+5dB": {
+          "n": 2000,
+          "correct": 245,
+          "control_correct": 1363,
+          "errors": 1755,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.1225,
+          "control_accuracy": 0.6815,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "white@+0dB": {
+          "n": 2000,
+          "correct": 137,
+          "control_correct": 1366,
+          "errors": 1863,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.0685,
+          "control_accuracy": 0.683,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+10dB": {
+          "n": 2000,
+          "correct": 801,
+          "control_correct": 1363,
+          "errors": 1199,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.4005,
+          "control_accuracy": 0.6815,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+5dB": {
+          "n": 2000,
+          "correct": 631,
+          "control_correct": 1364,
+          "errors": 1369,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.3155,
+          "control_accuracy": 0.682,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+0dB": {
+          "n": 2000,
+          "correct": 424,
+          "control_correct": 1359,
+          "errors": 1576,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.212,
+          "control_accuracy": 0.6795,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "semantic_same@+10dB": {
+          "n": 2000,
+          "correct": 874,
+          "control_correct": 1364,
+          "errors": 1126,
+          "errors_equal_interferer": 309,
+          "predicted_interferer": 309,
+          "semantic": true,
+          "accuracy": 0.437,
+          "control_accuracy": 0.682,
+          "capture_rate": 0.2744227353463588,
+          "capture_fraction": 0.1545
+        },
+        "semantic_same@+5dB": {
+          "n": 2000,
+          "correct": 711,
+          "control_correct": 1360,
+          "errors": 1289,
+          "errors_equal_interferer": 403,
+          "predicted_interferer": 403,
+          "semantic": true,
+          "accuracy": 0.3555,
+          "control_accuracy": 0.68,
+          "capture_rate": 0.3126454615981381,
+          "capture_fraction": 0.2015
+        },
+        "semantic_same@+0dB": {
+          "n": 2000,
+          "correct": 547,
+          "control_correct": 1340,
+          "errors": 1453,
+          "errors_equal_interferer": 532,
+          "predicted_interferer": 532,
+          "semantic": true,
+          "accuracy": 0.2735,
+          "control_accuracy": 0.67,
+          "capture_rate": 0.3661390227116311,
+          "capture_fraction": 0.266
+        },
+        "semantic_different@+10dB": {
+          "n": 2000,
+          "correct": 831,
+          "control_correct": 1365,
+          "errors": 1169,
+          "errors_equal_interferer": 262,
+          "predicted_interferer": 262,
+          "semantic": true,
+          "accuracy": 0.4155,
+          "control_accuracy": 0.6825,
+          "capture_rate": 0.22412318220701455,
+          "capture_fraction": 0.131
+        },
+        "semantic_different@+5dB": {
+          "n": 2000,
+          "correct": 685,
+          "control_correct": 1358,
+          "errors": 1315,
+          "errors_equal_interferer": 362,
+          "predicted_interferer": 362,
+          "semantic": true,
+          "accuracy": 0.3425,
+          "control_accuracy": 0.679,
+          "capture_rate": 0.2752851711026616,
+          "capture_fraction": 0.181
+        },
+        "semantic_different@+0dB": {
+          "n": 2000,
+          "correct": 527,
+          "control_correct": 1344,
+          "errors": 1473,
+          "errors_equal_interferer": 490,
+          "predicted_interferer": 490,
+          "semantic": true,
+          "accuracy": 0.2635,
+          "control_accuracy": 0.672,
+          "capture_rate": 0.33265444670739985,
+          "capture_fraction": 0.245
+        }
+      },
+      "model_dir": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/baselines/clean_cnn",
+      "checkpoint_sha256": {
+        "1": "485fb11a47b25e8dc1c4c76ce85542cd2dfd37e919b04ac213b20fc6c7f2b10f",
+        "2": "7143f19e534c56a8f10734563ab578a45e3706c3a374da17b26b7194ddc678a1",
+        "3": "81ced439b9b8fd5de7bc13ab067127cac6e0b6e8f69516e94b4a25a124f124fa",
+        "4": "3b79a594c9ad4e6d130d71a5993ae3883d2588c1911b54adec1470f5cc9c6ab4",
+        "5": "769516ee7eb808a5941b2d09a70345f01fddb6ffcc74a60eafbf84eefd2246a1"
+      }
+    }
+  },
+  "execution": {
+    "method": "unchanged evaluator on official-fold shards, reassembled in canonical manifest order",
+    "shared_worker_pool_size": 6,
+    "numerical_threads_per_worker": 1,
+    "timing_scope": "wall time including concurrent other-protocol jobs and queue gaps; not deployment latency",
+    "shards": [
+      {
+        "region": "own",
+        "fold": 3,
+        "start": 213970.444092166,
+        "end": 214556.361700708,
+        "command": [
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/tmp/local_setup_20261109/venv/bin/esc-baseline",
+          "evaluate-interference",
+          "--manifest",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_3/manifest",
+          "--svm-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed",
+          "--cnn-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/baselines/clean_cnn",
+          "--output",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_3/evaluation"
+        ],
+        "summary_sha256": "e1ff2db468c03fb296cb3836e661217ab1fc12adcd2952a1b0febc87410ad9e2"
+      },
+      {
+        "region": "own",
+        "fold": 1,
+        "start": 213970.434828041,
+        "end": 214559.751594458,
+        "command": [
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/tmp/local_setup_20261109/venv/bin/esc-baseline",
+          "evaluate-interference",
+          "--manifest",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_1/manifest",
+          "--svm-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed",
+          "--cnn-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/baselines/clean_cnn",
+          "--output",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_1/evaluation"
+        ],
+        "summary_sha256": "b7867a3e66678cd6e1b38412833d0b06aacc103a8aeb1898012a387542ce7cdd"
+      },
+      {
+        "region": "own",
+        "fold": 2,
+        "start": 213970.443635291,
+        "end": 214564.810906541,
+        "command": [
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/tmp/local_setup_20261109/venv/bin/esc-baseline",
+          "evaluate-interference",
+          "--manifest",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_2/manifest",
+          "--svm-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed",
+          "--cnn-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/baselines/clean_cnn",
+          "--output",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_2/evaluation"
+        ],
+        "summary_sha256": "01b3d60fc4a288aeb1a936417ec39b20ea7c5975b2aac7e5e9c23eeffead644a"
+      },
+      {
+        "region": "own",
+        "fold": 4,
+        "start": 214556.373388958,
+        "end": 215010.041812916,
+        "command": [
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/tmp/local_setup_20261109/venv/bin/esc-baseline",
+          "evaluate-interference",
+          "--manifest",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_4/manifest",
+          "--svm-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed",
+          "--cnn-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/baselines/clean_cnn",
+          "--output",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_4/evaluation"
+        ],
+        "summary_sha256": "36098eb341b7b9f8fc1b074b7052571680da209ad82506b726e084cce3558f11"
+      },
+      {
+        "region": "own",
+        "fold": 5,
+        "start": 214560.087264916,
+        "end": 215014.457615458,
+        "command": [
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/tmp/local_setup_20261109/venv/bin/esc-baseline",
+          "evaluate-interference",
+          "--manifest",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_5/manifest",
+          "--svm-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/clean_svm_reconstructed",
+          "--cnn-dir",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/baselines/clean_cnn",
+          "--output",
+          "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/shards/own_fold_5/evaluation"
+        ],
+        "summary_sha256": "7af88c2b6cbf80a911d61eba8886c6c6d143835ce6b7eaf5917300b01657cd10"
+      }
+    ]
+  }
+}

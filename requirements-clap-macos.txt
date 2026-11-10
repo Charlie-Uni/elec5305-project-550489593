@@ -1,0 +1,12 @@
+# Separate Python 3.11 environment for the frozen CLAP reference on Apple Silicon.
+# Keep the SVM/CNN environment and uv.lock unchanged.
+laion-clap==1.1.7
+numpy==1.26.4
+scipy==1.17.1
+scikit-learn==1.9.1
+soundfile==0.14.0
+torch==2.14.1
+torchaudio==2.11.1
+torchvision==0.29.2
+timm==1.0.31
+transformers==4.48.3

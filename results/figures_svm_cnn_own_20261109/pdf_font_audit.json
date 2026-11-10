@@ -1,0 +1,138 @@
+{
+  "fig1_macro_f1_vs_level.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/ECVIMF+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 16656
+      },
+      {
+        "base_font": "/EEZAWI+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 3864
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig2_capture_rate_vs_sir.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/QDJHPT+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 13896
+      },
+      {
+        "base_font": "/EEZAWI+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 3864
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig3_margin_vs_sir.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/HIVDST+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 15936
+      },
+      {
+        "base_font": "/GUCHGM+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 4012
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig4_same_vs_different.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/DPIPLE+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 14236
+      },
+      {
+        "base_font": "/EEZAWI+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 3864
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig5_representation_displacement.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/CHHUVP+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 17156
+      },
+      {
+        "base_font": "/DQIFZV+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 4040
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig6_confusion_flow.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/CXZDGD+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 16396
+      },
+      {
+        "base_font": "/DLFEFJ+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 4240
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig7_robustness_vs_cost.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/BFLESA+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 16196
+      },
+      {
+        "base_font": "/DQIFZV+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 4040
+      }
+    ],
+    "width_inches": 7.16
+  },
+  "fig8_overlap_strata.pdf": {
+    "embedded_fonts": [
+      {
+        "base_font": "/GKUAQH+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 14852
+      },
+      {
+        "base_font": "/HDIIKF+DejaVuSans",
+        "subtype": "/Type0",
+        "descendant_type": "/CIDFontType2",
+        "embedded_bytes": 3940
+      }
+    ],
+    "width_inches": 7.16
+  }
+}

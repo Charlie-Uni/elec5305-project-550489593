@@ -1,0 +1,35 @@
+{
+  "stage": "export",
+  "figures": {
+    "13_augmentation_transfer": {
+      "description": "SVM points are five-fold means. CNN large markers are means of three five-fold means; whiskers are sample SD across seeds, small dots show each seed. Conditions are categorical and unconnected.",
+      "layout": []
+    },
+    "14_svm_paired_training_effects": {
+      "description": "Each marker compares augmentation with its matching clean seed on identical mixtures, using 1,998\u20132,000 targets across five folds. Pointwise 95% paired intervals use 2,000 target-bootstrap replicates conditional on fitted models; they are not seed-level confidence intervals. All 156 extension exact McNemar tests share one Holm family; see the source CSV.",
+      "layout": []
+    },
+    "15_cnn_paired_training_effects": {
+      "description": "Each marker compares augmentation with its matching clean seed on identical mixtures, using 1,998\u20132,000 targets across five folds. Pointwise 95% paired intervals use 2,000 target-bootstrap replicates conditional on fitted models; they are not seed-level confidence intervals. All 156 extension exact McNemar tests share one Holm family; see the source CSV.",
+      "layout": []
+    },
+    "19_semantic_vs_wgn_training": {
+      "description": "Paired semantic-versus-WGN training contrasts, with each CNN seed matched and 1,998\u20132,000 targets per contrast across five folds. Pointwise 95% intervals use 2,000 target-bootstrap replicates; all 156 extension exact McNemar tests share one Holm family. This analysis amendment was recorded before semantic-trained results were available, after some WGN results had been inspected.",
+      "layout": []
+    },
+    "16_clap_prompt_ensemble": {
+      "description": "Top panels show five-fold macro-F1 means \u00b1 fold SD. Bottom panels use 1,998\u20132,000 matched targets and 2,000 target-bootstrap replicates for pointwise 95% accuracy intervals. Their exact McNemar tests join the 156-comparison Holm family; the source is 16_clap_prompt_ensemble_effects.csv. Same audio embeddings, all released fixed templates, no test-label prompt selection; this is not full PAT.",
+      "layout": []
+    },
+    "17_cnn_overlap_replication": {
+      "description": "Each seed uses 1,464 same-category or 1,465 different-category high-overlap targets and a separate pointwise 95% CI from 2,000 paired target-bootstrap replicates. The 12 exact McNemar comparisons share a Holm family. Repeated target predictions are not independent samples.",
+      "layout": []
+    }
+  },
+  "source": "results/extensions_20261109/interventions",
+  "all_seeds_retained": [
+    5305,
+    5306,
+    5307
+  ]
+}

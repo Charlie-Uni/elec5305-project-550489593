@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "interference_config": {
+    "levels_db": [
+      10.0,
+      5.0,
+      0.0
+    ],
+    "conditions": [
+      "white",
+      "demand",
+      "semantic_same",
+      "semantic_different"
+    ],
+    "active_threshold_db": 40.0,
+    "power_region": "target",
+    "peak_limit": 0.99,
+    "seed": 5305,
+    "demand_environments": [
+      "STRAFFIC",
+      "PSTATION",
+      "TMETRO"
+    ],
+    "demand_channel": "ch01"
+  },
+  "feature_config": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "data_root": "/Users/leaf/Projects/elec5305-local/data/ESC-50",
+  "metadata_sha256": "ca660da60191a97de289983a05821c9382d852a38a2ba8428980816b68cf6246",
+  "clips_in_dataset": 2000,
+  "subset_limit_per_fold": null,
+  "demand_cache": "/Users/leaf/Projects/elec5305-local/artifacts/interference/20261109/demand_cache",
+  "demand_environments": {
+    "STRAFFIC": {
+      "source": "data/DEMAND/STRAFFIC/ch01.wav",
+      "source_sha256": "5cd76b6a746746009de5d2b3e6955a3facbb7d1f9e5ba3450140372694dc33f1",
+      "source_sample_rate": 48000,
+      "channel": "ch01",
+      "cache": "STRAFFIC_ch01.npy",
+      "cache_sha256": "25237fcd2c1632348de43b9375c0c264607144cf34ae7858a6814e24d77a2bdb",
+      "samples": 13230177,
+      "seconds": 300.0040136054422,
+      "resampler": "scipy.signal.resample_poly 44100/48000"
+    },
+    "PSTATION": {
+      "source": "data/DEMAND/PSTATION/ch01.wav",
+      "source_sha256": "4a6675affa597f0435903d713abdfffd9d8d9bf29adc30717bda76ccf44023f8",
+      "source_sample_rate": 48000,
+      "channel": "ch01",
+      "cache": "PSTATION_ch01.npy",
+      "cache_sha256": "9679785b993f0aa31d5ca1ac5c9f494246db19f80ab74f5193e9ae514537fda2",
+      "samples": 13230177,
+      "seconds": 300.0040136054422,
+      "resampler": "scipy.signal.resample_poly 44100/48000"
+    },
+    "TMETRO": {
+      "source": "data/DEMAND/TMETRO/ch01.wav",
+      "source_sha256": "4672ffe1f6ece93e1ee2f426cf0cc22eebbe66112d171c62f2cb4d4cffa24005",
+      "source_sample_rate": 48000,
+      "channel": "ch01",
+      "cache": "TMETRO_ch01.npy",
+      "cache_sha256": "0ee609829825e904a858680a950cbd8472da119145524023fcd7271898874645",
+      "samples": 13230177,
+      "seconds": 300.0040136054422,
+      "resampler": "scipy.signal.resample_poly 44100/48000"
+    }
+  },
+  "distractor_rule": "same fold as the target; different fine class; different source recording; sources that cross folds are excluded; one same-coarse and one different-coarse distractor per target; seeded by (seed, fold)",
+  "power_definition": "target: mean square over its own active region (unwindowed frames within 40.0 dB of its peak frame); interferer: mean square inside the target's active region (proposal wording); both interferer readings are recorded in every row",
+  "dropped_pairs": [
+    {
+      "target_file": "4-164021-A-1.wav",
+      "interferer": "4-154443-A-24.wav"
+    },
+    {
+      "target_file": "4-164021-A-1.wav",
+      "interferer": "4-154443-A-24.wav"
+    },
+    {
+      "target_file": "4-164021-A-1.wav",
+      "interferer": "4-154443-A-24.wav"
+    },
+    {
+      "target_file": "4-184434-A-21.wav",
+      "interferer": "4-176914-A-23.wav"
+    },
+    {
+      "target_file": "4-184434-A-21.wav",
+      "interferer": "4-176914-A-23.wav"
+    },
+    {
+      "target_file": "4-184434-A-21.wav",
+      "interferer": "4-176914-A-23.wav"
+    },
+    {
+      "target_file": "5-235874-A-28.wav",
+      "interferer": "5-221593-A-21.wav"
+    },
+    {
+      "target_file": "5-235874-A-28.wav",
+      "interferer": "5-221593-A-21.wav"
+    },
+    {
+      "target_file": "5-235874-A-28.wav",
+      "interferer": "5-221593-A-21.wav"
+    }
+  ],
+  "alignment_rule": "target and distractor keep their natural alignment (zero offset); DEMAND segments start at a seeded offset into the cached recording",
+  "peak_rule": "one common gain when the mixture peak exceeds 0.99",
+  "summary": {
+    "rows": 23991,
+    "common_gain_applied": 10076,
+    "low_overlap_pairs": 1986,
+    "dropped_silent_in_target_region": 9
+  },
+  "source_sha256": {
+    "mixing.py": "0de2a216087d21d6a95c7f6d0abf059685edbfff3e73377acb7f5e9d1ab697c6",
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "data.py": "a43f834cb80a04fc0089f266d19f4a9a04d6e3f4fbb9132d7b19ccf98b5121fc"
+  },
+  "storage_relocation": {
+    "source_manifest": "/Users/leaf/Documents/GitHub/elec5305-project-550489593/artifacts/interference/v3_20261109/manifest_target",
+    "source_metadata_sha256": "3043daf02c5436f87cd4addfafe8027f9a54f7e08de51aba12d9b5b86247a130",
+    "manifest_csv_unchanged": true
+  }
+}

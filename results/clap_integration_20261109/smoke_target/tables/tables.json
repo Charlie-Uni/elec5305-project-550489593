@@ -1,0 +1,931 @@
+{
+  "evaluation": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/smoke_target",
+  "manifest_sha256": "0172b0e0e7baa7ace89a21183f145417b796ee16c125a93f648c9ba2294a67d5",
+  "power_definition": "target: mean square over its own active region (unwindowed frames within 40.0 dB of its peak frame); interferer: mean square inside the target's active region (proposal wording); both interferer readings are recorded in every row",
+  "systems": {
+    "clap": {
+      "clean": {
+        "n": 2,
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "accuracy": {
+          "mean": 0.5,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.02,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.5,
+          "macro_f1": 0.02
+        }
+      },
+      "demand@+10dB": {
+        "n": 2,
+        "ratio_type": "SNR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "accuracy": {
+          "mean": 0.5,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.02,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.5,
+          "macro_f1": 0.02
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 0.0,
+        "relative_control_macro_f1_loss": 0.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 1,
+          "become_incorrect": 0,
+          "become_distractor": 0,
+          "distractor_fraction_of_new_errors": null
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": null,
+        "margin": null
+      },
+      "demand@+5dB": {
+        "n": 2,
+        "ratio_type": "SNR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "accuracy": {
+          "mean": 0.5,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.02,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.5,
+          "macro_f1": 0.02
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 0.0,
+        "relative_control_macro_f1_loss": 0.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 1,
+          "become_incorrect": 0,
+          "become_distractor": 0,
+          "distractor_fraction_of_new_errors": null
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": null,
+        "margin": null
+      },
+      "demand@+0dB": {
+        "n": 2,
+        "ratio_type": "SNR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 0,
+          "distractor_fraction_of_new_errors": null
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": null,
+        "margin": null
+      },
+      "semantic_different@+10dB": {
+        "n": 2,
+        "ratio_type": "SIR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 1,
+          "distractor_fraction_of_new_errors": 1.0
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 0
+        },
+        "capture": {
+          "n": 2,
+          "errors": 2,
+          "errors_equal_distractor": 1,
+          "capture_rate": 0.5,
+          "capture_fraction": 0.5,
+          "uniform_wrong_class_reference": 0.02040816326530612,
+          "reference_assumption": "uniform choice among wrong labels; not an empirical null"
+        },
+        "margin": {
+          "n": 2,
+          "median": -0.12309826883762193,
+          "q1": -0.16353823217602007,
+          "q3": -0.08265830549922379,
+          "fraction_negative": 1.0
+        }
+      },
+      "semantic_different@+5dB": {
+        "n": 2,
+        "ratio_type": "SIR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 1,
+          "distractor_fraction_of_new_errors": 1.0
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 0
+        },
+        "capture": {
+          "n": 2,
+          "errors": 2,
+          "errors_equal_distractor": 2,
+          "capture_rate": 1.0,
+          "capture_fraction": 1.0,
+          "uniform_wrong_class_reference": 0.02040816326530612,
+          "reference_assumption": "uniform choice among wrong labels; not an empirical null"
+        },
+        "margin": {
+          "n": 2,
+          "median": -0.1611847285870302,
+          "q1": -0.1973418579600574,
+          "q3": -0.12502759921400297,
+          "fraction_negative": 1.0
+        }
+      },
+      "semantic_different@+0dB": {
+        "n": 2,
+        "ratio_type": "SIR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 1,
+          "distractor_fraction_of_new_errors": 1.0
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": {
+          "n": 2,
+          "errors": 2,
+          "errors_equal_distractor": 2,
+          "capture_rate": 1.0,
+          "capture_fraction": 1.0,
+          "uniform_wrong_class_reference": 0.02040816326530612,
+          "reference_assumption": "uniform choice among wrong labels; not an empirical null"
+        },
+        "margin": {
+          "n": 2,
+          "median": -0.19452295929301222,
+          "q1": -0.23680424365909805,
+          "q3": -0.15224167492692642,
+          "fraction_negative": 1.0
+        }
+      },
+      "semantic_same@+10dB": {
+        "n": 2,
+        "ratio_type": "SIR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 1,
+          "distractor_fraction_of_new_errors": 1.0
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": {
+          "n": 2,
+          "errors": 2,
+          "errors_equal_distractor": 1,
+          "capture_rate": 0.5,
+          "capture_fraction": 0.5,
+          "uniform_wrong_class_reference": 0.02040816326530612,
+          "reference_assumption": "uniform choice among wrong labels; not an empirical null"
+        },
+        "margin": {
+          "n": 2,
+          "median": -0.11549018948048168,
+          "q1": -0.286419974278331,
+          "q3": 0.05543959531736767,
+          "fraction_negative": 0.5
+        }
+      },
+      "semantic_same@+5dB": {
+        "n": 2,
+        "ratio_type": "SIR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 1,
+          "distractor_fraction_of_new_errors": 1.0
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": {
+          "n": 2,
+          "errors": 2,
+          "errors_equal_distractor": 1,
+          "capture_rate": 0.5,
+          "capture_fraction": 0.5,
+          "uniform_wrong_class_reference": 0.02040816326530612,
+          "reference_assumption": "uniform choice among wrong labels; not an empirical null"
+        },
+        "margin": {
+          "n": 2,
+          "median": -0.15861468410437324,
+          "q1": -0.31717302466021036,
+          "q3": -5.6343548536147425e-05,
+          "fraction_negative": 0.5
+        }
+      },
+      "semantic_same@+0dB": {
+        "n": 2,
+        "ratio_type": "SIR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 1,
+          "distractor_fraction_of_new_errors": 1.0
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": {
+          "n": 2,
+          "errors": 2,
+          "errors_equal_distractor": 1,
+          "capture_rate": 0.5,
+          "capture_fraction": 0.5,
+          "uniform_wrong_class_reference": 0.02040816326530612,
+          "reference_assumption": "uniform choice among wrong labels; not an empirical null"
+        },
+        "margin": {
+          "n": 2,
+          "median": -0.2084336456638684,
+          "q1": -0.3439238641988041,
+          "q3": -0.07294342712893265,
+          "fraction_negative": 0.5
+        }
+      },
+      "white@+10dB": {
+        "n": 2,
+        "ratio_type": "SNR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 0,
+          "distractor_fraction_of_new_errors": null
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": null,
+        "margin": null
+      },
+      "white@+5dB": {
+        "n": 2,
+        "ratio_type": "SNR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 0,
+          "distractor_fraction_of_new_errors": null
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": null,
+        "margin": null
+      },
+      "white@+0dB": {
+        "n": 2,
+        "ratio_type": "SNR",
+        "folds": {
+          "1": {
+            "n": 2,
+            "accuracy": 0.0,
+            "macro_f1": 0.0
+          }
+        },
+        "accuracy": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "macro_f1": {
+          "mean": 0.0,
+          "sample_std": null
+        },
+        "pooled": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0
+        },
+        "matched_clean": {
+          "n": 2,
+          "folds": {
+            "1": {
+              "n": 2,
+              "accuracy": 0.5,
+              "macro_f1": 0.02
+            }
+          },
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "pooled": {
+            "accuracy": 0.5,
+            "macro_f1": 0.02
+          }
+        },
+        "relative_macro_f1_loss": 1.0,
+        "relative_control_macro_f1_loss": 1.0,
+        "control_macro_f1_minus_clean": 0.0,
+        "control_correct_transitions": {
+          "n": 1,
+          "remain_correct": 0,
+          "become_incorrect": 1,
+          "become_distractor": 0,
+          "distractor_fraction_of_new_errors": null
+        },
+        "control": {
+          "accuracy": {
+            "mean": 0.5,
+            "sample_std": null
+          },
+          "macro_f1": {
+            "mean": 0.02,
+            "sample_std": null
+          },
+          "rows_with_common_gain": 1
+        },
+        "capture": null,
+        "margin": null
+      }
+    }
+  }
+}

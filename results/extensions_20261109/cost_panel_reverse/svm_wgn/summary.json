@@ -1,0 +1,84 @@
+{
+  "scope": "one clip per class and official fold, 250 unique five-second clips",
+  "system": "svm",
+  "batch_size": 1,
+  "device": "cpu",
+  "numerical_threads": 1,
+  "observed_thread_pools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "filepath": "/Users/leaf/Projects/elec5305-local/baseline-venv/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+      "version": null
+    }
+  ],
+  "repetitions_per_clip": 3,
+  "warmup_per_model": 10,
+  "trials": 750,
+  "elapsed_seconds_including_loading_between_trials": 9.349190084001748,
+  "model_sha256": {
+    "svm_fold_1.joblib": "68c481c344d5b6240180ce8bc14afaf11ef90946341274f29f08fdcd4a4a88c3",
+    "svm_fold_2.joblib": "804d8f4a769a64f689af5b3b725f838d3006a02743bdd9c4c84b0c2373fc1fc2",
+    "svm_fold_3.joblib": "e6b586f820934af0b705253518da9011f0d4d85d818e852251455536e06bb9d7",
+    "svm_fold_4.joblib": "cddac0bbd8e3499656cdd5e79c91f772e6f60c8b5c2d6785fad995c2a7c954a3",
+    "svm_fold_5.joblib": "2d73eae7f6b0887eb42271bf0f5f77f2ccc4db60aca1cb8407c2e5c99c4939fd"
+  },
+  "serialized_model_bytes": {
+    "svm_fold_1.joblib": 4734488,
+    "svm_fold_2.joblib": 4833560,
+    "svm_fold_3.joblib": 4848792,
+    "svm_fold_4.joblib": 4836600,
+    "svm_fold_5.joblib": 4728392
+  },
+  "parameter_count": null,
+  "excludes": [
+    "disk I/O",
+    "model loading",
+    "text embedding preparation",
+    "external pretraining"
+  ],
+  "includes": [
+    "frontend",
+    "audio representation",
+    "50-class scoring",
+    "argmax"
+  ],
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "processor": "arm",
+  "cpu_name": "Apple M3",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1"
+  },
+  "interpretation": "Latency distribution over clips and repetitions; not independent accuracy observations or a general hardware guarantee",
+  "trials_sha256": "9b1cfa81e44dc77832e856c87f694281c438a9edba170ec4546310835aef2aab",
+  "source_sha256": "cb673ce0472fc1c90ba3704dfd893540ad0079c4fa22b5027a3edd737aba4d05",
+  "support_vectors_per_fold": {
+    "1": 3083,
+    "2": 3148,
+    "3": 3158,
+    "4": 3150,
+    "5": 3079
+  },
+  "preprocessing_ms": {
+    "median": 4.166833503404632,
+    "p25": 4.106510255951434,
+    "p75": 4.266562260454521,
+    "p95": 4.478081106208265
+  },
+  "inference_scoring_ms": {
+    "median": 7.307729494641535,
+    "p25": 7.264187763212249,
+    "p75": 7.3721457447391,
+    "p95": 7.665410047047771
+  },
+  "total_ms": {
+    "median": 11.47429199772887,
+    "p25": 11.381458243704401,
+    "p75": 11.596656499023084,
+    "p95": 12.106595501245465
+  }
+}

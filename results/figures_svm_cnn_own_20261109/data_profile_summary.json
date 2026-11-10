@@ -1,0 +1,61 @@
+{
+  "svm": {
+    "rows": 24000,
+    "unique_targets": 2000,
+    "folds": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "classes": 50,
+    "condition_level_counts": {
+      "white@10.0": 2000,
+      "white@5.0": 2000,
+      "white@0.0": 2000,
+      "demand@10.0": 2000,
+      "demand@5.0": 2000,
+      "demand@0.0": 2000,
+      "semantic_same@10.0": 2000,
+      "semantic_same@5.0": 2000,
+      "semantic_same@0.0": 2000,
+      "semantic_different@10.0": 2000,
+      "semantic_different@5.0": 2000,
+      "semantic_different@0.0": 2000
+    },
+    "generic_rows_without_distractor_class": 12000
+  },
+  "cnn": {
+    "rows": 24000,
+    "unique_targets": 2000,
+    "folds": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "classes": 50,
+    "condition_level_counts": {
+      "white@10.0": 2000,
+      "white@5.0": 2000,
+      "white@0.0": 2000,
+      "demand@10.0": 2000,
+      "demand@5.0": 2000,
+      "demand@0.0": 2000,
+      "semantic_same@10.0": 2000,
+      "semantic_same@5.0": 2000,
+      "semantic_same@0.0": 2000,
+      "semantic_different@10.0": 2000,
+      "semantic_different@5.0": 2000,
+      "semantic_different@0.0": 2000
+    },
+    "generic_rows_without_distractor_class": 12000
+  },
+  "interpretation": {
+    "class_ids_and_folds": "categorical identifiers",
+    "empty_semantic_fields_in_generic_noise": "expected missingness",
+    "repeated_measures": "levels/conditions share targets; folds are not independent model-training replications"
+  }
+}

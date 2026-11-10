@@ -1,0 +1,24 @@
+{
+  "scope": "single_clip_microbenchmark",
+  "audio_file": "/Users/leaf/Projects/elec5305-local/data/ESC-50/audio/1-100032-A-0.wav",
+  "audio_seconds": 5.0,
+  "batch_size": 1,
+  "runs": 100,
+  "warmup": 10,
+  "numerical_threads": 1,
+  "device": "cpu",
+  "preprocessing_median_ms": 5.779437502496876,
+  "inference_median_ms": 92.35289598291274,
+  "text_embeddings_precomputed": true,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "excludes": [
+    "disk I/O",
+    "model loading",
+    "text-prompt embedding",
+    "external pretraining"
+  ],
+  "checkpoint_bytes": 1863587645,
+  "parameter_count": 158334169,
+  "parameter_bytes": 633336676,
+  "parameter_scope": "complete audio and text model, excluding buffers"
+}

@@ -57,7 +57,7 @@ def metrics(y_true, y_pred, labels):
     }
 
 
-def fit_outer_fold(X, y, folds, test_fold, grid=None):
+def fit_outer_fold(X, y, folds, test_fold, grid=None, augmentation=None):
     """The test indices are never passed to a candidate fit or selection score."""
     train, validation, test = outer_split(folds, test_fold)
     labels = np.unique(y)
@@ -65,10 +65,16 @@ def fit_outer_fold(X, y, folds, test_fold, grid=None):
         if not np.array_equal(np.unique(y[indices]), labels):
             raise ValueError("Every train/validation/test partition must contain all classes")
     template = make_pipeline()
+    train_X, train_y = X[train], y[train]
+    bank_metadata = {}
+    if augmentation is not None:
+        train_X, train_y, bank_metadata["selection"] = augmentation.training_features(
+            X, y, train, test_fold, "selection"
+        )
     selection = []
     for params in ParameterGrid(DEFAULT_GRID if grid is None else grid):
         candidate = clone(template).set_params(**params)
-        candidate.fit(X[train], y[train])
+        candidate.fit(train_X, train_y)
         scores = metrics(y[validation], candidate.predict(X[validation]), labels)
         selection.append({"parameters": params, **scores})
     if not selection:
@@ -77,7 +83,12 @@ def fit_outer_fold(X, y, folds, test_fold, grid=None):
     best = max(selection, key=lambda row: row["macro_f1"])
     final_train = np.concatenate((train, validation))
     model = clone(template).set_params(**best["parameters"])
-    model.fit(X[final_train], y[final_train])
+    final_X, final_y = X[final_train], y[final_train]
+    if augmentation is not None:
+        final_X, final_y, bank_metadata["refit"] = augmentation.training_features(
+            X, y, final_train, test_fold, "refit"
+        )
+    model.fit(final_X, final_y)
     predictions = model.predict(X[test])
     result = {
         "test_fold": test_fold,
@@ -94,10 +105,14 @@ def fit_outer_fold(X, y, folds, test_fold, grid=None):
         "test_metrics": metrics(y[test], predictions, labels),
         "support_vectors": int(model.named_steps["svc"].support_vectors_.shape[0]),
     }
+    if augmentation is not None:
+        result["augmentation_banks"] = bank_metadata
+        result["n_selection_examples"] = len(train_y)
+        result["n_refit_examples"] = len(final_y)
     return model, result, test, predictions, class_scores(model, X[test])
 
 
-def evaluate_svm(cache_path, output_dir, grid=None, require_complete=True):
+def evaluate_svm(cache_path, output_dir, grid=None, require_complete=True, augmentation=None):
     cache_path, output_dir = Path(cache_path), Path(output_dir)
     if output_dir.exists() and any(output_dir.iterdir()):
         raise FileExistsError(
@@ -105,6 +120,14 @@ def evaluate_svm(cache_path, output_dir, grid=None, require_complete=True):
         )
     cache, config = load_feature_cache(cache_path)
     X, y, folds = cache["X"], cache["y"], cache["folds"]
+    if augmentation is not None and (
+        config != augmentation.config
+        or any(
+            not np.array_equal(cache[key], augmentation.cache[key])
+            for key in ("filenames", "y", "folds", "audio_sha256")
+        )
+    ):
+        raise ValueError("Augmentation bank and SVM feature cache are not aligned")
     labels = np.unique(y)
     if require_complete and (
         not bool(cache["complete_dataset"])
@@ -123,7 +146,9 @@ def evaluate_svm(cache_path, output_dir, grid=None, require_complete=True):
     with threadpool_limits(limits=1):
         for fold in range(1, 6):
             print(f"Training outer fold {fold}/5", flush=True)
-            model, result, test, pred, decision = fit_outer_fold(X, y, folds, fold, grid)
+            model, result, test, pred, decision = fit_outer_fold(
+                X, y, folds, fold, grid, augmentation
+            )
             if not np.array_equal(model.classes_, labels):
                 raise ValueError("Inconsistent class ordering")
             predictions[test], scores[test] = pred, decision
@@ -203,6 +228,7 @@ def evaluate_svm(cache_path, output_dir, grid=None, require_complete=True):
             "labels": labels.tolist(),
             "feature_config": config.as_dict(),
             "selection_grid": DEFAULT_GRID if grid is None else grid,
+            "augmentation": augmentation.settings if augmentation is not None else "none",
             "feature_cache_sha256": sha256_file(cache_path),
             "source_sha256": {
                 name: sha256_file(Path(__file__).with_name(name))

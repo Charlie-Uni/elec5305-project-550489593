@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "comparisons": 90,
+  "paired_trial_rows": 35982,
+  "sources": {
+    "own/svm": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+    "own/cnn": "2530061f2bb5c0016a1ff986d70571aed36d9d46becb7c0743ab5e51a684121e",
+    "own/clap": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+    "target/svm": "9bf2100917e525e7e5a306cea25b4ec0c30997dd34741f5d144c83b1ee48b3ba",
+    "target/cnn": "5a402d3bcd20bee14b702df0d902c7dd2bfc9ca1f33174e6e95c0ecf4a3246b8",
+    "target/clap": "7ac200ccc603ce3b9eaa8ecba3e4bd28e1fc4ce931b26e31786d77d12201f239"
+  },
+  "replicates": 2000,
+  "seed": 530510,
+  "calipers": {
+    "close_primary": [
+      0.1,
+      0.05,
+      0.1
+    ],
+    "close_strict": [
+      0.05,
+      0.025,
+      0.05
+    ],
+    "close_loose": [
+      0.2,
+      0.1,
+      0.2
+    ]
+  },
+  "interpretation": "Same-target selected-subset associations, not semantic causal effects"
+}

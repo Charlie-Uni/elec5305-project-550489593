@@ -1,0 +1,61 @@
+{
+  "verified": true,
+  "report_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slide_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "figures_color_and_grayscale_inspected": 3,
+  "report_geometry": {
+    "pdf_sha256": "3c8cbc7bd962389a8d8d3e1c81e27ac37d84c423ab9cd925891073747c9dbade",
+    "pages": 10,
+    "text_flags": [],
+    "visual_review_required": true
+  },
+  "slides_geometry": {
+    "pdf_sha256": "782b29d883308ced99742db14ba15371704defec303724aa1de994a6b95e6adc",
+    "pages": 12,
+    "text_flags": [],
+    "visual_review_required": true
+  },
+  "presentation_sha256": "bd405fe80b06d2d9db3b6e5ff51d9047cf36a893aea0d1451e988afa06a1f8b4",
+  "ooxml_schema_valid": true,
+  "first_party_import_passed": true,
+  "native_chart_workbook_checks_passed": true,
+  "original_font_policy_passed": true,
+  "desktop_and_mobile_site_widths": [
+    1280,
+    390,
+    320
+  ],
+  "audio_clip_export_and_video_streams_checked": true,
+  "native_powerpoint_playback_verified": false,
+  "author_listening_required": true,
+  "tests": {
+    "passed": 96,
+    "skipped": 1,
+    "skip": "CUDA unavailable on Apple M3"
+  },
+  "visual_review_note": "All 10 report and 12 slide pages were rendered and inspected; slide 3 column spacing and figure 2 hatch/number legibility were revised. No clipping or unresolved references found."
+}

@@ -1,0 +1,232 @@
+{
+  "manifest": "artifacts/interference/20261109/manifest_own_active",
+  "manifest_sha256": "587c2c5e46131ed6b5a021255d4c7197a8c0866a4637a42cfd0944cb7934e8e5",
+  "rows_evaluated": 24000,
+  "subset_limit": null,
+  "data_root": "data/ESC-50",
+  "interference_config": {
+    "levels_db": [
+      10.0,
+      5.0,
+      0.0
+    ],
+    "conditions": [
+      "white",
+      "demand",
+      "semantic_same",
+      "semantic_different"
+    ],
+    "active_threshold_db": 40.0,
+    "peak_limit": 0.99,
+    "seed": 5305,
+    "demand_environments": [
+      "STRAFFIC",
+      "PSTATION",
+      "TMETRO"
+    ],
+    "demand_channel": "ch01"
+  },
+  "power_definition": "each component's mean square over its own active region (unwindowed frames within 40.0 dB of that component's peak frame); the interferer power inside the target's active region is recorded separately",
+  "feature_config": {
+    "sample_rate": 44100,
+    "frame_length": 1024,
+    "hop_length": 512,
+    "n_fft": 1024,
+    "n_mels": 64,
+    "n_mfcc": 20,
+    "rolloff_fraction": 0.85,
+    "delta_width": 2,
+    "log_floor": 1e-12
+  },
+  "control": "target scaled by the row's common gain, classified by the same model",
+  "seconds": 247.56373704099678,
+  "environment": {
+    "python": "3.11.16",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "numerical_threads": 1,
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "soundfile": "0.14.0",
+      "torch": "2.14.1"
+    }
+  },
+  "source_sha256": {
+    "interference_eval.py": "f0b2bd6f58ebb490b552e6a915540082be0bd1ce3412a53552f25da4e47ecaaf",
+    "mixing.py": "8fe5ae22ea791ba55977209b51d5109655116f7421c89d63080661b86749f058",
+    "dsp.py": "cddeb4b151468325587ba37b4f1a7ef12dd6fc5e81ac015d9cdfc92a5d446e9b",
+    "features.py": "6db31128977dfbdd70695013f937ab481c88989a25dbda25d41f5a383e0a0db3"
+  },
+  "systems": {
+    "cnn": {
+      "score_type": "logits",
+      "conditions": {
+        "white@+10dB": {
+          "n": 2000,
+          "correct": 371,
+          "control_correct": 1364,
+          "errors": 1629,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.1855,
+          "control_accuracy": 0.682,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "white@+5dB": {
+          "n": 2000,
+          "correct": 246,
+          "control_correct": 1361,
+          "errors": 1754,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.123,
+          "control_accuracy": 0.6805,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "white@+0dB": {
+          "n": 2000,
+          "correct": 140,
+          "control_correct": 1366,
+          "errors": 1860,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.07,
+          "control_accuracy": 0.683,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+10dB": {
+          "n": 2000,
+          "correct": 807,
+          "control_correct": 1365,
+          "errors": 1193,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.4035,
+          "control_accuracy": 0.6825,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+5dB": {
+          "n": 2000,
+          "correct": 632,
+          "control_correct": 1363,
+          "errors": 1368,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.316,
+          "control_accuracy": 0.6815,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "demand@+0dB": {
+          "n": 2000,
+          "correct": 444,
+          "control_correct": 1363,
+          "errors": 1556,
+          "errors_equal_interferer": 0,
+          "predicted_interferer": 0,
+          "semantic": false,
+          "accuracy": 0.222,
+          "control_accuracy": 0.6815,
+          "capture_rate": null,
+          "capture_fraction": null
+        },
+        "semantic_same@+10dB": {
+          "n": 2000,
+          "correct": 874,
+          "control_correct": 1364,
+          "errors": 1126,
+          "errors_equal_interferer": 309,
+          "predicted_interferer": 309,
+          "semantic": true,
+          "accuracy": 0.437,
+          "control_accuracy": 0.682,
+          "capture_rate": 0.2744227353463588,
+          "capture_fraction": 0.1545
+        },
+        "semantic_same@+5dB": {
+          "n": 2000,
+          "correct": 711,
+          "control_correct": 1360,
+          "errors": 1289,
+          "errors_equal_interferer": 403,
+          "predicted_interferer": 403,
+          "semantic": true,
+          "accuracy": 0.3555,
+          "control_accuracy": 0.68,
+          "capture_rate": 0.3126454615981381,
+          "capture_fraction": 0.2015
+        },
+        "semantic_same@+0dB": {
+          "n": 2000,
+          "correct": 547,
+          "control_correct": 1340,
+          "errors": 1453,
+          "errors_equal_interferer": 532,
+          "predicted_interferer": 532,
+          "semantic": true,
+          "accuracy": 0.2735,
+          "control_accuracy": 0.67,
+          "capture_rate": 0.3661390227116311,
+          "capture_fraction": 0.266
+        },
+        "semantic_different@+10dB": {
+          "n": 2000,
+          "correct": 831,
+          "control_correct": 1365,
+          "errors": 1169,
+          "errors_equal_interferer": 262,
+          "predicted_interferer": 262,
+          "semantic": true,
+          "accuracy": 0.4155,
+          "control_accuracy": 0.6825,
+          "capture_rate": 0.22412318220701455,
+          "capture_fraction": 0.131
+        },
+        "semantic_different@+5dB": {
+          "n": 2000,
+          "correct": 685,
+          "control_correct": 1358,
+          "errors": 1315,
+          "errors_equal_interferer": 362,
+          "predicted_interferer": 362,
+          "semantic": true,
+          "accuracy": 0.3425,
+          "control_accuracy": 0.679,
+          "capture_rate": 0.2752851711026616,
+          "capture_fraction": 0.181
+        },
+        "semantic_different@+0dB": {
+          "n": 2000,
+          "correct": 527,
+          "control_correct": 1344,
+          "errors": 1473,
+          "errors_equal_interferer": 490,
+          "predicted_interferer": 490,
+          "semantic": true,
+          "accuracy": 0.2635,
+          "control_accuracy": 0.672,
+          "capture_rate": 0.33265444670739985,
+          "capture_fraction": 0.245
+        }
+      },
+      "model_dir": "artifacts/baselines/clean_cnn",
+      "checkpoint_sha256": {
+        "1": "485fb11a47b25e8dc1c4c76ce85542cd2dfd37e919b04ac213b20fc6c7f2b10f",
+        "2": "7143f19e534c56a8f10734563ab578a45e3706c3a374da17b26b7194ddc678a1",
+        "3": "81ced439b9b8fd5de7bc13ab067127cac6e0b6e8f69516e94b4a25a124f124fa",
+        "4": "3b79a594c9ad4e6d130d71a5993ae3883d2588c1911b54adec1470f5cc9c6ab4",
+        "5": "769516ee7eb808a5941b2d09a70345f01fddb6ffcc74a60eafbf84eefd2246a1"
+      }
+    }
+  }
+}

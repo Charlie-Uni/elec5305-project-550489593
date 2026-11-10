@@ -1,0 +1,101 @@
+{
+  "evaluation": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
+  "manifest_sha256": "14174715e99b9906b6b223613f67c7d1494c510dcee64a8193174d496c4e6756",
+  "systems": [
+    "svm",
+    "cnn",
+    "clap"
+  ],
+  "score_types": {
+    "svm": "ovr_decision_function",
+    "cnn": "logits",
+    "clap": "cosine_similarity"
+  },
+  "input_evaluations": {
+    "svm": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
+    "cnn": "/Users/leaf/Projects/elec5305-local/repo/artifacts/interference/v3_20261109/eval_own",
+    "clap": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/eval_own"
+  },
+  "svm_training_scalers": {
+    "1": {
+      "path": "/Users/leaf/Projects/elec5305-local/artifacts/interference/v3_20261109/clean_svm_reconstructed/svm_fold_1.joblib",
+      "sha256": "6c615d717e03f6b9c692141da287b0c3f03f19b2d3d3574bd0277f520e3b571a"
+    },
+    "2": {
+      "path": "/Users/leaf/Projects/elec5305-local/artifacts/interference/v3_20261109/clean_svm_reconstructed/svm_fold_2.joblib",
+      "sha256": "20ad29a19af73012518e66538be1ad5eb98017f55482c0966fe92c1afaa2fe7c"
+    },
+    "3": {
+      "path": "/Users/leaf/Projects/elec5305-local/artifacts/interference/v3_20261109/clean_svm_reconstructed/svm_fold_3.joblib",
+      "sha256": "2dc72edc8dfc98b69796cbb12f246331a15ba21a37982cfa6a5f4b4fe02204e3"
+    },
+    "4": {
+      "path": "/Users/leaf/Projects/elec5305-local/artifacts/interference/v3_20261109/clean_svm_reconstructed/svm_fold_4.joblib",
+      "sha256": "ca7e30a2766ed88303fc5c0c6282400795c19e94c72c9c96528ae3c0c880e0e3"
+    },
+    "5": {
+      "path": "/Users/leaf/Projects/elec5305-local/artifacts/interference/v3_20261109/clean_svm_reconstructed/svm_fold_5.joblib",
+      "sha256": "d37d62b85873f4f7fa675be356a268a3434af1aecdc9449aceb62769f953bf86"
+    }
+  },
+  "focus_level_db": 5,
+  "clean_dirs": {
+    "svm": "/Users/leaf/Projects/elec5305-local/repo/results/clean_svm",
+    "cnn": "/Users/leaf/Projects/elec5305-local/repo/results/clean_cnn",
+    "clap": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/clean"
+  },
+  "costs": {
+    "svm": "/Users/leaf/Projects/elec5305-local/repo/results/clean_svm/cost.json",
+    "cnn": "/Users/leaf/Projects/elec5305-local/repo/results/clean_cnn/cost.json",
+    "clap": "/Users/leaf/Projects/elec5305-local/runs/clap_v4_20261109/clean/cost.json"
+  },
+  "records_per_figure": {
+    "fig1_macro_f1_vs_level": 48,
+    "fig2_capture_rate_vs_sir": 18,
+    "fig3_margin_vs_sir": 18,
+    "fig4_same_vs_different": 18,
+    "fig5_representation_displacement": 24,
+    "fig6_confusion_flow": 30,
+    "fig8_overlap_strata": 18,
+    "fig7_robustness_vs_cost": 3
+  },
+  "palette": {
+    "systems": {
+      "svm": "#2a78d6",
+      "cnn": "#eb6834",
+      "clap": "#1baf7a"
+    },
+    "note": "fixed per-system colours; condition contrast by fill vs hatch"
+  },
+  "source_sha256": {
+    "figures.py": "ae31d46764383a3a3d3afaf7e9510ff13b81027b9abf3c27bfb54dd2a326e2f4"
+  },
+  "input_sha256": {
+    "svm": {
+      "summary.json": "dc88f909bad5ddfb4771f0f73fe51f4de755a0220cfb29fba3f78664c7791479",
+      "svm_predictions.csv": "798576415732eb6538a313a25c2b9f73133f90de9cebb8362819760e22a066ed",
+      "svm_scores.npz": "f836551604f034edee2618bca6b78af1f2e9a8ba902f148172036513b9c61fbd"
+    },
+    "cnn": {
+      "summary.json": "dc88f909bad5ddfb4771f0f73fe51f4de755a0220cfb29fba3f78664c7791479",
+      "cnn_predictions.csv": "2530061f2bb5c0016a1ff986d70571aed36d9d46becb7c0743ab5e51a684121e",
+      "cnn_scores.npz": "d456439311a11b9be4ae38cbdb99cbd46b974c5b6c7bb344868a8140688db651"
+    },
+    "clap": {
+      "summary.json": "a211ab21d24c73c9fc842a8d46664b7de2e4f4a40c71d0f661755ed76a4f4afa",
+      "clap_predictions.csv": "5aeca6ddcad0403f64aa0d9856fa7e864f4be5b7287f4077144144ae05484b3e",
+      "clap_scores.npz": "90c904f46947279301b6cbb7a6441e396bf298427e7ef0b41e91abe9c8025b01"
+    }
+  },
+  "clean_sha256": {
+    "svm": "18bc32f9f1639d530279cb03449cf1632b152040a998c22067f3e10182e38cbc",
+    "cnn": "2114da32ab9944eeb28279d87ebb89037a2dccb1f8116fed0838aa6df1de5d35",
+    "clap": "ca32fcc6b86e76e1961cc6d578257854e2d95259b5690f8bfe2164e6d01cfe5e"
+  },
+  "caveats": [
+    "0 dB is a stress test with ambiguous single-label ground truth",
+    "Fold SD is descriptive, not a confidence interval",
+    "Flows are exploratory examples selected by capture count",
+    "Representation distances are comparable only within each system"
+  ]
+}
