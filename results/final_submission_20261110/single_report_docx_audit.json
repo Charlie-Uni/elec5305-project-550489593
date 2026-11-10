@@ -1,15 +1,15 @@
 {
   "verified": true,
   "source": "docs/final_report.tex",
-  "source_sha256": "309f3230791e100db8c9e8321c286930737563c098132e26d8d76f879af71d40",
-  "word_sha256": "0b06caae9b28471a991a805cac94c872d48a0e4b611ccc89b8fc341b9311536b",
+  "source_sha256": "d87d66f8987a1f1f4401b2ae28fd72294c0fcd6f51d86c716a89490199f5c2e0",
+  "word_sha256": "f1f46b2615a8f75b8a8437fd055aae7e4ce74d335904a735c009c6c5128a0c2c",
   "rendered_pages": 11,
   "native_tables": 4,
   "native_math_objects": 44,
   "figures": 5,
   "references": 13,
-  "unchanged_converted_body_blocks": 104,
+  "unchanged_converted_body_blocks": 105,
   "figures_match_source_png": true,
-  "visual_review": "All 11 pages inspected after rendering; editable text, native tables and OMML math. Figure captions remain separate from body paragraphs.",
+  "visual_review": "Pages 1\u20134 inspected after rendering; pages 5\u201311 pixel-identical to the previously inspected version; editable text, native tables and OMML math. Figure captions remain separate from body paragraphs.",
   "pagination_scope": "Bundled LibreOffice rendering; Word versions and font availability can change pagination."
 }
