@@ -3,7 +3,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /FSBYHW+DejaVuSans, /EEZAWI+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /FSBYHW+DejaVuSans, /EEZAWI+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -73,7 +73,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /EEZAWI+DejaVuSans, /FCGINJ+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /EEZAWI+DejaVuSans, /FCGINJ+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -143,7 +143,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /GUCHGM+DejaVuSans, /GOZOJM+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /GUCHGM+DejaVuSans, /GOZOJM+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -213,7 +213,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /EEZAWI+DejaVuSans, /EFSFYO+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /EEZAWI+DejaVuSans, /EFSFYO+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -283,7 +283,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /MQYIBR+DejaVuSans, /DQIFZV+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /MQYIBR+DejaVuSans, /DQIFZV+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -353,7 +353,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /DLFEFJ+DejaVuSans, /EUMNSR+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /DLFEFJ+DejaVuSans, /EUMNSR+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -423,7 +423,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /CWMNNZ+DejaVuSans, /DQIFZV+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /CWMNNZ+DejaVuSans, /DQIFZV+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {
@@ -493,7 +493,7 @@
     "issues": [
       [
         "WARN",
-        "PDF \u4e2d\u4ee5\u4e0b\u5b57\u4f53\u53ef\u80fd\u672a\u5d4c\u5165: /HDIIKF+DejaVuSans, /DAJXBC+DejaVuSans. \u5bfc\u81f4\u4ed6\u4eba\u7535\u8111\u6253\u5f00\u53d8\u6210\u66ff\u4ee3\u5b57\u4f53\u3002"
+        "The following PDF fonts may not be embedded: /HDIIKF+DejaVuSans, /DAJXBC+DejaVuSans. Other computers may substitute fonts."
       ]
     ],
     "info": {

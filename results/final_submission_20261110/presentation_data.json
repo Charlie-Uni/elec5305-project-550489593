@@ -26774,11 +26774,12 @@
       "confirmed_by": "project author, in conversation",
       "date": "2026-11-11",
       "scope": "representative clean and mixed audio examples on the project website",
-      "author_statement": "\u5df2\u8bd5\u542c\uff0c\u58f0\u97f3\u53ef\u8fa8\u8ba4\u4e14\u65e0\u660e\u663e\u5931\u771f",
+      "author_statement": "Listened; sounds are recognisable with no obvious distortion.",
       "english_translation": "Listened; sounds are recognisable with no obvious distortion.",
       "method": "Human listening confirmation, not an automated audio-quality measurement",
       "teacher_item": 71,
-      "website": "https://charlie-uni.github.io/elec5305-project-550489593/"
+      "website": "https://charlie-uni.github.io/elec5305-project-550489593/",
+      "statement_note": "English translation of the author's original confirmation, retained in the conversation history."
     },
     "source_sha256": {
       "conditions.csv": "4ae60698b32622b4c67533e1b9d1c78afc81a8e340bc6e50610ada40a2679ea4",

@@ -10,7 +10,7 @@ Qihan Zhu · SID 550489593
 
 | Material | Direct link | What it contains |
 |---|---|---|
-| **Main report** | **[11-page PDF](results/final_submission_20261110/final_report.pdf)** · [editable Word](results/final_submission_20261110/final_report.docx) · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
+| **Main report** | **[11-page PDF](https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/final_report.pdf)** · [editable Word](https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/final_report.docx) · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
 | **Project website** | **[Open the live website](https://charlie-uni.github.io/elec5305-project-550489593/)** | Interactive results, figures, downloads and four target sounds to explore |
 | **Working code** | **[Source-code map](src/esc_robustness/README.md)** · [reproduction guides](docs/README.md#reproduce-the-study) | DSP, SVM, CNN, frozen CLAP, controlled mixing and analysis |
 | **Presentation** | **[12-slide PDF](results/final_submission_20261110/presentation.pdf)** · [editable PowerPoint](results/final_submission_20261110/presentation.pptx) | Selected findings, speaker notes and embedded audio |
