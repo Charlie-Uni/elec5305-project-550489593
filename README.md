@@ -13,7 +13,6 @@ Qihan Zhu · SID 550489593
 | **Main report** | **[11-page PDF](https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/final_report.pdf)** · [editable Word](https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/final_report.docx) · [LaTeX source](docs/final_report.tex) | Research question, methods, selected results and discussion |
 | **Project website** | **[Open the live website](https://charlie-uni.github.io/elec5305-project-550489593/)** | Interactive results, figures, downloads and four target sounds to explore |
 | **Working code** | **[Source-code map](src/esc_robustness/README.md)** · [reproduction guides](docs/README.md#reproduce-the-study) | DSP, SVM, CNN, frozen CLAP, controlled mixing and analysis |
-| **Presentation** | **[12-slide PDF](results/final_submission_20261110/presentation.pdf)** · [editable PowerPoint](results/final_submission_20261110/presentation.pptx) | Selected findings, speaker notes and embedded audio |
 | **Project video** | **[Watch the final video](https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/project_video.mp4)** | 5 min 50 s, with subtitles, project findings and a short code demonstration |
 | **Code demonstration** | [Standalone execution clip](results/final_submission_20261110/code_demo.mp4) · [run it locally](docs/code_demo.md) | Source reconstruction, SIR verification and fresh three-model inference |
 | **Evidence** | **[Results index](results/README.md)** · [recording script](docs/video_narration_final.txt) | Original results, numerical checks and narration |
@@ -98,13 +97,11 @@ index.html + site-data.json       Public project website
 .github/workflows/        Verified GitHub Pages publication
 ```
 
-Experiment result and audio paths remain stable. The retired 26-page report and
-its dedicated build pipeline were removed at the author's request; the current
-11-page PDF and its Word companion are the only final report. Repeated CSVs, provenance files and audio inside
+Repeated CSVs, provenance files and audio inside
 self-contained result packages are intentional. [Repository maintenance](docs/repository_maintenance.md)
 explains the preservation and temporary-file policy.
 
-## Attribution and project status
+## Attribution
 
 The DSP, experiment control and evaluation implementation is project code developed
 with AI assistance. NumPy, SciPy, scikit-learn and PyTorch are external libraries;
@@ -112,7 +109,3 @@ LAION-CLAP supplies pretrained code and weights. See the
 [references and external-code notes](docs/guides/proposal_and_references.md),
 [audio attribution](examples/README.md) and
 [formal submission review](docs/rubric_review_20261111.md).
-
-`main` contains the integrated project. The older `feature/interference` branch
-remains available for existing links. Pages publishes from the verified `main`
-workflow; publication does not constitute Canvas submission.
