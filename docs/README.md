@@ -8,13 +8,14 @@
 |---|---|
 | Main manuscript | [11-page PDF](../results/final_submission_20261110/final_report.pdf) · [editable Word](../results/final_submission_20261110/final_report.docx) · [LaTeX source](final_report.tex) · [generated tables](final_report_tables.tex) |
 | Presentation | [12-slide PDF](../results/final_submission_20261110/presentation.pdf) · [editable PowerPoint](../results/final_submission_20261110/presentation.pptx) |
+| Final project video | [5 min 50 s subtitled presentation and code demonstration](../results/final_submission_20261110/project_video.mp4) |
 | Code demonstration | [Run guide](code_demo.md) · [actual execution video](../results/final_submission_20261110/code_demo.mp4) · [recording script](video_narration_final.txt) |
 | Current report edits | [Prioritised follow-up and verified capture counts](report_followup_20261110.md) |
 | Course submission | [Final checklist](final_submission_checklist_20261110.md) · [rubric review](rubric_review_20261111.md) · [80 instructor suggestions](teacher_review_20261110.md) |
 
-The execution clip has no author narration. Experimental completion, manuscript
-readiness and Canvas submission are separate states; see the current follow-up
-and checklist before submitting.
+The final video is linked from the report and the public website. The earlier
+standalone execution clip remains available for inspecting the demonstration.
+See the final checklist for personal review and Canvas submission.
 
 ## Reproduce the study
 

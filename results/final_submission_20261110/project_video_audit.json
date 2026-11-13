@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "source_filename": "ELEC5305_project_video_v13_short_code_subtitled.mp4",
+  "published_file": "project_video.mp4",
+  "url": "https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/project_video.mp4",
+  "sha256": "08f6f56025d8c78d46ec6ea0b5f41a30b0e2fc3baea426c32df00db1c893a223",
+  "bytes": 19918833,
+  "duration_seconds": 350.4,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1920,
+  "height": 1080,
+  "full_file_decoding_passed": true,
+  "source_bytes_preserved": true,
+  "subtitles_observed_in_representative_frames": true,
+  "video_transcoded_for_publication": false
+}

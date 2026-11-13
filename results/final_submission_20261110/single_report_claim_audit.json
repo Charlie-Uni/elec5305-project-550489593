@@ -1,5 +1,7 @@
 {
   "verified": true,
+  "references": 17,
+  "literature_subsections": 2,
   "capture_points": 18,
   "margin_median_iqr_records": 18,
   "displacement_median_iqr_records": 24,

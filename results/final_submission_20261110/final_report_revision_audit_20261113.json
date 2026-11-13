@@ -1,0 +1,270 @@
+{
+  "verified": true,
+  "date": "2026-11-13",
+  "pdf_pages": 11,
+  "word_rendered_pages": 11,
+  "native_tables": 5,
+  "figures": 5,
+  "references": 17,
+  "native_math_objects": 47,
+  "display_equations": 2,
+  "word_toc_entries_checked": 20,
+  "official_source_overlap_retained": true,
+  "requested_prompt_sentence_included": true,
+  "figures_unchanged": true,
+  "protected_experimental_files_and_presentation_unchanged": 180,
+  "original_input_word_unchanged": true,
+  "primary_macro_f1_recomputed": [
+    [
+      "svm",
+      "white@+5dB",
+      "2.03"
+    ],
+    [
+      "svm",
+      "semantic_same@+5dB",
+      "22.47"
+    ],
+    [
+      "clap",
+      "white@+5dB",
+      "62.91"
+    ],
+    [
+      "clap",
+      "demand@+5dB",
+      "71.49"
+    ],
+    [
+      "clap",
+      "semantic_same@+5dB",
+      "48.86"
+    ],
+    [
+      "cnn",
+      "semantic_same@+5dB",
+      "32.60"
+    ]
+  ],
+  "scope_checks": [
+    "own/+5 dB and single-prompt CLAP specified for core values",
+    "three-seed CNN augmentation distinguished from seed-5305 core baseline",
+    "capture denominator is errors; top-two denominators separately stated",
+    "label-calibrated readout separated from zero-shot readouts",
+    "pointwise source-cluster intervals and Holm families distinguished",
+    "matched-subset associations not claimed as semantic causality"
+  ],
+  "rubric_coverage": {
+    "originality_and_contribution": "Introduction; Methods 2.2/3.4 and AI acknowledgement",
+    "command_of_subject": "STFT validation, descriptors, log-Mel and audio-text representations",
+    "introduction": "Single explicit research question, scope and motivation",
+    "literature_review": "Two analytical subsections; 17 references including three 2026 studies",
+    "methods": "Official folds; controls, active power, numerical mixing verification and prespecified calibration rules",
+    "results": "Five figures, five tables; paired uncertainty, costs and error destinations",
+    "discussion_and_conclusion": "5.1 interpretation and published context; 5.2 limitations with validation plans; 5.3 quantitative conclusion",
+    "presentation_and_references": "11 pages; 20 contents entries; cross-references, native equations, resolved bibliography"
+  },
+  "visual_review": "All changed table pages inspected in both formats. Final first pages inspected after video-link update; remaining pages match the verified centred version.",
+  "file_open_checks": "DOCX ZIP/OOXML and PDF strict parser passed; full DOCX converted and rendered successfully.",
+  "remaining_submission_checks": [
+    "Personal review of final report and supplied video",
+    "Canvas upload and submission receipt"
+  ],
+  "hashes": {
+    "docs/final_report.tex": "89ed6e592707ab1c92f43cd7a7d56b69d90554f5d5d5695428d1e57aecac8e80",
+    "results/final_submission_20261110/final_report.docx": "bfc50ec34b0fef6f62b5e4570097e62b39cb01abcbce532f18234d21d64f9484",
+    "results/final_submission_20261110/final_report.pdf": "e9e95f020896d98d6192a1697db88e2fc06aad83dd9ffb8071545b6a667de95b"
+  },
+  "pagination_note": "PDF is the LaTeX fixed-layout submission copy. Word pagination can vary with fonts and application versions.",
+  "reference_order": "first citation order verified independently in TeX and Word",
+  "reference_number_map": [
+    {
+      "key": "sed",
+      "previous_number": 14,
+      "new_number": 1
+    },
+    {
+      "key": "rsa",
+      "previous_number": 11,
+      "new_number": 2
+    },
+    {
+      "key": "piczak",
+      "previous_number": 5,
+      "new_number": 3
+    },
+    {
+      "key": "clap",
+      "previous_number": 7,
+      "new_number": 4
+    },
+    {
+      "key": "esc",
+      "previous_number": 4,
+      "new_number": 5
+    },
+    {
+      "key": "demand",
+      "previous_number": 12,
+      "new_number": 6
+    },
+    {
+      "key": "course3",
+      "previous_number": 1,
+      "new_number": 7
+    },
+    {
+      "key": "course4",
+      "previous_number": 2,
+      "new_number": 8
+    },
+    {
+      "key": "augmentation",
+      "previous_number": 6,
+      "new_number": 9
+    },
+    {
+      "key": "bc",
+      "previous_number": 8,
+      "new_number": 10
+    },
+    {
+      "key": "mixup",
+      "previous_number": 15,
+      "new_number": 11
+    },
+    {
+      "key": "pat",
+      "previous_number": 9,
+      "new_number": 12
+    },
+    {
+      "key": "mixclap",
+      "previous_number": 10,
+      "new_number": 13
+    },
+    {
+      "key": "aip",
+      "previous_number": 17,
+      "new_number": 14
+    },
+    {
+      "key": "msclap",
+      "previous_number": 16,
+      "new_number": 15
+    },
+    {
+      "key": "course6",
+      "previous_number": 3,
+      "new_number": 16
+    },
+    {
+      "key": "noncollapsibility",
+      "previous_number": 13,
+      "new_number": 17
+    }
+  ],
+  "reference_metadata_unchanged": true,
+  "approved_ai_acknowledgement_exact": true,
+  "visible_ai_urls": [
+    "https://openai.com/codex/",
+    "https://claude.ai/"
+  ],
+  "unchanged_sections": [
+    "Methods",
+    "Results",
+    "Limitations",
+    "Conclusion"
+  ],
+  "editorial_changes": {
+    "section_2_2_word_count": 305,
+    "section_5_1_word_count": 496,
+    "critical_review": "Training objective, audio-text alignment versus designated target, background-level versus pairwise acoustics",
+    "practical_synthesis": "Separate interference evaluation, task-specific augmentation/readout criteria, capture and ranking diagnostics, calibration false positives, hardware-specific latency"
+  },
+  "final_wording_checks": {
+    "verified": true,
+    "pdf_pages": 11,
+    "word_pages": 11,
+    "only_three_requested_source_replacements": true,
+    "native_word_equations": 47,
+    "tables": 5,
+    "figures": 5,
+    "toc_entries_verified": 20,
+    "first_page_links_verified_in_both_formats": 3,
+    "date_removed": true,
+    "endmatter_only_ai_acknowledgement_and_references": true,
+    "approved_ai_acknowledgement_preserved": true,
+    "protected_inputs_unchanged": 180,
+    "visual_review": "All 11 pages of the LaTeX PDF and all 11 rendered Word pages inspected; no clipping, broken equations, missing glyphs or numbering issues.",
+    "delivered_paths": [
+      "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.docx",
+      "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.pdf"
+    ],
+    "hashes": {
+      "docs/final_report.tex": "d336905c88c053188a815668c3cb7260d129612d22dae077639296c1f4690099",
+      "results/final_submission_20261110/final_report.docx": "81ad17d90353cf0e3871ead97593b7c7397b4f34b11d64b38be9b3dee2f04d8b",
+      "results/final_submission_20261110/final_report.pdf": "7af1abd9e0c7a691af276504c29827a6ba0b0ce9f28db1525f385254f107642b"
+    }
+  },
+  "delivered_final_files": [
+    "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.docx",
+    "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.pdf"
+  ],
+  "front_matter_layout_checks": {
+    "verified": true,
+    "title_area_contains_course_name_and_centered_author_sid": true,
+    "student_information_heading_removed": true,
+    "resource_block_after_abstract_before_contents": true,
+    "links_clickable_both_formats": 3,
+    "pdf_pages": 11,
+    "word_pages": 11,
+    "first_pages_visually_verified": true,
+    "pages_2_through_11_pixel_identical_to_previous_verified_version": true,
+    "abstract_and_body_unchanged": true,
+    "native_word_equations": 47,
+    "tables": 5,
+    "figures": 5,
+    "toc_entries_verified": 20,
+    "protected_inputs_unchanged": 180,
+    "delivered_final_files": [
+      "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.docx",
+      "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.pdf"
+    ]
+  },
+  "current_final_video_and_table_checks": {
+    "verified": true,
+    "all_five_tables_centered": true,
+    "native_word_equations": 47,
+    "tables": 5,
+    "figures": 5,
+    "pdf_pages": 11,
+    "word_pages": 11,
+    "final_video_link_verified_in_both_formats": "https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/project_video.mp4",
+    "first_pages_visually_inspected": true,
+    "remaining_pages_pixel_identical_to_verified_centred_version": true,
+    "report_body_and_results_unchanged": true,
+    "protected_experiment_and_user_presentation_files_unchanged": 180,
+    "final_video": {
+      "verified": true,
+      "source_filename": "ELEC5305_project_video_v13_short_code_subtitled.mp4",
+      "published_file": "project_video.mp4",
+      "url": "https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/project_video.mp4",
+      "sha256": "08f6f56025d8c78d46ec6ea0b5f41a30b0e2fc3baea426c32df00db1c893a223",
+      "bytes": 19918833,
+      "duration_seconds": 350.4,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "width": 1920,
+      "height": 1080,
+      "full_file_decoding_passed": true,
+      "source_bytes_preserved": true,
+      "subtitles_observed_in_representative_frames": true,
+      "video_transcoded_for_publication": false
+    },
+    "delivered_files": [
+      "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.docx",
+      "/Users/leaf/Downloads/ELEC5305_Final_Report_EN_FINAL.pdf"
+    ]
+  }
+}

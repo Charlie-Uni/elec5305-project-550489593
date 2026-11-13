@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -86,11 +87,28 @@ def audit():
             )
     assert f"{min(sensitivity):.2f}" == "0.47" and f"{max(sensitivity):.2f}" == "2.35"
     tex = (ROOT / "docs/final_report.tex").read_text()
-    assert "supplement" not in tex.lower() and "Fable" not in tex
-    for value in ("56.25", "71.45", "0.47--2.35", "98.25", "model version not recorded"):
+    assert not re.search(r"supplement(?:ary|al) material|supplement\.pdf|26[- ]page", tex, re.I)
+    for value in ("56.25", "71.45", "0.47--2.35", "GPT-6.1 Sol", "Fable 5.1", "https://openai.com/codex/", "https://claude.ai/"):
         assert value in tex, value
+    references = re.findall(r"\\bibitem\{([^}]+)\}", tex)
+    cited = {key for group in re.findall(r"\\cite\{([^}]+)\}", tex)
+             for key in group.split(",")}
+    assert len(references) == len(set(references)) == 17
+    first_occurrence = []
+    for group in re.findall(r"\\cite\{([^}]+)\}", tex.split(r"\begin{thebibliography}")[0]):
+        for key in group.split(","):
+            if key not in first_occurrence:
+                first_occurrence.append(key)
+    assert references == first_occurrence, "Bibliography must follow first citation order"
+
+    assert cited == set(references), "Every citation must resolve and every reference must be used"
+    assert {"sed", "mixup", "msclap", "aip"} <= cited
+    review = tex.split(r"\section{Literature review}")[1].split(r"\section{Methods}")[0]
+    assert review.count(r"\subsection{") == 2
     result = {
         "verified": True,
+        "references": len(references),
+        "literature_subsections": 2,
         "capture_points": 18,
         "margin_median_iqr_records": 18,
         "displacement_median_iqr_records": 24,

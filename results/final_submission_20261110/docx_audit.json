@@ -1,15 +1,16 @@
 {
   "verified": true,
   "source": "docs/final_report.tex",
-  "source_sha256": "86e709564c0959a99a117184650cfd52963c17fe7c03efcc0d3a38b9eef0b5c1",
-  "word_sha256": "d08e42b6c7d42d993187345696176ac6600ba4611879c2d12a87f44c8fe6171a",
-  "rendered_pages": 10,
-  "native_tables": 4,
-  "native_math_objects": 43,
-  "figures": 3,
-  "references": 13,
-  "unchanged_converted_body_blocks": 98,
+  "source_sha256": "89ed6e592707ab1c92f43cd7a7d56b69d90554f5d5d5695428d1e57aecac8e80",
+  "word_sha256": "bfc50ec34b0fef6f62b5e4570097e62b39cb01abcbce532f18234d21d64f9484",
+  "rendered_pages": 11,
+  "native_tables": 5,
+  "native_math_objects": 47,
+  "figures": 5,
+  "references": 17,
   "figures_match_source_png": true,
-  "visual_review": "All 10 pages inspected after rendering; editable text, native tables and OMML math. Figure captions remain separate from body paragraphs.",
-  "pagination_scope": "Bundled LibreOffice rendering; Word versions and font availability can change pagination."
+  "visual_review": "Changed table pages and final first page inspected; other pages match verified output.",
+  "pagination_scope": "PDF is the LaTeX fixed-layout submission copy. Word pagination can vary with fonts and application versions.",
+  "all_five_tables_centered": true,
+  "final_video_url": "https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/project_video.mp4"
 }

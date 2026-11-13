@@ -9,7 +9,7 @@ import subprocess
 from pathlib import Path
 
 from docx import Document
-from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
+from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT, WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK, WD_TAB_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
@@ -42,17 +42,23 @@ def expand(text, command, count, replacement):
     return text
 
 
-def prepare_tex():
+def prepare_tex(labels_aux=None):
     source = (ROOT / "docs/final_report.tex").read_text()
     references = {
         key: str(i + 1) for i, key in enumerate(re.findall(r"\\bibitem\{([^}]+)\}", source))
     }
     source = source.split(r"\begin{document}", 1)[1].split(r"\end{document}")[0]
     source = "TITLEBLOCKMARKER\n\n" + source[source.index(r"\begin{abstract}") :]
+    source = re.sub(
+        r"\{\\small GitHub Username:.*?\\par\}",
+        lambda _: "\n\nPROJECTRESOURCESMARKER\n\n",
+        source,
+        flags=re.S,
+    )
     source = source.replace(r"\begin{abstract}", r"\section*{Abstract}").replace(
         r"\end{abstract}", ""
     )
-    source = source.replace(r"\tableofcontents", "TOCMARKER").replace(
+    source = source.replace(r"\tableofcontents", "\n\nTOCMARKER\n\n").replace(
         r"\clearpage", "\n\nPAGEBREAKMARKER\n\n"
     )
     source = source.replace(r"\site", "https://charlie-uni.github.io/elec5305-project-550489593/")
@@ -61,8 +67,10 @@ def prepare_tex():
     source = source.replace(r"\phantomsection", "")
     source = source.replace(r"\begin{samepage}", "").replace(r"\end{samepage}", "")
     source = re.sub(r"\\addcontentsline\{toc\}\{section\}\{References\}", "", source)
-    source = source.replace(
-        r"\begin{thebibliography}{13}\raggedright", r"\section*{References}"
+    source = re.sub(
+        r"\\begin\{thebibliography\}\{[^}]+\}\\raggedright",
+        lambda _: r"\section*{References}",
+        source,
     ).replace(r"\end{thebibliography}", "")
     source = re.sub(r"\\bibitem\{([^}]+)\}", lambda m: "\n\n[" + references[m[1]] + "] ", source)
     source = re.sub(
@@ -81,6 +89,32 @@ def prepare_tex():
             start = tables.index("\\newcommand{\\" + name + "}") + len("\\newcommand{\\" + name + "}")
             content, _ = brace(tables, start)
             source = source.replace("\\" + name, content)
+    # Resolve native cross-references even when no TeX auxiliary file is supplied.
+    labels, section_number, subsection_number, table_count, current_number = {}, 0, 0, 0, ""
+    events = re.finditer(r"\\(section|subsection)\{[^}]+\}|\\captionof\{table\}|\\label\{([^}]+)\}", source)
+    for event in events:
+        if event[1] == "section":
+            section_number += 1
+            subsection_number = 0
+            current_number = str(section_number)
+        elif event[1] == "subsection":
+            subsection_number += 1
+            current_number = f"{section_number}.{subsection_number}"
+        elif event[2]:
+            labels[event[2]] = current_number
+        else:
+            table_count += 1
+            current_number = str(table_count)
+    labels.update({"fig:" + name: str(i + 1) for i, name in enumerate(re.findall(r"\\pic\{([^}]+)\}", source))})
+    if labels_aux is not None:
+        auxiliary_labels = dict(re.findall(r"\\newlabel\{([^}]+)\}\{\{([^}]+)\}", labels_aux.read_text()))
+        assert all(auxiliary_labels.get(key) == value for key, value in labels.items())
+    source = re.sub(r"\\ref\{([^}]+)\}", lambda m: labels[m[1]], source)
+    source = re.sub(r"\\label\{[^}]+\}", "", source)
+    source = re.sub(r"\\addcontentsline\{toc\}\{section\}\{[^}]+\}", "", source)
+    source = source.replace(r"\begingroup", "").replace(r"\endgroup", "")
+    source = source.replace(r"\begin{minipage}{\linewidth}", "").replace(r"\end{minipage}", "")
+    source = source.replace(r"\setlength{\parskip}{0pt}", "")
     figure_number, table_number = 0, 0
 
     def figure(name, caption):
@@ -147,42 +181,32 @@ def format_document(doc, toc_pdf=None):
         st.paragraph_format.space_after = Pt(6)
         st.paragraph_format.keep_with_next = True
     footer = section.footer.paragraphs[0]
+    footer.clear()
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
     footer._p.append(element("w:fldSimple", **{"w:instr": "PAGE"}))
     titles = [
         ("When Background Noise Has Meaning", "Title"),
         ("Environmental Sound Classification under Semantic Interference", "Subtitle"),
-        ("Qihan Zhu   SID 550489593", "Normal"),
         ("ELEC5305 Acoustics, Speech and Signal Processing", "Normal"),
-        ("11 November 2026", "Normal"),
+        ("Qihan Zhu   SID 550489593", "Normal"),
     ]
-    toc = [
-        ("1 Introduction", 1),
-        ("2 Literature review", 2),
-        ("3 Methods", 3),
-        ("4 Results", 5),
-        ("5 Discussion", 8),
-        ("6 Conclusion", 9),
-        ("7 Implementation, reproduction and attribution", 9),
-        ("References", 11),
-    ]
+    toc = [(p.text, 1) for p in doc.paragraphs if p.style.name in ("Heading 1", "Heading 2") and p.text != "Abstract"]
     if toc_pdf is not None:
         from pypdf import PdfReader
-
         reader = PdfReader(toc_pdf)
-        destinations = {
-            re.sub(r"^\d+\s+", "", item.title): reader.get_destination_page_number(item) + 1
-            for item in reader.outline if isinstance(item, dict)
-        }
-        # Some older LaTeX bookmarks inherit the preceding section's anchor.
-        references = [i + 1 for i, page in enumerate(reader.pages)
-                      if re.match(r"\s*References(?:\s|$)", page.extract_text() or "")]
-        destinations["References"] = references[0] if references else len(reader.pages)
-        toc = [(title, destinations.get(re.sub(r"^\d+\s+", "", title), page))
-               for title, page in toc]
+        destinations = {}
+        def visit(items):
+            for item in items:
+                if isinstance(item, list):
+                    visit(item)
+                elif isinstance(item, dict):
+                    title = re.sub(r"^\d+(?:\.\d+)*\s+", "", item.title)
+                    destinations[title] = reader.get_destination_page_number(item) + 1
+        visit(reader.outline)
+        toc = [(title, destinations.get(re.sub(r"^\d+(?:\.\d+)*\s+", "", title), page)) for title, page in toc]
     conclusion_next = False
     for p in list(doc.paragraphs):
-        if p.text == "6 Conclusion":
+        if p.text == "5.3 Conclusion":
             conclusion_next = True
         elif conclusion_next and p.text.strip():
             p.paragraph_format.keep_together = True
@@ -192,12 +216,47 @@ def format_document(doc, toc_pdf=None):
                 added = p.insert_paragraph_before(text, style)
                 added.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p._element.getparent().remove(p._element)
+        elif p.text == "PROJECTRESOURCESMARKER":
+            from docx.opc.constants import RELATIONSHIP_TYPE as RT
+            def add_link(paragraph, label, url):
+                link = element("w:hyperlink", **{"r:id": paragraph.part.relate_to(url, RT.HYPERLINK, is_external=True)})
+                run = element("w:r")
+                props = element("w:rPr")
+                props.append(element("w:color", **{"w:val": "0563C1"}))
+                props.append(element("w:sz", **{"w:val": "19"}))
+                run.append(props)
+                label_node = element("w:t")
+                label_node.text = label
+                run.append(label_node)
+                link.append(run)
+                paragraph._p.append(link)
+            metadata = p.insert_paragraph_before("GitHub Username: Charlie-Uni")
+            project = p.insert_paragraph_before("GitHub Project Link: ")
+            add_link(project, "https://github.com/Charlie-Uni/elec5305-project-550489593", "https://github.com/Charlie-Uni/elec5305-project-550489593")
+            media = p.insert_paragraph_before("Web: ")
+            add_link(media, "Project website", "https://charlie-uni.github.io/elec5305-project-550489593/")
+            media.add_run("    Video: ")
+            add_link(media, "Project video report", "https://charlie-uni.github.io/elec5305-project-550489593/results/final_submission_20261110/project_video.mp4")
+            for item in (metadata, project, media):
+                item.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                item.paragraph_format.line_spacing = Pt(11)
+                item.paragraph_format.space_after = Pt(2)
+                item.paragraph_format.keep_with_next = True
+                for run in item.runs:
+                    run.font.name = "Times New Roman"
+                    run.font.size = Pt(9.5)
+            p._element.getparent().remove(p._element)
         elif p.text == "TOCMARKER":
             p.insert_paragraph_before("Contents", "Heading 1")
             for title, page in toc:
                 added = p.insert_paragraph_before(f"{title}\t{page}")
                 added.paragraph_format.tab_stops.add_tab_stop(Mm(169), WD_TAB_ALIGNMENT.RIGHT)
-                added.paragraph_format.space_after = Pt(5)
+                added.paragraph_format.space_after = Pt(0)
+                added.paragraph_format.line_spacing = Pt(11)
+                added.paragraph_format.left_indent = Mm(5) if re.match(r"\d+\.\d+", title) else Mm(0)
+                added.paragraph_format.keep_with_next = True
+                for run in added.runs:
+                    run.font.size = Pt(10)
             p._element.getparent().remove(p._element)
         elif p.text == "PAGEBREAKMARKER":
             p.clear()
@@ -227,6 +286,7 @@ def format_document(doc, toc_pdf=None):
         widths.insert(3, [30, 23, 23, 23, 23, 23, 25])
     assert len(doc.tables) == len(widths)
     for table_index, (table, columns) in enumerate(zip(doc.tables, widths)):
+        table.alignment = WD_TABLE_ALIGNMENT.CENTER
         table.autofit = False
         for column, width in zip(table.columns, columns):
             column.width = Mm(width)
@@ -280,13 +340,15 @@ def main():
     parser.add_argument("--pandoc", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, required=True)
     parser.add_argument("--toc-pdf", type=Path, default=ROOT / "results/final_submission_20261110/final_report.pdf")
+    parser.add_argument("--labels-aux", type=Path)
+    parser.add_argument("--reference-docx", type=Path)
     args = parser.parse_args()
     args.work_dir.mkdir(parents=True, exist_ok=True)
     tex = args.work_dir / "report_word_source.tex"
-    tex.write_text(prepare_tex())
+    tex.write_text(prepare_tex(args.labels_aux))
     candidate = args.work_dir / "converted.docx"
     subprocess.run(
-        [str(args.pandoc), str(tex), "--from=latex", "--to=docx", "--output", str(candidate)],
+        [str(args.pandoc), str(tex), "--from=latex", "--to=docx", "--output", str(candidate)] + (["--reference-doc", str(args.reference_docx)] if args.reference_docx else []),
         check=True,
     )
     doc = Document(candidate)
